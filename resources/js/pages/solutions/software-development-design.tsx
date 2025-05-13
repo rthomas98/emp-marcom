@@ -1,13 +1,33 @@
 import SiteLayout from '@/layouts/site-layout';
+import { SoftwareDevelopmentHeader } from '@/components/solutions/SoftwareDevelopmentHeader';
+import { CustomSoftwareSolutions } from '@/components/solutions/CustomSoftwareSolutions';
+import { SoftwareDevelopmentProcess } from '@/components/solutions/SoftwareDevelopmentProcess';
+import { ComprehensiveSoftwareSolutions } from '@/components/solutions/ComprehensiveSoftwareSolutions';
+import { ScalableSoftwareSolutions } from '@/components/solutions/ScalableSoftwareSolutions';
+import { ComprehensiveDevelopmentFeatures } from '@/components/solutions/ComprehensiveDevelopmentFeatures';
+import { SoftwareSolutionsBenefits } from '@/components/solutions/SoftwareSolutionsBenefits';
+import { SoftwareTestimonials } from '@/components/solutions/SoftwareTestimonials';
+import { DevelopmentProcessOverview } from '@/components/solutions/DevelopmentProcessOverview';
+import { SoftwareDevelopmentCTA } from '@/components/solutions/SoftwareDevelopmentCTA';
+import { Head } from '@inertiajs/react';
 
 export default function SoftwareDevelopmentDesign() {
   return (
-    <SiteLayout title="Software Development & Design - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Software Development & Design
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head>
+        <title>Software Development & Design - Empuls3</title>
+        <meta name="description" content="Transform your vision into software reality with Empuls3's end-to-end software development and design solutions." />
+      </Head>
+      <SoftwareDevelopmentHeader />
+      <CustomSoftwareSolutions />
+      <SoftwareDevelopmentProcess />
+      <ComprehensiveSoftwareSolutions />
+      <ScalableSoftwareSolutions />
+      <ComprehensiveDevelopmentFeatures />
+      <SoftwareSolutionsBenefits />
+      <DevelopmentProcessOverview />
+      <SoftwareTestimonials />
+      <SoftwareDevelopmentCTA />
     </SiteLayout>
   );
 }

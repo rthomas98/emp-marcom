@@ -1,13 +1,31 @@
 import SiteLayout from '@/layouts/site-layout';
+import { SolutionsHeader } from '@/components/solutions/SolutionsHeader';
+import { SolutionsOverview } from '@/components/solutions/SolutionsOverview';
+import { WebEcommerce } from '@/components/solutions/WebEcommerce';
+import { BackendAPI } from '@/components/solutions/BackendAPI';
+import { FrontendDevelopment } from '@/components/solutions/FrontendDevelopment';
+import { ProductDevelopment } from '@/components/solutions/ProductDevelopment';
+import { MobileCrossPlatform } from '@/components/solutions/MobileCrossPlatform';
+import { HubspotSolutions } from '@/components/solutions/HubspotSolutions';
+import { CallToAction } from '@/components/solutions/CallToAction';
+import { Head } from '@inertiajs/react';
 
-export default function SolutionsOverview() {
+export default function SolutionsPage() {
   return (
-    <SiteLayout title="Solutions Overview - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Solutions Overview
-        </h1>
-      </div>
+    <SiteLayout title="Solutions & Services - Empuls3">
+      <Head>
+        <meta name="description" content="Explore Empuls3's comprehensive suite of software development solutions and services tailored to meet your unique business needs and drive digital transformation." />
+        <meta name="keywords" content="software development, web development, custom applications, API integration, mobile apps, IT consulting, digital solutions" />
+      </Head>
+      <SolutionsHeader />
+      <SolutionsOverview />
+      <WebEcommerce />
+      <BackendAPI />
+      <FrontendDevelopment />
+      <ProductDevelopment />
+      <MobileCrossPlatform />
+      <HubspotSolutions />
+      <CallToAction />
     </SiteLayout>
   );
 }
