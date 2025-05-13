@@ -1,4 +1,12 @@
+/* Import Google Fonts - ASAP for headers and Open Sans for body */
+@import url('https://fonts.googleapis.com/css2?family=ASAP:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @import 'tailwindcss';
+
+/* Custom styles */
+.group:hover .group-hover\:text-white {
+  color: white;
+}
 
 @plugin 'tailwindcss-animate';
 
@@ -8,8 +16,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-sans:
-        'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-header: 'ASAP', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
@@ -35,6 +43,9 @@
 
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
+
+    --color-accent-pink: var(--accent-pink);
+    --color-accent-yellow: var(--accent-yellow);
 
     --color-destructive: var(--destructive);
     --color-destructive-foreground: var(--destructive-foreground);
@@ -78,74 +89,94 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --destructive-foreground: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.87 0 0);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.87 0 0);
+    /* Brand Colors */
+    --primary: #1F1946;
+    --primary-foreground: #FFFFFF;
+    --secondary: #231B53;
+    --secondary-foreground: #FFFFFF;
+    --accent-pink: #BD1550;
+    --accent-yellow: #FFC259;
+    --accent: #BD1550;
+    --accent-foreground: #FFFFFF;
+    
+    /* System Colors */
+    --background: #FFFFFF;
+    --foreground: #1F1946;
+    --card: #FFFFFF;
+    --card-foreground: #1F1946;
+    --popover: #FFFFFF;
+    --popover-foreground: #1F1946;
+    --muted: #F8F9FA;
+    --muted-foreground: #6c757d;
+    --destructive: #dc3545;
+    --destructive-foreground: #FFFFFF;
+    --border: #e9ecef;
+    --input: #e9ecef;
+    --ring: #BD1550;
+    
+    /* Chart Colors */
+    --chart-1: #1F1946;
+    --chart-2: #231B53;
+    --chart-3: #BD1550;
+    --chart-4: #FFC259;
+    --chart-5: #6c757d;
+    
+    /* Other */
+    --radius: 0.5rem;
+    
+    /* Sidebar */
+    --sidebar: #1F1946;
+    --sidebar-foreground: #FFFFFF;
+    --sidebar-primary: #BD1550;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #FFC259;
+    --sidebar-accent-foreground: #1F1946;
+    --sidebar-border: #231B53;
+    --sidebar-ring: #FFC259;
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.145 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.145 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.985 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.396 0.141 25.723);
-    --destructive-foreground: oklch(0.637 0.237 25.331);
-    --border: oklch(0.269 0 0);
-    --input: oklch(0.269 0 0);
-    --ring: oklch(0.439 0 0);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.985 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(0.269 0 0);
-    --sidebar-ring: oklch(0.439 0 0);
+    /* Brand Colors in Dark Mode */
+    --primary: #231B53;
+    --primary-foreground: #FFFFFF;
+    --secondary: #1F1946;
+    --secondary-foreground: #FFFFFF;
+    --accent-pink: #BD1550;
+    --accent-yellow: #FFC259;
+    --accent: #BD1550;
+    --accent-foreground: #FFFFFF;
+    
+    /* System Colors in Dark Mode */
+    --background: #121212;
+    --foreground: #F8F9FA;
+    --card: #1F1946;
+    --card-foreground: #F8F9FA;
+    --popover: #1F1946;
+    --popover-foreground: #F8F9FA;
+    --muted: #231B53;
+    --muted-foreground: #adb5bd;
+    --destructive: #e35d6a;
+    --destructive-foreground: #FFFFFF;
+    --border: #231B53;
+    --input: #231B53;
+    --ring: #BD1550;
+    
+    /* Chart Colors */
+    --chart-1: #FFC259;
+    --chart-2: #BD1550;
+    --chart-3: #231B53;
+    --chart-4: #1F1946;
+    --chart-5: #adb5bd;
+    
+    /* Sidebar */
+    --sidebar: #1F1946;
+    --sidebar-foreground: #FFFFFF;
+    --sidebar-primary: #BD1550;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #FFC259;
+    --sidebar-accent-foreground: #1F1946;
+    --sidebar-border: #231B53;
+    --sidebar-ring: #FFC259;
 }
 
 @layer base {
@@ -154,6 +185,10 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-body;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-header font-semibold;
     }
 }
