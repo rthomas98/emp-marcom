@@ -5,7 +5,7 @@ import { Mail, Phone, Globe } from "lucide-react";
 
 export function ContactInfo() {
   return (
-    <section id="contact-info" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="contact-info" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#F8F9FA]">
       <div className="container mx-auto">
         <div className="grid auto-cols-fr grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3 md:gap-y-16">
           <div>
