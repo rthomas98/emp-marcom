@@ -1,13 +1,30 @@
 import SiteLayout from '@/layouts/site-layout';
+import { EngineeringHeader } from '@/components/services/EngineeringHeader';
+import { EngineeringStrategies } from '@/components/services/EngineeringStrategies';
+import { EngineeringArchitecture } from '@/components/services/EngineeringArchitecture';
+import { EngineeringSolutions } from '@/components/services/EngineeringSolutions';
+import { EngineeringExpertise } from '@/components/services/EngineeringExpertise';
+import { EngineeringCloud } from '@/components/services/EngineeringCloud';
+import { EngineeringSecurity } from '@/components/services/EngineeringSecurity';
+import { EngineeringPerformance } from '@/components/services/EngineeringPerformance';
+import { EngineeringTestimonial } from '@/components/services/EngineeringTestimonial';
+import { EngineeringCTA } from '@/components/services/EngineeringCTA';
+import { Head } from '@inertiajs/react';
 
 export default function SoftwareEngineeringItConsulting() {
   return (
-    <SiteLayout title="Software Engineering & IT Consulting - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Software Engineering & IT Consulting
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Software Engineering & IT Consulting - Empuls3" />
+      <EngineeringHeader />
+      <EngineeringStrategies />
+      <EngineeringArchitecture />
+      <EngineeringSolutions />
+      <EngineeringExpertise />
+      <EngineeringCloud />
+      <EngineeringSecurity />
+      <EngineeringPerformance />
+      <EngineeringTestimonial />
+      <EngineeringCTA />
     </SiteLayout>
   );
 }

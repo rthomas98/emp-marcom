@@ -1,13 +1,18 @@
 import SiteLayout from '@/layouts/site-layout';
+import { ContactHeader } from '@/components/contact/ContactHeader';
+import { ContactInfo } from '@/components/contact/ContactInfo';
+import { ContactFormAdvanced } from '@/components/contact/ContactFormAdvanced';
+import { ContactSchedule } from '@/components/contact/ContactSchedule';
+import { Head } from '@inertiajs/react';
 
 export default function Contact() {
   return (
-    <SiteLayout title="Contact - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Contact
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Contact - Empuls3" />
+      <ContactHeader />
+      <ContactInfo />
+      <ContactFormAdvanced />
+      <ContactSchedule />
     </SiteLayout>
   );
 }

@@ -1,13 +1,30 @@
 import SiteLayout from '@/layouts/site-layout';
+import { MobileHeader } from '@/components/solutions/MobileHeader';
+import { MobileOverview } from '@/components/solutions/MobileOverview';
+import { MobilePWA } from '@/components/solutions/MobilePWA';
+import { MobileSolutions } from '@/components/solutions/MobileSolutions';
+import { MobileProcess } from '@/components/solutions/MobileProcess';
+import { MobileExperience } from '@/components/solutions/MobileExperience';
+import { MobileFeatures } from '@/components/solutions/MobileFeatures';
+import { MobileTestimonials } from '@/components/solutions/MobileTestimonials';
+import { MobileCTA } from '@/components/solutions/MobileCTA';
+import { MobileFinalCTA } from '@/components/solutions/MobileFinalCTA';
+import { Head } from '@inertiajs/react';
 
 export default function MobileCrossPlatformDevelopment() {
   return (
-    <SiteLayout title="Mobile & Cross-Platform Development - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Mobile & Cross-Platform Development
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Mobile & Cross-Platform Development - Empuls3" />
+      <MobileHeader />
+      <MobileOverview />
+      <MobilePWA />
+      <MobileSolutions />
+      <MobileProcess />
+      <MobileExperience />
+      <MobileFeatures />
+      <MobileTestimonials />
+      <MobileCTA />
+      <MobileFinalCTA />
     </SiteLayout>
   );
 }

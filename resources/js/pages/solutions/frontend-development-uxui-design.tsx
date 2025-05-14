@@ -1,13 +1,24 @@
 import SiteLayout from '@/layouts/site-layout';
+import { FrontendHeader } from '@/components/solutions/FrontendHeader';
+import { FrontendSolutions } from '@/components/solutions/FrontendSolutions';
+import { FrontendFeatures } from '@/components/solutions/FrontendFeatures';
+import { FrontendFrameworks } from '@/components/solutions/FrontendFrameworks';
+import { FrontendProcess } from '@/components/solutions/FrontendProcess';
+import { FrontendTestimonials } from '@/components/solutions/FrontendTestimonials';
+import { FrontendCTA } from '@/components/solutions/FrontendCTA';
+import { Head } from '@inertiajs/react';
 
 export default function FrontendDevelopmentUxUiDesign() {
   return (
-    <SiteLayout title="Front-End Development & UX/UI Design - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Front-End Development & UX/UI Design
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Front-End Development & UX/UI Design - Empuls3" />
+      <FrontendHeader />
+      <FrontendSolutions />
+      <FrontendFeatures />
+      <FrontendFrameworks />
+      <FrontendProcess />
+      <FrontendTestimonials />
+      <FrontendCTA />
     </SiteLayout>
   );
 }

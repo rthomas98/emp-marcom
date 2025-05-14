@@ -1,13 +1,26 @@
 import SiteLayout from '@/layouts/site-layout';
+import { AppDevOpsHeader } from '@/components/services/AppDevOpsHeader';
+import { AppDevOpsOverview } from '@/components/services/AppDevOpsOverview';
+import { AppDevOpsPipeline } from '@/components/services/AppDevOpsPipeline';
+import { AppDevOpsInfrastructure } from '@/components/services/AppDevOpsInfrastructure';
+import { AppDevOpsFeatures } from '@/components/services/AppDevOpsFeatures';
+import { AppDevOpsProcess } from '@/components/services/AppDevOpsProcess';
+import { AppDevOpsTestimonial } from '@/components/services/AppDevOpsTestimonial';
+import { AppDevOpsCTA } from '@/components/services/AppDevOpsCTA';
+import { Head } from '@inertiajs/react';
 
 export default function ApplicationDevopsServices() {
   return (
-    <SiteLayout title="Application & DevOps Services - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Application & DevOps Services
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Application & DevOps Services - Empuls3" />
+      <AppDevOpsHeader />
+      <AppDevOpsOverview />
+      <AppDevOpsPipeline />
+      <AppDevOpsInfrastructure />
+      <AppDevOpsFeatures />
+      <AppDevOpsProcess />
+      <AppDevOpsTestimonial />
+      <AppDevOpsCTA />
     </SiteLayout>
   );
 }

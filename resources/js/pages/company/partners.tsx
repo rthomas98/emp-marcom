@@ -1,13 +1,26 @@
 import SiteLayout from '@/layouts/site-layout';
+import { PartnersHeader } from '@/components/company/PartnersHeader';
+import { PartnersOverview } from '@/components/company/PartnersOverview';
+import { PartnersStrategic } from '@/components/company/PartnersStrategic';
+import { PartnersLogos } from '@/components/company/PartnersLogos';
+import { PartnersFeature } from '@/components/company/PartnersFeature';
+import { PartnersCase } from '@/components/company/PartnersCase';
+import { PartnersHighlight } from '@/components/company/PartnersHighlight';
+import { PartnersCallToAction } from '@/components/company/PartnersCallToAction';
+import { Head } from '@inertiajs/react';
 
 export default function Partners() {
   return (
-    <SiteLayout title="Partners - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Partners
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Partners - Empuls3" />
+      <PartnersHeader />
+      <PartnersOverview />
+      <PartnersLogos />
+      <PartnersStrategic />
+      <PartnersFeature />
+      <PartnersCase />
+      <PartnersHighlight />
+      <PartnersCallToAction />
     </SiteLayout>
   );
 }

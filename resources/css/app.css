@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=ASAP:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 @import 'tailwindcss';
+@import './animations.css';
 
 /* Custom styles */
 .group:hover .group-hover\:text-white {

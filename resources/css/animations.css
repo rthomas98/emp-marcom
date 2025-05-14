@@ -1,0 +1,51 @@
+@keyframes loop-vertically {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes loop-vertically-reverse {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee-horizontally {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-horizontally-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-loop-vertically {
+  animation: loop-vertically 30s linear infinite;
+}
+
+.animate-loop-vertically-reverse {
+  animation: loop-vertically-reverse 30s linear infinite;
+}
+
+.animate-marquee-horizontally {
+  animation: marquee-horizontally 30s linear infinite;
+}
+
+.animate-marquee-horizontally-reverse {
+  animation: marquee-horizontally-reverse 30s linear infinite;
+}

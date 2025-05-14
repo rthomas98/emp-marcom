@@ -33,16 +33,25 @@ export default function MainMenu({ className }: MainMenuProps) {
 
   // Company dropdown items
   const company = [
-    { name: 'About Us', href: route('company.about'), description: 'Learn more about our company values and mission' },
-    { name: 'Partners', href: route('company.partners'), description: 'Meet our strategic technology partners' },
-    { name: 'FAQs', href: route('company.faqs'), description: 'Answers to commonly asked questions' },
+    { name: 'About Us', href: route('company.about'), description: 'Learn more about our company values and mission', icon: Rocket },
+    { name: 'Partners', href: route('company.partners'), description: 'Meet our strategic technology partners', icon: Globe },
+    { name: 'FAQs', href: route('company.faqs'), description: 'Answers to commonly asked questions', icon: Database },
   ];
-
-
 
   // Check if a link is active
   const isActive = (href: string) => {
+    // For HubSpot & CRM Development page
+    if (url === route('solutions.hubspot-crm-development') && 
+        href === route('solutions.hubspot-crm-development')) {
+      return true;
+    }
     return url.startsWith(href);
+  };
+
+  // Check if the current item is the HubSpot & CRM Development page
+  const isHubspotPage = (href: string) => {
+    return url === route('solutions.hubspot-crm-development') && 
+           href === route('solutions.hubspot-crm-development');
   };
 
   return (
@@ -56,7 +65,6 @@ export default function MainMenu({ className }: MainMenuProps) {
               src="/images/emp-logo.svg"
               className="h-8 w-auto"
             />
-            <span className="ml-2 text-xl font-bold text-primary font-header hidden lg:inline">Empuls3</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -81,20 +89,22 @@ export default function MainMenu({ className }: MainMenuProps) {
                 {solutions.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex gap-x-6 rounded-lg p-4 text-sm hover:bg-muted"
+                    className={`group relative rounded-lg p-4 text-sm hover:bg-[#1F1946] ${isHubspotPage(item.href) ? 'bg-[#1F1946]/10' : ''}`}
                   >
-                    <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon className="size-6 text-primary group-hover:text-accent-pink" />
-                    </div>
-                    <div className="flex-auto">
-                      <Link 
-                        href={item.href} 
-                        className={`block font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-accent-pink'}`}
-                      >
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </Link>
-                      <p className="mt-1 text-gray-700 group-hover:text-white">{item.description}</p>
+                    <div className="flex items-start gap-x-3">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20">
+                        <item.icon className="h-6 w-6 text-[#BD1550] group-hover:text-[#BD1550]" />
+                      </div>
+                      <div>
+                        <Link 
+                          href={item.href} 
+                          className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-white'}`}
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </Link>
+                        <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -113,20 +123,22 @@ export default function MainMenu({ className }: MainMenuProps) {
                 {services.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex gap-x-6 rounded-lg p-4 text-sm hover:bg-muted"
+                    className="group relative rounded-lg p-4 text-sm hover:bg-[#1F1946]"
                   >
-                    <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon className="size-6 text-primary group-hover:text-accent-pink" />
-                    </div>
-                    <div className="flex-auto">
-                      <Link 
-                        href={item.href} 
-                        className={`block font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-accent-pink'}`}
-                      >
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </Link>
-                      <p className="mt-1 text-gray-700 group-hover:text-white">{item.description}</p>
+                    <div className="flex items-start gap-x-3">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20">
+                        <item.icon className="h-6 w-6 text-[#BD1550] group-hover:text-[#BD1550]" />
+                      </div>
+                      <div>
+                        <Link 
+                          href={item.href} 
+                          className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-white'}`}
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </Link>
+                        <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -149,15 +161,22 @@ export default function MainMenu({ className }: MainMenuProps) {
 
             <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-white p-4 shadow-lg ring-1 ring-gray-900/5">
               {company.map((item) => (
-                <div key={item.name} className="relative rounded-lg p-4 hover:bg-muted">
-                  <Link 
-                    href={item.href} 
-                    className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
-                  >
-                    {item.name}
-                    <span className="absolute inset-0" />
-                  </Link>
-                  <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                <div key={item.name} className="group relative rounded-lg p-4 hover:bg-[#1F1946]">
+                  <div className="flex items-start gap-x-3">
+                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20">
+                      {item.icon && <item.icon className="h-6 w-6 text-[#BD1550] group-hover:text-[#BD1550]" />}
+                    </div>
+                    <div>
+                      <Link 
+                        href={item.href} 
+                        className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-white'}`}
+                      >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </Link>
+                      <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </Popover.Panel>
@@ -173,90 +192,87 @@ export default function MainMenu({ className }: MainMenuProps) {
         </div>
       </nav>
       
-      {/* Mobile menu */}
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 flex w-full flex-col justify-between overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="p-6">
-            <div className="flex items-center justify-between">
-              <Link href={route('home')} className="-m-1.5 p-1.5">
-                <span className="sr-only">Empuls3</span>
-                <img
-                  alt="Empuls3"
-                  src="/images/emp-logo.svg"
-                  className="h-8 w-auto"
-                />
-              </Link>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-primary"
-              >
-                <span className="sr-only">Close menu</span>
-                <X className="size-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  <div>
-                    <Link
-                      href={route('solutions')}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/solutions') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
-                    >
-                      Solutions Overview
-                    </Link>
-                    {solutions.slice(1).map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={`-mx-3 block rounded-lg px-3 py-2 pl-6 text-base font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary/80 hover:text-accent-pink'}`}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-4">
-                    <Link
-                      href={route('services')}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/services') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
-                    >
-                      Services Overview
-                    </Link>
-                    {services.slice(1).map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={`-mx-3 block rounded-lg px-3 py-2 pl-6 text-base font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary/80 hover:text-accent-pink'}`}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                  
+        <div className="fixed inset-0 z-50" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <Link href={route('home')} className="-m-1.5 p-1.5 flex items-center">
+              <span className="sr-only">Empuls3</span>
+              <img
+                alt="Empuls3"
+                src="/images/emp-logo.svg"
+                className="h-8 w-auto"
+              />
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="-m-2.5 rounded-md p-2.5 text-primary"
+            >
+              <span className="sr-only">Close menu</span>
+              <X className="size-6" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                <div>
                   <Link
-                    href={route('industries')}
-                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/industries') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
-                    onClick={() => setMobileMenuOpen(false)}
+                    href={route('solutions')}
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/solutions') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
                   >
-                    Industries
+                    Solutions Overview
                   </Link>
-                  
-                  <div className="mt-4">
-                    {company.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
+                  {solutions.slice(1).map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`-mx-3 block rounded-lg px-3 py-2 pl-6 text-base font-semibold ${isHubspotPage(item.href) ? 'bg-[#1F1946]/10 text-accent-pink' : isActive(item.href) ? 'text-accent-pink' : 'text-primary/80 hover:text-accent-pink'}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+                
+                <div className="mt-4">
+                  <Link
+                    href={route('services')}
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/services') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
+                  >
+                    Services Overview
+                  </Link>
+                  {services.slice(1).map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`-mx-3 block rounded-lg px-3 py-2 pl-6 text-base font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary/80 hover:text-accent-pink'}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+                
+                <Link
+                  href={route('industries')}
+                  className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/industries') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Industries
+                </Link>
+                
+                <div className="mt-4">
+                  {company.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>

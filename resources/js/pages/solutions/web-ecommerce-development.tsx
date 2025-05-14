@@ -1,13 +1,24 @@
 import SiteLayout from '@/layouts/site-layout';
+import { WebEcommerceHeader } from '@/components/solutions/WebEcommerceHeader';
+import { WordPressSolutions } from '@/components/solutions/WordPressSolutions';
+import { EcommercePlatforms } from '@/components/solutions/EcommercePlatforms';
+import { ProgressiveWebApps } from '@/components/solutions/ProgressiveWebApps';
+import { WebEcommerceFeatures } from '@/components/solutions/WebEcommerceFeatures';
+import { WebEcommerceTestimonials } from '@/components/solutions/WebEcommerceTestimonials';
+import { WebEcommerceCTA } from '@/components/solutions/WebEcommerceCTA';
+import { Head } from '@inertiajs/react';
 
 export default function WebEcommerceDevelopment() {
   return (
-    <SiteLayout title="Web & E-commerce Development - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Web & E-commerce Development
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Web & E-commerce Development - Empuls3" />
+      <WebEcommerceHeader />
+      <WordPressSolutions />
+      <EcommercePlatforms />
+      <ProgressiveWebApps />
+      <WebEcommerceFeatures />
+      <WebEcommerceTestimonials />
+      <WebEcommerceCTA />
     </SiteLayout>
   );
 }

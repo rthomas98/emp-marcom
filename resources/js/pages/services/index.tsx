@@ -1,13 +1,22 @@
 import SiteLayout from '@/layouts/site-layout';
+import { ServicesHeader } from '@/components/services/ServicesHeader';
+import { ServicesOverview } from '@/components/services/ServicesOverview';
+import { ServicesDevOps } from '@/components/services/ServicesDevOps';
+import { ServicesConsulting } from '@/components/services/ServicesConsulting';
+import { ServicesSupport } from '@/components/services/ServicesSupport';
+import { ServicesCTA } from '@/components/services/ServicesCTA';
+import { Head } from '@inertiajs/react';
 
-export default function ServicesOverview() {
+export default function ServicesIndex() {
   return (
-    <SiteLayout title="Services Overview - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Services Overview
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Services Overview - Empuls3" />
+      <ServicesHeader />
+      <ServicesOverview />
+      <ServicesDevOps />
+      <ServicesConsulting />
+      <ServicesSupport />
+      <ServicesCTA />
     </SiteLayout>
   );
 }

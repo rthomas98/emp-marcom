@@ -1,0 +1,54 @@
+"use client";
+
+import React from "react";
+import { Link } from "@inertiajs/react";
+import { ChevronRight } from "lucide-react";
+
+export function AppDevOpsOverview() {
+  return (
+    <section id="app-devops-services" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container mx-auto">
+        <div className="mb-12 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
+          <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+              Innovate and transform ideas into reality today!
+            </p>
+            <h3 className="text-4xl leading-[1.2] font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
+              End-to-End Application Development and DevOps Solutions
+            </h3>
+          </div>
+          <div>
+            <p className="text-gray-700 md:text-md">
+              Our comprehensive app development services cover every stage of
+              the process, from initial concept to final deployment. We
+              specialize in creating robust applications that meet your business
+              needs while ensuring seamless integration with DevOps practices.
+              Trust us to enhance your development lifecycle with our expertise
+              in CI/CD pipelines and infrastructure automation.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-6 py-3 text-center font-medium text-[#BD1550] transition hover:bg-[#BD1550] hover:text-white"
+              >
+                Learn More
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1 font-medium text-[#BD1550] hover:underline"
+              >
+                Get Started
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <img
+          src="/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_2.png"
+          className="w-full rounded-lg border border-gray-200 object-cover h-[500px]"
+          alt="Software engineers working on application development"
+        />
+      </div>
+    </section>
+  );
+}

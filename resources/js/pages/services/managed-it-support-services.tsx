@@ -1,13 +1,26 @@
 import SiteLayout from '@/layouts/site-layout';
+import { ManagedITHeader } from '@/components/services/ManagedITHeader';
+import { ManagedITOverview } from '@/components/services/ManagedITOverview';
+import { ManagedITTeams } from '@/components/services/ManagedITTeams';
+import { ManagedITSupport } from '@/components/services/ManagedITSupport';
+import { ManagedITServices } from '@/components/services/ManagedITServices';
+import { ManagedITSolutions } from '@/components/services/ManagedITSolutions';
+import { ManagedITTestimonial } from '@/components/services/ManagedITTestimonial';
+import { ManagedITCTA } from '@/components/services/ManagedITCTA';
+import { Head } from '@inertiajs/react';
 
 export default function ManagedItSupportServices() {
   return (
-    <SiteLayout title="Managed IT & Support Services - Empuls3">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-center font-header text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
-          Managed IT & Support Services
-        </h1>
-      </div>
+    <SiteLayout>
+      <Head title="Managed IT & Support Services - Empuls3" />
+      <ManagedITHeader />
+      <ManagedITOverview />
+      <ManagedITTeams />
+      <ManagedITSupport />
+      <ManagedITServices />
+      <ManagedITSolutions />
+      <ManagedITTestimonial />
+      <ManagedITCTA />
     </SiteLayout>
   );
 }
