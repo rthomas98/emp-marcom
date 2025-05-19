@@ -89,7 +89,7 @@ export const Header = (props: HeaderProps) => {
     <section id="hero" className="relative h-[250vh]" aria-labelledby="hero-heading">
       <div className="px-[5%] pt-16 md:pt-24 lg:pt-28">
         <div className="container mx-auto">
-          <div className="w-full max-w-lg">
+          <div className="w-full max-w-3xl">
             <h1 id="hero-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">{title}</h1>
             <p className="text-lg text-gray-700">{description}</p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
