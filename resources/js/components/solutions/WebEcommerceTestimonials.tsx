@@ -26,25 +26,24 @@ export function WebEcommerceTestimonials() {
               <Star className="h-6 w-6 fill-current" />
             </div>
             <blockquote className="text-lg leading-[1.4] font-bold text-gray-800 md:text-xl">
-              "The e-commerce platform developed by Empuls3 exceeded our
-              expectations."
+              "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that."
             </blockquote>
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
                   src="/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_2d8255b5-eb2b-4d1c-b57d-58077e6d9d44.png"
-                  alt="Jane Doe, CEO"
+                  alt="Palmer Dean, Founder"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
-                <p className="font-semibold">Jane Doe</p>
-                <p className="text-gray-600">CEO, Tech Innovations</p>
+                <p className="font-semibold">Palmer Dean</p>
+                <p className="text-gray-600">Founder, Wash Metrix</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
               <div>
                 <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">Tech Innovations</span>
+                  <span className="text-sm font-semibold text-gray-700">Wash Metrix</span>
                 </div>
               </div>
             </div>
@@ -58,24 +57,24 @@ export function WebEcommerceTestimonials() {
               <Star className="h-6 w-6 fill-current" />
             </div>
             <blockquote className="text-lg leading-[1.4] font-bold text-gray-800 md:text-xl">
-              "Their WordPress solutions are top-notch and user-friendly!"
+              "I would highly recommend Empuls3 for any Web design, App Creation, and App Launch. They are knowledgeable, and will ensure your project is completed from beginning to the end."
             </blockquote>
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
                   src="/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png"
-                  alt="John Smith, Founder"
+                  alt="John Knight, Founder"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
-                <p className="font-semibold">John Smith</p>
-                <p className="text-gray-600">Founder, E-Shop</p>
+                <p className="font-semibold">John Knight</p>
+                <p className="text-gray-600">Founder, 24peekview.com</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
               <div>
                 <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">E-Shop</span>
+                  <span className="text-sm font-semibold text-gray-700">24peekview</span>
                 </div>
               </div>
             </div>
@@ -89,25 +88,24 @@ export function WebEcommerceTestimonials() {
               <Star className="h-6 w-6 fill-current" />
             </div>
             <blockquote className="text-lg leading-[1.4] font-bold text-gray-800 md:text-xl">
-              "Empuls3's PWAs have significantly improved our customer
-              engagement."
+              "Rob did a wonderful job on my webpage and was responsive to my needs. The feedback on my website has been greatly positive."
             </blockquote>
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
                   src="/images/site-images/rob_thomas23_African_American_Team_of_Young_Managers_Discussing_df53a8b9-91a0-4201-a378-f71855407ec1.png"
-                  alt="Emily Johnson, Marketing Director"
+                  alt="Theron Williams"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
-                <p className="font-semibold">Emily Johnson</p>
-                <p className="text-gray-600">Marketing Director, Retail Hub</p>
+                <p className="font-semibold">Theron Williams</p>
+                <p className="text-gray-600">Client</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
               <div>
                 <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">Retail Hub</span>
+                  <span className="text-sm font-semibold text-gray-700">Client</span>
                 </div>
               </div>
             </div>

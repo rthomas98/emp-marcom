@@ -6,15 +6,13 @@ type HomeComponentWrapperProps = {
 
 export function HomeComponentWrapper({ children }: HomeComponentWrapperProps) {
   useEffect(() => {
-    // Add border to all images and remove shadows
-    const addBordersRemoveShadows = () => {
-      // Target all images in the home components
+    // Remove shadows from cards and borders from images
+    const removeShadowsAndImageBorders = () => {
+      // Remove borders from all images
       const images = document.querySelectorAll('img');
       images.forEach(img => {
-        // Add border class if it doesn't have one
-        if (!img.classList.contains('border')) {
-          img.classList.add('border', 'border-gray-200');
-        }
+        // Remove border classes from images
+        img.classList.remove('border', 'border-gray-200');
       });
 
       // Remove shadows from cards
@@ -25,10 +23,10 @@ export function HomeComponentWrapper({ children }: HomeComponentWrapperProps) {
     };
 
     // Run once on mount
-    addBordersRemoveShadows();
+    removeShadowsAndImageBorders();
 
     // Also run after a short delay to catch any dynamically loaded content
-    const timer = setTimeout(addBordersRemoveShadows, 500);
+    const timer = setTimeout(removeShadowsAndImageBorders, 500);
 
     return () => clearTimeout(timer);
   }, []);

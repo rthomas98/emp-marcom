@@ -10,21 +10,21 @@ type Testimonial = {
 export function MobileTestimonials() {
   const testimonials: Testimonial[] = [
     {
-      quote: "The mobile app developed by Empuls3 exceeded our expectations!",
-      author: "Alice Johnson",
-      position: "CTO, TechCorp",
+      quote: "Rob is fantastic. Really enjoyed working with him. He is very honest/fair with regards to pricing and turn around time for work is very quick.",
+      author: "James McElroy",
+      position: "Founder, frienzy.io",
       avatar: "/images/site-images/rob_thomas23_Portrait_of_happy_African_American_business_people_453fe4c5-c7a7-4d1e-9b53-fee82b42f03b.png"
     },
     {
-      quote: "Empuls3's expertise in cross-platform development is unmatched!",
-      author: "Mark Smith",
-      position: "CEO, InnovateX",
+      quote: "I would highly recommend Empuls3 for any Web design, App Creation, and App Launch. They are knowledgeable, and will ensure your project is completed from beginning to the end.",
+      author: "John Knight",
+      position: "Founder, 24peekview.com",
       avatar: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_0f48e92a-5e85-4e9f-9713-d384e5873a22.png"
     },
     {
-      quote: "Their solutions helped us reach a wider audience effortlessly.",
-      author: "Sara Lee",
-      position: "Product Manager, ShopNow",
+      quote: "Rob did a wonderful job on my webpage and was responsive to my needs. The feedback on my website has been greatly positive.",
+      author: "Theron Williams",
+      position: "Client, Satisfied Customer",
       avatar: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png"
     }
   ];

@@ -26,26 +26,24 @@ export function SoftwareTestimonials() {
               <Star className="h-6 w-6 fill-current" />
             </div>
             <blockquote className="text-lg leading-[1.4] font-bold text-gray-800 md:text-xl">
-              "The team at Empuls3 exceeded our expectations in every way. Their
-              expertise in software development was evident throughout the
-              project."
+              "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with!"
             </blockquote>
             <div className="mt-6 flex w-full flex-col gap-3 md:mt-8 md:w-auto md:flex-row md:items-center md:gap-5">
               <div>
                 <img
                   src="/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png"
-                  alt="John Doe, CEO"
+                  alt="Palmer Dean, Founder"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-4 md:mb-0">
-                <p className="font-semibold">John Doe</p>
-                <p className="text-gray-600">CEO, Tech Innovations</p>
+                <p className="font-semibold">Palmer Dean</p>
+                <p className="text-gray-600">Founder, Wash Metrix</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
               <div>
                 <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">Tech Innovations</span>
+                  <span className="text-sm font-semibold text-gray-700">Wash Metrix</span>
                 </div>
               </div>
             </div>
@@ -59,25 +57,24 @@ export function SoftwareTestimonials() {
               <Star className="h-6 w-6 fill-current" />
             </div>
             <blockquote className="text-lg leading-[1.4] font-bold text-gray-800 md:text-xl">
-              "Working with Empuls3 was a game changer for us. Their attention
-              to detail and commitment to quality made all the difference."
+              "Rob is fantastic. Really enjoyed working with him. He is very honest/fair with regards to pricing and turn around time for work is very quick."
             </blockquote>
             <div className="mt-6 flex w-full flex-col gap-3 md:mt-8 md:w-auto md:flex-row md:items-center md:gap-5">
               <div>
                 <img
                   src="/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png"
-                  alt="Jane Smith, Project Manager"
+                  alt="James McElroy, Founder & CEO"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-4 md:mb-0">
-                <p className="font-semibold">Jane Smith</p>
-                <p className="text-gray-600">Project Manager, Retail Corp</p>
+                <p className="font-semibold">James McElroy</p>
+                <p className="text-gray-600">Founder & CEO, frienzy.io</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
               <div>
                 <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">Retail Corp</span>
+                  <span className="text-sm font-semibold text-gray-700">frienzy.io</span>
                 </div>
               </div>
             </div>

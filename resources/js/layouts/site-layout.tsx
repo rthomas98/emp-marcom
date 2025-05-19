@@ -2,6 +2,7 @@ import { Head } from '@inertiajs/react';
 import { ReactNode, useEffect, useState } from 'react';
 import MainMenu from '@/components/navigation/MainMenu';
 import Footer from '@/components/footer/Footer';
+import Loader from '@/components/ui/Loader';
 
 interface SiteLayoutProps {
   children: ReactNode;
@@ -99,6 +100,7 @@ export default function SiteLayout({ children, title = 'Empuls3' }: SiteLayoutPr
 
   return (
     <div className="flex min-h-screen flex-col bg-white font-body text-foreground">
+      <Loader />
       <Head title={title} />
       
       {/* Particles Background */}

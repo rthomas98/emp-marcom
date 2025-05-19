@@ -22,58 +22,58 @@ export function MvpTestimonials() {
   const testimonials: Testimonial[] = [
     {
       numberOfStars: 5,
-      quote: "Empuls3 transformed our concept into a fully functional MVP in record time. Their agile approach and technical expertise were instrumental in helping us secure our first round of funding.",
+      quote: "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with! Easy, fun, and talented.",
       avatar: {
         src: "/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png",
-        alt: "CEO Testimonial"
+        alt: "Palmer Dean Testimonial"
       },
-      name: "Michael Johnson",
-      position: "CEO, TechStart Innovations",
+      name: "Palmer Dean",
+      position: "Founder, Wash Metrix",
       logo: {
         src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "TechStart Logo"
+        alt: "Wash Metrix Logo"
       }
     },
     {
       numberOfStars: 5,
-      quote: "The team at Empuls3 delivered beyond our expectations. Their MVP development process was transparent and efficient, allowing us to validate our business model quickly and iterate based on real user feedback.",
+      quote: "I would highly recommend Empuls3 for any Web design, App Creation, and App Launch. They are knowledgeable, and will ensure your project is completed from beginning to the end.",
       avatar: {
         src: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_0f48e92a-5e85-4e9f-9713-d384e5873a22.png",
-        alt: "Product Manager Testimonial"
+        alt: "John Knight Testimonial"
       },
-      name: "Sophia Williams",
-      position: "Product Manager, HealthTech Solutions",
+      name: "John Knight",
+      position: "Founder, 24peekview.com",
       logo: {
         src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "HealthTech Logo"
+        alt: "24peekview Logo"
       }
     },
     {
       numberOfStars: 5,
-      quote: "Working with Empuls3 on our MVP was a game-changer. Their focus on scalable architecture meant that as our user base grew, our platform handled the increased load seamlessly. Highly recommended for startups looking to scale.",
+      quote: "Rob is fantastic. Really enjoyed working with him. He is very honest/fair with regards to pricing and turn around time for work is very quick.",
       avatar: {
         src: "/images/site-images/rob_thomas23_Afrianc_American_Women_and_men_in_a_digital_market_57f3a2b1-6eaf-4c56-aa14-4dba9129a523.png",
-        alt: "Founder Testimonial"
+        alt: "James McElroy Testimonial"
       },
-      name: "David Rodriguez",
-      position: "Founder, MarketPlace Connect",
+      name: "James McElroy",
+      position: "Founder & CEO, frienzy.io",
       logo: {
         src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "MarketPlace Logo"
+        alt: "frienzy.io Logo"
       }
     },
     {
       numberOfStars: 5,
-      quote: "Empuls3's MVP development services helped us validate our business model with minimal investment. Their user-centric approach ensured our product resonated with our target audience from day one.",
+      quote: "Rob did a wonderful job on my webpage and was responsive to my needs. The feedback on my website has been greatly positive.",
       avatar: {
         src: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png",
-        alt: "CTO Testimonial"
+        alt: "Theron Williams Testimonial"
       },
-      name: "Jasmine Thompson",
-      position: "CTO, DataFlow Systems",
+      name: "Theron Williams",
+      position: "Client, Satisfied Customer",
       logo: {
         src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "DataFlow Logo"
+        alt: "Client Logo"
       }
     }
   ];

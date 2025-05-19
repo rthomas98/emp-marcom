@@ -6,15 +6,15 @@ export function FrontendTestimonials() {
   
   const testimonials = [
     {
-      quote: "Empuls3 transformed our online presence with their exceptional front-end development and UX/UI design. The user engagement has significantly increased since the launch of our new interface.",
-      name: "Jane Doe",
-      position: "CEO, Tech Innovations",
+      quote: "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with! Easy, fun, and talented.",
+      name: "Palmer Dean",
+      position: "Founder, Wash Metrix",
       image: "/images/site-images/rob_thomas23_A_African_American_team_of_professionals_collabora_0c9ec954-2131-4655-b31f-c9a5c027ba39.png"
     },
     {
-      quote: "The responsive design and intuitive user interface created by Empuls3 has dramatically improved our conversion rates. Their attention to detail and focus on user experience is unmatched.",
-      name: "Michael Johnson",
-      position: "Marketing Director, Digital Solutions",
+      quote: "I would highly recommend Empuls3 for any Web design, App Creation, and App Launch. They are knowledgeable, and will ensure your project is completed from beginning to the end.",
+      name: "John Knight",
+      position: "Founder, 24peekview.com",
       image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_20ceb692-4f97-46ca-9d6e-d8e9ad71c06b_0 (1).png"
     }
   ];
