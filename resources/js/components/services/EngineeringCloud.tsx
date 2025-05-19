@@ -12,16 +12,13 @@ export function EngineeringCloud() {
           <div className="mb-12 md:mb-18 lg:mb-20">
             <div className="w-full max-w-3xl">
               <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-                Cloud Integration Solutions
+                Boutique Cloud Services
               </p>
               <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-                Seamless Cloud Integration and Migration Services
+                Personalized Cloud Solutions with Senior Expertise
               </h2>
               <p className="text-gray-700 md:text-md">
-                Elevate your business to new heights with our comprehensive
-                cloud integration solutions. We guarantee a seamless transition
-                to cloud platforms, significantly enhancing both scalability and
-                operational efficiency for your organization.
+                As a specialized micro agency, we elevate your business with personalized cloud integration solutions. Unlike larger firms where your project might be handed off to junior staff, our senior specialists work directly with you to ensure a seamless transition to cloud platforms—significantly enhancing both scalability and operational efficiency with faster implementation times and more dedicated attention.
               </p>
             </div>
           </div>
@@ -31,12 +28,10 @@ export function EngineeringCloud() {
                 <Cloud className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Expert Guidance for Cloud Solutions
+                Direct Access to Senior Cloud Specialists
               </h3>
               <p className="text-gray-700">
-                Our dedicated team specializes in creating customized strategies
-                to ensure a smooth and effective cloud adoption process for your
-                business.
+                Our boutique team provides direct access to senior cloud specialists who create truly customized strategies for your business—ensuring a smooth and effective cloud adoption process with the personalized attention that only a micro agency can provide.
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -44,12 +39,10 @@ export function EngineeringCloud() {
                 <Upload className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Simplified Migration for Your Business
+                Personalized Migration Strategy
               </h3>
               <p className="text-gray-700">
-                Our goal is to streamline the migration process, ensuring
-                minimal disruptions and a smooth transition for everyone
-                involved.
+                As a micro agency, we deliver a truly personalized migration strategy with faster implementation times—ensuring minimal disruptions and a smooth transition without the overhead and complexity of larger firms.
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -57,11 +50,10 @@ export function EngineeringCloud() {
                 <Zap className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Maximize Efficiency with Cloud Technologies
+                Boutique Cloud Optimization
               </h3>
               <p className="text-gray-700">
-                Utilize advanced cloud technologies to significantly enhance and
-                improve overall operational efficiency for your business.
+                Work directly with our senior specialists to utilize advanced cloud technologies that significantly enhance your operational efficiency—with the focused attention and customization that only a boutique agency can deliver.
               </p>
             </div>
           </div>

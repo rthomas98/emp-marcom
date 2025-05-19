@@ -10,19 +10,14 @@ export function IndustriesStartups() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Startups</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Startup Solutions</p>
             <h2 className="text-4xl font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
-              Empowering Startups with Tailored Technology Solutions
+              Personalized Startup Technology with Senior Expertise
             </h2>
           </div>
           <div>
             <p className="text-gray-700 md:text-md">
-              In the fast-paced world of startups, having the right technology
-              can make all the difference. Empuls3 offers scalable and flexible
-              solutions designed to help startups innovate rapidly and grow
-              efficiently. Our expertise in modern development practices ensures
-              that your business can adapt and thrive in a competitive
-              landscape.
+              In the fast-paced world of startups, having the right technology can make all the difference. As a specialized micro agency, Empuls3 offers truly personalized, scalable solutions designed to help startups innovate rapidly and grow efficiently. Unlike larger firms where your project might be handed off to junior staff, our boutique team of senior specialists works directly with you—ensuring your business can adapt and thrive with faster implementation times and more dedicated attention than larger firms can provide.
             </p>
           </div>
         </div>
@@ -36,13 +31,10 @@ export function IndustriesStartups() {
               />
             </div>
             <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-              Tailored Solutions for Startups
+              Direct Access to Senior Specialists
             </h3>
             <p className="text-gray-700">
-              We recognize the distinct challenges that startups encounter as
-              they navigate their journey. Our goal is to provide tailored
-              support and solutions to help them thrive in a competitive
-              landscape.
+              Work directly with our senior specialists who recognize the distinct challenges that startups encounter. Unlike larger firms, our boutique team provides truly personalized support and solutions—helping your startup thrive with faster implementation times and more dedicated attention.
             </p>
           </div>
           <div>
@@ -54,12 +46,10 @@ export function IndustriesStartups() {
               />
             </div>
             <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-              Accelerate Your Growth with Our Expertise
+              The Micro Agency Advantage
             </h3>
             <p className="text-gray-700">
-              Our dedicated team is fully committed to providing you with the
-              support and resources you need to achieve your goals and ensure
-              your success in every endeavor you pursue.
+              Experience the micro agency advantage with our boutique team who is fully committed to providing personalized support and resources—helping you achieve your goals with faster response times and more dedicated attention than larger firms can offer.
             </p>
           </div>
           <div>
@@ -71,12 +61,10 @@ export function IndustriesStartups() {
               />
             </div>
             <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-              Rapid Results Through Innovation
+              Personalized Innovation Strategy
             </h3>
             <p className="text-gray-700">
-              Utilize the latest advancements in technology to maintain a
-              competitive edge in your industry and ensure you are always one
-              step ahead of the competition.
+              Work directly with our senior specialists to utilize the latest advancements in technology—maintaining a competitive edge in your industry with personalized innovation strategies and faster implementation times than larger firms can deliver.
             </p>
           </div>
         </div>

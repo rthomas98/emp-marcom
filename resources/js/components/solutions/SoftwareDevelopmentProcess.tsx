@@ -8,18 +8,16 @@ export function SoftwareDevelopmentProcess() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-gray-700 md:mb-4">
-              Our proven approach to software excellence.
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">
+              Boutique Process, Enterprise Results
             </p>
             <h2 className="text-4xl font-bold font-header text-primary md:text-5xl lg:text-6xl">
-              How We Deliver Exceptional Software Solutions
+              Our Micro Agency Development Advantage
             </h2>
           </div>
           <div>
             <p className="text-gray-700 md:text-lg">
-              At Empuls3, we follow a structured yet flexible development process that ensures quality at every stage. 
-              From initial planning and design through development, testing, and deployment, our methodology is designed 
-              to deliver robust, scalable software that exceeds your expectations.
+              As a boutique micro agency, we offer a development process that combines the agility of a small team with the expertise of industry veterans. Our senior developers work directly with you at every stage—from planning and design through development, testing, and deployment—eliminating the bureaucracy and communication barriers that slow down larger firms.
             </p>
           </div>
         </div>
@@ -36,7 +34,7 @@ export function SoftwareDevelopmentProcess() {
               Discovery & Planning
             </h3>
             <p className="text-gray-700">
-              We begin with a thorough understanding of your business goals, user needs, and technical requirements to create a comprehensive roadmap for your project.
+              Unlike larger agencies where discovery is handled by junior staff, our senior team works directly with you from day one to understand your business goals, user needs, and technical requirements, creating a comprehensive roadmap tailored to your unique challenges.
             </p>
           </div>
           <div>
@@ -51,7 +49,7 @@ export function SoftwareDevelopmentProcess() {
               Design & Development
             </h3>
             <p className="text-gray-700">
-              Our team creates intuitive user interfaces and robust architectures, then implements them using modern technologies and best practices for clean, maintainable code.
+              With direct access to our senior designers and developers, you'll experience a truly collaborative process as we create intuitive interfaces and robust architectures using modern technologies and best practices—without the communication barriers of larger agencies.
             </p>
           </div>
           <div>
@@ -66,7 +64,7 @@ export function SoftwareDevelopmentProcess() {
               Testing & Deployment
             </h3>
             <p className="text-gray-700">
-              We rigorously test all aspects of your software to ensure quality, security, and performance, then deploy with careful planning to minimize disruption and maximize adoption.
+              Our boutique approach means your project receives meticulous attention during testing and deployment from the same senior team that built it—ensuring quality, security, and performance without handoffs between departments that can introduce errors and delays.
             </p>
           </div>
         </div>

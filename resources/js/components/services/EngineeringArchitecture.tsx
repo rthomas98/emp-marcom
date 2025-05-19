@@ -11,16 +11,13 @@ export function EngineeringArchitecture() {
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-              Designing systems that scale and endure through time.
+              Boutique Architecture Services
             </p>
             <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Crafting Scalable and Efficient System Architectures
+              Personalized System Architecture with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-md">
-              Our expert team specializes in designing robust system
-              architectures that meet the unique demands of your business. We
-              ensure scalability and efficiency, empowering your organization to
-              thrive in a digital landscape.
+              As a specialized micro agency, our senior architects work directly with you to design robust system architectures that meet your unique business demands. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures scalability and efficiency with personalized attention and faster implementation—empowering your organization to thrive in a digital landscape without the overhead of larger firms.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link 

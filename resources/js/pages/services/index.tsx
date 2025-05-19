@@ -10,7 +10,11 @@ import { Head } from '@inertiajs/react';
 export default function ServicesIndex() {
   return (
     <SiteLayout>
-      <Head title="Services Overview - Empuls3" />
+      <Head>
+        <title>Boutique Professional Services - Empuls3</title>
+        <meta name="description" content="Experience personalized professional services from our boutique micro agency. Direct collaboration with senior specialists for implementation, optimization, and support without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique professional services, senior specialists, personalized support, implementation services, optimization, direct collaboration" />
+      </Head>
       <ServicesHeader />
       <ServicesOverview />
       <ServicesDevOps />

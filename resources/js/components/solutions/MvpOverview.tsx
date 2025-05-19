@@ -8,20 +8,20 @@ export function MvpOverview() {
   const tabs = [
     {
       id: "tab-one",
-      title: "Rapid MVP Development",
-      content: "Our team combines technical excellence with industry insights to deliver tailored MVP solutions. We focus on innovation and practical business value to help you succeed in the competitive market.",
+      title: "Boutique MVP Development",
+      content: "As a specialized micro agency, our senior developers work directly with you to deliver tailored MVP solutions with faster turnaround times. We combine technical excellence with personalized attention that larger firms simply can't match, helping you succeed in the competitive market without the overhead costs.",
       image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_4d54bb42-096c-4b7b-ae8e-cee40c231aac_0.png"
     },
     {
       id: "tab-two",
-      title: "Iterative Product Enhancement",
-      content: "We help you refine your product through continuous feedback and improvement cycles. Our iterative approach ensures your product evolves based on real user insights and market demands.",
+      title: "Direct Access to Senior Talent",
+      content: "Unlike larger agencies where your project might be handed off to junior staff, our boutique team ensures you work directly with senior developers throughout the entire process. This direct collaboration enables faster iteration cycles based on real user insights and market demands.",
       image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_Happy__Mobile_de_addb40d4-04d4-481e-9072-f29d1dee05d1_3 (2).png"
     },
     {
       id: "tab-three",
-      title: "Scalable Architecture",
-      content: "We build your MVP with scalability in mind, ensuring your product can grow alongside your business. Our solutions are designed to handle increasing users and expanding feature sets.",
+      title: "Micro Agency Scalability",
+      content: "Our specialized team builds your MVP with scalability in mind while maintaining the personalized attention only a micro agency can provide. We design solutions that grow alongside your business without the communication barriers and overhead costs of traditional firms.",
       image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_4d54bb42-096c-4b7b-ae8e-cee40c231aac_3.png"
     }
   ];
@@ -30,15 +30,12 @@ export function MvpOverview() {
     <section id="mvp-overview" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 md:w-auto lg:mb-20">
-          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Begin the process now.</p>
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">The Micro Agency Advantage</p>
           <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Accelerate Your MVP & Product Development Journey
+            Personalized MVP Development with Senior Expertise
           </h2>
           <p className="text-gray-700 md:text-lg">
-            Empuls3's MVP & Product Development services empower startups and
-            businesses to quickly launch their minimum viable products. We
-            ensure that speed does not compromise quality, allowing you to test
-            and iterate effectively.
+            As a boutique micro agency, Empuls3 empowers startups and businesses with personalized MVP development services and direct access to our senior developers. We deliver faster validation and iteration without compromising quality, all with the focused attention and reduced overhead that larger firms simply can't match.
           </p>
           <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
             <Link

@@ -17,14 +17,12 @@ export function ManagedITTeams() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Support</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Team Support</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Expert Teams for Your Growth and Success
+              Senior IT Specialists for Your Success
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              Our Managed IT & Support Services provide ongoing assistance and
-              troubleshooting. With our expert teams, you can scale efficiently
-              and focus on your core business.
+              As a specialized micro agency, our Managed IT & Support Services provide personalized assistance with direct access to senior specialists. Unlike larger firms where your needs might be handled by junior staff, our boutique team ensures you receive faster response times and more dedicated attention—allowing you to scale efficiently and focus on your core business without the overhead of traditional IT providers.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -32,11 +30,10 @@ export function ManagedITTeams() {
                   <Users className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
                 </div>
                 <h6 className="mb-3 text-md leading-[1.4] font-bold text-[#1F1946] md:mb-4 md:text-xl">
-                  Team Augmentation
+                  Direct Access to Senior Specialists
                 </h6>
                 <p className="text-gray-700">
-                  Access specialized skills to enhance your team's capabilities
-                  and drive growth.
+                  Work directly with our senior IT specialists who enhance your team's capabilities with personalized solutions and faster implementation times than larger firms can offer.
                 </p>
               </div>
               <div>
@@ -44,11 +41,10 @@ export function ManagedITTeams() {
                   <Headphones className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
                 </div>
                 <h6 className="mb-3 text-md leading-[1.4] font-bold text-[#1F1946] md:mb-4 md:text-xl">
-                  Ongoing Support
+                  Boutique IT Support
                 </h6>
                 <p className="text-gray-700">
-                  Reliable troubleshooting and maintenance to keep your systems
-                  running smoothly.
+                  Experience the micro agency advantage with personalized troubleshooting and maintenance that keeps your systems running smoothly—with faster response times and more dedicated attention than larger firms.
                 </p>
               </div>
             </div>

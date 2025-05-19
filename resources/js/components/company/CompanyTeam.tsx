@@ -8,16 +8,12 @@ export function CompanyTeam() {
     <section id="company-team" className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <div className="mb-12 max-w-lg md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Team</p>
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Senior Specialists</p>
           <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-            Our Team
+            Our Boutique Team
           </h2>
           <p className="text-gray-700 md:text-md">
-            Introducing the exceptional individuals who are at the heart of our
-            success. Their dedication, creativity, and expertise play a vital
-            role in shaping our achievements. Together, they form a remarkable
-            team that consistently pushes boundaries and delivers outstanding
-            results, making our vision a reality.
+            As a specialized micro agency, we provide direct access to our senior specialists who are at the heart of our success. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you—delivering personalized solutions with faster implementation times and more dedicated attention. Founded in 2009 by Robert Thomas, our team consistently pushes boundaries to make our vision a reality.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
@@ -58,39 +54,39 @@ export function CompanyTeam() {
 
 const teamMembers = [
   {
-    name: "Alice Johnson",
-    title: "CEO & Founder",
-    description: "Leading the vision and strategy for innovative technology solutions at Empuls3.",
+    name: "Robert Thomas",
+    title: "Founder & CEO",
+    description: "Founded Empuls3 in 2009 as a specialized micro agency providing personalized technology solutions with direct access to senior specialists.",
     image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_0.png"
   },
   {
     name: "Mark Smith",
-    title: "CTO",
-    description: "Overseeing technical excellence and innovation in software development practices.",
+    title: "Senior Technical Specialist",
+    description: "Providing direct client collaboration and overseeing technical excellence in our boutique approach to software development.",
     image: "/images/site-images/rob_thomas23_Africa_American_Software_developers_discussing_abo_61339e21-6c03-4f31-9813-6dafd2b02df0.png"
   },
   {
     name: "Sarah Lee",
-    title: "Project Manager",
-    description: "Ensuring timely delivery and client satisfaction through effective project management.",
+    title: "Senior Project Specialist",
+    description: "Working directly with clients to ensure faster implementation times and more personalized attention than larger firms can offer.",
     image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_1.png"
   },
   {
     name: "David Brown",
-    title: "Lead Developer",
-    description: "Specializing in full-stack development to create robust software solutions.",
+    title: "Senior Development Specialist",
+    description: "Providing direct client collaboration with specialized expertise in full-stack development to create truly personalized software solutions.",
     image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_2.png"
   },
   {
     name: "Emma Wilson",
-    title: "UX Designer",
-    description: "Crafting user-centric designs that enhance the overall user experience.",
+    title: "Senior Design Specialist",
+    description: "Working directly with clients to craft personalized, user-centric designs that enhance the overall user experience with faster implementation times.",
     image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_3.png"
   },
   {
     name: "James Taylor",
-    title: "Marketing Lead",
-    description: "Driving brand awareness and engagement through innovative marketing strategies.",
+    title: "Senior Marketing Specialist",
+    description: "Providing personalized marketing solutions with direct client collaboration to drive brand awareness through truly tailored strategies.",
     image: "/images/site-images/rob_thomas23_Afrianc_American_Women_and_men_in_a_digital_market_2ecd10a0-759e-4eab-a9b4-879a27fe0bb7.png"
   }
 ];

@@ -14,8 +14,8 @@ export default function SolutionsPage() {
   return (
     <SiteLayout title="Solutions & Services - Empuls3">
       <Head>
-        <meta name="description" content="Explore Empuls3's comprehensive suite of software development solutions and services tailored to meet your unique business needs and drive digital transformation." />
-        <meta name="keywords" content="software development, web development, custom applications, API integration, mobile apps, IT consulting, digital solutions" />
+        <meta name="description" content="Empuls3 is a specialized micro agency delivering personalized software development solutions with the direct attention of senior developers that larger firms can't match." />
+        <meta name="keywords" content="micro agency, boutique development firm, personalized software development, senior developers, custom applications, web development, mobile apps, API integration, direct client collaboration" />
       </Head>
       <SolutionsHeader />
       <SolutionsOverview />

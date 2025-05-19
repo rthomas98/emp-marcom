@@ -10,14 +10,12 @@ export function PartnersCallToAction() {
         <div className="grid grid-rows-1 items-start gap-y-5 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20 lg:gap-y-16">
           <div>
             <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-              Partner with Empuls3 for Success
+              Experience the Micro Agency Advantage
             </h1>
           </div>
           <div>
             <p className="text-white md:text-md">
-              Join us in driving innovation and delivering exceptional
-              solutions. Explore how our strategic partnerships can elevate your
-              business to new heights.
+              Partner with our boutique agency founded in 2009 by Robert Thomas for direct access to senior specialists who deliver personalized technology solutions with faster implementation times than larger firms can offer—all without the overhead of traditional agencies.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               <Link

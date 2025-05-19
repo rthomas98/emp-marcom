@@ -11,16 +11,13 @@ export function ManagedITServices() {
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
             <div className="mx-auto w-full max-w-3xl">
               <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-                Assist and uplift those in need of encouragement.
+                Boutique IT Services
               </p>
               <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-                Comprehensive Managed IT & Support Services
+                The Micro Agency IT Support Advantage
               </h2>
               <p className="text-gray-700 md:text-md">
-                Our Managed IT & Support Services ensure your business runs
-                smoothly with proactive monitoring and expert troubleshooting.
-                We provide team augmentation to support your growth and adapt to
-                changing needs.
+                As a specialized micro agency, our senior IT specialists provide personalized support services that ensure your business runs smoothly. Unlike larger firms where your needs might be handled by junior staff, our boutique team delivers faster response times, more dedicated attention, and truly tailored solutions—supporting your growth and adapting to changing needs without the overhead of traditional IT providers.
               </p>
             </div>
           </div>
@@ -34,12 +31,10 @@ export function ManagedITServices() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Proactive Monitoring for Business Continuity
+                Direct Access to Senior Monitoring Specialists
               </h3>
               <p className="text-gray-700">
-                Proactively identify and resolve potential issues before they
-                escalate, ensuring smooth and efficient workflows for your
-                operations at all times.
+                Work directly with our senior specialists who proactively identify and resolve potential issues before they escalate—ensuring smooth operations with faster response times and more personalized attention than larger firms can offer.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -51,12 +46,10 @@ export function ManagedITServices() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Expert Troubleshooting When You Need It Most
+                Boutique Troubleshooting Services
               </h3>
               <p className="text-gray-700">
-                Our dedicated team is fully prepared to tackle and resolve any
-                IT challenges you may encounter, ensuring smooth operations for
-                you.
+                Experience the micro agency advantage with our senior specialists who tackle and resolve your IT challenges with personalized attention—ensuring smoother operations with faster resolution times than larger firms can deliver.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -68,12 +61,10 @@ export function ManagedITServices() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Augmented Teams for Long-Term Growth
+                Personalized Team Augmentation
               </h3>
               <p className="text-gray-700">
-                Enhance and expand your IT capabilities by leveraging the
-                expertise of our dedicated team of professionals and
-                specialists.
+                Enhance your IT capabilities by working directly with our senior specialists who provide personalized support—delivering the expertise you need with faster implementation times and more dedicated attention than larger firms can provide.
               </p>
             </div>
           </div>

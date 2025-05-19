@@ -8,16 +8,12 @@ export function FrontendFrameworks() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Innovate</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Framework Expertise</p>
             <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Elevate Your User Experience with Modern Frameworks
+              Personalized Modern Framework Development
             </h2>
             <p className="text-gray-700 md:text-lg">
-              Our front-end development leverages cutting-edge frameworks like
-              React, Vue.js, and Angular to create dynamic and responsive
-              applications. These technologies ensure your user interfaces are
-              not only visually appealing but also scalable and easy to
-              maintain.
+              As a specialized micro agency, our senior developers work directly with you to leverage cutting-edge frameworks like React, Vue.js, and Angular for your project. Unlike larger firms where you might get assigned junior developers, our boutique team ensures your applications are not only visually appealing but also scalable and maintainable—with the personalized attention and faster implementation that only a micro agency can provide.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link

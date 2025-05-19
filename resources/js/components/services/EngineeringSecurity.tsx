@@ -10,16 +10,13 @@ export function EngineeringSecurity() {
       <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-            Security measures are crucial for protecting assets.
+            Boutique Security Services
           </p>
           <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-            Robust Security Measures
+            Personalized Security Solutions with Senior Expertise
           </h2>
           <p className="text-gray-700 md:text-md">
-            Ensure the safety and integrity of your systems by implementing
-            cutting-edge security protocols designed to safeguard against
-            potential threats and vulnerabilities, providing you with peace of
-            mind and reliable protection.
+            As a specialized micro agency, we ensure the safety and integrity of your systems with direct access to our senior security specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team implements cutting-edge security protocols tailored to your specific needs—providing peace of mind and reliable protection with faster implementation times and more dedicated attention.
           </p>
         </div>
         <div className="grid auto-cols-fr grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
@@ -33,13 +30,12 @@ export function EngineeringSecurity() {
             </div>
             <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
               <div>
-                <p className="mb-2 font-semibold text-[#BD1550]">Safety</p>
+                <p className="mb-2 font-semibold text-[#BD1550]">Direct Access</p>
                 <h3 className="mb-3 text-2xl font-bold text-[#1F1946] md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                  Prioritizing Your Data Security
+                  Senior Security Specialists
                 </h3>
                 <p className="text-gray-700">
-                  Adopting best practices ensures comprehensive protection for
-                  your entire system.
+                  Our boutique team provides direct access to senior security specialists who implement best practices for comprehensive protection—with the personalized attention that only a micro agency can provide.
                 </p>
               </div>
               <div className="mt-5 md:mt-6">
@@ -63,13 +59,12 @@ export function EngineeringSecurity() {
             </div>
             <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
               <div>
-                <p className="mb-2 font-semibold text-[#BD1550]">Trust</p>
+                <p className="mb-2 font-semibold text-[#BD1550]">Personalized</p>
                 <h3 className="mb-3 text-2xl font-bold text-[#1F1946] md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                  Ongoing Monitoring and Updates
+                  Boutique Monitoring Services
                 </h3>
                 <p className="text-gray-700">
-                  Regularly update your systems to maintain security and protect
-                  against potential threats and vulnerabilities.
+                  Experience the micro agency advantage with personalized monitoring and updates from our senior specialists—maintaining security against threats and vulnerabilities with faster response times than larger firms.
                 </p>
               </div>
               <div className="mt-5 md:mt-6">
@@ -93,13 +88,12 @@ export function EngineeringSecurity() {
             </div>
             <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
               <div>
-                <p className="mb-2 font-semibold text-[#BD1550]">Integrity</p>
+                <p className="mb-2 font-semibold text-[#BD1550]">Tailored</p>
                 <h3 className="mb-3 text-2xl font-bold text-[#1F1946] md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                  Custom Security for Your Business
+                  Micro Agency Security Advantage
                 </h3>
                 <p className="text-gray-700">
-                  Tailored strategies designed to effectively address your
-                  unique security requirements and needs.
+                  Our boutique team creates truly personalized security strategies designed to address your unique requirements—with the focused attention and customization that only a micro agency can deliver.
                 </p>
               </div>
               <div className="mt-5 md:mt-6">

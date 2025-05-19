@@ -10,15 +10,12 @@ export function IndustriesEcommerce() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">E-commerce</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique E-commerce Solutions</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Transforming E-commerce & Retail with Technology
+              Personalized E-commerce & Retail with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-md">
-              Empuls3 offers innovative platforms designed to enhance sales and
-              customer engagement in the E-commerce and Retail sectors. Our
-              solutions streamline operations, enabling businesses to thrive in
-              a competitive landscape.
+              As a specialized micro agency, Empuls3 offers truly personalized platforms designed to enhance sales and customer engagement in the E-commerce and Retail sectors. Unlike larger firms where your project might be handed off to junior staff, our boutique team of senior specialists works directly with you to streamline operations—enabling your business to thrive with faster implementation times and more dedicated attention than larger firms can provide.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link

@@ -6,18 +6,18 @@ export function MvpFeatures() {
   const features = [
     {
       icon: <Lightbulb className="size-12 text-[#BD1550]" />,
-      title: "Industry Challenges Explained",
-      description: "Our team has extensive knowledge and understanding of the unique dynamics within various industry sectors."
+      title: "Direct Access to\nSenior Developers",
+      description: "As a boutique micro agency, we provide direct collaboration with our senior developers who understand your industry's unique challenges and opportunities."
     },
     {
       icon: <Code className="size-12 text-[#BD1550]" />,
-      title: "Innovating with Modern Development",
-      description: "We utilize cutting-edge technologies and innovative strategies to deliver the most effective and optimal solutions for our clients."
+      title: "Personalized MVP Development",
+      description: "Our specialized team creates truly personalized MVPs using cutting-edge technologies, with the focused attention and customization that only a micro agency can deliver."
     },
     {
       icon: <Rocket className="size-12 text-[#BD1550]" />,
-      title: "Your Partner in Rapid Product Development",
-      description: "Our primary goal is to consistently deliver exceptional value to our clients, ensuring that we do so without any unnecessary delays."
+      title: "Faster Time-to-Market Advantage",
+      description: "Experience the micro agency advantage with quicker implementation times and more dedicated attention than larger firms—helping you validate ideas and reach your market faster."
     }
   ];
 
@@ -26,14 +26,12 @@ export function MvpFeatures() {
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
           <div className="mb-12 w-full max-w-2xl text-center md:mb-16 lg:mb-20">
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Innovate</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique MVP Development</p>
             <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Transforming Ideas into Market-Ready Products
+              The Micro Agency MVP Advantage
             </h2>
             <p className="text-gray-700 md:text-lg">
-              Our full-stack expertise empowers startups to launch MVPs
-              efficiently. We leverage modern technologies to ensure your
-              product meets market demands swiftly.
+              As a specialized micro agency, our senior developers work directly with you to transform ideas into market-ready products. Unlike larger firms, our boutique approach delivers personalized MVPs with faster implementation times and more dedicated attention—helping you validate concepts and reach your market quicker.
             </p>
           </div>
           <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">

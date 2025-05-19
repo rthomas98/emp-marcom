@@ -14,7 +14,11 @@ import { Head } from '@inertiajs/react';
 export default function IndustriesOverview() {
   return (
     <SiteLayout>
-      <Head title="Industries Overview - Empuls3" />
+      <Head>
+        <title>Boutique Industry Solutions - Empuls3</title>
+        <meta name="description" content="Experience personalized industry solutions from our boutique micro agency. Direct collaboration with senior specialists for tailored technology services across healthcare, finance, e-commerce, and more." />
+        <meta name="keywords" content="micro agency, boutique industry solutions, senior specialists, personalized technology services, healthcare IT, fintech solutions, e-commerce development, manufacturing technology" />
+      </Head>
       <IndustriesHeader />
       <IndustriesHealthcare />
       <IndustriesFinance />

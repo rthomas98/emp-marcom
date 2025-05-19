@@ -9,16 +9,14 @@ export function IndustriesFinance() {
     <section id="industries-finance" className="relative px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container relative z-10 mx-auto">
         <div className="mb-12 max-w-lg md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold text-white md:mb-4">
-            Finance
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+            Boutique Finance Solutions
           </p>
           <h2 className="mb-5 text-4xl font-bold text-white md:mb-6 md:text-5xl lg:text-6xl">
-            Empowering Financial Services with Innovative Solutions
+            Personalized Financial Services with Senior Expertise
           </h2>
           <p className="text-white md:text-md">
-            In the fast-paced world of finance, secure and scalable technology
-            is essential. Empuls3 provides tailored solutions that enhance
-            customer experiences and streamline operations.
+            In the fast-paced world of finance, secure and scalable technology is essential. As a specialized micro agency, Empuls3 provides truly personalized solutions with direct access to our senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to enhance customer experiences and streamline operations—with the dedicated attention and faster implementation times that larger firms simply can't match.
           </p>
         </div>
         <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-4">
@@ -27,11 +25,10 @@ export function IndustriesFinance() {
               <DollarSign className="h-12 w-12 text-white" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Transforming Banking with Cutting-Edge Technology
+              Direct Access to Senior Banking Specialists
             </h3>
             <p className="text-white">
-              Our solutions ensure compliance and security while enhancing user
-              engagement and operational efficiency.
+              Work directly with our senior specialists to ensure compliance and security while enhancing user engagement and operational efficiency—with faster implementation times and more personalized attention than larger firms can offer.
             </p>
           </div>
           <div className="flex w-full flex-col">
@@ -39,11 +36,10 @@ export function IndustriesFinance() {
               <ShoppingBag className="h-12 w-12 text-white" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Innovative Solutions for E-commerce Growth
+              Boutique E-commerce Solutions
             </h3>
             <p className="text-white">
-              We empower e-commerce businesses with robust platforms that drive
-              sales and improve customer satisfaction.
+              Experience the micro agency advantage as we empower your e-commerce business with personalized platforms that drive sales and improve customer satisfaction—delivering faster results with more dedicated attention than larger firms can provide.
             </p>
           </div>
           <div className="flex w-full flex-col">
@@ -51,11 +47,10 @@ export function IndustriesFinance() {
               <Store className="h-12 w-12 text-white" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Streamlined Operations for Retail Success
+              Personalized Retail Technology
             </h3>
             <p className="text-white">
-              Our technology enhances inventory management and customer
-              interactions, ensuring a seamless retail experience.
+              Our senior specialists create personalized technology solutions that enhance inventory management and customer interactions—ensuring a seamless retail experience with faster implementation times and more dedicated attention than larger firms can deliver.
             </p>
           </div>
           <div className="flex w-full flex-col">
@@ -63,11 +58,10 @@ export function IndustriesFinance() {
               <TrendingUp className="h-12 w-12 text-white" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Your Partner in Financial Innovation
+              The Micro Agency Advantage
             </h3>
             <p className="text-white">
-              Join us to revolutionize your financial services with our expert
-              technology solutions tailored for success.
+              Partner with our boutique team to revolutionize your financial services with direct access to senior specialists—delivering truly personalized technology solutions with faster implementation times and more dedicated attention than larger firms can provide.
             </p>
           </div>
         </div>

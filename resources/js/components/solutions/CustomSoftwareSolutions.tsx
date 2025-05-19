@@ -8,21 +8,16 @@ export function CustomSoftwareSolutions() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-gray-700 md:mb-4">
-              Revolutionize and create new ideas for progress.
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">
+              The Micro Agency Advantage
             </p>
             <h2 className="text-4xl font-bold font-header text-primary md:text-5xl lg:text-6xl">
-              Custom Software Solutions Tailored for You
+              Personalized Software Solutions with Senior Expertise
             </h2>
           </div>
           <div>
             <p className="text-gray-700 md:text-lg">
-              At Empuls3, we specialize in creating custom software solutions
-              that align perfectly with your business objectives. Our end-to-end
-              approach encompasses design, architecture, and development,
-              ensuring a seamless integration of both front-end and back-end
-              functionalities. Let us help you transform your unique challenges
-              into innovative software solutions.
+              As a boutique micro agency, Empuls3 delivers custom software solutions with a level of personal attention that larger firms simply can't match. Our senior developers work directly with you throughout the entire process—from design and architecture to development—ensuring seamless integration of front-end and back-end functionalities without the bureaucracy and overhead of traditional agencies.
             </p>
           </div>
         </div>
@@ -39,8 +34,7 @@ export function CustomSoftwareSolutions() {
               Why Choose Our Custom Software Development?
             </h3>
             <p className="text-gray-700">
-              We provide customized software solutions designed to evolve and
-              expand alongside the unique needs of your growing business.
+              Unlike larger firms with multiple layers of management, our boutique team provides direct access to senior developers who create customized solutions designed to evolve alongside your growing business.
             </p>
           </div>
           <div>
@@ -55,9 +49,7 @@ export function CustomSoftwareSolutions() {
               Quality and Efficiency Guaranteed
             </h3>
             <p className="text-gray-700">
-              Our agile methodologies ensure that we can develop quickly while
-              maintaining the highest standards of quality throughout the entire
-              process.
+              Our micro agency structure enables truly agile development with faster decision-making and implementation, while maintaining enterprise-level quality standards throughout the entire process.
             </p>
           </div>
           <div>
@@ -72,9 +64,7 @@ export function CustomSoftwareSolutions() {
               Partner with Us for Scalable Solutions
             </h3>
             <p className="text-gray-700">
-              Our primary focus is on ensuring long-term scalability that
-              effectively supports your ongoing growth and future development
-              needs.
+              Partner with our specialized team for solutions that grow with you. Our senior developers build with long-term scalability in mind, supporting your ongoing growth without the overhead costs of larger agencies.
             </p>
           </div>
         </div>

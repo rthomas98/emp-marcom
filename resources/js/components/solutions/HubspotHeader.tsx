@@ -20,16 +20,14 @@ export function Header9() {
         <div className="relative z-10 container">
           <div className="grid grid-rows-1 items-start gap-y-5 py-12 md:grid-cols-2 md:gap-x-12 md:gap-y-8 md:py-18 lg:gap-x-20 lg:gap-y-16 lg:py-20">
             <div>
+              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique HubSpot Development</p>
               <h1 className="text-4xl font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
-                Transform Your Business with HubSpot Solutions
+                Personalized HubSpot Solutions with Senior Expertise
               </h1>
             </div>
             <div>
               <p className="text-base text-gray-700 md:text-md">
-                Our expertise in CRM integrations and automation empowers your
-                business to streamline processes and enhance customer
-                relationships. Discover custom HubSpot solutions tailored to
-                meet your unique needs.
+                As a specialized micro agency, our senior HubSpot specialists work directly with you to deliver tailored CRM solutions. Our boutique approach ensures personalized attention, faster implementation, and streamlined processes that enhance customer relationships—without the overhead and complexity of larger firms.
               </p>
               <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
                 <Link 

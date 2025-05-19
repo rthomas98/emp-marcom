@@ -9,19 +9,14 @@ export function EngineeringPerformance() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Performance Optimization</p>
             <h2 className="text-4xl leading-[1.2] font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
-              Maximize Efficiency and Performance with Our Tailored Engineering
-              Solutions
+              Personalized Performance Solutions with Senior Expertise
             </h2>
           </div>
           <div>
             <p className="text-gray-700 md:text-md">
-              At Empuls3, we specialize in performance optimization to ensure
-              your systems run at peak efficiency. Our expert engineers analyze
-              your architecture and identify bottlenecks, implementing solutions
-              that enhance speed and reliability. With our guidance, you can
-              achieve a seamless user experience and improved operational
-              performance.
+              As a specialized micro agency, Empuls3 delivers personalized performance optimization with direct access to our senior engineers. Unlike larger firms where your project might be handed off to junior staff, our boutique team analyzes your architecture and identifies bottlenecks with focused attention—implementing solutions that enhance speed and reliability with faster turnaround times and more dedicated support than larger firms can offer.
             </p>
           </div>
         </div>
@@ -31,12 +26,10 @@ export function EngineeringPerformance() {
               <Zap className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-[#1F1946] md:mb-4 md:text-2xl">
-              Unlock Your System's Potential with Advanced Performance
-              Optimization Strategies
+              Direct Access to Senior Performance Engineers
             </h3>
             <p className="text-gray-700">
-              Revolutionize your technology landscape and enhance efficiency by
-              leveraging our expert solutions tailored for your needs.
+              Our boutique team provides direct access to senior performance engineers who revolutionize your technology landscape—enhancing efficiency with personalized solutions tailored specifically for your unique needs.
             </p>
           </div>
           <div>
@@ -44,11 +37,10 @@ export function EngineeringPerformance() {
               <BarChart className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-[#1F1946] md:mb-4 md:text-2xl">
-              Tailored Solutions for Enhanced System Performance and Scalability
+              Boutique Performance Strategies
             </h3>
             <p className="text-gray-700">
-              Our dedicated team creates tailored strategies specifically
-              designed to align perfectly with your unique business goals.
+              Experience the micro agency advantage with truly personalized performance strategies created by our senior specialists—designed to align perfectly with your unique business goals without the overhead of larger firms.
             </p>
           </div>
           <div>
@@ -56,12 +48,10 @@ export function EngineeringPerformance() {
               <Gauge className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-[#1F1946] md:mb-4 md:text-2xl">
-              Achieve Optimal Performance with Our Comprehensive IT Consulting
-              Services
+              Personalized Performance Consulting
             </h3>
             <p className="text-gray-700">
-              Leverage our expertise to enhance your system's performance and
-              reliability, ensuring it operates at peak potential consistently.
+              Work directly with our senior specialists to enhance your system's performance and reliability—ensuring it operates at peak potential with the focused attention and faster implementation that only a boutique agency can provide.
             </p>
           </div>
         </div>

@@ -4,16 +4,15 @@ import { Link } from "@inertiajs/react";
 export function FrontendHeader() {
   return (
     <section id="frontend-header" className="relative px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="relative z-10 container mx-auto max-w-lg text-center">
+      <div className="relative z-10 container mx-auto max-w-3xl text-center">
         <p className="mb-3 font-semibold text-white md:mb-4">
-          Innovate and create new solutions for the future.
+          Boutique UX/UI Design & Development
         </p>
         <h1 className="mb-5 text-4xl font-bold font-header text-white md:mb-6 md:text-5xl lg:text-6xl">
-          Engage, Design, Deliver
+          Personalized Front-End Solutions with Senior Expertise
         </h1>
         <p className="text-white md:text-lg">
-          Empuls3 crafts interactive interfaces and exceptional experiences for
-          high-performance web applications that captivate users.
+          As a specialized micro agency, Empuls3 delivers interactive interfaces and exceptional user experiences with direct access to our senior designers. We craft high-performance web applications that captivate users with the personalized attention and faster turnaround that larger firms simply can't match.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
           <Link

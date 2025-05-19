@@ -63,7 +63,7 @@ export function Partners() {
   const tabItems = [
     {
       heading: "Warner Brothers Discovery",
-      description: "We helped Warner Brothers Discovery modernize their content delivery platform, resulting in a 40% increase in streaming performance.",
+      description: "As a specialized micro agency, we helped Warner Brothers redesign the backend infrastructure of the WB Studio Tour website (wbstudiotour.com), improving performance and enhancing the visitor experience.",
       image: {
         src: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png",
         alt: "Team working with Warner Brothers Discovery",
@@ -71,7 +71,7 @@ export function Partners() {
     },
     {
       heading: "Shell",
-      description: "Our team developed custom data analytics solutions for Shell, enabling real-time decision making across their global operations.",
+      description: "We're currently partnered with CodeGig to help build a Carbon Emission App for Shell, leveraging our boutique expertise to create sustainable technology solutions with significant environmental impact.",
       image: {
         src: "/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png",
         alt: "Executive meeting with Shell leadership",
@@ -79,7 +79,7 @@ export function Partners() {
     },
     {
       heading: "Samsung",
-      description: "We created innovative mobile applications for Samsung that enhanced user experience and increased customer engagement by 35%.",
+      description: "Our micro agency partnered with Monkey Tag to support the development of Samsung's Launch Support Site, delivering personalized technical expertise that larger agencies couldn't provide.",
       image: {
         src: "/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_ff51deb6-2b53-4935-b091-29dd4ac7a594.png",
         alt: "Project presentation for Samsung executives",
@@ -89,7 +89,7 @@ export function Partners() {
 
   return (
     <section id="partners" className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="partners-heading">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="relative flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 md:pr-6 lg:pr-10">
             <div className="mb-8 md:hidden">

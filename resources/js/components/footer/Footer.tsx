@@ -5,16 +5,15 @@ import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
 export default function Footer() {
   return (
     <footer id="footer" className="px-[5%] py-12 md:py-18 lg:py-20 bg-primary text-white">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="border-b border-white/20">
           <div className="mb-12 grid grid-cols-1 gap-x-[8vw] gap-y-12 md:mb-18 md:gap-y-16 lg:mb-20 lg:grid-cols-[1fr_0.5fr] lg:gap-y-20">
             <div className="rb-6 max-w-md">
               <h1 className="mb-5 text-4xl font-bold font-header md:mb-6 md:text-5xl lg:text-6xl">
-                Explore Our Comprehensive Technology Solutions
+                Boutique Technology Solutions with Senior Expertise
               </h1>
               <p className="text-white/80">
-                Empuls3 delivers innovative solutions tailored to your business
-                needs, ensuring growth and digital excellence.
+                As a specialized micro agency, Empuls3 delivers truly personalized solutions with direct access to our senior specialists. Experience faster implementation times and more dedicated attention than larger firms can offer.
               </p>
               <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
                 <Link 

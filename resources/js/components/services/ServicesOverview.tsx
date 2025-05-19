@@ -9,14 +9,12 @@ export function ServicesOverview() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">The Micro Agency Advantage</p>
             <h2 className="mb-5 text-4xl leading-[1.2] font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Tailored Application Services for Seamless Development and
-              Integration
+              Boutique Application Services with Senior Expertise
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              Our Application Services focus on custom development that meets
-              your unique business needs. We ensure seamless integration with
-              existing systems to enhance functionality and efficiency.
+              As a specialized micro agency, our Application Services provide personalized development with direct access to senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to meet your unique business needs and ensure seamless integration with existing systems—delivering enhanced functionality with faster implementation times.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -27,8 +25,7 @@ export function ServicesOverview() {
                   Custom Development
                 </h6>
                 <p className="text-gray-700">
-                  Build applications tailored to your business requirements with
-                  our expert development team.
+                  Work directly with our senior developers to build applications precisely tailored to your business requirements—with the personalized attention and faster turnaround that only a boutique agency can provide.
                 </p>
               </div>
               <div>
@@ -39,8 +36,7 @@ export function ServicesOverview() {
                   Seamless Integration
                 </h6>
                 <p className="text-gray-700">
-                  Integrate new applications smoothly with your existing systems
-                  for optimal performance.
+                  Our boutique team ensures seamless integration of new applications with your existing systems, providing direct access to senior specialists throughout the entire process for optimal performance without the overhead of larger firms.
                 </p>
               </div>
             </div>

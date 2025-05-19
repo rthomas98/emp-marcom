@@ -11,13 +11,12 @@ export function HubspotTraining() {
         <div className="flex flex-col">
           <div className="mb-12 md:mb-18 lg:mb-20">
             <div className="w-full max-w-3xl">
+              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique HubSpot Training</p>
               <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-                Empower Your Team with Expert Guidance
+                Personalized Training with Senior Expertise
               </h2>
               <p className="text-gray-700 md:text-md">
-                Our comprehensive training sessions ensure your team is fully
-                equipped to leverage HubSpot's capabilities. With ongoing
-                support, we are here to assist you every step of the way.
+                As a specialized micro agency, our senior specialists deliver personalized training sessions that ensure your team is fully equipped to leverage HubSpot's capabilities. With direct access to our experts and ongoing support, we provide the dedicated attention that larger firms simply can't match.
               </p>
             </div>
           </div>
@@ -27,11 +26,10 @@ export function HubspotTraining() {
                 <BookOpen className="h-12 w-12 text-[#BD1550]" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Tailored Training for Your Unique Needs
+                Boutique Training for Your Unique Needs
               </h3>
               <p className="text-gray-700">
-                Our training programs are tailored specifically to meet the
-                unique requirements of your business and its needs.
+                Our boutique approach ensures training programs are specifically tailored to your unique business requirements, with direct access to senior specialists who understand your specific goals—without the generic solutions often provided by larger agencies.
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -39,11 +37,10 @@ export function HubspotTraining() {
                 <HeadphonesIcon className="h-12 w-12 text-[#BD1550]" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                24/7 Support for Your HubSpot Solutions
+                Direct Access to Senior Specialists
               </h3>
               <p className="text-gray-700">
-                Our dedicated support team is available 24/7 to assist you with
-                any questions or concerns you may have at any time.
+                As a micro agency, we provide direct access to our senior specialists who are readily available to assist with your questions and concerns—eliminating the frustrating tiered support systems common with larger firms.
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -51,12 +48,10 @@ export function HubspotTraining() {
                 <FileText className="h-12 w-12 text-[#BD1550]" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Resources to Maximize Your CRM Investment
+                Personalized Resources for Your Team
               </h3>
               <p className="text-gray-700">
-                Discover a vast array of valuable resources designed to elevate
-                and enhance your overall HubSpot experience, ensuring you
-                maximize its full potential.
+                Our boutique team creates personalized resources specifically designed for your team, elevating and enhancing your HubSpot experience with the focused attention that only a micro agency can provide—ensuring you maximize the full potential of your CRM investment.
               </p>
             </div>
           </div>

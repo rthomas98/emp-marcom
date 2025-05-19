@@ -13,7 +13,11 @@ import { Head } from '@inertiajs/react';
 export default function HubspotCrmDevelopment() {
   return (
     <SiteLayout>
-      <Head title="HubSpot & CRM Development - Empuls3" />
+      <Head>
+        <title>Boutique HubSpot & CRM Development - Empuls3</title>
+        <meta name="description" content="Experience personalized HubSpot and CRM development from our boutique micro agency. Direct collaboration with senior specialists for streamlined solutions without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique HubSpot development, CRM solutions, senior specialists, personalized CRM services, HubSpot integration, automation" />
+      </Head>
       <Header9 />
       <HubspotOverview />
       <HubspotProcess />

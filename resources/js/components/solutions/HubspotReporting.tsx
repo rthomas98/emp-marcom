@@ -10,13 +10,12 @@ export function HubspotReporting() {
       <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique HubSpot Reporting</p>
             <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-              Unlock the Power of Custom Reporting
+              Personalized Reporting with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-md">
-              Transform your data into actionable insights with our custom
-              reporting solutions. Tailored dashboards provide clarity and drive
-              informed decision-making.
+              As a specialized micro agency, we transform your data into actionable insights with personalized reporting solutions. Our senior specialists work directly with you to create tailored dashboards that provide clarity and drive informed decision-making—with the dedicated attention and faster implementation that larger firms simply can't match.
             </p>
           </div>
         </div>
@@ -30,8 +29,7 @@ export function HubspotReporting() {
                 Tailored Dashboards
               </h3>
               <p className="text-gray-700">
-                Create dashboards that reflect your unique business metrics and
-                KPIs for better visibility.
+                Work directly with our senior specialists to create dashboards that perfectly reflect your unique business metrics and KPIs—with the personalized attention that only a boutique agency can provide.
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
@@ -42,8 +40,7 @@ export function HubspotReporting() {
                 Actionable Insights
               </h3>
               <p className="text-gray-700">
-                Leverage data-driven insights to enhance your strategies and
-                improve overall performance.
+                Our boutique team helps you leverage data-driven insights to enhance your strategies and improve overall performance, with direct access to senior expertise throughout the entire process.
               </p>
             </div>
           </div>
@@ -63,8 +60,7 @@ export function HubspotReporting() {
                 Seamless Integration
               </h3>
               <p className="text-gray-700">
-                Integrate seamlessly with your existing systems for a unified
-                view of your operations.
+                As a micro agency, we provide faster integration with your existing systems for a unified view of your operations, without the overhead and complexity of larger firms.
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
@@ -75,8 +71,7 @@ export function HubspotReporting() {
                 User-Friendly Interface
               </h3>
               <p className="text-gray-700">
-                Our intuitive design ensures that anyone can navigate and
-                utilize the reports effectively.
+                Our boutique team creates intuitive designs that ensure everyone can navigate and utilize reports effectively, with personalized training from our senior specialists.
               </p>
             </div>
           </div>

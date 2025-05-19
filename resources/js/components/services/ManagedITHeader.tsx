@@ -8,15 +8,15 @@ export function ManagedITHeader() {
     <section id="managed-it-header" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto grid grid-cols-1 gap-12 md:grid-cols-[0.5fr_1fr] md:gap-16">
         <div className="flex h-full flex-col justify-between">
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+            Boutique IT Support Services
+          </p>
           <h1 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-            Empower Your Business with Managed IT Solutions
+            Personalized IT Solutions with Senior Expertise
           </h1>
           <div className="ml-[7.5%]">
             <p className="text-gray-700 md:text-md">
-              Our Managed IT & Support Services ensure your technology runs
-              smoothly while you focus on growth. With expert troubleshooting
-              and team augmentation, we provide the support you need for
-              long-term success.
+              As a specialized micro agency, Empuls3 delivers personalized Managed IT & Support Services with direct access to our senior specialists. Unlike larger firms where your tickets might be handled by junior staff, our boutique team ensures your technology runs smoothly with faster response times and more dedicated attention—allowing you to focus on growth while we handle the technical details.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8 md:flex-wrap">
               <Link

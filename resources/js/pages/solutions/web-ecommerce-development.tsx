@@ -11,7 +11,11 @@ import { Head } from '@inertiajs/react';
 export default function WebEcommerceDevelopment() {
   return (
     <SiteLayout>
-      <Head title="Web & E-commerce Development - Empuls3" />
+      <Head>
+        <title>Boutique Web & E-commerce Development - Empuls3</title>
+        <meta name="description" content="Experience personalized web and e-commerce development from our boutique micro agency. Direct collaboration with senior developers for WordPress, e-commerce, and PWA solutions." />
+        <meta name="keywords" content="micro agency, boutique web development, WordPress development, e-commerce solutions, senior developers, personalized web services, progressive web apps" />
+      </Head>
       <WebEcommerceHeader />
       <WordPressSolutions />
       <EcommercePlatforms />

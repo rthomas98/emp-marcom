@@ -20,55 +20,55 @@ export function FAQsCategories() {
 
   const categories: FAQCategory[] = [
     {
-      title: "Services",
-      description: "Common questions about our services and solutions",
+      title: "Micro Agency Advantage",
+      description: "Learn about the benefits of working with our boutique agency",
       faqs: [
         {
-          question: "What services does Empuls3 offer?",
-          answer: "Empuls3 offers a comprehensive range of digital services including web development, mobile app development, cloud solutions, digital marketing, and strategic consulting. Our team specializes in creating custom solutions tailored to meet the unique needs of each client."
+          question: "What makes Empuls3 different as a micro agency?",
+          answer: "As a specialized micro agency founded in 2009 by Robert Thomas, Empuls3 provides direct access to senior specialists who work directly with you—unlike larger firms where your project might be handed off to junior staff. Our boutique approach delivers personalized solutions with faster implementation times and more dedicated attention than larger firms can offer, all without the overhead of traditional agencies."
         },
         {
-          question: "How do you ensure quality in your deliverables?",
-          answer: "We maintain strict quality control processes throughout our development lifecycle. This includes thorough testing, code reviews, and regular client feedback sessions. Our team follows industry best practices and standards to ensure all deliverables meet the highest quality benchmarks."
+          question: "How does your micro agency approach benefit clients?",
+          answer: "Our boutique approach means you work directly with senior specialists who understand your unique needs. This direct collaboration results in faster implementation times, more personalized solutions, and a level of dedicated attention that larger agencies simply cannot match—all without the overhead costs associated with traditional firms."
         },
         {
-          question: "What technologies do you specialize in?",
-          answer: "Our team has expertise in a wide range of technologies including React, Angular, Vue.js, Node.js, PHP/Laravel, Python, AWS, Azure, and Google Cloud. We stay current with emerging technologies to provide cutting-edge solutions for our clients."
+          question: "What services does your boutique agency offer?",
+          answer: "Since our founding in 2009, our specialized micro agency has offered personalized technology solutions including web development, mobile app development, cloud solutions, digital marketing, and strategic consulting. Unlike larger firms, our senior specialists work directly with you to create truly tailored solutions with faster implementation times."
         }
       ]
     },
     {
-      title: "Partnerships",
-      description: "Information about our partnership programs and opportunities",
+      title: "Boutique Partnerships",
+      description: "Information about our strategic alliances as a micro agency",
       faqs: [
         {
-          question: "How can my company partner with Empuls3?",
-          answer: "We offer various partnership models including strategic alliances, technology partnerships, and channel partnerships. To explore partnership opportunities, please contact our partnerships team through the Contact Us page, and we'll schedule a consultation to discuss potential collaboration."
+          question: "How does your micro agency approach partnerships?",
+          answer: "As a specialized boutique agency founded in 2009 by Robert Thomas, we form strategic alliances that complement our personalized approach. We carefully select partners who enhance our ability to provide direct access to senior specialists while maintaining our boutique service model—delivering faster implementation times without the overhead of larger firms."
         },
         {
-          question: "What benefits do partners receive?",
-          answer: "Our partners enjoy benefits such as joint marketing opportunities, technical support, training resources, and access to our network of clients. We work closely with our partners to create mutually beneficial relationships that drive growth for both organizations."
+          question: "What benefits do partners receive when working with a micro agency?",
+          answer: "Partners who collaborate with our boutique agency benefit from our agile decision-making, personalized approach, and direct access to our senior specialists. We create truly collaborative relationships where both organizations can leverage each other's strengths without the bureaucracy and overhead of larger firms."
         },
         {
-          question: "Do you have any existing case studies of successful partnerships?",
-          answer: "Yes, we have several case studies highlighting our successful partnerships with companies like Samsung, Shell, and Warner Brothers Discovery. These case studies demonstrate how our collaborative approach has delivered significant value and results for our partners."
+          question: "Can you share examples of successful micro agency partnerships?",
+          answer: "Yes, our specialized micro agency has successfully partnered with companies like Samsung, Shell, and Warner Brothers Discovery. These partnerships demonstrate how our boutique approach—providing direct access to senior specialists and personalized solutions—has delivered significant value with faster implementation times than larger firms can offer."
         }
       ]
     },
     {
-      title: "Process",
-      description: "Learn about our project process and methodology",
+      title: "Boutique Process",
+      description: "Learn about our micro agency approach to projects",
       faqs: [
         {
-          question: "What is your project development process?",
-          answer: "Our development process follows an agile methodology with clear phases including discovery, planning, design, development, testing, deployment, and ongoing support. We emphasize collaboration, transparency, and regular communication throughout the project lifecycle."
+          question: "How does your micro agency approach project development?",
+          answer: "As a specialized boutique agency, our senior specialists work directly with you throughout the entire project lifecycle. Unlike larger firms where your project might be handed off to junior staff, our micro agency approach ensures personalized attention, faster implementation times, and more agile decision-making—all without the overhead of traditional agencies."
         },
         {
-          question: "How do you handle project timelines and deadlines?",
-          answer: "We create detailed project plans with realistic timelines based on the scope and requirements. Our project managers closely monitor progress, identify potential delays early, and implement mitigation strategies when necessary to ensure timely delivery."
+          question: "How does your boutique approach affect project timelines?",
+          answer: "Our micro agency model enables us to deliver faster implementation times than larger firms can offer. With direct access to senior specialists and fewer layers of management, we eliminate bureaucratic delays and provide more dedicated attention to your project—ensuring efficient delivery without sacrificing quality."
         },
         {
-          question: "How do you communicate project updates?",
+          question: "How do you maintain communication as a micro agency?",
           answer: "We provide regular updates through scheduled meetings, progress reports, and our project management platform. Clients have access to real-time project status and can communicate directly with our team members as needed."
         }
       ]
@@ -110,11 +110,12 @@ export function FAQsCategories() {
       <div className="container mx-auto">
         <div className="mb-12 md:mb-16 lg:mb-20">
           <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Micro Agency FAQs</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl">
-              Browse by Category
+              Boutique Agency Questions
             </h2>
             <p className="text-gray-700 md:text-md">
-              Find answers to your questions by exploring our FAQ categories below. If you can't find what you're looking for, please contact our support team.
+              Find answers about our specialized micro agency founded in 2009 by Robert Thomas. Explore how we provide direct access to senior specialists and deliver personalized solutions with faster implementation times than larger firms can offer.
             </p>
           </div>
         </div>

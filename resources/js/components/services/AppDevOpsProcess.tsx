@@ -11,16 +11,13 @@ export function AppDevOpsProcess() {
         <div className="flex flex-col items-center">
           <div className="mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-              Streamlined for improved efficiency and productivity.
+              Boutique Development Process
             </p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Our Process: From Idea to Deployment
+              Personalized DevOps Journey with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-md">
-              We begin with a thorough consultation to understand your unique
-              needs and objectives. Our team then crafts a tailored strategy
-              that guides the development process, ensuring alignment with your
-              goals.
+              As a specialized micro agency, we begin with a personalized consultation where you work directly with our senior specialists to understand your unique needs. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures you receive dedicated attention throughout the entire development process with faster implementation times and truly tailored solutions.
             </p>
           </div>
           <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
@@ -29,11 +26,10 @@ export function AppDevOpsProcess() {
                 <FileSearch className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Consultation and Strategy Development
+                Direct Access to Senior Strategists
               </h3>
               <p className="text-gray-700">
-                Our experienced team works closely with you to clearly define
-                the project scope and specific requirements.
+                Work directly with our senior strategists who collaborate closely with you to define project scope and requirements—with the personalized attention and faster response times that only a boutique micro agency can provide.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -41,12 +37,10 @@ export function AppDevOpsProcess() {
                 <GitBranch className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Agile Development and Continuous Integration
+                Boutique Agile Approach
               </h3>
               <p className="text-gray-700">
-                We utilize agile methodologies to guarantee flexibility,
-                enabling rapid iterations and continuous improvements in our
-                processes.
+                Experience the micro agency advantage with our personalized agile methodology that ensures flexibility and rapid iterations—delivering continuous improvements with faster implementation cycles than larger firms can match.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -54,11 +48,10 @@ export function AppDevOpsProcess() {
                 <Rocket className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Final Deployment and Ongoing Support
+                Personalized Support with Senior Specialists
               </h3>
               <p className="text-gray-700">
-                After deployment, we offer ongoing support and maintenance to
-                ensure everything runs smoothly and efficiently for you.
+                After deployment, our senior specialists provide personalized ongoing support and maintenance—ensuring your systems run smoothly with the dedicated attention and faster response times that larger firms simply can't match.
               </p>
             </div>
           </div>

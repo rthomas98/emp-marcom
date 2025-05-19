@@ -6,15 +6,13 @@ export function FrontendSolutions() {
       <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-            Need Some Front-End Development
+            The Micro Agency Advantage
           </p>
           <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Dynamic User Experiences
+            Boutique Design with Direct Access to Senior Talent
           </h2>
           <p className="text-gray-700 md:text-lg">
-            Revolutionizing the way users engage with websites through
-            innovative and responsive design solutions that enhance usability
-            and create seamless experiences across all devices and screen sizes.
+            As a specialized micro agency, we revolutionize the way users engage with your website through personalized design solutions created by our senior designers. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to create responsive interfaces that enhance usability across all devices with faster turnaround times and more personalized attention.
           </p>
         </div>
         <div className="grid auto-cols-fr grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
@@ -26,8 +24,7 @@ export function FrontendSolutions() {
                   Crafting Seamless User Interfaces
                 </h3>
                 <p className="text-gray-700">
-                  Improving user experience by implementing cutting-edge design
-                  strategies and innovative practices for better usability.
+                  Our boutique team of senior designers works directly with you to implement cutting-edge UI strategies that improve user experience, delivering enterprise-quality interfaces without the overhead costs and communication barriers of larger agencies.
                 </p>
               </div>
             </div>
@@ -47,8 +44,7 @@ export function FrontendSolutions() {
                   User-Centric Design Approach
                 </h3>
                 <p className="text-gray-700">
-                  Custom solutions designed to enhance and improve every unique
-                  user interaction for a more personalized experience.
+                  Experience the micro agency advantage with user-centric designs created by our specialized team who collaborate directly with you, enhancing every interaction with personalized solutions that larger firms struggle to deliver.
                 </p>
               </div>
             </div>
@@ -68,9 +64,7 @@ export function FrontendSolutions() {
                   Responsive and Engaging Interfaces
                 </h3>
                 <p className="text-gray-700">
-                  Enhancing user engagement by utilizing innovative and
-                  cutting-edge technology solutions tailored for modern
-                  audiences.
+                  With direct access to our senior designers, your interfaces will engage users through innovative technology solutions tailored specifically for your audience—with the focused attention and faster implementation that only a boutique micro agency can provide.
                 </p>
               </div>
             </div>

@@ -11,20 +11,15 @@ export function AppDevOpsOverview() {
         <div className="mb-12 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-              Innovate and transform ideas into reality today!
+              The Micro Agency Advantage
             </p>
             <h3 className="text-4xl leading-[1.2] font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
-              End-to-End Application Development and DevOps Solutions
+              Personalized DevOps with Senior Expertise
             </h3>
           </div>
           <div>
             <p className="text-gray-700 md:text-md">
-              Our comprehensive app development services cover every stage of
-              the process, from initial concept to final deployment. We
-              specialize in creating robust applications that meet your business
-              needs while ensuring seamless integration with DevOps practices.
-              Trust us to enhance your development lifecycle with our expertise
-              in CI/CD pipelines and infrastructure automation.
+              As a specialized micro agency, our senior DevOps specialists work directly with you through every stage of the process—from initial concept to final deployment. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures you receive personalized attention, faster implementation times, and truly tailored CI/CD pipelines and infrastructure automation solutions without the overhead of traditional agencies.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link

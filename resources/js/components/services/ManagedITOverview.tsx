@@ -11,19 +11,15 @@ export function ManagedITOverview() {
         <div className="mb-12 grid grid-cols-1 items-start justify-between gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-white md:mb-4">
-              Assistance and encouragement in difficult times.
+              Boutique IT Support
             </p>
             <h2 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-              Comprehensive Managed IT & Support Services
+              The Micro Agency IT Support Advantage
             </h2>
           </div>
           <div>
             <p className="text-white md:text-md">
-              Our Managed IT & Support Services ensure your business runs
-              smoothly with ongoing maintenance and troubleshooting. We provide
-              expert team augmentation to help you scale effectively and address
-              challenges proactively. With our dedicated support, you can focus
-              on growth while we handle the technical details.
+              As a specialized micro agency, our senior IT specialists provide personalized support services that ensure your business runs smoothly. Unlike larger firms where your tickets might be handled by junior staff, our boutique team delivers faster response times, more dedicated attention, and truly tailored solutions—allowing you to focus on growth while we handle the technical details with the expertise and responsiveness that only a micro agency can provide.
             </p>
           </div>
         </div>
@@ -33,11 +29,10 @@ export function ManagedITOverview() {
               <HelpCircle className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Reliable Troubleshooting for Seamless Operations
+              Direct Access to Senior IT Specialists
             </h3>
             <p className="text-white">
-              Our team is always ready to resolve issues swiftly and
-              efficiently, minimizing downtime.
+              Work directly with our senior IT specialists who resolve issues swiftly and efficiently—minimizing downtime with faster response times than larger firms can match.
             </p>
           </div>
           <div>
@@ -45,11 +40,10 @@ export function ManagedITOverview() {
               <Clock className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Proactive Maintenance for Long-Term Success
+              Personalized Proactive Maintenance
             </h3>
             <p className="text-white">
-              Regular updates and monitoring keep your systems running at peak
-              performance, ensuring reliability.
+              Our boutique team provides truly personalized monitoring and updates that keep your systems running at peak performance—with the dedicated attention and faster implementation that larger firms simply can't offer.
             </p>
           </div>
           <div>
@@ -57,11 +51,10 @@ export function ManagedITOverview() {
               <Users className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Expert Team Support On Demand
+              Boutique Team Augmentation
             </h3>
             <p className="text-white">
-              Enhance your capabilities with our skilled professionals, ready to
-              integrate with your team.
+              Experience the micro agency advantage with our senior specialists who enhance your capabilities—integrating seamlessly with your team and providing personalized support without the overhead of larger firms.
             </p>
           </div>
           <div>
@@ -69,11 +62,10 @@ export function ManagedITOverview() {
               <Settings className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Tailored Solutions for Every Business
+              Micro Agency Customization
             </h3>
             <p className="text-white">
-              We customize our services to meet the unique needs of your
-              organization, ensuring maximum value.
+              Our boutique team creates truly personalized solutions that meet the unique needs of your organization—delivering maximum value with the focused attention and flexibility that only a specialized micro agency can provide.
             </p>
           </div>
         </div>

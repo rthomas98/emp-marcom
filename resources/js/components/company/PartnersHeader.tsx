@@ -9,13 +9,14 @@ export function PartnersHeader() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-12 lg:mb-20 lg:gap-20">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Agency Partnerships</p>
             <h1 className="text-5xl font-bold text-[#1F1946] md:text-6xl lg:text-7xl">
-              Strategic Partnerships for Business Growth
+              Micro Agency Strategic Alliances
             </h1>
           </div>
           <div className="mx-[7.5%] flex flex-col justify-end md:mt-48">
             <p className="text-gray-700 md:text-md">
-              Empuls3 partners with industry leaders to deliver comprehensive technology solutions that drive innovation and business success. Our collaborative approach ensures that our clients receive the best possible outcomes through combined expertise and resources.
+              Since our founding in 2009 by Robert Thomas, Empuls3 has strategically partnered with industry leaders to enhance our boutique service offerings. As a specialized micro agency, we combine our personalized approach and direct access to senior specialists with our partners' complementary capabilities—delivering truly tailored technology solutions with faster implementation times than larger firms can offer.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               <Link

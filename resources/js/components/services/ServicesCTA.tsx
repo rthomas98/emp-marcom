@@ -8,12 +8,12 @@ export function ServicesCTA() {
     <section id="services-cta" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#1F1946]">
       <div className="container mx-auto">
         <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Professional Services</p>
           <h2 className="mb-5 text-5xl font-bold text-white md:mb-6 md:text-6xl lg:text-7xl">
-            Ready to Transform Your Business with Our Services?
+            Experience the Micro Agency Advantage
           </h2>
           <p className="mb-8 text-gray-300 md:text-md">
-            Let's discuss how our comprehensive services can help you achieve your business goals. 
-            Our team of experts is ready to provide tailored solutions for your specific needs.
+            Let's discuss how our boutique services can help you achieve your business goals with direct access to senior specialists. Unlike larger firms, our micro agency provides personalized attention, faster implementation, and more dedicated support—without the overhead and complexity that comes with bigger agencies.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link 

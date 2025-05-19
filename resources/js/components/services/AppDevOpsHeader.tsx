@@ -9,16 +9,16 @@ export function AppDevOpsHeader() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-12 lg:mb-20 lg:gap-20">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+              Boutique DevOps Services
+            </p>
             <h1 className="text-5xl font-bold text-[#1F1946] md:text-6xl lg:text-7xl">
-              Optimize Your Development with Empuls3 Solutions
+              Personalized DevOps Solutions with Senior Expertise
             </h1>
           </div>
           <div className="mx-[7.5%] flex flex-col justify-end md:mt-48">
             <p className="text-gray-700 md:text-md">
-              Empuls3's combined Application and DevOps services empower your
-              team to streamline app development and enhance operational
-              efficiency. Experience seamless integration of CI/CD pipelines and
-              infrastructure automation for scalable solutions.
+              As a specialized micro agency, Empuls3 delivers personalized Application and DevOps services with direct access to our senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures streamlined CI/CD pipelines and infrastructure automation with faster implementation times and more dedicated attention.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               <Link

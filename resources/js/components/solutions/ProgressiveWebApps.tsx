@@ -8,17 +8,14 @@ export function ProgressiveWebApps() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-gray-700 md:mb-4">
-              Innovative ideas drive progress and inspire change.
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">
+              Boutique PWA Development
             </p>
             <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Transform Your Online Presence with PWAs
+              Personalized Progressive Web App Solutions
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-lg">
-              Progressive Web Apps provide a fast, reliable, and highly engaging
-              user experience. They operate seamlessly across all devices,
-              significantly enhancing overall user satisfaction and interaction
-              with the content.
+              As a specialized micro agency, we deliver Progressive Web Apps with direct collaboration between you and our senior developers. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures your PWA provides a fast, reliable, and highly engaging user experience across all devices—with faster turnaround times and personalized attention throughout the process.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -31,8 +28,7 @@ export function ProgressiveWebApps() {
                   Enhanced Performance
                 </h6>
                 <p className="text-gray-700">
-                  Enjoy incredibly fast load times and seamless interactions
-                  that enhance the experience for all your users.
+                  Our boutique team of senior developers creates PWAs with incredibly fast load times and seamless interactions, delivering enterprise-level performance without the overhead of larger agencies.
                 </p>
               </div>
               <div>
@@ -45,8 +41,7 @@ export function ProgressiveWebApps() {
                   Cross-Platform Compatibility
                 </h6>
                 <p className="text-gray-700">
-                  Connect with your audience seamlessly across all devices for a
-                  consistent and engaging experience.
+                  With direct access to our senior developers, your PWA will connect with your audience seamlessly across all devices, ensuring a consistent and engaging experience that larger firms struggle to deliver.
                 </p>
               </div>
             </div>

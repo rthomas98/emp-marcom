@@ -7,6 +7,7 @@ import { Innovation } from '@/components/home/Innovation';
 import { Approach } from '@/components/home/Approach';
 import { Partners } from '@/components/home/Partners';
 import { Testimonials } from '@/components/home/Testimonials';
+import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
 import { Head } from '@inertiajs/react';
 
 export default function Home() {
@@ -16,14 +17,16 @@ export default function Home() {
         <meta name="description" content="Empuls3 delivers custom software development, web applications, and IT consulting services that transform your business and drive growth in the digital landscape." />
         <meta name="keywords" content="software development, web development, IT consulting, custom applications, digital transformation" />
       </Head>
-      <Header />
-      <Features />
-      <Services />
-      <Industries />
-      <Innovation />
-      <Approach />
-      <Partners />
-      <Testimonials />
+      <HomeComponentWrapper>
+        <Header />
+        <Features />
+        <Services />
+        <Industries />
+        <Innovation />
+        <Approach />
+        <Partners />
+        <Testimonials />
+      </HomeComponentWrapper>
     </SiteLayout>
   );
 }

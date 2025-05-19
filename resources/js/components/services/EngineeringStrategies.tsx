@@ -11,18 +11,14 @@ export function EngineeringStrategies() {
         <div className="mb-12 grid grid-cols-1 items-start justify-between gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-white md:mb-4">
-              Guidance
+              Boutique Technology Guidance
             </p>
             <h2 className="text-5xl font-bold text-white md:text-5xl lg:text-6xl">
-              Tailored Strategies for Your Technology Needs
+              Personalized Strategies with Senior Expertise
             </h2>
           </div>
           <p className="text-white md:text-md">
-            Our expert team provides personalized technical guidance to help you
-            navigate complex technology landscapes. We analyze your existing
-            systems and recommend strategies that align with your business
-            goals. With our support, you can optimize your technology stack for
-            maximum efficiency and effectiveness.
+            As a specialized micro agency, our senior specialists provide personalized technical guidance to help you navigate complex technology landscapes. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to analyze your existing systems and recommend strategies that align with your business goals—with the dedicated attention and faster implementation that larger firms simply can't match.
           </p>
         </div>
         <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
@@ -33,11 +29,10 @@ export function EngineeringStrategies() {
             />
             <div>
               <h3 className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                System Architecture Solutions
+                Boutique Architecture Solutions
               </h3>
               <p className="text-white">
-                We create strong and adaptable architectures specifically
-                designed to meet your unique needs.
+                Work directly with our senior architects to create strong and adaptable systems specifically designed to meet your unique needs—with the personalized attention that only a micro agency can provide.
               </p>
             </div>
           </div>
@@ -48,11 +43,10 @@ export function EngineeringStrategies() {
             />
             <div>
               <h3 className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Modern Engineering Solutions
+                Direct Access to Senior Engineers
               </h3>
               <p className="text-white">
-                Our innovative engineering solutions enhance efficiency and
-                drive progress forward.
+                Our boutique team provides innovative engineering solutions with direct access to senior specialists—enhancing efficiency and driving progress without the overhead of larger firms.
               </p>
             </div>
           </div>
@@ -63,11 +57,10 @@ export function EngineeringStrategies() {
             />
             <div>
               <h3 className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Unlock Your Tech Potential
+                Personalized Technology Approach
               </h3>
               <p className="text-white">
-                Join us in revolutionizing and enhancing your technology
-                landscape for better results.
+                Experience the micro agency advantage as we work closely with you to revolutionize your technology landscape—delivering better results with faster implementation times and more dedicated attention.
               </p>
             </div>
           </div>

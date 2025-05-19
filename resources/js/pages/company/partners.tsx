@@ -12,7 +12,11 @@ import { Head } from '@inertiajs/react';
 export default function Partners() {
   return (
     <SiteLayout>
-      <Head title="Partners - Empuls3" />
+      <Head>
+        <title>Boutique Agency Partnerships - Empuls3</title>
+        <meta name="description" content="Learn about Empuls3's strategic partnerships as a specialized micro agency. Direct collaboration with senior specialists and industry-leading partners to deliver personalized technology solutions." />
+        <meta name="keywords" content="micro agency partnerships, boutique technology firm, strategic partners, senior specialists, personalized technology solutions, direct collaboration" />
+      </Head>
       <PartnersHeader />
       <PartnersOverview />
       <PartnersLogos />

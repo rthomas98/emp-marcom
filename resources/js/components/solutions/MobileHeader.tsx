@@ -16,14 +16,12 @@ export function MobileHeader() {
       <div className="relative z-10 px-[5%] py-16 md:py-24 lg:py-32">
         <div className="container mx-auto">
           <div className="w-full max-w-lg">
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Cross-Platform Excellence</p>
+            <p className="mb-3 font-semibold text-white md:mb-4">Boutique Mobile Development</p>
             <h1 className="mb-5 text-5xl font-bold font-header text-white md:mb-6 md:text-6xl lg:text-7xl">
-              Mobile Development Solutions
+              Personalized Mobile Solutions with Senior Expertise
             </h1>
             <p className="text-white/90 md:text-lg">
-              Empuls3 specializes in creating high-performance mobile applications
-              that ensure seamless user experiences across a wide range of
-              devices, making it easier for everyone to connect and engage.
+              As a specialized micro agency, we deliver high-performance mobile applications with direct access to our senior developers. Our boutique team ensures seamless user experiences across all devices with the personalized attention and faster turnaround that larger firms simply can't match.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link

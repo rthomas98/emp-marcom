@@ -10,15 +10,13 @@ export function AppDevOpsInfrastructure() {
       <div className="relative z-10 container mx-auto">
         <div className="mb-12 max-w-lg md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-white md:mb-4">
-            Streamlined processes enhance overall productivity levels.
+            Boutique Infrastructure Solutions
           </p>
           <h2 className="mb-5 text-4xl font-bold text-white md:mb-6 md:text-5xl lg:text-6xl">
-            Streamline Your Infrastructure with Automation
+            Personalized Infrastructure Automation with Senior Expertise
           </h2>
           <p className="text-white md:text-md">
-            Automating your infrastructure enhances scalability and operational
-            efficiency. Experience seamless integration and faster deployment
-            cycles.
+            As a specialized micro agency, our senior DevOps specialists create truly personalized infrastructure automation solutions. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures enhanced scalability and operational efficiency with faster implementation times and more dedicated attention.
           </p>
         </div>
         <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-4">
@@ -27,11 +25,10 @@ export function AppDevOpsInfrastructure() {
               <Server className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Benefits of Infrastructure Automation
+              Direct Access to Senior DevOps Engineers
             </h3>
             <p className="text-white">
-              Reduce manual errors and improve deployment speed with automated
-              infrastructure solutions.
+              Work directly with our senior specialists to reduce manual errors and improve deployment speed with personalized infrastructure automation solutions that larger firms can't match.
             </p>
           </div>
           <div className="flex w-full flex-col">
@@ -39,11 +36,10 @@ export function AppDevOpsInfrastructure() {
               <Scale className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Scalability for Growing Businesses
+              Boutique Scalability Solutions
             </h3>
             <p className="text-white">
-              Easily scale your applications to meet increasing demand without
-              compromising performance.
+              Experience the micro agency advantage with personalized scalability solutions that help your applications meet increasing demand with faster implementation times than larger firms.
             </p>
           </div>
           <div className="flex w-full flex-col">
@@ -51,11 +47,10 @@ export function AppDevOpsInfrastructure() {
               <DollarSign className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Cost-Effective Resource Management
+              Personalized Resource Optimization
             </h3>
             <p className="text-white">
-              Optimize resource usage and reduce operational costs through
-              intelligent automation.
+              Our boutique team creates truly personalized resource management solutions that optimize usage and reduce operational costs with the focused attention that only a micro agency can provide.
             </p>
           </div>
           <div className="flex w-full flex-col">
@@ -63,11 +58,10 @@ export function AppDevOpsInfrastructure() {
               <Zap className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-white md:mb-4 md:text-2xl">
-              Get Started with Automation Today
+              The Micro Agency Advantage
             </h3>
             <p className="text-white">
-              Transform your infrastructure management with our expert
-              automation services tailored for your needs.
+              Transform your infrastructure management with our senior specialists who provide personalized automation services with faster implementation times and more dedicated attention than larger firms.
             </p>
           </div>
         </div>

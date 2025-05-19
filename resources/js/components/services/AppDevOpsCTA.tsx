@@ -8,14 +8,14 @@ export function AppDevOpsCTA() {
     <section id="app-devops-cta" className="relative px-[5%] py-16 md:py-24 lg:py-28">
       <div className="relative z-10 container mx-auto">
         <div className="w-full max-w-lg">
+          <p className="mb-3 font-semibold text-white md:mb-4">
+            Boutique DevOps Services
+          </p>
           <h2 className="mb-5 text-4xl font-bold text-white md:mb-6 md:text-5xl lg:text-6xl">
-            Transform Your Development Experience
+            Experience the Micro Agency Advantage
           </h2>
           <p className="text-white md:text-md">
-            Get in touch with us today to elevate your application and DevOps
-            capabilities. Our team of experts is ready to provide you with
-            tailored solutions that will enhance your operational efficiency and
-            drive your projects to success. Don't wait—reach out now!
+            Contact us today for direct access to our senior specialists who provide truly personalized application and DevOps solutions. Unlike larger firms, our boutique micro agency delivers faster implementation times, more dedicated attention, and tailored infrastructure automation without the overhead and complexity that comes with bigger agencies.
           </p>
           <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
             <Link

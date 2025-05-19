@@ -9,14 +9,10 @@ export function WebEcommerceHeader() {
     >
       <div className="mx-[5%] max-w-[40rem] justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
         <h1 className="mb-5 text-5xl font-bold font-header text-primary md:mb-6 md:text-6xl lg:text-7xl">
-          Empower Your Business with Scalable Web Solutions
+          Boutique Web & E-commerce Development with Senior Expertise
         </h1>
         <p className="text-gray-700 md:text-lg">
-          Our Web & E-commerce Development services combine custom WordPress
-          solutions, robust e-commerce platforms, and innovative Progressive Web
-          Apps to create seamless online experiences. Whether you're looking to
-          enhance your digital presence or launch a new platform, we provide the
-          tools you need for success.
+          As a specialized micro agency, we deliver personalized web and e-commerce solutions with direct access to our senior developers. Our boutique approach combines custom WordPress solutions, robust e-commerce platforms, and innovative Progressive Web Apps—all with the focused attention and faster turnaround that larger agencies simply can't match.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
           <Link

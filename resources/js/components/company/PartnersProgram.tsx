@@ -20,7 +20,7 @@ export function PartnersProgram() {
         
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {partnerBenefits.map((benefit, index) => (
-            <div key={index} className="flex flex-col rounded-lg bg-white p-6 shadow-sm transition duration-300 hover:shadow-md">
+            <div key={index} className="flex flex-col rounded-lg bg-white p-6 transition duration-300 border border-gray-200">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#BD1550]/10 text-[#BD1550]">
                 {benefit.icon}
               </div>

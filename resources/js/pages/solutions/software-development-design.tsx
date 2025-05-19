@@ -15,8 +15,9 @@ export default function SoftwareDevelopmentDesign() {
   return (
     <SiteLayout>
       <Head>
-        <title>Software Development & Design - Empuls3</title>
-        <meta name="description" content="Transform your vision into software reality with Empuls3's end-to-end software development and design solutions." />
+        <title>Boutique Software Development & Design - Empuls3</title>
+        <meta name="description" content="Experience the micro agency advantage with Empuls3's boutique software development services. Direct access to senior developers, personalized attention, and enterprise-quality results." />
+        <meta name="keywords" content="micro agency, boutique software development, senior developers, custom software solutions, personalized development, software design" />
       </Head>
       <SoftwareDevelopmentHeader />
       <CustomSoftwareSolutions />

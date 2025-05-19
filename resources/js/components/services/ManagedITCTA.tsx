@@ -8,14 +8,14 @@ export function ManagedITCTA() {
     <section id="managed-it-cta" className="relative px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container relative z-10 mx-auto">
         <div className="w-full max-w-lg">
+          <p className="mb-3 font-semibold text-white md:mb-4">
+            Boutique IT Support
+          </p>
           <h2 className="mb-5 text-4xl font-bold text-white md:mb-6 md:text-5xl lg:text-6xl">
-            Get Your IT Support Today
+            Experience the Micro Agency Advantage
           </h2>
           <p className="text-white md:text-md">
-            Reach out to us today to discuss a customized support plan designed
-            specifically for your needs. Our goal is to help you drive growth
-            and achieve lasting success for your business. Let's work together
-            to create a strategy that works for you!
+            Contact us today for direct access to our senior specialists who provide truly personalized IT support solutions. Unlike larger firms, our boutique team delivers faster response times, more dedicated attention, and custom strategies designed specifically for your unique needs—helping you drive growth and achieve lasting success without the overhead of traditional IT providers.
           </p>
           <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
             <Link

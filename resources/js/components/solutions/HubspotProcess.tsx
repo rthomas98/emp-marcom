@@ -11,17 +11,15 @@ export function HubspotProcess() {
         <div className="grid grid-cols-1 items-start gap-5 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-white md:mb-4">
-              Automating processes for greater efficiency and accuracy.
+              Boutique HubSpot Automation
             </p>
             <h2 className="text-5xl font-bold text-white md:text-6xl lg:text-7xl">
-              Streamline Your Processes with HubSpot Solutions
+              Personalized Process Automation with Senior Expertise
             </h2>
           </div>
           <div>
             <p className="mb-6 text-white md:mb-8 md:text-md">
-              Enhance your business efficiency through automated workflows and
-              lead nurturing. Our custom HubSpot solutions ensure personalized
-              customer engagement at every touchpoint.
+              As a specialized micro agency, we enhance your business efficiency through personalized automated workflows and lead nurturing. Our senior HubSpot specialists work directly with you to create custom solutions that ensure personalized customer engagement at every touchpoint—with the dedicated attention and faster implementation that larger firms simply can't match.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -32,8 +30,7 @@ export function HubspotProcess() {
                   Boost Efficiency
                 </h6>
                 <p className="text-white">
-                  Automate repetitive tasks and focus on what truly matters for
-                  your business growth.
+                  Work directly with our senior specialists to automate repetitive tasks, allowing you to focus on what truly matters for your business growth—all with the personalized attention that only a boutique agency can provide.
                 </p>
               </div>
               <div>
@@ -44,8 +41,7 @@ export function HubspotProcess() {
                   Personalized Engagement
                 </h6>
                 <p className="text-white">
-                  Create tailored experiences for your customers that drive
-                  loyalty and satisfaction.
+                  Our boutique team creates tailored experiences for your customers that drive loyalty and satisfaction, with the direct access to senior expertise that ensures your specific business needs are met without the overhead of larger agencies.
                 </p>
               </div>
             </div>

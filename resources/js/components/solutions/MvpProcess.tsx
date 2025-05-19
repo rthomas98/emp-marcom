@@ -6,34 +6,34 @@ export function MvpProcess() {
   const processSteps = [
     {
       number: "01",
-      title: "Rapid Prototyping",
-      subtitle: "Ideate",
-      heading: "Transform Ideas into Functional Prototypes Quickly",
-      description: "Our fast and efficient rapid prototyping service significantly speeds up your product development process. Transform your innovative concepts into functional working models in no time at all.",
+      title: "Boutique Prototyping",
+      subtitle: "Micro Agency Advantage",
+      heading: "Direct Access to Senior Developers for Rapid Prototyping",
+      description: "As a specialized micro agency, our senior developers work directly with you to transform ideas into functional prototypes with faster turnaround times. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures personalized attention throughout the prototyping process.",
       image: "/images/site-images/rob_thomas23_African_American_Designers_and_developers_collabor_5359f06c-96ed-4f19-94a6-00d8d4fdbd59.png"
     },
     {
       number: "02",
-      title: "User Testing",
-      subtitle: "Validate",
-      heading: "Gather Valuable User Feedback to Refine Your MVP",
-      description: "Our comprehensive user testing approach helps you validate your product with real users. We collect actionable insights that guide refinements and ensure your MVP resonates with your target audience.",
+      title: "Personalized User Testing",
+      subtitle: "Focused Validation",
+      heading: "Collaborative Feedback Collection with Senior Expertise",
+      description: "Our boutique approach to user testing ensures your product is validated with real users while maintaining direct collaboration with our senior team. We collect actionable insights without the communication barriers of larger agencies, ensuring your MVP resonates with your target audience faster.",
       image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_Happy__working_t_e54e2d34-af10-4785-8b30-bc46cef92038_0.png"
     },
     {
       number: "03",
-      title: "Iterative Development",
-      subtitle: "Improve",
-      heading: "Continuously Enhance Your Product Based on Feedback",
-      description: "Our iterative development process incorporates user feedback to continuously improve your MVP. We make data-driven refinements that enhance functionality and user experience with each iteration.",
+      title: "Agile Micro Agency Development",
+      subtitle: "Rapid Improvement",
+      heading: "Faster Iterations with Direct Senior Developer Access",
+      description: "Experience the micro agency advantage with our iterative development process. Our senior developers incorporate user feedback to continuously improve your MVP with faster implementation cycles than larger firms, making data-driven refinements that enhance functionality and user experience with each iteration.",
       image: "/images/site-images/rob_thomas23_African_American_People_working_in_big_modern_of_848a2004-ac77-47fe-9d58-52c599a75e0a_1.png"
     },
     {
       number: "04",
-      title: "Launch Strategy",
-      subtitle: "Deploy",
-      heading: "Strategic Product Launch for Maximum Impact",
-      description: "Our launch strategy services help you bring your MVP to market effectively. We develop a comprehensive plan that maximizes visibility, adoption, and sets the foundation for sustainable growth.",
+      title: "Boutique Launch Strategy",
+      subtitle: "Personalized Deployment",
+      heading: "Strategic Product Launch with Senior Guidance",
+      description: "Our specialized team provides personalized launch strategy services to bring your MVP to market effectively. With direct access to our senior strategists, we develop a comprehensive plan that maximizes visibility and adoption without the overhead costs and bureaucracy of larger agencies.",
       image: "/images/site-images/rob_thomas23_African_American_People_working_in_big_modern_of_848a2004-ac77-47fe-9d58-52c599a75e0a_2.png"
     }
   ];

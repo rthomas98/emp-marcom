@@ -14,9 +14,7 @@ export function EngineeringTestimonial() {
             ))}
           </div>
           <blockquote className="text-xl font-bold text-[#1F1946] md:text-2xl">
-            "Empuls3 transformed our operations with their innovative solutions.
-            Their expertise in software engineering and IT consulting was
-            invaluable to our success."
+            "Working with Empuls3's boutique team was a game-changer for our business. The direct access to their senior specialists and personalized attention made all the difference. Their micro agency approach delivered faster implementation and more tailored solutions than we ever experienced with larger firms."
           </blockquote>
           <div className="mt-6 flex w-full flex-col items-center justify-center gap-3 text-center md:mt-8 md:w-auto md:flex-row md:gap-5 md:text-left">
             <div>
@@ -28,7 +26,7 @@ export function EngineeringTestimonial() {
             </div>
             <div className="mb-4 md:mb-0">
               <p className="font-bold text-[#1F1946]">Sarah Johnson</p>
-              <p className="text-gray-700">CTO, TechInnovate</p>
+              <p className="text-gray-700">CTO, TechInnovate Solutions</p>
             </div>
             <div className="hidden w-px self-stretch bg-gray-300 md:block" />
             <div>

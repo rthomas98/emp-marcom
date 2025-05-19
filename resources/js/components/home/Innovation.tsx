@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 export function Innovation() {
   return (
     <section id="innovation" className="relative px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="innovation-heading">
-      <div className="relative z-10 container">
+      <div className="relative z-10 container mx-auto">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-white md:mb-4">

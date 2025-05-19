@@ -5,19 +5,16 @@ import { ChevronRight } from "lucide-react";
 export function Services() {
   return (
     <section id="services" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-accent-pink md:mb-4">
             Outstanding performance in all endeavors.
           </p>
           <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Your Trusted Technology Partner for Innovative Solutions
+            Boutique Expertise, Enterprise-Level Results
           </h2>
           <p className="text-gray-700 md:text-lg">
-            Empowering businesses to thrive by leveraging our comprehensive
-            full-stack expertise, we provide tailored solutions that drive
-            innovation, enhance efficiency, and foster growth in today's
-            competitive market landscape.
+            As a specialized micro agency, we combine deep technical expertise with personalized attention that larger firms can't match. Our nimble team delivers tailored solutions that drive innovation, enhance efficiency, and foster growth—without the overhead and complexity of traditional agencies.
           </p>
         </div>
         <div className="grid auto-cols-fr gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
@@ -80,12 +77,12 @@ export function Services() {
               </div>
             </div>
           </div>
-          <div className="flex auto-cols-fr flex-col rounded-lg border border-gray-200 bg-white shadow-sm sm:col-span-2 sm:grid-cols-2 lg:col-span-1 lg:col-start-3 lg:row-span-2">
+          <div className="flex auto-cols-fr flex-col rounded-lg border border-gray-200 bg-white sm:col-span-2 sm:grid-cols-2 lg:col-span-1 lg:col-start-3 lg:row-span-2">
             <div className="flex size-full flex-col items-center justify-center self-start bg-gray-100 p-4 lg:h-auto">
               <img
                 src="/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_2d8255b5-eb2b-4d1c-b57d-58077e6d9d44.png"
                 alt="Team presenting digital transformation strategy"
-                className="h-full w-full object-cover rounded-md"
+                className="h-full w-full object-cover rounded-md border border-gray-200"
               />
             </div>
             <div className="block flex-1 p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
@@ -110,12 +107,12 @@ export function Services() {
               </div>
             </div>
           </div>
-          <div className="flex auto-cols-fr flex-col rounded-lg border border-gray-200 bg-white shadow-sm last-of-type:row-span-1 last-of-type:grid sm:col-span-2 sm:grid-cols-2 sm:last-of-type:row-start-2 md:last-of-type:col-span-2 lg:col-span-2 lg:col-start-1 lg:row-span-1">
+          <div className="flex auto-cols-fr flex-col rounded-lg border border-gray-200 bg-white last-of-type:row-span-1 last-of-type:grid sm:col-span-2 sm:grid-cols-2 sm:last-of-type:row-start-2 md:last-of-type:col-span-2 lg:col-span-2 lg:col-start-1 lg:row-span-1">
             <div className="flex size-full flex-col items-center justify-center self-start bg-gray-100 p-4 lg:h-auto">
               <img
                 src="/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_1e9c41b2-97f0-453f-a3ac-3d7547b2c689_3.png"
                 alt="Diverse team working on enterprise solutions"
-                className="h-full w-full object-cover rounded-md"
+                className="h-full w-full object-cover rounded-md border border-gray-200"
               />
             </div>
             <div className="block flex-1 p-6 sm:flex sm:flex-col sm:justify-center md:p-8">

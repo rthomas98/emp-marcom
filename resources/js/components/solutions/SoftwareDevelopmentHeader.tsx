@@ -10,14 +10,10 @@ export function SoftwareDevelopmentHeader() {
           <div className="grid auto-cols-fr grid-cols-1 lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 md:p-12">
               <h1 id="software-development-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-                Transform Your Vision into Software Reality
+                Boutique Software Development with Direct Senior Access
               </h1>
               <p className="text-gray-700 md:text-lg">
-                At Empuls3, we specialize in delivering end-to-end software
-                development and design solutions tailored to your unique needs.
-                Our expert team combines innovative design with robust
-                architecture to create seamless experiences for both front-end and
-                back-end.
+                As a specialized micro agency, Empuls3 delivers personalized software development with direct access to our senior developers. We transform your vision into reality through collaborative partnerships that larger firms simply can't offer, combining innovative design with robust architecture for both front-end and back-end excellence.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
                 <Link

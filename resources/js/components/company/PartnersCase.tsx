@@ -19,7 +19,7 @@ export function PartnersCase() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8">
           <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
-            <div className="order-first flex flex-col items-stretch overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm lg:order-none lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3">
+            <div className="order-first flex flex-col items-stretch overflow-hidden rounded-lg border border-gray-200 bg-white lg:order-none lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3">
               <div>
                 <img
                   src="/images/site-images/rob_thomas23_A_African_American_team_of_professionals_collabora_71aec2e9-67b0-4fb7-8f24-58f13c1e9800.png"
@@ -57,7 +57,7 @@ export function PartnersCase() {
                 </div>
               </div>
             </div>
-            <div className="order-last flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm md:grid md:grid-cols-2 lg:order-none">
+            <div className="order-last flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white md:grid md:grid-cols-2 lg:order-none">
               <div className="flex w-full items-center justify-center">
                 <img
                   src="/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_ab0a8b19-f943-4281-95fe-a3acda2eb6c8_0.png"
@@ -87,7 +87,7 @@ export function PartnersCase() {
                 </div>
               </div>
             </div>
-            <div className="order-last flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm md:grid md:grid-cols-2 lg:order-none">
+            <div className="order-last flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white md:grid md:grid-cols-2 lg:order-none">
               <div className="flex w-full items-center justify-center">
                 <img
                   src="/images/site-images/rob_thomas23_An_African_American_team_leader_shaking_hands_with_6cd791fa-9847-44b3-be94-fd439a747f57.png"

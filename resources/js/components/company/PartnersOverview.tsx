@@ -10,32 +10,28 @@ export function PartnersOverview() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Partners</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Agency Alliances</p>
             <h1 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Empuls3: Elevating Solutions Through Strategic Partnerships
+              Enhancing Our Micro Agency Advantage
             </h1>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              At Empuls3, our partnerships are pivotal in delivering
-              comprehensive technology solutions. By collaborating with industry
-              leaders, we enhance our offerings and drive innovation.
+              As a specialized micro agency founded in 2009 by Robert Thomas, our strategic partnerships enhance our ability to deliver personalized technology solutions. By collaborating with industry leaders while maintaining our boutique approach, we provide direct access to senior specialists combined with expanded capabilities—all without the overhead of larger firms.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Collaborative Success
+                  Boutique Collaboration
                 </h6>
                 <p className="text-gray-700">
-                  Together, we tackle complex challenges and create exceptional
-                  value for our clients.
+                  Our micro agency approach ensures you work directly with senior specialists who collaborate with our partners to tackle complex challenges with faster implementation times than larger firms can offer.
                 </p>
               </div>
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Innovative Solutions
+                  Personalized Innovation
                 </h6>
                 <p className="text-gray-700">
-                  Our partners empower us to integrate cutting-edge technologies
-                  and best practices seamlessly.
+                  Our strategic partnerships enhance our boutique capabilities, allowing our senior specialists to integrate cutting-edge technologies while maintaining the personalized attention that only a micro agency can provide.
                 </p>
               </div>
             </div>

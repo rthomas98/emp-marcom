@@ -11,7 +11,11 @@ import { Head } from '@inertiajs/react';
 export default function FrontendDevelopmentUxUiDesign() {
   return (
     <SiteLayout>
-      <Head title="Front-End Development & UX/UI Design - Empuls3" />
+      <Head>
+        <title>Boutique Front-End Development & UX/UI Design - Empuls3</title>
+        <meta name="description" content="Experience personalized front-end development and UX/UI design from our boutique micro agency. Direct collaboration with senior designers for engaging interfaces without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique UX/UI design, front-end development, senior designers, personalized design services, responsive interfaces" />
+      </Head>
       <FrontendHeader />
       <FrontendSolutions />
       <FrontendFeatures />

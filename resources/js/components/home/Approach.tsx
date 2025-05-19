@@ -6,7 +6,7 @@ export function Approach() {
   return (
     <section id="approach" className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="approach-heading">
       <h2 id="approach-heading" className="sr-only">Our Approach</h2>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:gap-16">
           <div>
             <div className="mb-6 md:mb-8">

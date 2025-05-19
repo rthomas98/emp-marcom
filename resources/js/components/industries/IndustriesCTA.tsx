@@ -7,12 +7,14 @@ export function IndustriesCTA() {
   return (
     <section id="industries-cta" className="relative px-[5%] py-16 md:py-24 lg:py-28">
       <div className="relative z-10 container mx-auto max-w-lg text-center">
+        <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+          Boutique Industry Solutions
+        </p>
         <h2 className="mb-5 text-4xl font-bold text-white md:mb-6 md:text-5xl lg:text-6xl">
-          Explore Our Industry Solutions
+          Experience the Micro Agency Advantage
         </h2>
         <p className="text-white md:text-md">
-          Discover tailored technology solutions designed for your industry's
-          unique challenges and opportunities.
+          Contact us today for direct access to our senior specialists who provide truly personalized technology solutions for your industry's unique challenges. Unlike larger firms, our boutique team delivers faster implementation times, more dedicated attention, and custom strategies—without the overhead of traditional agencies.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
           <Link

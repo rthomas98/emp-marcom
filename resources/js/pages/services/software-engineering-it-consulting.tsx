@@ -14,7 +14,11 @@ import { Head } from '@inertiajs/react';
 export default function SoftwareEngineeringItConsulting() {
   return (
     <SiteLayout>
-      <Head title="Software Engineering & IT Consulting - Empuls3" />
+      <Head>
+        <title>Boutique Software Engineering & IT Consulting - Empuls3</title>
+        <meta name="description" content="Experience personalized software engineering and IT consulting from our boutique micro agency. Direct collaboration with senior specialists for tailored solutions without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique software engineering, IT consulting, senior specialists, personalized development, direct collaboration, software architecture" />
+      </Head>
       <EngineeringHeader />
       <EngineeringStrategies />
       <EngineeringArchitecture />

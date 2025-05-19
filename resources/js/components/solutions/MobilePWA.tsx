@@ -9,17 +9,15 @@ export function MobilePWA() {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-white md:mb-4">
-              Innovate for a brighter, more creative future today.
+              Boutique PWA Development
             </p>
             <h2 className="text-4xl font-bold font-header text-white md:text-5xl lg:text-6xl">
-              Seamless Mobile Experiences Across All Platforms
+              Personalized Progressive Web Apps with Senior Expertise
             </h2>
           </div>
           <div>
             <p className="mb-6 text-white/90 md:mb-8 md:text-lg">
-              Progressive Web Apps (PWAs) merge the best features of web and
-              mobile applications. They deliver fast, reliable, and engaging
-              user experiences on any device.
+              As a specialized micro agency, we deliver Progressive Web Apps with direct access to our senior developers. Our boutique team merges the best features of web and mobile applications to create fast, reliable, and engaging user experiences on any device—with the personalized attention and faster implementation that larger firms simply can't match.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2 sm:gap-y-8">
               <div>
@@ -27,8 +25,7 @@ export function MobilePWA() {
                   Enhanced Performance
                 </h3>
                 <p className="text-white/90">
-                  PWAs load quickly, ensuring users stay engaged regardless of
-                  their internet connection.
+                  Our senior developers build PWAs that load quickly and perform exceptionally well, ensuring users stay engaged regardless of their internet connection—all with the focused attention of our boutique team.
                 </p>
               </div>
               <div>
@@ -36,8 +33,7 @@ export function MobilePWA() {
                   Cross-Platform Compatibility
                 </h3>
                 <p className="text-white/90">
-                  Connect with users seamlessly on any device, eliminating the
-                  need for separate apps.
+                  Experience the micro agency advantage with PWAs that connect with users seamlessly across all devices, eliminating the need for separate apps while maintaining the personalized approach that only a boutique team can provide.
                 </p>
               </div>
             </div>

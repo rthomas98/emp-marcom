@@ -24,8 +24,8 @@ const imageColumns = [
 ];
 
 export function CompanyHeader({
-  heading = "Empowering Businesses Through Technology",
-  description = "At Empuls3, we're dedicated to providing innovative technology solutions that help businesses thrive in today's digital landscape. Our team of experts is committed to delivering exceptional service and results.",
+  heading = "The Micro Agency Advantage",
+  description = "Founded in 2009 by Robert Thomas, Empuls3 is a specialized micro agency providing personalized technology solutions with direct access to senior specialists. Unlike larger firms, our boutique team delivers faster implementation times and more dedicated attention without the overhead of traditional agencies.",
   imagesPartOne = defaultImagesPartOne,
   imagesPartTwo = defaultImagesPartTwo,
 }: Partial<Props>) {

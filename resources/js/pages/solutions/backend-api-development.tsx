@@ -10,7 +10,11 @@ import { Head } from '@inertiajs/react';
 export default function BackendApiDevelopment() {
   return (
     <SiteLayout>
-      <Head title="Back-End & API Development - Empuls3" />
+      <Head>
+        <title>Boutique Back-End & API Development - Empuls3</title>
+        <meta name="description" content="Experience specialized back-end and API development from our boutique micro agency. Direct collaboration with senior developers for scalable solutions without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique backend development, API integration, senior developers, database management, personalized development services" />
+      </Head>
       <BackendAPIHeader />
       <BackendSolutions />
       <DatabaseManagement />

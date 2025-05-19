@@ -70,9 +70,9 @@ export function FAQsHeader(props: FAQsHeaderProps) {
 }
 
 export const FAQsHeaderDefaults: Props = {
-  heading: "Frequently Asked Questions",
+  heading: "Boutique Agency FAQs",
   description:
-    "Find answers to common questions about our services, partnerships, and solutions. If you can't find what you're looking for, our team is always ready to help.",
+    "Find answers to common questions about our specialized micro agency founded in 2009 by Robert Thomas. Learn about our personalized approach, direct access to senior specialists, and how we deliver faster implementation times than larger firms can offer—all without the overhead of traditional agencies.",
   links: [
     { href: "#faq-categories", title: "Browse FAQs", variant: "primary" }, 
     { href: "/contact", title: "Contact Us", variant: "secondary" }

@@ -17,32 +17,28 @@ export function IndustriesManufacturing() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Manufacturing</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Manufacturing Solutions</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Transforming Manufacturing with Innovative Solutions
+              Personalized Manufacturing Technology with Senior Expertise
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              Empuls3 offers advanced technology solutions tailored for the
-              manufacturing sector. Our expertise helps optimize production
-              processes and enhance supply chain management.
+              As a specialized micro agency, Empuls3 offers truly personalized technology solutions for the manufacturing sector. Unlike larger firms where your project might be handed off to junior staff, our boutique team of senior specialists works directly with you to optimize production processes and enhance supply chain management—with faster implementation times and more dedicated attention than larger firms can provide.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Efficiency Boost
+                  Direct Access to Senior Specialists
                 </h6>
                 <p className="text-gray-700">
-                  Streamline operations and reduce costs with our tailored
-                  manufacturing solutions.
+                  Work directly with our senior specialists to streamline operations and reduce costs with personalized manufacturing solutions—delivering better results with faster implementation times than larger firms can offer.
                 </p>
               </div>
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Smart Integration
+                  The Micro Agency Advantage
                 </h6>
                 <p className="text-gray-700">
-                  Leverage cutting-edge technology for seamless integration
-                  across your production lines.
+                  Experience the micro agency advantage as you leverage cutting-edge technology for seamless integration across your production lines—with the personalized attention and faster response times that only a boutique firm can provide.
                 </p>
               </div>
             </div>

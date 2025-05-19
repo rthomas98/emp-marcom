@@ -10,9 +10,9 @@ export function HubspotFeatures() {
         <div className="flex flex-col">
           <div className="mb-12 md:mb-18 lg:mb-20">
             <div className="w-full max-w-3xl">
+              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">The Micro Agency Advantage</p>
               <h2 className="text-4xl leading-[1.2] font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
-                Custom HubSpot Solutions: Tailored Configurations for Your
-                Unique Business Needs
+                Boutique HubSpot Solutions with Senior Expertise
               </h2>
             </div>
           </div>
@@ -23,11 +23,10 @@ export function HubspotFeatures() {
               </div>
               <div>
                 <h3 className="mb-3 text-xl font-bold text-[#1F1946] md:mb-4 md:text-2xl">
-                  Optimize Your Processes with HubSpot Integrations
+                  Direct Access to Senior HubSpot Specialists
                 </h3>
                 <p className="text-gray-700">
-                  Our custom HubSpot solutions are designed to enhance your CRM
-                  experience and drive growth.
+                  As a boutique micro agency, we provide direct access to senior HubSpot specialists who work closely with you to enhance your CRM experience and drive growth—without the layers of management found at larger firms.
                 </p>
               </div>
             </div>
@@ -37,11 +36,10 @@ export function HubspotFeatures() {
               </div>
               <div>
                 <h3 className="mb-3 text-xl font-bold text-[#1F1946] md:mb-4 md:text-2xl">
-                  Boost Efficiency with Custom HubSpot Solutions
+                  Faster Implementation & Personalized Attention
                 </h3>
                 <p className="text-gray-700">
-                  Leverage our expertise to automate your workflows and improve
-                  customer engagement.
+                  Our boutique team delivers faster implementation times with more personalized attention, automating your workflows and improving customer engagement without the overhead of larger agencies.
                 </p>
               </div>
             </div>
@@ -51,11 +49,10 @@ export function HubspotFeatures() {
               </div>
               <div>
                 <h3 className="mb-3 text-xl font-bold text-[#1F1946] md:mb-4 md:text-2xl">
-                  Maximize HubSpot with Custom Solutions
+                  Tailored Solutions for Your Specific Needs
                 </h3>
                 <p className="text-gray-700">
-                  Our team crafts personalized HubSpot solutions that align with
-                  your business objectives.
+                  Our specialized micro agency crafts truly personalized HubSpot solutions that precisely align with your unique business objectives—with the focused attention and customization that only a boutique team can provide.
                 </p>
               </div>
             </div>

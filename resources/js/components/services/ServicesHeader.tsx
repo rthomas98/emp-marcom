@@ -9,15 +9,12 @@ export function ServicesHeader() {
       <div className="container mx-auto">
         <div className="ml-[5%]">
           <div className="mb-12 w-full max-w-5xl md:mb-18 lg:mb-20">
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Professional Services</p>
             <h1 className="mb-5 text-6xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-              Comprehensive Professional Services for Implementation,
-              Optimization, and Ongoing Support
+              Personalized Services with Senior Expertise
             </h1>
             <p className="text-gray-700 md:text-md">
-              Empuls3 provides customized solutions specifically designed to
-              improve your business operations while fostering sustainable
-              growth and success. Let us help you achieve your goals efficiently
-              and effectively.
+              As a specialized micro agency, Empuls3 provides truly personalized solutions with direct access to our senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to improve your business operations and foster sustainable growth—with the dedicated attention and faster implementation that larger firms simply can't match.
             </p>
             <div className="mt-6 flex gap-x-4 md:mt-8">
               <Link 

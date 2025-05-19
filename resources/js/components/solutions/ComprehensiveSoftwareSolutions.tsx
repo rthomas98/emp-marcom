@@ -8,16 +8,14 @@ export function ComprehensiveSoftwareSolutions() {
       <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-lg text-center">
-            <p className="mb-3 font-semibold text-gray-700 md:mb-4">
-              Innovate and embrace change for a better future.
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">
+              Micro Agency, Major Impact
             </p>
             <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Comprehensive Software Solutions
+              Boutique Development with Direct Senior Access
             </h2>
             <p className="text-gray-700 md:text-lg">
-              We specialize in turning your innovative ideas into powerful and
-              reliable software applications that meet your needs and exceed
-              your expectations, ensuring a seamless user experience every time.
+              As a specialized micro agency, we transform your innovative ideas into powerful software solutions with the personal attention that larger firms simply can't match. Our senior developers work directly with you throughout your project, ensuring exceptional quality and a truly collaborative experience.
             </p>
           </div>
         </div>
@@ -30,12 +28,10 @@ export function ComprehensiveSoftwareSolutions() {
                 </div>
               </div>
               <h3 className="mb-5 text-3xl leading-[1.2] font-bold text-primary md:mb-6 md:text-4xl lg:text-5xl">
-                Full-Stack Development Expertise
+                Senior Full-Stack Developers
               </h3>
               <p className="text-gray-700">
-                Achieve optimal performance through the seamless integration of
-                both front-end and back-end technologies, ensuring a smooth and
-                efficient user experience across your website.
+                Unlike larger agencies where you rarely interact with senior developers, our boutique team gives you direct access to experienced full-stack engineers who seamlessly integrate front-end and back-end technologies for optimal performance and efficiency.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
@@ -62,12 +58,10 @@ export function ComprehensiveSoftwareSolutions() {
                 </div>
               </div>
               <h3 className="mb-5 text-3xl leading-[1.2] font-bold text-primary md:mb-6 md:text-4xl lg:text-5xl">
-                Tailored Development Services
+                Personalized Micro Agency Approach
               </h3>
               <p className="text-gray-700">
-                Tailored solutions specifically crafted to address and fulfill
-                the unique requirements of your business, ensuring that you
-                receive the utmost value and effectiveness in every aspect.
+                Experience the advantage of working with a boutique agency where your project receives undivided attention from senior developers. We craft solutions specifically tailored to your unique business requirements without the overhead costs and bureaucracy of larger firms.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">

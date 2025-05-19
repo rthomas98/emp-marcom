@@ -10,14 +10,12 @@ export function HubspotOverview() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Integrate</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">The Micro Agency Advantage</p>
             <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-              Streamline Your CRM with HubSpot Solutions
+              Boutique HubSpot Integration with Senior Expertise
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              Enhance your customer relationship management with seamless
-              HubSpot integrations. Our custom solutions ensure a unified view
-              of your customer data.
+              As a specialized micro agency, we enhance your customer relationship management with personalized HubSpot integrations. Unlike larger firms where your project might be handed off to junior staff, our senior specialists work directly with you to ensure a unified view of your customer data with faster implementation and more dedicated attention.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -25,8 +23,7 @@ export function HubspotOverview() {
                   Unified View
                 </h6>
                 <p className="text-gray-700">
-                  Connect HubSpot with your systems for better insights and
-                  customer engagement.
+                  Our boutique team connects HubSpot with your existing systems for better insights and customer engagement, with the personalized attention that only a micro agency can provide.
                 </p>
               </div>
               <div>
@@ -34,8 +31,7 @@ export function HubspotOverview() {
                   Automation Tools
                 </h6>
                 <p className="text-gray-700">
-                  Automate workflows to save time and improve efficiency across
-                  your organization.
+                  Work directly with our senior specialists to automate workflows, saving time and improving efficiency across your organization without the overhead of larger agencies.
                 </p>
               </div>
             </div>

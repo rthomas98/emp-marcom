@@ -23,8 +23,8 @@ export function IndustriesFAQ() {
   const faqItems: FAQItem[] = [
     {
       id: "item-0",
-      question: "What industries do you serve?",
-      answer: "We provide tailored technology solutions across various industries including healthcare, finance, e-commerce, manufacturing, education, and startups. Our deep understanding of sector-specific challenges enables us to deliver effective results. Whether you're a startup or a global leader, we have the expertise to support your needs."
+      question: "What industries do you serve as a micro agency?",
+      answer: "As a specialized micro agency, we provide truly personalized technology solutions across various industries including healthcare, finance, e-commerce, manufacturing, education, and startups. Unlike larger firms where your project might be handed off to junior staff, our boutique team of senior specialists works directly with you—ensuring our deep understanding of sector-specific challenges enables us to deliver more effective results with faster implementation times and more dedicated attention than larger firms can provide."
     },
     {
       id: "item-1",
@@ -52,12 +52,14 @@ export function IndustriesFAQ() {
     <section id="industries-faq" className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto max-w-lg">
         <div className="mb-12 text-center md:mb-18 lg:mb-20">
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+            Boutique Agency FAQs
+          </p>
           <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-            FAQs
+            Common Questions
           </h2>
           <p className="text-gray-700 md:text-md">
-            Find answers to common questions about our industry-specific
-            technology solutions and services.
+            Find answers to common questions about our boutique agency approach and personalized industry-specific technology solutions.
           </p>
         </div>
         <div className="flex flex-col space-y-2">

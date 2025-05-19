@@ -9,13 +9,10 @@ export function BackendAPIHeader() {
     >
       <div className="mx-[5%] sm:max-w-md md:justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
         <h1 className="mb-5 text-5xl font-bold font-header text-primary md:mb-6 md:text-6xl lg:text-7xl">
-          Transform Your Business with Back-End Solutions
+          Boutique Back-End Development with Senior Expertise
         </h1>
         <p className="text-gray-700 md:text-lg">
-          Our Back-End & API Development services focus on creating scalable
-          server-side logic and seamless database management. We ensure robust
-          API integrations that empower your custom applications to perform at
-          their best.
+          As a specialized micro agency, we deliver personalized back-end and API development with direct access to our senior developers. Our boutique approach creates scalable server-side logic and seamless database management without the overhead of larger firms, ensuring robust API integrations that empower your applications with faster turnaround times.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
           <Link

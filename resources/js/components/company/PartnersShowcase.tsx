@@ -19,7 +19,7 @@ export function PartnersShowcase() {
         
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
           {partners.map((partner, index) => (
-            <div key={index} className="flex flex-col rounded-lg border border-gray-200 bg-white p-6 transition duration-300 hover:shadow-md">
+            <div key={index} className="flex flex-col rounded-lg border border-gray-200 bg-white p-6 transition duration-300">
               <div className="mb-6 flex h-16 items-center">
                 <div className="h-12 w-full">
                   <div className="flex h-full items-center justify-center rounded-md bg-gray-100 px-4">

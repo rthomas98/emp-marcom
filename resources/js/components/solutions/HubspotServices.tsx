@@ -11,14 +11,12 @@ export function HubspotServices() {
         <div className="flex flex-col items-center">
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
             <div className="w-full max-w-3xl">
-              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Integrate</p>
+              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique HubSpot Services</p>
               <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-                Seamless HubSpot CRM Integration Solutions
+                Personalized HubSpot Solutions with Senior Expertise
               </h2>
               <p className="text-gray-700 md:text-md">
-                Transform your customer relationship management with our
-                tailored HubSpot solutions. We specialize in seamless
-                integrations and automation to enhance your business efficiency.
+                As a specialized micro agency, we transform your customer relationship management with personalized HubSpot solutions. Our senior specialists work directly with you to create seamless integrations and automation that enhance your business efficiency—with the dedicated attention and faster implementation that larger firms simply can't match.
               </p>
             </div>
           </div>
@@ -32,12 +30,10 @@ export function HubspotServices() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Secure Data Migration to HubSpot
+                Boutique Data Migration Services
               </h3>
               <p className="text-gray-700">
-                Discover seamless and reliable data migration services to
-                HubSpot, ensuring your information is both secure and accurate
-                throughout the process.
+                Work directly with our senior HubSpot specialists for seamless and reliable data migration services, ensuring your information is both secure and accurate throughout the process—with the personalized attention that only a micro agency can provide.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -49,11 +45,10 @@ export function HubspotServices() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Tailored HubSpot Solutions for You
+                Personalized HubSpot Implementation
               </h3>
               <p className="text-gray-700">
-                Our tailored solutions are specifically crafted to address your
-                individual and unique requirements effectively.
+                As a boutique micro agency, our solutions are specifically crafted to address your individual requirements with direct access to senior specialists and faster turnaround times than larger firms can offer.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -65,11 +60,10 @@ export function HubspotServices() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Automate Your Marketing with HubSpot
+                Boutique Marketing Automation
               </h3>
               <p className="text-gray-700">
-                Utilize automation tools to enhance and streamline your
-                marketing strategies for improved efficiency and effectiveness.
+                Our senior specialists work directly with you to implement automation tools that enhance and streamline your marketing strategies—delivering improved efficiency and effectiveness with the personalized attention only a micro agency can provide.
               </p>
             </div>
           </div>

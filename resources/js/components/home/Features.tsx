@@ -49,14 +49,14 @@ export const Features = (props: FeaturesProps) => {
   return (
     <section id="features" className="px-[5%]" aria-labelledby="features-heading">
       <h2 id="features-heading" className="sr-only">Our Features</h2>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="relative grid gap-x-12 py-16 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20">
           <div className="sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center">
             {images.map((image, index) => (
               <img
                 key={index}
                 src={image.src}
-                className={clsx("absolute w-full rounded-lg transition-opacity duration-500", {
+                className={clsx("absolute w-full rounded-lg border border-gray-200 transition-opacity duration-500", {
                   "opacity-100": activeSection === index,
                   "opacity-0": activeSection !== index,
                 })}
@@ -133,9 +133,9 @@ export const FeaturesDefaults: Props = {
   contents: [
     {
       tagline: "Custom Software Development",
-      heading: "Tailored Solutions for Your Unique Business Needs",
+      heading: "Tailored Solutions for Your Unique Challenges",
       description:
-        "We build custom software applications that solve your specific business challenges. Our development team works closely with you to understand your requirements and deliver scalable, maintainable solutions that drive growth and efficiency.",
+        "We build custom software applications that solve your specific business challenges. Our development team works closely with you to understand your requirements and deliver scalable, maintainable solutions that drive growth and efficiency. Our boutique team approach ensures direct access to senior developers throughout your project.",
       buttons: [
         { title: "Learn More", href: "/solutions/software-development-design", variant: "secondary" },
         { title: "View Case Studies", href: "/case-studies", variant: "link" },
@@ -149,7 +149,7 @@ export const FeaturesDefaults: Props = {
       tagline: "Web & E-commerce Development",
       heading: "Powerful Online Experiences That Convert",
       description:
-        "From responsive websites to full-featured e-commerce platforms, we create web experiences that engage your audience and drive conversions. Our solutions are built with performance, security, and scalability in mind.",
+        "From responsive websites to full-featured e-commerce platforms, we create web experiences that engage your audience and drive conversions. Our solutions are built with performance, security, and scalability in mind. As a micro agency, we deliver personalized e-commerce experiences with faster turnaround and more attentive service.",
       buttons: [
         { title: "Explore Services", href: "/solutions/web-ecommerce-development", variant: "secondary" },
         { title: "Contact Us", href: "/contact", variant: "link" },
@@ -163,7 +163,7 @@ export const FeaturesDefaults: Props = {
       tagline: "API & Backend Development",
       heading: "Robust Infrastructure for Modern Applications",
       description:
-        "We design and build powerful backend systems and APIs that form the foundation of your digital products. Our solutions ensure seamless data flow, system integration, and optimal performance for your applications.",
+        "We design and build powerful backend systems and APIs that form the foundation of your digital products. Our solutions ensure seamless data flow, system integration, and optimal performance for your applications. Our specialized team brings focused expertise to your infrastructure needs without the overhead of larger firms.",
       buttons: [
         { title: "View Solutions", href: "/solutions/backend-api-development", variant: "secondary" },
         { title: "See Our Process", href: "/company/about", variant: "link" },
@@ -177,7 +177,7 @@ export const FeaturesDefaults: Props = {
       tagline: "UX/UI Design & Front-End Development",
       heading: "Beautiful Interfaces That Users Love",
       description:
-        "We create intuitive, engaging user experiences and translate them into pixel-perfect front-end implementations. Our design-led approach ensures your applications are not just functional but delightful to use.",
+        "We create intuitive, engaging user experiences and translate them into pixel-perfect front-end implementations. Our design-led approach ensures your applications are not just functional but delightful to use. Experience the advantage of working directly with our senior designers from concept to completion.",
       buttons: [
         { title: "See Our Work", href: "/solutions/frontend-development-uxui-design", variant: "secondary" },
         { title: "Start Your Project", href: "/contact", variant: "link" },

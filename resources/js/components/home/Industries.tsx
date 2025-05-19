@@ -9,7 +9,7 @@ export function Industries() {
       className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 bg-primary text-white"
       aria-labelledby="industries-heading"
     >
-      <div className="container">
+      <div className="container mx-auto">
         <div className="mb-12 max-w-lg md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-accent-yellow md:mb-4">
             Understanding and awareness bring clarity and depth.

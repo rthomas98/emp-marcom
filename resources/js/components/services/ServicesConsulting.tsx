@@ -13,14 +13,12 @@ export function ServicesConsulting() {
             <div className="mb-5 md:mb-6">
               <Lightbulb className="h-16 w-16 text-[#BD1550]" />
             </div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique IT Consulting</p>
             <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Navigate Your Technology Challenges with Confidence
+              Personalized Technology Guidance with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-md">
-              Our IT Consulting Services provide expert guidance to help you
-              tackle complex technology challenges. With a deep understanding of
-              industry-specific needs, we empower your business to leverage
-              technology for optimal growth and efficiency.
+              As a specialized micro agency, our IT Consulting Services provide personalized guidance with direct access to senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to tackle complex technology challenges—with a deep understanding of your specific needs and the dedicated attention that larger firms simply can't match.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link 

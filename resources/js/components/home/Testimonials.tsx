@@ -122,7 +122,7 @@ export function Testimonials() {
 
   return (
     <section id="testimonials" className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="testimonials-heading">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <h2 id="testimonials-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
             Client Testimonials

@@ -8,20 +8,16 @@ export function EcommercePlatforms() {
       <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-white/80 md:mb-4">
-              E-commerce: The Future of Online Shopping and Sales
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+              Boutique E-commerce Development
             </p>
             <h3 className="font-header text-4xl font-bold leading-[1.2] text-white md:text-5xl lg:text-6xl">
-              Elevate Your Online Store Experience Today
+              Personalized E-commerce Solutions with Senior Expertise
             </h3>
           </div>
           <div>
             <p className="text-white/90 md:text-lg">
-              Our e-commerce platforms offer comprehensive solutions tailored to
-              your business needs. From seamless payment gateways to robust
-              inventory management, we ensure a smooth user experience that
-              drives sales. Let us help you create an online store that not only
-              attracts customers but also keeps them coming back.
+              As a boutique micro agency, we deliver e-commerce solutions with direct access to our senior developers throughout your entire project. Unlike larger agencies, our specialized team provides personalized attention to every detail—from seamless payment gateways to robust inventory management—ensuring a smooth user experience that drives sales without the overhead costs and communication barriers of traditional firms.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link

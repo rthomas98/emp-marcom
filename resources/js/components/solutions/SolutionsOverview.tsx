@@ -8,16 +8,13 @@ export function SolutionsOverview() {
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 font-semibold text-accent-pink md:mb-4">
-              Nurture Innovative Solutions
+              The Micro Agency Advantage
             </p>
             <h2 id="solutions-overview-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Comprehensive Development Solutions
+              Specialized Solutions, Exceptional Results
             </h2>
             <p className="text-gray-700 md:text-lg">
-              We specialize in transforming innovative ideas into powerful
-              software solutions by leveraging our extensive expertise and
-              experience in the industry. Our commitment to quality ensures that
-              we deliver reliable and effective results for your unique needs.
+              As a boutique micro agency, we transform innovative ideas into powerful software solutions with a level of personal attention that's impossible at larger firms. Our senior developers work directly with you from day one, ensuring your project benefits from our specialized expertise without layers of management or unnecessary complexity.
             </p>
           </div>
         </div>
@@ -31,8 +28,7 @@ export function SolutionsOverview() {
                     End-to-End Software Development
                   </h3>
                   <p className="text-gray-700">
-                    Personalized solutions designed specifically to meet your
-                    business needs, from concept to deployment and beyond.
+                    Our boutique team delivers personalized solutions with direct access to senior developers throughout your project, from concept to deployment and beyond.
                   </p>
                   <Link 
                     href="/solutions/software-development-design" 
@@ -59,7 +55,7 @@ export function SolutionsOverview() {
                     User-Centered Design
                   </h3>
                   <p className="text-gray-700">
-                    Designing intuitive interfaces that enhance user experiences and drive engagement.
+                    Experience the advantage of working directly with our senior designers to create intuitive interfaces that enhance user experiences and drive engagement.
                   </p>
                   <Link 
                     href="/solutions/frontend-development-uxui-design" 
@@ -86,7 +82,7 @@ export function SolutionsOverview() {
                     API & System Integration
                   </h3>
                   <p className="text-gray-700">
-                    Seamlessly connect your systems and applications for improved efficiency and data flow.
+                    Our specialized team brings focused expertise to seamlessly connect your systems and applications, delivering enterprise-quality integration without the overhead of larger firms.
                   </p>
                   <Link 
                     href="/solutions/backend-api-development" 

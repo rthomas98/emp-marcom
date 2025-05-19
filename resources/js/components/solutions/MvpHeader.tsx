@@ -7,11 +7,14 @@ export function MvpHeader() {
       <div className="container mx-auto relative">
         <div className="relative z-10 flex min-h-[32rem] flex-col items-start justify-center p-8 md:min-h-[40rem] md:p-16">
           <div className="w-full max-w-md">
+            <p className="mb-3 font-semibold text-white md:mb-4">
+              Boutique MVP Development
+            </p>
             <h1 className="mb-5 text-4xl font-bold font-header text-white md:mb-6 md:text-5xl lg:text-6xl">
-              Transforming Ideas into Successful Products
+              Personalized MVP Solutions with Senior Expertise
             </h1>
             <p className="text-white md:text-lg">
-              From concept to launch, our MVP and product development services help startups and enterprises validate ideas quickly and build scalable solutions that drive business growth.
+              As a specialized micro agency, we deliver personalized MVP and product development with direct access to our senior developers. From concept to launch, our boutique team helps startups and enterprises validate ideas faster and build scalable solutions with the focused attention and quicker turnaround that larger firms simply can't match.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">

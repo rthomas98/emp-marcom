@@ -12,7 +12,11 @@ import { Head } from '@inertiajs/react';
 export default function ApplicationDevopsServices() {
   return (
     <SiteLayout>
-      <Head title="Application & DevOps Services - Empuls3" />
+      <Head>
+        <title>Boutique Application & DevOps Services - Empuls3</title>
+        <meta name="description" content="Experience personalized application and DevOps services from our boutique micro agency. Direct collaboration with senior specialists for streamlined CI/CD pipelines without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique DevOps, application services, senior DevOps specialists, personalized CI/CD, cloud infrastructure, containerization" />
+      </Head>
       <AppDevOpsHeader />
       <AppDevOpsOverview />
       <AppDevOpsPipeline />

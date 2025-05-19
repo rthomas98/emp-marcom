@@ -9,13 +9,14 @@ export function IndustriesHeader() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+              Boutique Industry Solutions
+            </p>
             <h1 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-              Industry-Specific Technology Solutions
+              Personalized Industry Solutions with Senior Expertise
             </h1>
             <p className="text-gray-700 md:text-md">
-              Empuls3 delivers tailored technology solutions designed for the unique challenges of your industry. 
-              Our expertise spans multiple sectors, ensuring that your business receives the specialized support 
-              it needs to thrive in today's competitive landscape.
+              As a specialized micro agency, Empuls3 delivers truly personalized technology solutions designed for the unique challenges of your industry. Unlike larger firms where your project might be handed off to junior staff, our boutique team of senior specialists works directly with you across multiple sectors—ensuring your business receives the dedicated attention and faster implementation times that larger firms simply can't match.
             </p>
             <div className="mt-6 flex gap-x-4 md:mt-8">
               <Link

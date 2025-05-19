@@ -15,16 +15,14 @@ export function WordPressSolutions() {
             />
           </div>
           <div className="order-1 lg:order-2">
-            <p className="mb-3 font-semibold text-gray-700 md:mb-4">
-              Innovators change the world with their new ideas.
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">
+              Boutique WordPress Development
             </p>
             <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Custom WordPress Solutions for Your Business
+              Personalized WordPress Solutions with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-lg">
-              Our custom WordPress solutions are designed to meet your unique
-              business needs. From tailored themes to specialized plugins, we
-              ensure your online presence stands out.
+              As a specialized micro agency, we deliver custom WordPress solutions with direct access to our senior developers. Unlike larger agencies where your project might be handed off to junior staff, our boutique team works closely with you from concept to completion, ensuring your unique business needs are met with precision and care.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               <Link

@@ -10,33 +10,28 @@ export function CompanyVision() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Empuls3</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Vision</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Our Vision for Business Transformation
+              The Micro Agency Difference
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              At Empuls3, we envision a world where businesses thrive through
-              innovative technology solutions. Our mission is to empower
-              organizations to achieve digital excellence and sustainable
-              growth.
+              At Empuls3, we envision a world where businesses thrive through truly personalized technology solutions. As a specialized micro agency, our mission is to provide direct access to senior specialists who empower organizations to achieve digital excellence and sustainable growth—with faster implementation times and more dedicated attention than larger firms can provide.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Our Values
+                  Boutique Values
                 </h6>
                 <p className="text-gray-700">
-                  Integrity, innovation, and collaboration drive our commitment
-                  to client success.
+                  Personalized attention, direct collaboration with senior specialists, and truly tailored solutions drive our commitment to client success as a specialized micro agency.
                 </p>
               </div>
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Our Achievements
+                  Micro Agency Excellence
                 </h6>
                 <p className="text-gray-700">
-                  Trusted partner for industry leaders, delivering impactful
-                  technology solutions since 2019.
+                  Trusted boutique partner for industry leaders, delivering personalized technology solutions with senior expertise since our founding in 2009 by Robert Thomas.
                 </p>
               </div>
             </div>

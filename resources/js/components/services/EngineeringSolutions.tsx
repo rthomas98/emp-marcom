@@ -18,16 +18,13 @@ export function EngineeringSolutions() {
           </div>
           <div className="order-1 md:order-2">
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-              Transform ideas into reality through innovation.
+              Boutique Software Engineering
             </p>
             <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-              Custom Software Engineering and IT Consulting Solutions
+              Personalized Solutions with Senior Expertise
             </h2>
             <p className="mb-5 text-gray-700 md:mb-6 md:text-md">
-              Empuls3 specializes in creating tailored software solutions that
-              address your unique challenges. Our expert team combines technical
-              guidance with innovative engineering practices to deliver
-              exceptional results.
+              As a specialized micro agency, Empuls3 creates truly personalized software solutions that address your unique challenges. Unlike larger firms where your project might be handed off to junior staff, our senior specialists work directly with you, combining technical guidance with innovative engineering practices to deliver exceptional results—with faster implementation times and more dedicated attention.
             </p>
             <div className="grid grid-cols-1 gap-4 py-2">
               <div className="flex self-start">
@@ -35,8 +32,7 @@ export function EngineeringSolutions() {
                   <Check className="h-6 w-6 text-[#BD1550]" aria-hidden="true" />
                 </div>
                 <p className="text-gray-700">
-                  High-quality, scalable software tailored to your business
-                  needs.
+                  Direct access to senior engineers creating high-quality, scalable software precisely tailored to your business needs—with the personalized attention only a boutique agency can provide.
                 </p>
               </div>
               <div className="flex self-start">
@@ -44,8 +40,7 @@ export function EngineeringSolutions() {
                   <Check className="h-6 w-6 text-[#BD1550]" aria-hidden="true" />
                 </div>
                 <p className="text-gray-700">
-                  Expert consulting for effective system architecture and
-                  design.
+                  Boutique consulting with senior specialists for effective system architecture and design—delivering faster implementation without the overhead of larger firms.
                 </p>
               </div>
               <div className="flex self-start">
@@ -53,7 +48,7 @@ export function EngineeringSolutions() {
                   <Check className="h-6 w-6 text-[#BD1550]" aria-hidden="true" />
                 </div>
                 <p className="text-gray-700">
-                  Transforming ideas into robust software solutions seamlessly.
+                  Our micro agency transforms your ideas into robust software solutions with direct collaboration and personalized attention throughout the entire process.
                 </p>
               </div>
             </div>

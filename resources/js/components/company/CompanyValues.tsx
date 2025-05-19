@@ -8,33 +8,28 @@ export function CompanyValues() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Values</p>
             <h2 className="mb-5 text-4xl font-bold leading-[1.2] text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Our Core Values: Innovation, Excellence, and Commitment to Client
-              Success
+              The Micro Agency Approach: Personalization, Senior Expertise, and Direct Collaboration
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              At Empuls3, we are dedicated to pushing the boundaries of
-              technology and creativity. Our commitment to excellence ensures
-              that our clients achieve their goals with innovative solutions
-              tailored to their needs.
+              As a specialized micro agency founded in 2009 by Robert Thomas, we are dedicated to providing truly personalized technology solutions. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures direct access to senior specialists—delivering faster implementation times and more dedicated attention than larger firms can provide.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Innovation First
+                  Direct Access to Senior Specialists
                 </h6>
                 <p className="text-gray-700">
-                  We embrace cutting-edge technologies to drive transformative
-                  outcomes for our clients.
+                  Work directly with our senior specialists who embrace cutting-edge technologies to drive transformative outcomes with faster implementation times than larger firms can offer.
                 </p>
               </div>
               <div>
                 <h6 className="mb-3 text-md font-bold leading-[1.4] text-[#1F1946] md:mb-4 md:text-xl">
-                  Client Success
+                  Personalized Attention
                 </h6>
                 <p className="text-gray-700">
-                  Our clients' achievements are our top priority, guiding every
-                  decision we make.
+                  Experience the micro agency advantage with personalized attention and truly tailored solutions—ensuring our clients' achievements remain our top priority with more dedicated service than larger firms can provide.
                 </p>
               </div>
             </div>

@@ -3,9 +3,9 @@ import { Check } from "lucide-react";
 
 export function MobileOverview() {
   const features = [
-    "Native-like performance on all devices.",
-    "Streamlined development for faster time to market.",
-    "Cross-platform solutions that enhance user engagement."
+    "Direct access to senior developers throughout your entire project.",
+    "Faster turnaround times without the overhead of larger agencies.",
+    "Personalized attention to your specific business requirements."
   ];
 
   return (
@@ -13,16 +13,12 @@ export function MobileOverview() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">The Micro Agency Advantage</p>
             <h2 className="mb-5 text-4xl leading-[1.2] font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Empower Your Business with Mobile & Cross-Platform Development
-              Solutions
+              Boutique Mobile Development with Senior Expertise
             </h2>
             <p className="mb-5 text-gray-700 md:mb-6 md:text-lg">
-              Leverage the power of React Native to create high-performance
-              mobile applications that deliver a native-like experience on both
-              iOS and Android. Our Progressive Web Apps (PWAs) ensure seamless
-              functionality across devices, providing users with an engaging
-              experience.
+              As a specialized micro agency, we leverage React Native to create high-performance mobile applications with direct access to our senior developers. Unlike larger firms where your project might be handed off to junior staff, our boutique team works closely with you to deliver native-like experiences on both iOS and Android, along with Progressive Web Apps that ensure seamless functionality across all devices.
             </p>
             <ul className="grid grid-cols-1 gap-4 py-2">
               {features.map((feature, index) => (

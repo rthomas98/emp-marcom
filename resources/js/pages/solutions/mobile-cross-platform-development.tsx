@@ -14,7 +14,11 @@ import { Head } from '@inertiajs/react';
 export default function MobileCrossPlatformDevelopment() {
   return (
     <SiteLayout>
-      <Head title="Mobile & Cross-Platform Development - Empuls3" />
+      <Head>
+        <title>Boutique Mobile & Cross-Platform Development - Empuls3</title>
+        <meta name="description" content="Experience personalized mobile and cross-platform development from our boutique micro agency. Direct collaboration with senior developers for native-like apps without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique mobile development, cross-platform solutions, React Native, PWA, senior developers, personalized development services" />
+      </Head>
       <MobileHeader />
       <MobileOverview />
       <MobilePWA />

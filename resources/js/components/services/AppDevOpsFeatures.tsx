@@ -12,15 +12,13 @@ export function AppDevOpsFeatures() {
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
             <div className="mx-auto w-full max-w-3xl">
               <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-                Innovate and inspire for a brighter future ahead.
+                Boutique DevOps Services
               </p>
               <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-                Empowering Your Business with Advanced Solutions
+                The Micro Agency DevOps Advantage
               </h2>
               <p className="text-gray-700 md:text-md">
-                Our Application and DevOps Services combine technical excellence
-                with industry insights. We ensure your applications are built
-                for scalability and performance.
+                As a specialized micro agency, our Application and DevOps services combine senior technical expertise with personalized attention. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures your applications are built for scalability and performance with faster implementation times and more dedicated support.
               </p>
             </div>
           </div>
@@ -34,12 +32,10 @@ export function AppDevOpsFeatures() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Expertise in Full-Stack Development
+                Direct Access to Senior Developers
               </h3>
               <p className="text-gray-700">
-                Utilize our comprehensive full-stack expertise to create
-                powerful and reliable applications that meet your unique
-                business needs effectively.
+                Work directly with our senior full-stack specialists who create powerful and reliable applications tailored to your unique business needs—with the personalized attention and faster implementation times that only a micro agency can provide.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -51,12 +47,10 @@ export function AppDevOpsFeatures() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Understanding Your Industry Challenges
+                Personalized Industry Solutions
               </h3>
               <p className="text-gray-700">
-                Our team has extensive expertise in understanding the unique
-                challenges faced within specific industries, allowing us to
-                provide tailored solutions for your needs.
+                Our boutique team brings extensive expertise in understanding your industry's unique challenges—delivering truly personalized solutions with the focused attention and direct collaboration that larger firms simply can't match.
               </p>
             </div>
             <div className="flex w-full flex-col items-center text-center">
@@ -68,12 +62,10 @@ export function AppDevOpsFeatures() {
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Focus on Innovation and Emerging Technologies
+                Boutique Innovation Approach
               </h3>
               <p className="text-gray-700">
-                We utilize a blend of contemporary strategies and innovative
-                techniques to achieve the best possible outcomes for our
-                clients.
+                Experience the micro agency advantage with our senior specialists who blend contemporary strategies and innovative techniques—delivering faster implementation times and more personalized solutions than larger firms can offer.
               </p>
             </div>
           </div>

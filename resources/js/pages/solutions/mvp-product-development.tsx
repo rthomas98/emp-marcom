@@ -13,7 +13,11 @@ import { Head } from '@inertiajs/react';
 export default function MvpProductDevelopment() {
   return (
     <SiteLayout>
-      <Head title="MVP & Product Development - Empuls3" />
+      <Head>
+        <title>Boutique MVP & Product Development - Empuls3</title>
+        <meta name="description" content="Experience personalized MVP and product development from our boutique micro agency. Direct collaboration with senior developers for faster validation and scalable solutions without the overhead of larger firms." />
+        <meta name="keywords" content="micro agency, boutique MVP development, product development, senior developers, personalized development services, startup solutions, rapid prototyping" />
+      </Head>
       <MvpHeader />
       <MvpOverview />
       <MvpProcess />

@@ -9,13 +9,12 @@ export function EngineeringCTA() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Software Engineering</p>
             <h2 className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-6xl">
-              Transform Your Business Today
+              Experience the Micro Agency Advantage
             </h2>
             <p className="text-gray-700 md:text-md">
-              Contact us today for personalized expert guidance in software
-              engineering and IT consulting that's specifically tailored to meet
-              your unique needs and goals.
+              Contact us today for direct access to our senior specialists who provide truly personalized software engineering and IT consulting solutions. Unlike larger firms, our boutique micro agency delivers faster implementation times, more dedicated attention, and tailored solutions without the overhead and complexity that comes with bigger agencies.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               <Link

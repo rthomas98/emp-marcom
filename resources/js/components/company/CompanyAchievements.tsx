@@ -11,15 +11,12 @@ export function CompanyAchievements() {
         <div className="flex flex-col">
           <div className="mb-12 md:mb-18 lg:mb-20">
             <div className="w-full max-w-lg">
-              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Achievements</p>
+              <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Agency Achievements</p>
               <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-                Our Proven Success with Industry Leaders
+                Micro Agency Excellence Since 2009
               </h2>
               <p className="text-gray-700 md:text-md">
-                Empuls3 has consistently delivered exceptional results for
-                global leaders, including Warner Brothers Discovery, Shell, and
-                Samsung. Our commitment to rapid development ensures that we
-                meet client needs without sacrificing quality.
+                Since our founding in 2009 by Robert Thomas, Empuls3 has consistently delivered exceptional results for global leaders, including Warner Brothers Discovery, Shell, and Samsung. As a specialized micro agency, our boutique team provides direct access to senior specialists—ensuring we meet client needs with faster implementation times and more dedicated attention than larger firms can offer, all without sacrificing quality.
               </p>
             </div>
           </div>
@@ -29,12 +26,10 @@ export function CompanyAchievements() {
                 <Award className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Quality and Speed: Our Development Approach
+                Direct Access to Senior Specialists
               </h3>
               <p className="text-gray-700">
-                We take great pride in our ability to deliver effective
-                solutions promptly, all while upholding the highest standards of
-                quality and excellence.
+                As a specialized micro agency, we take great pride in providing direct access to our senior specialists who deliver effective solutions with faster implementation times and more personalized attention than larger firms can offer—all while upholding the highest standards of quality and excellence.
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -42,12 +37,10 @@ export function CompanyAchievements() {
                 <Clock className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Client Success Stories That Inspire Trust
+                The Micro Agency Advantage
               </h3>
               <p className="text-gray-700">
-                Our strong partnerships with leading industry giants clearly
-                demonstrate our reliability and extensive expertise in the
-                field.
+                Our strong partnerships with leading industry giants clearly demonstrate the micro agency advantage—providing personalized solutions with senior expertise and faster implementation times without the overhead of larger firms.
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -55,12 +48,10 @@ export function CompanyAchievements() {
                 <Zap className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Transforming Ideas into Reality with Speed
+                Personalized Solutions with Senior Expertise
               </h3>
               <p className="text-gray-700">
-                Our agile development process enables us to execute tasks
-                quickly while maintaining a strong commitment to quality
-                standards.
+                Our boutique approach enables our senior specialists to provide truly personalized solutions—executing tasks with faster implementation times and more dedicated attention than larger firms can offer while maintaining our strong commitment to quality standards.
               </p>
             </div>
           </div>

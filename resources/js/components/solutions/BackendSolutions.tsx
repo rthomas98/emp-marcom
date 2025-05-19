@@ -8,16 +8,13 @@ export function BackendSolutions() {
       <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-            Scalability is crucial for business growth and success.
+            The Micro Agency Advantage
           </p>
           <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Powerful Back-End Solutions
+            Specialized Back-End Expertise
           </h2>
           <p className="text-gray-700 md:text-lg">
-            Enhance the functionality of your applications by incorporating
-            powerful server-side logic that ensures optimal performance,
-            reliability, and scalability, ultimately providing a seamless user
-            experience and meeting your business needs effectively.
+            As a boutique micro agency, we enhance your applications with powerful server-side logic built by senior developers who work directly with you throughout your project. Unlike larger firms where your project might be handed off to junior staff, our specialized team ensures optimal performance, reliability, and scalability without the overhead costs and communication barriers of traditional agencies.
           </p>
         </div>
         <div className="grid auto-cols-fr grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
@@ -29,8 +26,7 @@ export function BackendSolutions() {
                   Tailored Server-Side Operations for Growth
                 </h3>
                 <p className="text-gray-700">
-                  Tailored solutions designed specifically to meet the unique
-                  needs and challenges of your business for optimal success.
+                  Our boutique team delivers tailored server-side solutions with direct access to senior developers throughout your project, creating systems specifically designed for your unique business needs without the bureaucracy of larger firms.
                 </p>
               </div>
               <div className="mt-5 md:mt-6">
@@ -59,9 +55,7 @@ export function BackendSolutions() {
                   Seamless API Integrations for Enhanced Functionality
                 </h3>
                 <p className="text-gray-700">
-                  Integrate your systems seamlessly to achieve the best possible
-                  performance and ensure maximum reliability for your
-                  operations.
+                  Experience the micro agency advantage with API integrations built by our specialized team of senior developers who work directly with you to seamlessly connect your systems, delivering enterprise-quality performance without the overhead costs of larger agencies.
                 </p>
               </div>
               <div className="mt-5 md:mt-6">

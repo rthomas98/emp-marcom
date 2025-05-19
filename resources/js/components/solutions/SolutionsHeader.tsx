@@ -18,13 +18,10 @@ export function SolutionsHeader() {
       </div>
       <div className="order-1 mx-[5%] sm:max-w-md md:justify-self-start lg:order-2 lg:mr-[5vw] lg:ml-20">
         <h1 id="solutions-heading" className="mb-5 text-5xl font-bold font-header text-primary md:mb-6 md:text-6xl lg:text-7xl">
-          Your Partner in Achieving Development Goals
+          Boutique Development Solutions with Personal Attention
         </h1>
         <p className="text-gray-700 md:text-lg">
-          At Empuls3, we offer a full suite of development solutions tailored to
-          meet your unique business needs. From back-end to front-end
-          development, our expert team ensures that your projects are delivered
-          with precision and innovation.
+          As a specialized micro agency, Empuls3 delivers tailored development solutions with the personalized attention that larger firms simply can't match. Our senior team works directly with you throughout your project, ensuring exceptional quality, faster turnaround times, and a truly collaborative experience.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
           <Link

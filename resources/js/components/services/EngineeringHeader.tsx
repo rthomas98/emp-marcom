@@ -31,18 +31,18 @@ export function EngineeringHeader() {
   const slides = [
     {
       image: "/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_0.png",
-      title: "Expert Technical Guidance",
-      description: "Tailored solutions designed specifically to address the unique challenges your business faces, ensuring you achieve your goals and thrive in a competitive marketplace. Let's work together for success!"
+      title: "Direct Access to Senior Engineers",
+      description: "As a boutique micro agency, we provide personalized solutions with direct access to our senior engineers. Unlike larger firms where your project might be handed off to junior staff, our specialists work directly with you to address your unique challenges."
     },
     {
       image: "/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_2.png",
-      title: "Innovative Development Approaches",
-      description: "Our team leverages cutting-edge technologies and methodologies to build scalable, robust solutions that drive business growth and operational efficiency."
+      title: "Faster Implementation & Personalized Attention",
+      description: "Our boutique team leverages cutting-edge technologies with faster implementation times and more dedicated attention than larger firms can offer—building scalable, robust solutions without the overhead and complexity."
     },
     {
       image: "/images/site-images/rob_thomas23_African_American_Software_Engineers_standing_fac_1c490440-96b8-4333-88cd-7c5e0c406ec0_3.png",
-      title: "Strategic IT Consulting",
-      description: "We provide strategic guidance to help you make informed technology decisions that align with your business objectives and position you for long-term success."
+      title: "Boutique IT Consulting",
+      description: "Experience the micro agency advantage with strategic guidance from our senior specialists who help you make informed technology decisions aligned with your business objectives—with the personalized attention that only a boutique firm can provide."
     }
   ];
 
@@ -52,13 +52,12 @@ export function EngineeringHeader() {
       className="grid grid-cols-1 items-center gap-y-16 overflow-hidden pt-16 sm:overflow-auto md:pt-24 lg:grid-cols-[50%_50%] lg:gap-y-0 lg:pt-0"
     >
       <div className="mx-[5%] max-w-md justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
+        <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Software Engineering</p>
         <h1 className="mb-5 text-6xl font-bold text-[#1F1946] md:mb-6 md:text-7xl lg:text-7xl">
-          Transform Your Business with Expert Solutions
+          Personalized Solutions with Senior Expertise
         </h1>
         <p className="text-gray-700 md:text-md">
-          Empuls3 offers comprehensive software engineering and IT consulting
-          services designed to elevate your business. Our expert team provides
-          tailored solutions to meet your unique technical needs.
+          As a specialized micro agency, Empuls3 offers personalized software engineering and IT consulting services with direct access to our senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to deliver tailored solutions that meet your unique technical needs—with faster implementation times and more dedicated attention.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
           <Link 

@@ -8,31 +8,30 @@ export function AppDevOpsPipeline() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
+              Boutique CI/CD Solutions
+            </p>
             <h2 className="mb-5 text-4xl leading-[1.2] font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Accelerate Your Development with Seamless CI/CD Pipeline Solutions
+              Personalized CI/CD Pipelines with Senior Expertise
             </h2>
             <p className="mb-6 text-gray-700 md:mb-8 md:text-md">
-              Our CI/CD pipelines streamline your application development
-              process, ensuring faster and more reliable releases. Experience
-              the power of automation and efficiency in every deployment.
+              As a specialized micro agency, our senior DevOps specialists create truly personalized CI/CD pipelines that streamline your development process. Unlike larger firms where your project might be handed off to junior staff, our boutique team ensures faster implementation times and more reliable releases with the dedicated attention that only a micro agency can provide.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
                 <h6 className="mb-3 text-md leading-[1.4] font-bold text-[#1F1946] md:mb-4 md:text-xl">
-                  Fast Releases
+                  Direct Access to Senior Specialists
                 </h6>
                 <p className="text-gray-700">
-                  Achieve quicker time-to-market with our robust continuous
-                  integration and deployment strategies.
+                  Work directly with our senior DevOps engineers who create personalized CI/CD strategies that achieve quicker time-to-market without the overhead of larger firms.
                 </p>
               </div>
               <div>
                 <h6 className="mb-3 text-md leading-[1.4] font-bold text-[#1F1946] md:mb-4 md:text-xl">
-                  Reliable Automation
+                  Boutique Automation Solutions
                 </h6>
                 <p className="text-gray-700">
-                  Automate your workflows to minimize errors and maximize
-                  efficiency in your deployments.
+                  Experience the micro agency advantage with truly personalized workflow automation that minimizes errors and maximizes efficiency with faster implementation times than larger agencies.
                 </p>
               </div>
             </div>

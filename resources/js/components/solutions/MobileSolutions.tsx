@@ -8,15 +8,12 @@ export function MobileSolutions() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Native Mobile Development</p>
+            <p className="mb-3 font-semibold text-accent-pink md:mb-4">Boutique Mobile Development</p>
             <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-              Seamless Mobile Solutions for Every Business
+              Personalized Mobile Solutions with Senior Expertise
             </h2>
             <p className="text-gray-700 md:text-lg">
-              Our mobile app development services deliver customized solutions
-              for both iOS and Android platforms. We ensure that each
-              application is designed to meet your unique business objectives
-              and user needs.
+              As a specialized micro agency, we deliver customized mobile solutions with direct access to our senior developers. Unlike larger firms where your project might be handed off to junior staff, our boutique team works closely with you to create applications for both iOS and Android platforms that perfectly meet your unique business objectives with faster turnaround times and more personalized attention.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link

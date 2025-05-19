@@ -86,9 +86,9 @@ export const Header = (props: HeaderProps) => {
   };
 
   return (
-    <section id="hero" className="relative h-[250vh]" aria-labelledby="hero-heading" style={{ backgroundImage: 'url("/images/backgrounds/Background pattern-2.svg")', backgroundSize: '400px', backgroundRepeat: 'no-repeat', backgroundPosition: 'top right' }}>
+    <section id="hero" className="relative h-[250vh]" aria-labelledby="hero-heading">
       <div className="px-[5%] pt-16 md:pt-24 lg:pt-28">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="w-full max-w-lg">
             <h1 id="hero-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">{title}</h1>
             <p className="text-lg text-gray-700">{description}</p>
@@ -128,7 +128,7 @@ export const Header = (props: HeaderProps) => {
           >
             <div className="relative top-[5%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
               <img 
-                className="aspect-[2/3] w-full object-cover rounded-lg" 
+                className="aspect-[2/3] w-full object-cover rounded-lg border border-gray-200" 
                 src={images[0].src} 
                 alt={images[0].alt}
                 loading="lazy" 
@@ -138,7 +138,7 @@ export const Header = (props: HeaderProps) => {
             <div className="relative top-[-5%] flex flex-col gap-4 self-center">
               <div className="relative w-[30vw] flex-none md:w-[15vw]">
                 <img 
-                  className="aspect-square w-full object-cover rounded-lg" 
+                  className="aspect-square w-full object-cover rounded-lg border border-gray-200" 
                   src={images[1].src} 
                   alt={images[1].alt}
                   loading="lazy" 
@@ -146,7 +146,7 @@ export const Header = (props: HeaderProps) => {
               </div>
               <div className="relative w-[30vw] flex-none md:w-[15vw]">
                 <img 
-                  className="aspect-[3/4] w-full object-cover rounded-lg" 
+                  className="aspect-[3/4] w-full object-cover rounded-lg border border-gray-200" 
                   src={images[2].src} 
                   alt={images[2].alt}
                   loading="lazy" 
@@ -156,7 +156,7 @@ export const Header = (props: HeaderProps) => {
 
             <div className="relative top-[15%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
               <img 
-                className="aspect-square w-full object-cover rounded-lg" 
+                className="aspect-square w-full object-cover rounded-lg border border-gray-200" 
                 src={images[3].src} 
                 alt={images[3].alt}
                 loading="lazy" 
@@ -166,7 +166,7 @@ export const Header = (props: HeaderProps) => {
 
           <motion.div className="relative" style={centerImageContainer}>
             <img 
-              className="size-full object-cover rounded-lg" 
+              className="size-full object-cover rounded-lg border border-gray-200" 
               src={images[4].src} 
               alt={images[4].alt}
               loading="lazy" 
@@ -179,7 +179,7 @@ export const Header = (props: HeaderProps) => {
           >
             <div className="relative top-[5%] w-[40vw] md:w-[25vw] lg:w-[22vw]">
               <img 
-                className="aspect-[3/4] w-full object-cover rounded-lg" 
+                className="aspect-[3/4] w-full object-cover rounded-lg border border-gray-200" 
                 src={images[5].src} 
                 alt={images[5].alt}
                 loading="lazy" 
@@ -194,9 +194,9 @@ export const Header = (props: HeaderProps) => {
 };
 
 export const HeaderDefaults: Props = {
-  title: "Innovative Software Solutions for Modern Businesses",
+  title: "Agile Software Solutions from Your Dedicated Micro Agency Partner",
   description:
-    "Empuls3 delivers custom software development, web applications, and IT consulting services that transform your business and drive growth in the digital landscape.",
+    "Empuls3 delivers personalized software development and IT consulting with the agility of a micro agency and the expertise of industry veterans. We transform your business challenges into tailored digital solutions that drive growth.",
   buttons: [
     {
       title: "Explore Solutions",

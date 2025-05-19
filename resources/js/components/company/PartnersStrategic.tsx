@@ -10,14 +10,12 @@ export function PartnersStrategic() {
       <div className="container mx-auto">
         <div className="grid auto-cols-fr grid-cols-1 items-start justify-start gap-y-12 md:grid-cols-[0.5fr_1fr] md:gap-x-12 md:gap-y-16 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Partners</p>
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Micro Agency Partnerships</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-              Our Strategic Technology Partnerships
+              Boutique Expertise, Enhanced Capabilities
             </h2>
             <p className="text-gray-700 md:text-md">
-              At Empuls3, we believe in the power of collaboration. Our
-              strategic partnerships enable us to deliver comprehensive
-              solutions that drive innovation and efficiency.
+              Since our founding in 2009 by Robert Thomas, we've cultivated strategic partnerships that complement our boutique approach. As a specialized micro agency, we combine direct access to our senior specialists with our partners' capabilities—delivering personalized solutions with faster implementation times than larger firms can offer, all without sacrificing quality or increasing overhead.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link
@@ -58,23 +56,23 @@ export function PartnersStrategic() {
 
 const partnerFeatures = [
   {
-    title: "Partnering with Industry Leaders",
-    description: "We partner with leading technology providers to significantly enhance and improve our service offerings.",
+    title: "Direct Access to Senior Specialists",
+    description: "Our micro agency model ensures you work directly with senior specialists who leverage our strategic partnerships to enhance your personalized solutions.",
     icon: <Award className="h-6 w-6" />
   },
   {
-    title: "Innovative Solutions Through Collaboration",
-    description: "Through our strategic partnerships, we cultivate innovation and propel digital transformation across various industries for lasting impact.",
+    title: "Boutique Service, Enhanced Capabilities",
+    description: "We maintain our personalized micro agency approach while expanding our capabilities through strategic partnerships—delivering faster implementation times without the overhead of larger firms.",
     icon: <Zap className="h-6 w-6" />
   },
   {
-    title: "Commitment to Excellence in Technology",
-    description: "We prioritize quality and reliability by fostering strong alliances with our trusted partners in the industry.",
+    title: "Personalized Technology Solutions",
+    description: "Our boutique team works directly with you while leveraging our partners' technologies to create truly tailored solutions that address your unique needs.",
     icon: <BarChart3 className="h-6 w-6" />
   },
   {
-    title: "Building a Future Together",
-    description: "Become a part of our mission to develop innovative and impactful solutions that will shape a better future for everyone. Join us today!",
+    title: "Micro Agency Collaboration",
+    description: "Partner with our specialized boutique agency founded in 2009 by Robert Thomas to experience the perfect balance of personalized attention and expanded capabilities.",
     icon: <Users className="h-6 w-6" />
   }
 ];

@@ -22,14 +22,12 @@ export function AppDevOpsTestimonial() {
               ))}
             </div>
             <blockquote className="text-xl font-bold text-[#1F1946] md:text-2xl">
-              "Empuls3 transformed our app development process, making it faster
-              and more efficient. Their expertise in DevOps has significantly
-              improved our deployment times and overall productivity."
+              "Working with Empuls3's boutique team was a game-changer for our DevOps process. The direct access to their senior specialists and personalized attention made all the difference. Their micro agency approach delivered faster implementation and more tailored solutions than we ever experienced with larger firms."
             </blockquote>
             <div className="mt-6 flex flex-nowrap items-center gap-5 md:mt-8">
               <div>
                 <p className="font-semibold text-[#1F1946]">Michael Johnson</p>
-                <p className="text-gray-700">CTO, InnovateX</p>
+                <p className="text-gray-700">CTO, InnovateX Technologies</p>
               </div>
               <div className="mx-4 w-px self-stretch bg-gray-300 sm:mx-0" />
               <div>

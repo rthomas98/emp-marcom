@@ -9,15 +9,13 @@ export function DatabaseManagement() {
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-              Optimize productivity and streamline processes effectively.
+              Boutique Database Solutions
             </p>
             <h2 className="mb-5 text-4xl font-bold font-header text-white md:mb-6 md:text-5xl lg:text-6xl">
-              Robust Database Management for Your Applications
+              Personalized Database Management with Senior Expertise
             </h2>
             <p className="mb-6 text-gray-300 md:mb-8 md:text-lg">
-              Our database management solutions ensure high performance and
-              reliability. We design, implement, and maintain databases tailored
-              to your specific application needs.
+              As a specialized micro agency, we deliver database management solutions with direct access to our senior developers throughout your entire project. Unlike larger firms where your database needs might be handled by junior staff, our boutique team ensures high performance and reliability with personalized attention to your specific application requirements.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
@@ -25,8 +23,7 @@ export function DatabaseManagement() {
                   Performance Optimization
                 </h3>
                 <p className="text-gray-300">
-                  Maximize application efficiency with expertly managed
-                  databases that scale with your business.
+                  Our boutique team of senior developers creates expertly managed databases that maximize application efficiency and scale with your business—without the overhead costs and communication barriers of larger agencies.
                 </p>
               </div>
               <div>
@@ -34,8 +31,7 @@ export function DatabaseManagement() {
                   Seamless Integration
                 </h3>
                 <p className="text-gray-300">
-                  Integrate APIs effortlessly to enhance functionality and user
-                  experience in your applications.
+                  Experience the micro agency advantage with seamless API integrations built by our specialized team who work directly with you, enhancing functionality and user experience with faster implementation times than traditional firms.
                 </p>
               </div>
             </div>

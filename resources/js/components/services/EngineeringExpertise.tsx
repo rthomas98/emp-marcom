@@ -9,9 +9,9 @@ export function EngineeringExpertise() {
       <div className="container mx-auto">
         <div className="mb-12 text-center md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-3xl">
+            <p className="mb-3 font-semibold text-[#BD1550] md:mb-4 text-center">Boutique Development Services</p>
             <h2 className="text-4xl leading-[1.2] font-bold text-[#1F1946] md:text-5xl lg:text-6xl">
-              Expert Full-Stack Development for Seamless Front-End and Back-End
-              Solutions
+              Personalized Full-Stack Development with Senior Expertise
             </h2>
           </div>
         </div>
@@ -21,11 +21,10 @@ export function EngineeringExpertise() {
               <Code className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-5 text-xl font-bold text-[#1F1946] md:mb-6 md:text-2xl">
-              Elevate Your Business with Software Solutions
+              Direct Access to Senior Developers
             </h3>
             <p className="text-gray-700">
-              Our comprehensive full-stack development services guarantee a
-              seamless and efficient digital experience for all users.
+              Our boutique agency provides direct access to senior full-stack developers who work closely with you to create a seamless and efficient digital experience—without the layers of management found at larger firms.
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
@@ -33,11 +32,10 @@ export function EngineeringExpertise() {
               <Server className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-5 text-xl font-bold text-[#1F1946] md:mb-6 md:text-2xl">
-              Custom IT Consulting for Strategic Technology Support
+              Personalized IT Consulting
             </h3>
             <p className="text-gray-700">
-              Utilize our extensive IT consulting expertise to successfully
-              navigate through complex technology landscapes with confidence.
+              Experience the micro agency advantage with personalized IT consulting from our senior specialists who help you navigate complex technology landscapes with confidence—delivering faster implementation without the overhead of larger firms.
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
@@ -45,12 +43,10 @@ export function EngineeringExpertise() {
               <Lightbulb className="h-12 w-12 text-[#BD1550]" aria-hidden="true" />
             </div>
             <h3 className="mb-5 text-xl font-bold text-[#1F1946] md:mb-6 md:text-2xl">
-              Innovative Solutions for Modern Software Challenges
+              Tailored Solutions for Your Specific Needs
             </h3>
             <p className="text-gray-700">
-              Our innovative engineering solutions are specifically crafted to
-              address the distinct needs and challenges of your particular
-              industry.
+              Our boutique team creates innovative engineering solutions specifically crafted for your industry's unique challenges—with the focused attention and customization that only a micro agency can provide.
             </p>
           </div>
         </div>
