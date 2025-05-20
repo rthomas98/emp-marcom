@@ -32,8 +32,8 @@ export function CompanyHeader({
   return (
     <section id="company-header" className="relative px-[5%]">
       <div className="flex max-h-[60rem] min-h-svh items-center">
-        <div className="container py-16 md:py-24 lg:py-28">
-          <div className="relative z-10 mx-auto max-w-lg text-center">
+        <div className="container py-16 md:py-24 lg:py-28 mx-auto">
+          <div className="relative z-10 mx-auto max-w-3xl text-center">
             <h1 className="mb-5 text-5xl font-bold text-white md:mb-6 md:text-6xl lg:text-7xl">
               {heading}
             </h1>

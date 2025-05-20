@@ -9,7 +9,7 @@ export function CompanyJourney() {
     <section id="company-journey" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
-          <div className="mx-auto max-w-lg text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Agency Journey</p>
             <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
               Our Micro Agency Story Since 2009

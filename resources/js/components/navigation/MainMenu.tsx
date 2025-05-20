@@ -155,6 +155,13 @@ export default function MainMenu({ className }: MainMenuProps) {
             Industries
           </Link>
 
+          <Link 
+            href={route('case-studies.index')} 
+            className={`text-sm font-semibold ${isActive('/case-studies') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
+          >
+            Case Studies
+          </Link>
+
           <Popover className="relative">
             <Popover.Button className={`flex items-center gap-x-1 text-sm font-semibold ${isActive('/company') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}>
               Company
@@ -262,6 +269,14 @@ export default function MainMenu({ className }: MainMenuProps) {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Industries
+                </Link>
+                
+                <Link
+                  href={route('case-studies.index')}
+                  className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold ${isActive('/case-studies') ? 'text-accent-pink' : 'text-primary hover:text-accent-pink'}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Case Studies
                 </Link>
                 
                 <div className="mt-4">

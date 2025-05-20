@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { Linkedin, Twitter, Dribbble } from "lucide-react";
+import { Linkedin, Twitter, Dribbble, Globe, Instagram } from "lucide-react";
 
 export function CompanyTeam() {
   return (
     <section id="company-team" className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
-        <div className="mb-12 max-w-lg md:mb-18 lg:mb-20">
+        <div className="mb-12 max-w-3xl md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Senior Specialists</p>
           <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
             Our Boutique Team
@@ -17,76 +17,88 @@ export function CompanyTeam() {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col">
+            <div className="flex flex-col">
               <div className="relative mb-5 aspect-square w-full overflow-hidden rounded-lg border border-gray-200 md:mb-6 md:pt-[100%]">
                 <img
-                  src={member.image}
-                  alt={`${member.name}, ${member.title}`}
+                  src="/images/682c9204c876aa4ebe43910b-HeadshotPro.png"
+                  alt="Robert Thomas, Founder"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
                 <h5 className="text-md font-semibold text-[#1F1946] md:text-lg">
-                  {member.name}
+                  Robert Thomas
                 </h5>
-                <h6 className="text-gray-700 md:text-md">{member.title}</h6>
+                <h6 className="text-gray-700 md:text-md">Founder</h6>
               </div>
-              <p className="text-gray-700">{member.description}</p>
+              <p className="text-gray-700">Founded Empuls3 in 2009 as a specialized micro agency providing personalized technology solutions with direct access to senior specialists.</p>
               <div className="mt-6 flex gap-3.5 self-start">
-                <a href="#" className="text-[#1F1946] hover:text-[#BD1550]">
+                <a href="https://www.linkedin.com/in/robert-thomas-1b110216/" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
                   <Linkedin className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-[#1F1946] hover:text-[#BD1550]">
+                <a href="https://x.com/rob_thomas10" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
                   <Twitter className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-[#1F1946] hover:text-[#BD1550]">
+                <a href="https://dribbble.com/robt84" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
                   <Dribbble className="h-6 w-6" />
                 </a>
               </div>
             </div>
-          ))}
+            <div className="flex flex-col">
+              <div className="relative mb-5 aspect-square w-full overflow-hidden rounded-lg border border-gray-200 md:mb-6 md:pt-[100%]">
+                <img
+                  src="/images/adrian-hebert-thomas.jpg"
+                  alt="Adrian Hebert-Thomas, In-house Counsel"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <div className="mb-3 md:mb-4">
+                <h5 className="text-md font-semibold text-[#1F1946] md:text-lg">
+                  Adrian Hebert-Thomas
+                </h5>
+                <h6 className="text-gray-700 md:text-md">In-house Counsel/Hebert-Thomas Law</h6>
+              </div>
+              <p className="text-gray-700">Providing legal expertise and counsel for Empuls3 and its clients, ensuring compliance and protecting business interests.</p>
+              <div className="mt-6 flex gap-3.5 self-start">
+                <a href="https://www.linkedin.com/in/adrian-hebert-thomas-esq-41b013a2/" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a href="https://www.hebertthomaslaw.com/" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
+                  <Globe className="h-6 w-6" />
+                </a>
+                <a href="https://www.instagram.com/hebertthomaslaw/" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <div className="relative mb-5 aspect-square w-full overflow-hidden rounded-lg border border-gray-200 md:mb-6 md:pt-[100%]">
+                <img
+                  src="/images/cole-bush.jpg"
+                  alt="Cole Bush, Developer"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <div className="mb-3 md:mb-4">
+                <h5 className="text-md font-semibold text-[#1F1946] md:text-lg">
+                  Cole Bush
+                </h5>
+                <h6 className="text-gray-700 md:text-md">Developer</h6>
+              </div>
+              <p className="text-gray-700">Skilled developer creating custom solutions and implementing cutting-edge technologies for our clients' unique business needs.</p>
+              <div className="mt-6 flex gap-3.5 self-start">
+                <a href="https://www.linkedin.com/in/cole-bush-15026274/" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a href="https://www.cobraautorentals.com/" target="_blank" rel="noopener noreferrer" className="text-[#1F1946] hover:text-[#BD1550]">
+                  <Globe className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
         </div>
       </div>
     </section>
   );
 }
 
-const teamMembers = [
-  {
-    name: "Robert Thomas",
-    title: "Founder & CEO",
-    description: "Founded Empuls3 in 2009 as a specialized micro agency providing personalized technology solutions with direct access to senior specialists.",
-    image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_0.png"
-  },
-  {
-    name: "Mark Smith",
-    title: "Senior Technical Specialist",
-    description: "Providing direct client collaboration and overseeing technical excellence in our boutique approach to software development.",
-    image: "/images/site-images/rob_thomas23_Africa_American_Software_developers_discussing_abo_61339e21-6c03-4f31-9813-6dafd2b02df0.png"
-  },
-  {
-    name: "Sarah Lee",
-    title: "Senior Project Specialist",
-    description: "Working directly with clients to ensure faster implementation times and more personalized attention than larger firms can offer.",
-    image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_1.png"
-  },
-  {
-    name: "David Brown",
-    title: "Senior Development Specialist",
-    description: "Providing direct client collaboration with specialized expertise in full-stack development to create truly personalized software solutions.",
-    image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_2.png"
-  },
-  {
-    name: "Emma Wilson",
-    title: "Senior Design Specialist",
-    description: "Working directly with clients to craft personalized, user-centric designs that enhance the overall user experience with faster implementation times.",
-    image: "/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_9f59d12c-3dc1-41f8-bf2f-15c7b925b834_3.png"
-  },
-  {
-    name: "James Taylor",
-    title: "Senior Marketing Specialist",
-    description: "Providing personalized marketing solutions with direct client collaboration to drive brand awareness through truly tailored strategies.",
-    image: "/images/site-images/rob_thomas23_Afrianc_American_Women_and_men_in_a_digital_market_2ecd10a0-759e-4eab-a9b4-879a27fe0bb7.png"
-  }
-];
+// Team members removed as requested

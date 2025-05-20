@@ -88,6 +88,47 @@ Route::prefix('company')->group(function () {
     })->name('company.faqs');
 });
 
+// Case Studies
+Route::prefix('case-studies')->name('case-studies.')->group(function () {
+    Route::get('/', function () {
+        // Get all published case studies
+        $caseStudies = \App\Models\CaseStudy::where('status', 'published')
+            ->orderBy('created_at', 'desc')
+            ->get();
+            
+        return Inertia::render('case-studies', [
+            'caseStudies' => $caseStudies,
+        ]);
+    })->name('index');
+    
+    Route::get('/filter', [\App\Http\Controllers\CaseStudyController::class, 'filter'])->name('filter');
+    
+    // Original case study page
+    Route::get('/{caseStudy:slug}', function (\App\Models\CaseStudy $caseStudy) {
+        // Make sure only published case studies are viewable
+        if ($caseStudy->status !== 'published') {
+            abort(404);
+        }
+        
+        // Get related case studies with the same service type
+        $relatedCaseStudies = \App\Models\CaseStudy::where('status', 'published')
+            ->where('id', '!=', $caseStudy->id)
+            ->where('service_type', $caseStudy->service_type)
+            ->take(3)
+            ->get();
+            
+        return Inertia::render('case-study', [
+            'caseStudy' => $caseStudy,
+            'relatedCaseStudies' => $relatedCaseStudies,
+        ]);
+    })->name('show');
+    
+    // Redirect detail route to main case study page
+    Route::get('/{caseStudy:slug}/detail', function (\App\Models\CaseStudy $caseStudy) {
+        return redirect()->route('case-studies.show', $caseStudy->slug);
+    });
+});
+
 // Legal Pages
 Route::prefix('legal')->name('legal.')->group(function () {
     Route::get('/privacy-policy', function () {
