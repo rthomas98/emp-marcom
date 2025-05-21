@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Mail, Phone, MapPin, Check, AlertCircle } from "lucide-react";
+import axios from "axios";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,8 +11,30 @@ export function ContactForm() {
     phone: "",
     company: "",
     message: "",
-    service: "web-development"
+    formType: "general",
+    projectType: "web-development",
+    projectDescription: "",
+    requirements: "",
+    budget: "",
+    timeline: "",
+    website: "", // Honeypot field - should remain empty
+    submit_time: 0
   });
+  
+  const [formStatus, setFormStatus] = useState({
+    isSubmitting: false,
+    isSubmitted: false,
+    isError: false,
+    message: ""
+  });
+  
+  // Set the initial timestamp when component mounts
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      submit_time: Math.floor(Date.now() / 1000)
+    }));
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -21,21 +44,82 @@ export function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-      service: "web-development"
+    
+    // Set submitting state
+    setFormStatus({
+      isSubmitting: true,
+      isSubmitted: false,
+      isError: false,
+      message: ""
     });
-    // Show success message
-    alert("Thank you for your message. We'll get back to you soon!");
+    
+    console.log('Submitting form data:', formData);
+    
+    try {
+      // Get CSRF token from meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+      
+      // Configure axios with CSRF token
+      axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
+      
+      // Send form data to backend
+      console.log('Sending request to /contact/submit');
+      const response = await axios.post('/contact/submit', formData);
+      
+      if (response.data.success) {
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+          formType: "general",
+          projectType: "web-development",
+          projectDescription: "",
+          requirements: "",
+          budget: "",
+          timeline: "",
+          website: "",
+          submit_time: Math.floor(Date.now() / 1000)
+        });
+        
+        // Show success message
+        setFormStatus({
+          isSubmitting: false,
+          isSubmitted: true,
+          isError: false,
+          message: response.data.message || "Thank you for your message. We'll get back to you soon!"
+        });
+      } else {
+        throw new Error(response.data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      // Log more detailed error information
+      if (axios.isAxiosError(error)) {
+        console.error('Axios error details:', {
+          status: error.response?.status,
+          statusText: error.response?.statusText,
+          data: error.response?.data,
+          headers: error.response?.headers
+        });
+      }
+      
+      setFormStatus({
+        isSubmitting: false,
+        isSubmitted: false,
+        isError: true,
+        message: axios.isAxiosError(error) && error.response?.data?.message 
+          ? error.response.data.message 
+          : error instanceof Error 
+            ? error.message 
+            : "Something went wrong. Please try again."
+      });
+    }
   };
 
   return (
@@ -91,7 +175,45 @@ export function ContactForm() {
               Send Us a Message
             </h2>
             
+            {formStatus.isSubmitted ? (
+              <div className="rounded-md bg-green-50 p-4 mb-6">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <Check className="h-5 w-5 text-green-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-green-800">{formStatus.message}</p>
+                  </div>
+                </div>
+              </div>
+            ) : formStatus.isError ? (
+              <div className="rounded-md bg-red-50 p-4 mb-6">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <AlertCircle className="h-5 w-5 text-red-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-red-800">{formStatus.message}</p>
+                  </div>
+                </div>
+              </div>
+            ) : null}
+            
             <form onSubmit={handleSubmit}>
+              {/* Honeypot field - hidden from users but visible to bots */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website (Leave this empty)</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+              
               <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#1F1946]">
@@ -153,13 +275,13 @@ export function ContactForm() {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="service" className="mb-2 block text-sm font-medium text-[#1F1946]">
+                <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-[#1F1946]">
                   Service Interested In *
                 </label>
                 <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
+                  id="projectType"
+                  name="projectType"
+                  value={formData.projectType}
                   onChange={handleChange}
                   className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
                   required
@@ -190,9 +312,20 @@ export function ContactForm() {
               
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245]"
+                disabled={formStatus.isSubmitting}
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message
+                {formStatus.isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Processing...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>

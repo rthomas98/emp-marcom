@@ -9,9 +9,10 @@ interface ToastProps {
   title: string;
   onClose: () => void;
   duration?: number;
+  type?: "success" | "error";
 }
 
-export function Toast({ isVisible, message, title, onClose, duration = 5000 }: ToastProps) {
+export function Toast({ isVisible, message, title, onClose, duration = 5000, type = "success" }: ToastProps) {
   useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {
@@ -26,7 +27,7 @@ export function Toast({ isVisible, message, title, onClose, duration = 5000 }: T
 
   return (
     <div className="fixed left-1/2 top-4 z-50 w-full max-w-md -translate-x-1/2 transform">
-      <div className="rounded-lg bg-[#1F1946] p-4 shadow-lg">
+      <div className={`rounded-lg p-4 shadow-lg ${type === "error" ? "bg-red-600" : "bg-[#1F1946]"}`}>
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <h3 className="text-lg font-medium text-white">{title}</h3>

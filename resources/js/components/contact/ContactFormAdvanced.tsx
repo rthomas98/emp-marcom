@@ -1,14 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Toast } from "@/components/common/Toast";
+import axios from "axios";
 
 type FormType = "general" | "project";
 
 export function ContactFormAdvanced() {
   const [formType, setFormType] = useState<FormType>("general");
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("Thank you for your message. We'll get back to you soon!");
+  const [toastType, setToastType] = useState<"success" | "error">("success");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     // Common fields
     name: "",
@@ -23,8 +27,20 @@ export function ContactFormAdvanced() {
     budget: "",
     timeline: "",
     projectDescription: "",
-    requirements: ""
+    requirements: "",
+    
+    // Hidden fields for spam protection
+    website: "", // Honeypot field
+    submit_time: 0
   });
+  
+  // Set the initial timestamp when component mounts
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      submit_time: Math.floor(Date.now() / 1000)
+    }));
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -42,26 +58,72 @@ export function ContactFormAdvanced() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-      formType: formType,
-      projectType: "web-development",
-      budget: "",
-      timeline: "",
-      projectDescription: "",
-      requirements: ""
-    });
-    // Show toast notification
-    setShowToast(true);
+    
+    // Set submitting state
+    setIsSubmitting(true);
+    
+    try {
+      // Get CSRF token from meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+      
+      // Configure axios with CSRF token
+      axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
+      
+      // Send form data to backend
+      console.log('Sending request to /contact/submit');
+      const response = await axios.post('/contact/submit', formData);
+      
+      if (response.data.success) {
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+          formType: formType,
+          projectType: "web-development",
+          budget: "",
+          timeline: "",
+          projectDescription: "",
+          requirements: "",
+          website: "",
+          submit_time: Math.floor(Date.now() / 1000)
+        });
+        
+        // Show success toast notification
+        setToastType("success");
+        setToastMessage(response.data.message || "Thank you for your message. We'll get back to you soon!");
+        setShowToast(true);
+      } else {
+        throw new Error(response.data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      // Log more detailed error information
+      if (axios.isAxiosError(error)) {
+        console.error('Axios error details:', {
+          status: error.response?.status,
+          statusText: error.response?.statusText,
+          data: error.response?.data,
+          headers: error.response?.headers
+        });
+      }
+      
+      // Show error toast notification
+      setToastType("error");
+      setToastMessage(axios.isAxiosError(error) && error.response?.data?.message 
+        ? error.response.data.message 
+        : error instanceof Error 
+          ? error.message 
+          : "Something went wrong. Please try again.");
+      setShowToast(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   const handleCloseToast = () => {
@@ -72,10 +134,11 @@ export function ContactFormAdvanced() {
     <section id="contact-form" className="px-[5%] py-16 md:py-24 lg:py-28">
       <Toast
         isVisible={showToast}
-        title="empuls3.test says"
-        message="Thank you for your message. We'll get back to you soon!"
+        title={toastType === "success" ? "Success" : "Error"}
+        message={toastMessage}
         onClose={handleCloseToast}
         duration={5000}
+        type={toastType}
       />
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
@@ -331,9 +394,20 @@ export function ContactFormAdvanced() {
               
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245]"
+                disabled={isSubmitting}
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {formType === "general" ? "Send Message" : "Submit Project Request"}
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Processing...
+                  </>
+                ) : (
+                  formType === "general" ? "Send Message" : "Submit Project Request"
+                )}
               </button>
             </form>
           </div>

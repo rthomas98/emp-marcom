@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #1F1946;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #BD1550;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .debug-section {
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: none;
+            margin-right: 5px;
+            border-radius: 4px 4px 0 0;
+        }
+        .tab.active {
+            background-color: #f8f9fa;
+            border-color: #ddd;
+            border-bottom-color: #f8f9fa;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Form Debug Tool</h1>
+    <p>This tool helps diagnose issues with the contact form by testing different submission methods.</p>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="form">Form</div>
+        <div class="tab" data-tab="regular">Regular API</div>
+        <div class="tab" data-tab="debug">Debug API</div>
+    </div>
+    
+    <div class="tab-content active" id="form-tab">
+        <h2>Test Form Submission</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required value="Test User">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required value="info@empuls3.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" value="555-555-5555">
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" value="Empuls3">
+            </div>
+            
+            <div class="form-group">
+                <label for="formType">Form Type</label>
+                <input type="text" id="formType" name="formType" value="general">
+            </div>
+            
+            <div class="form-group">
+                <label for="projectType">Project Type *</label>
+                <select id="projectType" name="projectType" required>
+                    <option value="web-development">Web Development</option>
+                    <option value="mobile-development">Mobile Development</option>
+                    <option value="cloud-solutions">Cloud Solutions</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="consulting">Strategic Consulting</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="projectDescription">Project Description</label>
+                <textarea id="projectDescription" name="projectDescription" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="requirements">Requirements</label>
+                <textarea id="requirements" name="requirements" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="budget">Budget</label>
+                <input type="text" id="budget" name="budget">
+            </div>
+            
+            <div class="form-group">
+                <label for="timeline">Timeline</label>
+                <input type="text" id="timeline" name="timeline">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" required>This is a test message from the contact form debug tool.</textarea>
+            </div>
+            
+            <input type="hidden" id="website" name="website" value="">
+            <input type="hidden" id="submit_time" name="submit_time" value="">
+            
+            <button type="submit" id="submitButton">Send Message</button>
+        </form>
+    </div>
+    
+    <div class="tab-content" id="regular-tab">
+        <h2>Test Regular API Endpoint</h2>
+        <button id="testRegularApi">Test /contact/submit Endpoint</button>
+    </div>
+    
+    <div class="tab-content" id="debug-tab">
+        <h2>Test Debug API Endpoint</h2>
+        <button id="testDebugApi">Test /debug-contact Endpoint</button>
+    </div>
+    
+    <div id="response" class="response" style="display: none;"></div>
+    
+    <div class="debug-section">
+        <h3>Request Details</h3>
+        <pre id="requestData"></pre>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Response Details</h3>
+        <pre id="responseData"></pre>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set the initial timestamp
+            document.getElementById('submit_time').value = Math.floor(Date.now() / 1000);
+            
+            // Tab functionality
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Hide all tab content
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Show selected tab content
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            const form = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            const testRegularApiButton = document.getElementById('testRegularApi');
+            const testDebugApiButton = document.getElementById('testDebugApi');
+            const responseDiv = document.getElementById('response');
+            const requestDataPre = document.getElementById('requestData');
+            const responseDataPre = document.getElementById('responseData');
+            
+            // Helper function to collect form data
+            function getFormData() {
+                const formData = new FormData(form);
+                const formDataObj = {};
+                formData.forEach((value, key) => {
+                    formDataObj[key] = value;
+                });
+                return formDataObj;
+            }
+            
+            // Helper function to reset response area
+            function resetResponse() {
+                responseDiv.style.display = 'none';
+                responseDiv.className = 'response';
+                responseDiv.innerHTML = '';
+            }
+            
+            // Helper function to show loading state
+            function showLoading(button) {
+                const originalButtonText = button.innerHTML;
+                button.innerHTML = '<span class="loading"></span>Processing...';
+                button.disabled = true;
+                return originalButtonText;
+            }
+            
+            // Helper function to send request
+            async function sendRequest(url, formDataObj) {
+                // Get CSRF token if available
+                const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                
+                // Prepare headers
+                const headers = {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                };
+                
+                if (csrfToken) {
+                    headers['X-CSRF-TOKEN'] = csrfToken;
+                }
+                
+                // Display request data
+                requestDataPre.textContent = JSON.stringify({
+                    url: url,
+                    method: 'POST',
+                    headers: headers,
+                    body: formDataObj
+                }, null, 2);
+                
+                // Send request
+                return fetch(url, {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(formDataObj)
+                });
+            }
+            
+            // Helper function to handle response
+            function handleResponse(response, responseData, originalButtonText, button) {
+                // Display response data
+                responseDataPre.textContent = JSON.stringify({
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: Object.fromEntries([...response.headers]),
+                    data: responseData
+                }, null, 2);
+                
+                // Show success or error message
+                responseDiv.style.display = 'block';
+                
+                if (response.ok && responseData.success) {
+                    responseDiv.classList.add('success');
+                    responseDiv.innerHTML = '<strong>Success!</strong> ' + (responseData.message || 'Form submitted successfully.');
+                } else {
+                    responseDiv.classList.add('error');
+                    responseDiv.innerHTML = '<strong>Error!</strong> ' + (responseData.message || 'Something went wrong. Please try again.');
+                }
+                
+                // Reset button state
+                button.innerHTML = originalButtonText;
+                button.disabled = false;
+            }
+            
+            // Form submission handler
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                resetResponse();
+                const originalButtonText = showLoading(submitButton);
+                const formDataObj = getFormData();
+                
+                try {
+                    const response = await sendRequest('/contact/submit', formDataObj);
+                    const responseData = await response.json();
+                    handleResponse(response, responseData, originalButtonText, submitButton);
+                    
+                    if (response.ok && responseData.success) {
+                        form.reset();
+                        document.getElementById('submit_time').value = Math.floor(Date.now() / 1000);
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    responseDataPre.textContent = JSON.stringify({
+                        error: error.message,
+                        stack: error.stack
+                    }, null, 2);
+                    
+                    responseDiv.style.display = 'block';
+                    responseDiv.classList.add('error');
+                    responseDiv.innerHTML = '<strong>Error!</strong> ' + error.message;
+                    
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+            
+            // Test regular API endpoint
+            testRegularApiButton.addEventListener('click', async function() {
+                resetResponse();
+                const originalButtonText = showLoading(testRegularApiButton);
+                const formDataObj = getFormData();
+                
+                try {
+                    const response = await sendRequest('/contact/submit', formDataObj);
+                    const responseData = await response.json();
+                    handleResponse(response, responseData, originalButtonText, testRegularApiButton);
+                } catch (error) {
+                    console.error('API test error:', error);
+                    responseDataPre.textContent = JSON.stringify({
+                        error: error.message,
+                        stack: error.stack
+                    }, null, 2);
+                    
+                    responseDiv.style.display = 'block';
+                    responseDiv.classList.add('error');
+                    responseDiv.innerHTML = '<strong>Error!</strong> ' + error.message;
+                    
+                    testRegularApiButton.innerHTML = originalButtonText;
+                    testRegularApiButton.disabled = false;
+                }
+            });
+            
+            // Test debug API endpoint
+            testDebugApiButton.addEventListener('click', async function() {
+                resetResponse();
+                const originalButtonText = showLoading(testDebugApiButton);
+                const formDataObj = getFormData();
+                
+                try {
+                    const response = await sendRequest('/debug-contact', formDataObj);
+                    const responseData = await response.json();
+                    handleResponse(response, responseData, originalButtonText, testDebugApiButton);
+                } catch (error) {
+                    console.error('Debug API test error:', error);
+                    responseDataPre.textContent = JSON.stringify({
+                        error: error.message,
+                        stack: error.stack
+                    }, null, 2);
+                    
+                    responseDiv.style.display = 'block';
+                    responseDiv.classList.add('error');
+                    responseDiv.innerHTML = '<strong>Error!</strong> ' + error.message;
+                    
+                    testDebugApiButton.innerHTML = originalButtonText;
+                    testDebugApiButton.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
