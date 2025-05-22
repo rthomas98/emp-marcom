@@ -95,21 +95,21 @@ export function CaseStudyGallery({ relatedCaseStudies = [] }: CaseStudyGalleryPr
           <h2 className="mb-5 text-5xl font-bold text-secondary md:mb-6 md:text-7xl lg:text-8xl">
             Success Stories
           </h2>
-          <p className="md:text-md max-w-3xl mx-auto">
+          <p className="md:text-md max-w-3xl mx-auto text-secondary font-medium">
             Discover the inspiring success stories of our clients and the
             effective implementations we've carried out. Each narrative
             highlights the challenges faced, the innovative solutions we
             provided, and the remarkable results achieved.
           </p>
         </div>
-        <div className="gap-8 space-y-8 md:columns-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {displayCaseStudies.map((caseStudy) => (
             <Link 
               key={caseStudy.id} 
               href={`/case-studies/${caseStudy.slug}`} 
               className="block w-full mb-8 group"
             >
-              <div className="relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden rounded-lg h-[300px]">
                 <img
                   src={caseStudy.featured_image.startsWith('/storage/') 
                     ? caseStudy.featured_image 

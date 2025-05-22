@@ -18,7 +18,7 @@ export function CaseStudiesHeader() {
           style={{ opacity: opacityContent }}
         >
           <div className="px-[5%] py-16 md:py-24 lg:py-28">
-            <div className="relative z-10 mx-auto max-w-lg text-center">
+            <div className="relative z-10 mx-auto max-w-3xl text-center">
               <h1 className="mb-5 text-4xl font-bold text-white md:mb-6 md:text-6xl lg:text-7xl">
                 Transformative Case Studies That Inspire Growth
               </h1>

@@ -6,8 +6,13 @@ import CaseStudyGallery from '@/components/case-studies/CaseStudyGallery';
 import CaseStudiesCta from '@/components/case-studies/CaseStudiesCta';
 import CaseStudyGallery7 from '@/components/case-studies/CaseStudyGallery7';
 
-// This interface is used for type checking when parsing the gallery_images JSON
+// Define GalleryImage interface
+interface GalleryImage {
+    src: string;
+    alt?: string; 
+}
 
+// This interface is used for type checking
 interface CaseStudy {
   id: number;
   title: string;
@@ -22,7 +27,7 @@ interface CaseStudy {
   testimonial_author: string | null;
   testimonial_position: string | null;
   featured_image: string;
-  gallery_images: string | null;
+  gallery_images: GalleryImage[] | null; 
   logo: string | null;
   website_url: string | null;
   completion_date: string | null;
@@ -82,22 +87,22 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
         </div>
       </section>
       
-      {/* Project Gallery */}
-      {caseStudy.gallery_images ? (
+      {/* Project Gallery or Featured Image */}
+      {caseStudy.gallery_images && caseStudy.gallery_images.length > 0 ? (
         <CaseStudyGallery7 
-          images={JSON.parse(caseStudy.gallery_images).slice(0, 3).map((img: {src: string; alt?: string}) => ({
-            src: img.src,
-            alt: img.alt
+          images={caseStudy.gallery_images.slice(0, 3).map((img: GalleryImage) => ({
+            src: img.src.startsWith('http') ? img.src : `/storage/${img.src.startsWith('/') ? img.src.substring(1) : img.src}`,
+            alt: img.alt || caseStudy.title 
           }))}
         />
       ) : (
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-xl overflow-hidden shadow-lg h-[400px]">
               <img 
-                src={caseStudy.featured_image.startsWith('/') ? caseStudy.featured_image : `/storage/${caseStudy.featured_image}`} 
+                src={caseStudy.featured_image.startsWith('http') ? caseStudy.featured_image : `/storage/${caseStudy.featured_image.startsWith('/') ? caseStudy.featured_image.substring(1) : caseStudy.featured_image}`}
                 alt={caseStudy.title} 
-                className="w-full h-auto object-cover border-0"
+                className="w-full h-full object-cover border-0"
               />
             </div>
           </div>
@@ -130,7 +135,7 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
                 {caseStudy.logo && (
                   <div className="mb-6">
                     <img 
-                      src={caseStudy.logo && caseStudy.logo.startsWith('/') ? caseStudy.logo : `/storage/${caseStudy.logo}`} 
+                      src={caseStudy.logo.startsWith('http') ? caseStudy.logo : `/storage/${caseStudy.logo.startsWith('/') ? caseStudy.logo.substring(1) : caseStudy.logo}`}
                       alt={`${caseStudy.client_name} logo`} 
                       className="max-h-16 border-0"
                     />

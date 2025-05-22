@@ -8,6 +8,7 @@ use App\Models\CaseStudy;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -65,11 +66,13 @@ class CaseStudyResource extends Resource
                                 'Technology' => 'Technology',
                                 'Healthcare' => 'Healthcare',
                                 'Finance' => 'Finance',
+                                'Legal' => 'Legal',
                                 'Education' => 'Education',
                                 'E-commerce' => 'E-commerce',
                                 'Manufacturing' => 'Manufacturing',
                                 'Real Estate' => 'Real Estate',
                                 'Hospitality' => 'Hospitality',
+                                'Retail' => 'Retail',
                                 'Entertainment' => 'Entertainment',
                                 'Other' => 'Other',
                             ]),
@@ -144,16 +147,35 @@ class CaseStudyResource extends Resource
                         FileUpload::make('featured_image')
                             ->required()
                             ->image()
+                            ->disk('public')
                             ->directory('case-studies/featured')
+                            ->maxSize(2048)
                             ->visibility('public')
-                            ->maxSize(5120)
                             ->columnSpanFull(),
                             
                         FileUpload::make('logo')
                             ->image()
+                            ->disk('public')
                             ->directory('case-studies/logos')
-                            ->visibility('public')
-                            ->maxSize(1024),
+                            ->maxSize(2048),
+
+                        Repeater::make('gallery_images')
+                            ->label('Gallery Images')
+                            ->schema([
+                                FileUpload::make('src')
+                                    ->label('Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('case-studies/gallery')
+                                    ->maxSize(2048)
+                                    ->required(),
+                                TextInput::make('alt')
+                                    ->label('Alt Text')
+                                    ->maxLength(255),
+                            ])
+                            ->columns(1)
+                            ->addActionLabel('Add Image to Gallery')
+                            ->columnSpanFull(),
                     ]),
                     
                 Section::make('SEO & Settings')

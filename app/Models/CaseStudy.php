@@ -26,6 +26,7 @@ class CaseStudy extends Model
         'featured_image',
         'logo',
         'website_url',
+        'gallery_images',
         'completion_date',
         'is_featured',
         'meta_title',
@@ -36,7 +37,33 @@ class CaseStudy extends Model
     protected $casts = [
         'is_featured' => 'boolean',
         'completion_date' => 'date',
+        'gallery_images' => 'array',
     ];
+    
+    /**
+     * Get the gallery images attribute with proper formatting
+     * This ensures the gallery_images are always properly formatted even if stored as a string
+     */
+    public function getGalleryImagesAttribute($value)
+    {
+        // If the value is a string (JSON), decode it
+        if (is_string($value) && !empty($value)) {
+            try {
+                $decoded = json_decode($value, true);
+                return is_array($decoded) ? $decoded : [];
+            } catch (\Exception $e) {
+                return [];
+            }
+        }
+        
+        // If it's already an array, return it
+        if (is_array($value)) {
+            return $value;
+        }
+        
+        // Default to empty array
+        return [];
+    }
     
     public function setTitleAttribute($value)
     {

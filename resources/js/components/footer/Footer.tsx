@@ -53,16 +53,10 @@ export default function Footer() {
                   <Link href={route('contact')}>Contact Us</Link>
                 </li>
                 <li className="py-2 text-sm font-semibold">
-                  <Link href={route('company.about')}>Careers</Link>
+                  <Link href={route('case-studies.index')}>Case Studies</Link>
                 </li>
                 <li className="py-2 text-sm font-semibold">
-                  <Link href={route('home')}>Blog</Link>
-                </li>
-                <li className="py-2 text-sm font-semibold">
-                  <Link href={route('home')}>Case Studies</Link>
-                </li>
-                <li className="py-2 text-sm font-semibold">
-                  <Link href={route('company.faqs')}>FAQs</Link>
+                  <Link href={route('company.about')}>About Us</Link>
                 </li>
               </ul>
             </div>
@@ -101,19 +95,19 @@ export default function Footer() {
         <div className="flex flex-col-reverse items-start justify-between pt-6 pb-4 text-sm md:flex-row md:items-center md:pt-8 md:pb-0">
           <p className="text-white/70">© {new Date().getFullYear()} Empuls3. All rights reserved.</p>
           <div className="grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3 mb-4 md:mb-0">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/empuls3/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Facebook className="size-6 text-white hover:text-accent-pink transition-colors" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/empuls3/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram className="size-6 text-white hover:text-accent-pink transition-colors" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://x.com/empuls3" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <Twitter className="size-6 text-white hover:text-accent-pink transition-colors" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/empuls3/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin className="size-6 text-white hover:text-accent-pink transition-colors" />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a href="https://www.youtube.com/@empuls3" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <Youtube className="size-6 text-white hover:text-accent-pink transition-colors" />
             </a>
           </div>
