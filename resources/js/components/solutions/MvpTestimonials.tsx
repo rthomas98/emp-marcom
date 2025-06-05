@@ -24,7 +24,7 @@ export function MvpTestimonials() {
       numberOfStars: 5,
       quote: "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with! Easy, fun, and talented.",
       avatar: {
-        src: "/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png",
+        src: "/images/1638545534787.jpeg",
         alt: "Palmer Dean Testimonial"
       },
       name: "Palmer Dean",
@@ -38,7 +38,7 @@ export function MvpTestimonials() {
       numberOfStars: 5,
       quote: "I would highly recommend Empuls3 for any Web design, App Creation, and App Launch. They are knowledgeable, and will ensure your project is completed from beginning to the end.",
       avatar: {
-        src: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_0f48e92a-5e85-4e9f-9713-d384e5873a22.png",
+        src: "/images/305620519_446536930828187_8773084213258704960_n.jpg",
         alt: "John Knight Testimonial"
       },
       name: "John Knight",
@@ -52,7 +52,7 @@ export function MvpTestimonials() {
       numberOfStars: 5,
       quote: "Rob is fantastic. Really enjoyed working with him. He is very honest/fair with regards to pricing and turn around time for work is very quick.",
       avatar: {
-        src: "/images/site-images/rob_thomas23_Afrianc_American_Women_and_men_in_a_digital_market_57f3a2b1-6eaf-4c56-aa14-4dba9129a523.png",
+        src: "/images/image-800x800.webp",
         alt: "James McElroy Testimonial"
       },
       name: "James McElroy",
@@ -66,11 +66,11 @@ export function MvpTestimonials() {
       numberOfStars: 5,
       quote: "Rob did a wonderful job on my webpage and was responsive to my needs. The feedback on my website has been greatly positive.",
       avatar: {
-        src: "/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png",
+        src: "/images/fx-gs.webp",
         alt: "Theron Williams Testimonial"
       },
       name: "Theron Williams",
-      position: "Client, Satisfied Customer",
+      position: "Owner at Theron J Williams Consulting LLC",
       logo: {
         src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "Client Logo"

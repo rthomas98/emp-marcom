@@ -31,13 +31,13 @@ export function SoftwareTestimonials() {
             <div className="mt-6 flex w-full flex-col gap-3 md:mt-8 md:w-auto md:flex-row md:items-center md:gap-5">
               <div>
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png"
+                  src="/images/1638545534787.jpeg"
                   alt="Palmer Dean, Founder"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-4 md:mb-0">
-                <p className="font-semibold">Palmer Dean</p>
+                <p className="font-semibold text-[#BD1550]">Palmer Dean</p>
                 <p className="text-gray-600">Founder, Wash Metrix</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
@@ -62,13 +62,13 @@ export function SoftwareTestimonials() {
             <div className="mt-6 flex w-full flex-col gap-3 md:mt-8 md:w-auto md:flex-row md:items-center md:gap-5">
               <div>
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png"
+                  src="/images/image-800x800.webp"
                   alt="James McElroy, Founder & CEO"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-4 md:mb-0">
-                <p className="font-semibold">James McElroy</p>
+                <p className="font-semibold text-[#BD1550]">James McElroy</p>
                 <p className="text-gray-600">Founder & CEO, frienzy.io</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />

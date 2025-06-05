@@ -43,7 +43,7 @@ export function Innovation() {
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               <Link
-                href="/services/innovation"
+                href="/services/software-engineering-it-consulting"
                 className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50"
               >
                 Learn More

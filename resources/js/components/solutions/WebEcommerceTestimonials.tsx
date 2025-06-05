@@ -31,20 +31,18 @@ export function WebEcommerceTestimonials() {
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_2d8255b5-eb2b-4d1c-b57d-58077e6d9d44.png"
+                  src="/images/1638545534787.jpeg"
                   alt="Palmer Dean, Founder"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
-                <p className="font-semibold">Palmer Dean</p>
+                <p className="font-semibold text-primary">Palmer Dean</p>
                 <p className="text-gray-600">Founder, Wash Metrix</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
               <div>
-                <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">Wash Metrix</span>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -62,21 +60,17 @@ export function WebEcommerceTestimonials() {
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png"
+                  src="/images/305620519_446536930828187_8773084213258704960_n.jpg"
                   alt="John Knight, Founder"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
-                <p className="font-semibold">John Knight</p>
+                <p className="font-semibold text-primary">John Knight</p>
                 <p className="text-gray-600">Founder, 24peekview.com</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
-              <div>
-                <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">24peekview</span>
-                </div>
-              </div>
+              
             </div>
           </div>
           <div className="flex h-full max-w-lg flex-col items-start justify-start text-left">
@@ -93,21 +87,17 @@ export function WebEcommerceTestimonials() {
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_Team_of_Young_Managers_Discussing_df53a8b9-91a0-4201-a378-f71855407ec1.png"
+                  src="/images/fx-gs.webp"
                   alt="Theron Williams"
                   className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
               </div>
               <div className="mb-3 md:mb-4">
-                <p className="font-semibold">Theron Williams</p>
-                <p className="text-gray-600">Client</p>
+                <p className="font-semibold text-primary">Theron Williams</p>
+                <p className="text-gray-600">Theron J Williams Consulting LLC</p>
               </div>
               <div className="hidden w-px self-stretch bg-gray-300 md:block" />
-              <div>
-                <div className="h-12 w-24 flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-semibold text-gray-700">Client</span>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

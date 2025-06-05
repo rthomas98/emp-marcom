@@ -44,7 +44,7 @@ export function HubspotSolutions() {
               </div>
               <div className="mt-5 md:mt-6">
                 <Link
-                  href="/solutions/hubspot-automation"
+                  href="/solutions/hubspot-crm-development"
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                 >
                   Learn More
@@ -74,7 +74,7 @@ export function HubspotSolutions() {
               </div>
               <div className="mt-5 md:mt-6">
                 <Link
-                  href="/solutions/hubspot-integrations"
+                  href="/solutions/hubspot-crm-development"
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                 >
                   Learn More

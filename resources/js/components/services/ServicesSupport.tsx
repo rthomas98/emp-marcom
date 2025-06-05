@@ -21,7 +21,7 @@ export function ServicesSupport() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
-            <div className="flex flex-col rounded-lg border border-gray-200">
+            <div className="flex flex-col rounded-lg border border-gray-200 bg-white">
               <div className="flex h-full flex-col justify-between p-6 md:p-8 lg:p-6">
                 <div>
                   <div className="mb-3 md:mb-4">
@@ -34,7 +34,7 @@ export function ServicesSupport() {
                 </div>
                 <div className="mt-5 flex items-center gap-4 md:mt-6">
                   <Link
-                    href="/services/support"
+                    href="/services/managed-it-support-services"
                     className="inline-flex items-center text-[#BD1550] hover:underline"
                   >
                     Learn More
@@ -43,7 +43,7 @@ export function ServicesSupport() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col rounded-lg border border-gray-200">
+            <div className="flex flex-col rounded-lg border border-gray-200 bg-white">
               <div className="flex h-full flex-col justify-between p-6 md:p-8 lg:p-6">
                 <div>
                   <div className="mb-3 md:mb-4">
@@ -56,7 +56,7 @@ export function ServicesSupport() {
                 </div>
                 <div className="mt-5 flex items-center gap-4 md:mt-6">
                   <Link
-                    href="/services/technical-assistance"
+                    href="/services/managed-it-support-services"
                     className="inline-flex items-center text-[#BD1550] hover:underline"
                   >
                     Learn More
@@ -65,7 +65,7 @@ export function ServicesSupport() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 rounded-lg border border-gray-200 sm:col-span-2 sm:row-span-1 sm:grid-cols-2">
+            <div className="grid grid-cols-1 rounded-lg border border-gray-200 bg-white sm:col-span-2 sm:row-span-1 sm:grid-cols-2">
               <div className="flex items-center justify-center">
                 <img
                   src="/images/site-images/rob_thomas23_African_American_Software_Engineers_in_a_meeting_7f9202d7-9cb9-49eb-92d7-f5f6966d2594_2.png"

@@ -5,7 +5,6 @@ import { AppDevOpsPipeline } from '@/components/services/AppDevOpsPipeline';
 import { AppDevOpsInfrastructure } from '@/components/services/AppDevOpsInfrastructure';
 import { AppDevOpsFeatures } from '@/components/services/AppDevOpsFeatures';
 import { AppDevOpsProcess } from '@/components/services/AppDevOpsProcess';
-import { AppDevOpsTestimonial } from '@/components/services/AppDevOpsTestimonial';
 import { AppDevOpsCTA } from '@/components/services/AppDevOpsCTA';
 import { Head } from '@inertiajs/react';
 
@@ -23,7 +22,6 @@ export default function ApplicationDevopsServices() {
       <AppDevOpsInfrastructure />
       <AppDevOpsFeatures />
       <AppDevOpsProcess />
-      <AppDevOpsTestimonial />
       <AppDevOpsCTA />
     </SiteLayout>
   );

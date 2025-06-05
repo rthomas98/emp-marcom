@@ -18,7 +18,7 @@ export function ServicesDevOps() {
           </p>
         </div>
         <div className="grid auto-cols-fr grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
-          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200">
+          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
             <div className="block flex-1 p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
               <div>
                 <p className="mb-2 font-semibold text-[#BD1550]">Micro Agency Advantage</p>
@@ -31,7 +31,7 @@ export function ServicesDevOps() {
               </div>
               <div className="mt-5 md:mt-6">
                 <Link
-                  href="/services/devops"
+                  href="/services/application-devops-services"
                   className="inline-flex items-center text-[#BD1550] hover:underline"
                 >
                   Learn More
@@ -47,7 +47,7 @@ export function ServicesDevOps() {
               />
             </div>
           </div>
-          <div className="grid auto-cols-fr grid-cols-1 flex-col overflow-hidden rounded-lg border border-gray-200 sm:grid-cols-2 lg:col-span-2">
+          <div className="grid auto-cols-fr grid-cols-1 flex-col overflow-hidden rounded-lg border border-gray-200 bg-white sm:grid-cols-2 lg:col-span-2">
             <div className="block p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
               <div>
                 <p className="mb-2 font-semibold text-[#BD1550]">Boutique Approach</p>

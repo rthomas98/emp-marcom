@@ -42,7 +42,7 @@ export function ProductDevelopment() {
                 </div>
                 <div className="mt-5 flex items-center gap-4 md:mt-6">
                   <Link
-                    href="/solutions/product-development"
+                    href="/solutions/mvp-product-development"
                     className="inline-flex items-center text-primary hover:text-accent-pink"
                   >
                     Learn More
@@ -69,7 +69,7 @@ export function ProductDevelopment() {
                 </div>
                 <div className="mt-5 flex items-center gap-4 md:mt-6">
                   <Link
-                    href="/solutions/mvp-development"
+                    href="/solutions/mvp-product-development"
                     className="inline-flex items-center text-primary hover:text-accent-pink"
                   >
                     Learn More

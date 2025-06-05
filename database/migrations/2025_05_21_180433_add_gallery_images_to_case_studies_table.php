@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('case_studies', function (Blueprint $table) {
-            $table->json('gallery_images')->nullable()->after('website_url');
+            if (!Schema::hasColumn('case_studies', 'gallery_images')) {
+                $table->json('gallery_images')->nullable()->after('website_url');
+            }
         });
     }
 

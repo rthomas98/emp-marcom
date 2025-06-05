@@ -5,7 +5,6 @@ import { ManagedITTeams } from '@/components/services/ManagedITTeams';
 import { ManagedITSupport } from '@/components/services/ManagedITSupport';
 import { ManagedITServices } from '@/components/services/ManagedITServices';
 import { ManagedITSolutions } from '@/components/services/ManagedITSolutions';
-import { ManagedITTestimonial } from '@/components/services/ManagedITTestimonial';
 import { ManagedITCTA } from '@/components/services/ManagedITCTA';
 import { Head } from '@inertiajs/react';
 
@@ -23,7 +22,6 @@ export default function ManagedItSupportServices() {
       <ManagedITSupport />
       <ManagedITServices />
       <ManagedITSolutions />
-      <ManagedITTestimonial />
       <ManagedITCTA />
     </SiteLayout>
   );

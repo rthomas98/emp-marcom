@@ -10,8 +10,8 @@ export function AppDevOpsTestimonial() {
         <div className="grid w-full auto-cols-fr grid-cols-1 items-center justify-center gap-12 md:grid-cols-2 md:gap-10 lg:gap-x-20">
           <div className="order-last md:order-first">
             <img
-              src="/images/site-images/rob_thomas23_Two_African_American_business_professionals_shakin_192a73a1-6814-409d-9214-6471b0199cb4.png"
-              alt="Business professionals discussing app development success"
+              src="/images/1638545534787.jpeg"
+              alt="Palmer Dean portrait"
               className="aspect-square w-full rounded-lg border border-gray-200 object-cover"
             />
           </div>
@@ -22,18 +22,18 @@ export function AppDevOpsTestimonial() {
               ))}
             </div>
             <blockquote className="text-xl font-bold text-[#1F1946] md:text-2xl">
-              "Working with Empuls3's boutique team was a game-changer for our DevOps process. The direct access to their senior specialists and personalized attention made all the difference. Their micro agency approach delivered faster implementation and more tailored solutions than we ever experienced with larger firms."
+              "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with! Easy, fun, and talented."
             </blockquote>
             <div className="mt-6 flex flex-nowrap items-center gap-5 md:mt-8">
               <div>
-                <p className="font-semibold text-[#1F1946]">Michael Johnson</p>
-                <p className="text-gray-700">CTO, InnovateX Technologies</p>
+                <p className="font-semibold text-[#1F1946]">Palmer Dean</p>
+                <p className="text-gray-700">Founder, Wash Metrix</p>
               </div>
               <div className="mx-4 w-px self-stretch bg-gray-300 sm:mx-0" />
               <div>
                 <img
-                  src="/images/emp-logo.svg"
-                  alt="Client company logo"
+                  src="https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg"
+                  alt="Wash Metrix logo"
                   className="max-h-12"
                 />
               </div>

@@ -5,7 +5,7 @@ export function BackendFeatures() {
     <section id="backend-features" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
-          <div className="max-w-lg">
+          <div className="max-w-3xl">
             <h2 className="text-4xl leading-[1.2] font-bold font-header text-primary md:text-5xl lg:text-6xl">
               Unlock the Power of Scalable Back-End Solutions for Your Business
             </h2>

@@ -31,7 +31,7 @@ export function BackendTestimonials() {
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_People_sticky_note_and_office_g_cf3e7832-6a5e-48da-9f5b-7dd8a0ac57e4_1.png"
+                  src="/images/1723665299718.jpeg"
                   alt="Anthony Bearden portrait"
                   className="size-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
@@ -60,7 +60,7 @@ export function BackendTestimonials() {
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
-                  src="/images/site-images/rob_thomas23_Afrianc_American_Women_and_men_in_a_digital_market_b3490e73-4b60-4a0c-ba7a-b0c02fbab916.png"
+                  src="/images/1638545534787.jpeg"
                   alt="Palmer Dean portrait"
                   className="size-14 min-h-14 min-w-14 rounded-full object-cover"
                 />
@@ -89,7 +89,7 @@ export function BackendTestimonials() {
             <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
               <div className="mb-4">
                 <img
-                  src="/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_ff51deb6-2b53-4935-b091-29dd4ac7a594.png"
+                  src="/images/image-800x800.webp"
                   alt="James McElroy portrait"
                   className="size-14 min-h-14 min-w-14 rounded-full object-cover"
                 />

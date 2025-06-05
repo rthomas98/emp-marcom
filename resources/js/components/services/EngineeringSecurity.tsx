@@ -20,7 +20,7 @@ export function EngineeringSecurity() {
           </p>
         </div>
         <div className="grid auto-cols-fr grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
-          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200">
+          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
             <div className="flex w-full flex-col items-center justify-center self-start">
               <img
                 src="/images/site-images/rob_thomas23_African_American_Web_developers_using_a_computer_t_be2a97fe-d00e-41c1-ad43-4bffd775a774.png"
@@ -49,7 +49,7 @@ export function EngineeringSecurity() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200">
+          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
             <div className="flex w-full flex-col items-center justify-center self-start">
               <img
                 src="/images/site-images/rob_thomas23_An_African_American_developer_holding_his_computer_160e36fc-9208-4e49-8166-d14de5aa74b0.png"
@@ -78,7 +78,7 @@ export function EngineeringSecurity() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200">
+          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
             <div className="flex w-full flex-col items-center justify-center self-start">
               <img
                 src="/images/site-images/rob_thomas23_Laptop_Standing_on_a_Desk_with_a_Video_Streaming_4cf335b7-cb95-43d9-8eff-5e907d49c3f4_3.png"

@@ -28,7 +28,7 @@ export function AppDevOpsFeatures() {
                 <img
                   src="/images/site-images/rob_thomas23_A_dynamic_image_of_an_ecommerce_website_on_a_lapto_8573ee70-5ea2-48aa-ae70-35db662a51f2.png"
                   alt="Full-stack development for e-commerce applications"
-                  className="h-60 w-full rounded-lg border border-gray-200 object-cover"
+                  className="h-60 w-full rounded-lg  object-cover"
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
@@ -43,7 +43,7 @@ export function AppDevOpsFeatures() {
                 <img
                   src="/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png"
                   alt="Business executives discussing industry challenges"
-                  className="h-60 w-full rounded-lg border border-gray-200 object-cover"
+                  className="h-60 w-full rounded-lg object-cover"
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
@@ -58,7 +58,7 @@ export function AppDevOpsFeatures() {
                 <img
                   src="/images/site-images/rob_thomas23_Afrianc_American_Women_and_men_in_a_digital_market_2ecd10a0-759e-4eab-a9b4-879a27fe0bb7.png"
                   alt="Team working with emerging digital technologies"
-                  className="h-60 w-full rounded-lg border border-gray-200 object-cover"
+                  className="h-60 w-full rounded-lg object-cover"
                 />
               </div>
               <h3 className="mb-5 text-2xl font-bold text-[#1F1946] md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">

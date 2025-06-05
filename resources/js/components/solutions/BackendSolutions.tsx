@@ -6,7 +6,7 @@ export function BackendSolutions() {
   return (
     <section id="backend-solutions" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
-        <div className="mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20">
+        <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
             The Micro Agency Advantage
           </p>
@@ -18,7 +18,7 @@ export function BackendSolutions() {
           </p>
         </div>
         <div className="grid auto-cols-fr grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
-          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200">
+          <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
             <div className="block flex-1 p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
               <div>
                 <p className="mb-2 font-semibold text-[#BD1550]">Efficiency</p>
@@ -47,7 +47,7 @@ export function BackendSolutions() {
               />
             </div>
           </div>
-          <div className="grid auto-cols-fr grid-cols-1 flex-col overflow-hidden rounded-lg border border-gray-200 sm:grid-cols-2 lg:col-span-2">
+          <div className="grid auto-cols-fr grid-cols-1 flex-col overflow-hidden rounded-lg border border-gray-200 bg-white sm:grid-cols-2 lg:col-span-2">
             <div className="block p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
               <div>
                 <p className="mb-2 font-semibold text-[#BD1550]">Integration</p>

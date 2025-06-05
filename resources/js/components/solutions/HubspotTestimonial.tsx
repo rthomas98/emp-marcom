@@ -21,7 +21,7 @@ export function HubspotTestimonial() {
           <div className="mt-6 flex w-full flex-col items-center justify-center gap-3 text-center md:mt-8 md:w-auto md:flex-row md:gap-5 md:text-left">
             <div>
               <img
-                src="/images/site-images/rob_thomas23_African_American_CEO_and_Chief_Executive_Talking_A_72595ef3-0f82-49e6-bbd3-9b4581e80520.png"
+                src="/images/image-800x800.webp"
                 alt="James McElroy"
                 className="size-14 min-h-14 min-w-14 rounded-full object-cover"
               />

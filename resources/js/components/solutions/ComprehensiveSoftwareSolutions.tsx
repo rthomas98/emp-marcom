@@ -7,7 +7,7 @@ export function ComprehensiveSoftwareSolutions() {
     <section id="comprehensive-software-solutions" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
-          <div className="mx-auto max-w-lg text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 font-semibold text-accent-pink md:mb-4">
               Micro Agency, Major Impact
             </p>
@@ -28,7 +28,7 @@ export function ComprehensiveSoftwareSolutions() {
                 </div>
               </div>
               <h3 className="mb-5 text-3xl leading-[1.2] font-bold text-primary md:mb-6 md:text-4xl lg:text-5xl">
-                Senior Full-Stack Developers
+                Seasoned Senior Full-Stack Developers
               </h3>
               <p className="text-gray-700">
                 Unlike larger agencies where you rarely interact with senior developers, our boutique team gives you direct access to experienced full-stack engineers who seamlessly integrate front-end and back-end technologies for optimal performance and efficiency.

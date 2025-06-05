@@ -68,7 +68,7 @@ export function Services() {
               </div>
               <div className="mt-5 md:mt-6">
                 <Link
-                  href="/solutions/security"
+                  href="/services/software-engineering-it-consulting"
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                 >
                   Learn More
@@ -98,7 +98,7 @@ export function Services() {
               </div>
               <div className="mt-5 md:mt-6">
                 <Link
-                  href="/solutions/digital-transformation"
+                  href="/solutions/software-development-design"
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                 >
                   Get Started
