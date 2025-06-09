@@ -16,12 +16,24 @@ class FilamentAdminAccess
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // Allow access to login page and authentication routes
+        if ($request->is('*/login') || $request->is('*/forgot-password') || $request->is('*/reset-password/*')) {
+            return $next($request);
+        }
+        
         $user = Auth::user();
 
+        // Check if user is authenticated and has admin access
         if ($user && ($user->hasRole('admin') || $user->email === 'rob.thomas@empuls3.com')) {
             return $next($request);
         }
 
+        // If not authenticated, redirect to login
+        if (!$user) {
+            return redirect()->route('filament.marcom.auth.login');
+        }
+        
+        // If authenticated but not authorized, show 403
         abort(403, 'Unauthorized access to admin panel.');
     }
 }
