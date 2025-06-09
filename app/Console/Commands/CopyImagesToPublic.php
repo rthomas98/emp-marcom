@@ -43,24 +43,33 @@ class CopyImagesToPublic extends Command
         if ($source === 's3' || $source === 'both') {
             $this->info('Copying images from S3/R2...');
             try {
-                $images = Storage::disk('s3')->files('images/site-images');
-                
-                foreach ($images as $image) {
-                    try {
-                        $contents = Storage::disk('s3')->get($image);
-                        $relativePath = str_replace('images/site-images/', '', $image);
-                        $publicFilePath = $publicPath . '/' . $relativePath;
-                        
-                        File::put($publicFilePath, $contents);
-                        $count++;
-                        
-                        $this->info("Copied from S3: {$image}");
-                    } catch (\Exception $e) {
-                        $this->warn("Failed to copy {$image} from S3: " . $e->getMessage());
+                // Check if S3 disk is properly configured
+                if (!class_exists('League\Flysystem\AwsS3V3\AwsS3V3Adapter')) {
+                    $this->warn('AWS S3 adapter not available. Make sure you have installed the package: composer require league/flysystem-aws-s3-v3');
+                } else if (!config('filesystems.disks.s3.key') || !config('filesystems.disks.s3.secret')) {
+                    $this->warn('AWS S3 credentials not properly configured in .env file');
+                } else {
+                    // Try to list files from S3
+                    $images = Storage::disk('s3')->files('images/site-images');
+                    
+                    foreach ($images as $image) {
+                        try {
+                            $contents = Storage::disk('s3')->get($image);
+                            $relativePath = str_replace('images/site-images/', '', $image);
+                            $publicFilePath = $publicPath . '/' . $relativePath;
+                            
+                            File::put($publicFilePath, $contents);
+                            $count++;
+                            
+                            $this->info("Copied from S3: {$image}");
+                        } catch (\Exception $e) {
+                            $this->warn("Failed to copy {$image} from S3: " . $e->getMessage());
+                        }
                     }
                 }
             } catch (\Exception $e) {
                 $this->error('Error accessing S3/R2: ' . $e->getMessage());
+                $this->line('Continuing with local files...');
             }
         }
         
