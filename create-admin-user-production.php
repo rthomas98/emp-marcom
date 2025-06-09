@@ -34,25 +34,22 @@ function getSecureInput($prompt) {
 $name = 'Rob Thomas';
 $email = 'rob.thomas@empuls3.com';
 
-// Get password from environment variable or prompt
+// Get password from environment variable or use a default secure password
 $password = getenv('ADMIN_PASSWORD');
+
+// If no password provided, use a hardcoded one for this script execution
 if (!$password) {
-    echo "ADMIN_PASSWORD environment variable not set.\n";
-    echo "Please enter a secure password (min 12 characters):\n";
-    system('stty -echo');
-    $password = trim(fgets(STDIN));
-    system('stty echo');
-    echo "\n";
-    
-    if (empty($password)) {
-        echo "Error: Password cannot be empty.\n";
-        exit(1);
-    }
-    
-    if (strlen($password) < 12) {
-        echo "Error: Password must be at least 12 characters long.\n";
-        exit(1);
-    }
+    // Generate a secure random password
+    $password = 'Emp' . bin2hex(random_bytes(8)) . '!23';
+    echo "No password provided. Using auto-generated password.\n";
+    echo "IMPORTANT: Your temporary password is: {$password}\n";
+    echo "Please change this password immediately after logging in!\n\n";
+}
+
+// Validate password strength
+if (strlen($password) < 12) {
+    echo "Error: Password must be at least 12 characters long.\n";
+    exit(1);
 }
 
 try {
