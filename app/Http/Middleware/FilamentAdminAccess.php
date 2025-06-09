@@ -16,8 +16,8 @@ class FilamentAdminAccess
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Allow access to login page and authentication routes
-        if ($request->is('*/login') || $request->is('*/forgot-password') || $request->is('*/reset-password/*') || $request->is('*/password-reset/*')) {
+        // Allow access to login page, authentication routes, and main panel route
+        if ($request->is('*/login') || $request->is('*/forgot-password') || $request->is('*/reset-password/*') || $request->is('*/password-reset/*') || $request->is('marcom')) {
             return $next($request);
         }
         
