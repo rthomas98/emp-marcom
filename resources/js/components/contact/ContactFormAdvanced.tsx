@@ -81,7 +81,6 @@ export function ContactFormAdvanced() {
       }
       
       // Send form data to backend
-      console.log('Sending request to /contact/submit');
       const response = await axios.post('/contact/submit', submissionData);
       
       if (response.data.success) {

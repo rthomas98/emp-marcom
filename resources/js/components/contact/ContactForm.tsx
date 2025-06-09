@@ -65,7 +65,6 @@ export function ContactForm() {
       axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
       
       // Send form data to backend
-      console.log('Sending request to /contact/submit');
       const response = await axios.post('/contact/submit', formData);
       
       if (response.data.success) {
