@@ -30,7 +30,17 @@ class CreateFilamentUser extends Command
     {
         $name = $this->option('name') ?? $this->ask('Enter the user name');
         $email = $this->option('email') ?? $this->ask('Enter the user email');
-        $password = $this->option('password') ?? $this->secret('Enter the user password');
+        // Get password from option or prompt securely
+        $password = $this->option('password');
+        if (empty($password)) {
+            $password = $this->secret('Enter the user password');
+            
+            // Validate password strength
+            if (strlen($password) < 12) {
+                $this->error('Password must be at least 12 characters long.');
+                return 1;
+            }
+        }
         $role = $this->option('role') ?? $this->choice(
             'Select the user role',
             ['admin', 'editor', 'viewer'],

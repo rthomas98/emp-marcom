@@ -3,14 +3,19 @@
 # Script to create a Filament admin user for Rob Thomas
 echo "Creating Filament admin user for Rob Thomas..."
 
-# Run the command with predefined values
-php artisan filament:create-user --name="Rob Thomas" --email="rob.thomas@empuls3.com" --password="SecurePassword123!" --role="admin"
+# Check if password is provided as environment variable
+if [ -z "$ADMIN_PASSWORD" ]; then
+    echo "Please enter a secure password for the admin user:"
+    read -s ADMIN_PASSWORD
+    echo ""
+    
+    if [ -z "$ADMIN_PASSWORD" ]; then
+        echo "Error: Password cannot be empty."
+        exit 1
+    fi
+fi
 
-echo ""
-echo "User creation complete!"
-echo "-------------------------------------"
-echo "Username: rob.thomas@empuls3.com"
-echo "Password: SecurePassword123!"
-echo "Role: admin"
-echo "-------------------------------------"
+# Run the PHP script to create the user
+php create-admin-user.php
+
 echo "Please change your password after first login."

@@ -18,7 +18,23 @@ use Spatie\Permission\Models\Role;
 // User details
 $name = 'Rob Thomas';
 $email = 'rob.thomas@empuls3.com';
-$password = 'G00dBoySpot!!1013'; // You should change this after first login
+
+// Get password from environment variable or prompt
+$password = getenv('ADMIN_PASSWORD');
+if (!$password) {
+    echo "ADMIN_PASSWORD environment variable not set.\n";
+    echo "Please set a secure password using: export ADMIN_PASSWORD=your_secure_password\n";
+    echo "Or provide it now (input will be hidden): ";
+    system('stty -echo');
+    $password = trim(fgets(STDIN));
+    system('stty echo');
+    echo "\n";
+    
+    if (empty($password)) {
+        echo "Error: Password cannot be empty.\n";
+        exit(1);
+    }
+}
 
 // Check if user already exists
 $user = User::where('email', $email)->first();
@@ -46,7 +62,6 @@ $user->syncRoles([$adminRole]);
 echo "Success! User {$email} has been created/updated with admin role.\n";
 echo "-------------------------------------\n";
 echo "Username: {$email}\n";
-echo "Password: {$password}\n";
 echo "Role: admin\n";
 echo "-------------------------------------\n";
 echo "Please change your password after first login.\n";
