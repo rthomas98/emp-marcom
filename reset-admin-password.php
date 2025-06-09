@@ -9,9 +9,11 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
-// Define the admin email and a simple password for testing
+// Define the admin email
 $adminEmail = 'rob.thomas@empuls3.com';
-$newPassword = 'Admin123!';
+
+// Generate a secure random password
+$newPassword = bin2hex(random_bytes(8)) . 'A1!'; // Creates a random password with uppercase, number, and special char
 
 // Find the user by email
 $user = User::where('email', $adminEmail)->first();

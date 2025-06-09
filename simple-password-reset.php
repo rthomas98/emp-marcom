@@ -8,9 +8,11 @@ $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-// Define the admin email and a simple password
+// Define the admin email
 $adminEmail = 'rob.thomas@empuls3.com';
-$newPassword = 'Admin123!';
+
+// Generate a secure random password
+$newPassword = bin2hex(random_bytes(8)) . 'A1!'; // Creates a random password with uppercase, number, and special char
 
 // Find the user by email
 $user = User::where('email', $adminEmail)->first();
