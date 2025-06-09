@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Models\User;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -30,6 +31,10 @@ class MarcomPanelProvider extends PanelProvider
             ->brandLogoHeight('50px')
             ->path('marcom')
             ->login()
+            ->authGuard('web')
+            ->authAccessCallback(function (User $user): bool {
+                return $user->hasRole('admin') || $user->email === 'rob.thomas@empuls3.com';
+            })
             ->colors([
                 'primary' => '#BD1550',
                 'secondary' => '#1F1946',
