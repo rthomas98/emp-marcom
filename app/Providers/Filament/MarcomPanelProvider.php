@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\RequestPasswordReset;
 use App\Models\User;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -31,7 +32,7 @@ class MarcomPanelProvider extends PanelProvider
             ->brandLogoHeight('50px')
             ->path('marcom')
             ->login()
-            ->passwordReset()
+            ->passwordReset(RequestPasswordReset::class)
             ->authGuard('web')
             ->colors([
                 'primary' => '#BD1550',
