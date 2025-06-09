@@ -13,6 +13,34 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Check if the case_studies table exists
+        if (!Schema::hasTable('case_studies')) {
+            // Create the case_studies table first
+            Schema::create('case_studies', function (Blueprint $table) {
+                $table->id();
+                $table->string('title');
+                $table->string('slug')->unique();
+                $table->string('client_name');
+                $table->string('industry');
+                $table->string('service_type');
+                $table->text('challenge');
+                $table->text('solution');
+                $table->text('results');
+                $table->text('testimonial')->nullable();
+                $table->string('testimonial_author')->nullable();
+                $table->string('testimonial_position')->nullable();
+                $table->string('featured_image');
+                $table->string('logo')->nullable();
+                $table->string('website_url')->nullable();
+                $table->date('completion_date')->nullable();
+                $table->boolean('is_featured')->default(false);
+                $table->string('meta_title')->nullable();
+                $table->text('meta_description')->nullable();
+                $table->string('status')->default('draft'); // draft, published
+                $table->timestamps();
+            });
+        }
+        
         // Create sample case studies
         $sampleCaseStudies = [
             [
