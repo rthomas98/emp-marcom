@@ -37,7 +37,7 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
         <meta property="og:title" content={caseStudy.meta_title || `${caseStudy.title} | Empuls3 Case Study`} />
         <meta property="og:description" content={caseStudy.meta_description || `Learn how we helped ${caseStudy.client_name} overcome challenges with our ${caseStudy.service_type} solutions.`} />
         {caseStudy.featured_image && (
-          <meta property="og:image" content={`/storage/${caseStudy.featured_image}`} />
+          <meta property="og:image" content={caseStudy.featured_image} />
         )}
         <meta property="og:type" content="article" />
       </Head>

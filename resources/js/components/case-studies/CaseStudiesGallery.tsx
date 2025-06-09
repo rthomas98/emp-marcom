@@ -27,7 +27,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "RetailTech Solutions",
       industry: "E-commerce",
       service_type: "Web Development",
-      featured_image: "/images/site-images/rob_thomas23_A_dynamic_image_of_an_ecommerce_website_on_a_lapto_8573ee70-5ea2-48aa-ae70-35db662a51f2.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_A_dynamic_image_of_an_ecommerce_website_on_a_lapto_8573ee70-5ea2-48aa-ae70-35db662a51f2.png"
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "SecureFinance",
       industry: "Finance",
       service_type: "Mobile Development",
-      featured_image: "/images/site-images/rob_thomas23_African_American_mobile_developer_working_on_an__bc48faad-4ec2-47b8-bd41-c0baac19a857_2.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_African_American_mobile_developer_working_on_an__bc48faad-4ec2-47b8-bd41-c0baac19a857_2.png"
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "MedCare Innovations",
       industry: "Healthcare",
       service_type: "Software Development",
-      featured_image: "/images/site-images/rob_thomas23_African_American_developers_testing_an_app_on_a__8ce29719-300c-433f-b269-b04a31ca9ff7_0.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_African_American_developers_testing_an_app_on_a__8ce29719-300c-433f-b269-b04a31ca9ff7_0.png"
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "LearnSphere",
       industry: "Education",
       service_type: "MVP Development",
-      featured_image: "/images/site-images/rob_thomas23_African_American_developers_at_an_agency_waterco_31b61ffe-cc01-4adc-81dd-e6e0a1f5674e_1.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_African_American_developers_at_an_agency_waterco_31b61ffe-cc01-4adc-81dd-e6e0a1f5674e_1.png"
     },
     {
       id: 5,
@@ -63,7 +63,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "Global Enterprises",
       industry: "Technology",
       service_type: "Web Development",
-      featured_image: "/images/site-images/rob_thomas23_African_American_developers_working_in_an_agency.__75a77e13-82e4-4da4-aa89-3f854e38c79d.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_African_American_developers_working_in_an_agency.__75a77e13-82e4-4da4-aa89-3f854e38c79d.png"
     },
     {
       id: 6,
@@ -72,7 +72,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "PropertyConnect",
       industry: "Real Estate",
       service_type: "Web Development",
-      featured_image: "/images/site-images/rob_thomas23_African_American_front-end_developers_development__76be193d-31cc-4dcc-9acf-814ccfe788bb.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_African_American_front-end_developers_development__76be193d-31cc-4dcc-9acf-814ccfe788bb.png"
     },
     {
       id: 7,
@@ -81,7 +81,7 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
       client_name: "LogisticsPro",
       industry: "Manufacturing",
       service_type: "Software Development",
-      featured_image: "/images/site-images/rob_thomas23_African_American_developer_Software_development_te_a1893dc1-71a2-4688-b1dc-e38c62c215f0.png"
+      featured_image: "https://fls-9f1d4e41-ea60-4ed5-afbe-a63d3be91414.r2.cloudflarestorage.com/images/site-images/rob_thomas23_African_American_developer_Software_development_te_a1893dc1-71a2-4688-b1dc-e38c62c215f0.png"
     }
   ];
 
