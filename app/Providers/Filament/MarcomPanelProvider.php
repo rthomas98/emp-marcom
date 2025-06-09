@@ -32,9 +32,6 @@ class MarcomPanelProvider extends PanelProvider
             ->path('marcom')
             ->login()
             ->authGuard('web')
-            ->authAccessCallback(function (User $user): bool {
-                return $user->hasRole('admin') || $user->email === 'rob.thomas@empuls3.com';
-            })
             ->colors([
                 'primary' => '#BD1550',
                 'secondary' => '#1F1946',
@@ -59,6 +56,7 @@ class MarcomPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                \App\Http\Middleware\FilamentAdminAccess::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
