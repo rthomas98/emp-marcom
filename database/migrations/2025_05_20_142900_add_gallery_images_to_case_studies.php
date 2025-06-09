@@ -12,6 +12,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Skip if the table doesn't exist yet
+        if (!Schema::hasTable('case_studies')) {
+            return;
+        }
+        
+        // Check if the column already exists
+        if (Schema::hasColumn('case_studies', 'gallery_images')) {
+            return;
+        }
+        
         Schema::table('case_studies', function (Blueprint $table) {
             $table->json('gallery_images')->nullable()->after('featured_image');
         });
