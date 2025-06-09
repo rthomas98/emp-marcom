@@ -15,7 +15,7 @@ type FAQCategory = {
 };
 
 export function FAQsCategories() {
-  const [openCategory, setOpenCategory] = useState<string | null>("services");
+  const [openCategory, setOpenCategory] = useState<string | null>("micro agency advantage");
   const [openQuestions, setOpenQuestions] = useState<Record<string, boolean>>({});
 
   const categories: FAQCategory[] = [
@@ -106,79 +106,133 @@ export function FAQsCategories() {
   };
 
   return (
-    <section id="faq-categories" className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28">
+    <section 
+      id="faq-categories" 
+      className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28"
+      aria-labelledby="faq-categories-heading"
+    >
       <div className="container mx-auto">
         <div className="mb-12 md:mb-16 lg:mb-20">
-          <div className="mx-auto max-w-3xl text-center">
+          <header className="mx-auto max-w-3xl text-center">
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Micro Agency FAQs</p>
-            <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl">
+            <h2 
+              id="faq-categories-heading"
+              className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl"
+            >
               Boutique Agency Questions
             </h2>
             <p className="text-gray-700 md:text-md">
               Find answers about our specialized micro agency founded in 2009 by Robert Thomas. Explore how we provide direct access to senior specialists and deliver personalized solutions with faster implementation times than larger firms can offer.
             </p>
-          </div>
+          </header>
         </div>
 
-        <div className="mx-auto max-w-4xl">
-          {categories.map((category) => (
-            <div 
-              key={category.title} 
-              className="mb-6 overflow-hidden rounded-lg border border-gray-200 bg-white"
-            >
-              <button
-                className="flex w-full items-center justify-between bg-white p-6 text-left transition hover:bg-gray-50 md:p-8"
-                onClick={() => toggleCategory(category.title.toLowerCase())}
-                aria-expanded={openCategory === category.title.toLowerCase()}
+        <div 
+          className="mx-auto max-w-4xl"
+          role="tablist"
+          aria-label="FAQ categories"
+        >
+          {categories.map((category) => {
+            const categoryId = category.title.toLowerCase().replace(/\s+/g, '-');
+            const isOpen = openCategory === category.title.toLowerCase();
+            
+            return (
+              <div 
+                key={category.title} 
+                className="mb-6 overflow-hidden rounded-lg border border-gray-200 bg-white"
               >
-                <div>
-                  <h3 className="text-xl font-bold text-[#1F1946] md:text-2xl">
-                    {category.title}
-                  </h3>
-                  <p className="mt-2 text-gray-700">
-                    {category.description}
-                  </p>
-                </div>
-                <div className="ml-4 flex-shrink-0">
-                  <ChevronDown 
-                    className={`h-6 w-6 text-[#BD1550] transition-transform ${
-                      openCategory === category.title.toLowerCase() ? "rotate-180" : ""
-                    }`} 
-                  />
-                </div>
-              </button>
+                <h3>
+                  <button
+                    id={`tab-${categoryId}`}
+                    className="flex w-full items-center justify-between bg-white p-6 text-left transition hover:bg-gray-50 md:p-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
+                    onClick={() => toggleCategory(category.title.toLowerCase())}
+                    aria-expanded={isOpen}
+                    aria-controls={`panel-${categoryId}`}
+                    role="tab"
+                  >
+                    <div>
+                      <span className="text-xl font-bold text-[#1F1946] md:text-2xl">
+                        {category.title}
+                      </span>
+                      <p className="mt-2 text-gray-700">
+                        {category.description}
+                      </p>
+                    </div>
+                    <div 
+                      className="ml-4 flex-shrink-0"
+                      aria-hidden="true"
+                    >
+                      <ChevronDown 
+                        className={`h-6 w-6 text-[#BD1550] transition-transform ${
+                          isOpen ? "rotate-180" : ""
+                        }`} 
+                      />
+                    </div>
+                  </button>
+                </h3>
 
-              {openCategory === category.title.toLowerCase() && (
-                <div className="border-t border-gray-200 px-6 py-4 md:px-8">
-                  <div className="divide-y divide-gray-200">
-                    {category.faqs.map((faq, index) => (
-                      <div key={index} className="py-4">
-                        <button
-                          className="flex w-full items-center justify-between text-left"
-                          onClick={() => toggleQuestion(category.title.toLowerCase(), index)}
-                          aria-expanded={!!openQuestions[`${category.title.toLowerCase()}-${index}`]}
+              {isOpen && (
+                <div 
+                  id={`panel-${categoryId}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${categoryId}`}
+                  className="border-t border-gray-200 px-6 py-4 md:px-8"
+                >
+                  <div 
+                    className="divide-y divide-gray-200"
+                    role="list"
+                    aria-label={`${category.title} frequently asked questions`}
+                  >
+                    {category.faqs.map((faq, index) => {
+                      const questionId = `${category.title.toLowerCase().replace(/\s+/g, '-')}-q${index}`;
+                      const isQuestionOpen = !!openQuestions[`${category.title.toLowerCase()}-${index}`];
+                      
+                      return (
+                        <div 
+                          key={index} 
+                          className="py-4"
+                          role="listitem"
                         >
-                          <h4 className="text-lg font-medium text-[#1F1946]">
-                            {faq.question}
+                          <h4>
+                            <button
+                              id={questionId}
+                              className="flex w-full items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
+                              onClick={() => toggleQuestion(category.title.toLowerCase(), index)}
+                              aria-expanded={isQuestionOpen}
+                              aria-controls={`${questionId}-answer`}
+                            >
+                              <span className="text-lg font-medium text-[#1F1946]">
+                                {faq.question}
+                              </span>
+                              <span 
+                                className="ml-4 flex-shrink-0"
+                                aria-hidden="true"
+                              >
+                                <ChevronDown 
+                                  className={`h-5 w-5 text-[#BD1550] transition-transform ${
+                                    isQuestionOpen ? "rotate-180" : ""
+                                  }`} 
+                                />
+                              </span>
+                            </button>
                           </h4>
-                          <ChevronDown 
-                            className={`h-5 w-5 text-[#BD1550] transition-transform ${
-                              openQuestions[`${category.title.toLowerCase()}-${index}`] ? "rotate-180" : ""
-                            }`} 
-                          />
-                        </button>
-                        {openQuestions[`${category.title.toLowerCase()}-${index}`] && (
-                          <div className="mt-2 text-gray-700">
-                            <p>{faq.answer}</p>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                          {isQuestionOpen && (
+                            <div 
+                              id={`${questionId}-answer`}
+                              className="mt-2 text-gray-700"
+                            >
+                              <p>{faq.answer}</p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>

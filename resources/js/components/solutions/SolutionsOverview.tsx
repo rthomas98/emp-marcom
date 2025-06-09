@@ -20,11 +20,11 @@ export function SolutionsOverview() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
-            <div className="grid grid-cols-1 rounded-lg border border-gray-200 bg-white shadow-sm sm:col-span-2 sm:row-span-1 sm:grid-cols-2">
+            <article className="grid grid-cols-1 rounded-lg border border-gray-200 bg-white shadow-sm sm:col-span-2 sm:row-span-1 sm:grid-cols-2" aria-labelledby="software-dev-heading">
               <div className="flex flex-1 flex-col justify-center p-6">
                 <div>
                   <p className="mb-2 text-sm font-semibold text-accent-pink">Solutions</p>
-                  <h3 className="mb-2 text-xl font-bold text-primary md:text-2xl">
+                  <h3 id="software-dev-heading" className="mb-2 text-xl font-bold text-primary md:text-2xl">
                     End-to-End Software Development
                   </h3>
                   <p className="text-gray-700">
@@ -33,8 +33,10 @@ export function SolutionsOverview() {
                   <Link 
                     href="/solutions/software-development-design" 
                     className="mt-4 inline-flex items-center text-primary hover:text-accent-pink"
+                    aria-label="Learn more about our end-to-end software development solutions"
                   >
                     Learn more
+                    <span className="sr-only"> about end-to-end software development</span>
                   </Link>
                 </div>
               </div>
@@ -44,14 +46,16 @@ export function SolutionsOverview() {
                   alt="Software development team collaborating on code"
                   className="h-full w-full object-cover rounded-md"
                   loading="lazy"
+                  width="600"
+                  height="400"
                 />
               </div>
-            </div>
-            <div className="flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm">
+            </article>
+            <article className="flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm" aria-labelledby="design-heading">
               <div className="flex flex-col justify-center p-6">
                 <div>
                   <p className="mb-2 text-sm font-semibold text-accent-pink">Design</p>
-                  <h3 className="mb-2 text-xl font-bold text-primary md:text-2xl">
+                  <h3 id="design-heading" className="mb-2 text-xl font-bold text-primary md:text-2xl">
                     User-Centered Design
                   </h3>
                   <p className="text-gray-700">
@@ -60,8 +64,10 @@ export function SolutionsOverview() {
                   <Link 
                     href="/solutions/frontend-development-uxui-design" 
                     className="mt-4 inline-flex items-center text-primary hover:text-accent-pink"
+                    aria-label="Learn more about our user-centered design services"
                   >
                     Learn more
+                    <span className="sr-only"> about user-centered design</span>
                   </Link>
                 </div>
               </div>
@@ -71,14 +77,16 @@ export function SolutionsOverview() {
                   alt="UX/UI design team working on interfaces"
                   className="h-full w-full object-cover rounded-md"
                   loading="lazy"
+                  width="600"
+                  height="400"
                 />
               </div>
-            </div>
-            <div className="flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm">
+            </article>
+            <article className="flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm" aria-labelledby="integration-heading">
               <div className="flex flex-col justify-center p-6">
                 <div>
                   <p className="mb-2 text-sm font-semibold text-accent-pink">Integration</p>
-                  <h3 className="mb-2 text-xl font-bold text-primary md:text-2xl">
+                  <h3 id="integration-heading" className="mb-2 text-xl font-bold text-primary md:text-2xl">
                     API & System Integration
                   </h3>
                   <p className="text-gray-700">
@@ -87,8 +95,10 @@ export function SolutionsOverview() {
                   <Link 
                     href="/solutions/backend-api-development" 
                     className="mt-4 inline-flex items-center text-primary hover:text-accent-pink"
+                    aria-label="Learn more about our API and system integration services"
                   >
                     Learn more
+                    <span className="sr-only"> about API and system integration</span>
                   </Link>
                 </div>
               </div>
@@ -98,9 +108,11 @@ export function SolutionsOverview() {
                   alt="Developer working on API integration"
                   className="w-full object-cover rounded-md"
                   loading="lazy"
+                  width="600"
+                  height="400"
                 />
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>

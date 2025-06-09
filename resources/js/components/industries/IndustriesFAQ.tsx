@@ -49,34 +49,42 @@ export function IndustriesFAQ() {
   ];
 
   return (
-    <section id="industries-faq" className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="industries-faq" className="bg-[#F8F9FA] px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="faq-heading">
       <div className="container mx-auto max-w-lg">
-        <div className="mb-12 text-center md:mb-18 lg:mb-20">
+        <header className="mb-12 text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
             Boutique Agency FAQs
           </p>
-          <h2 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
+          <h2 id="faq-heading" className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
             Common Questions
           </h2>
           <p className="text-gray-700 md:text-md">
             Find answers to common questions about our boutique agency approach and personalized industry-specific technology solutions.
           </p>
-        </div>
-        <div className="flex flex-col space-y-2">
+        </header>
+        <div className="flex flex-col space-y-2" role="region" aria-label="Frequently Asked Questions">
           {faqItems.map((item) => (
             <div key={item.id} className="border-b border-gray-200">
-              <button
-                type="button"
-                onClick={() => toggleItem(item.id)}
-                className="flex w-full items-center justify-between py-4 text-left font-medium text-[#1F1946] md:py-5 md:text-md"
-              >
-                {item.question}
-                <ChevronDown 
-                  className={`h-5 w-5 text-[#BD1550] transition-transform ${openItems[item.id] ? 'rotate-180' : ''}`} 
-                />
-              </button>
+              <h3>
+                <button
+                  type="button"
+                  onClick={() => toggleItem(item.id)}
+                  className="flex w-full items-center justify-between py-4 text-left font-medium text-[#1F1946] md:py-5 md:text-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 rounded-sm"
+                  aria-expanded={!!openItems[item.id]}
+                  aria-controls={`${item.id}-content`}
+                >
+                  <span>{item.question}</span>
+                  <ChevronDown 
+                    className={`h-5 w-5 text-[#BD1550] transition-transform ${openItems[item.id] ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                  />
+                </button>
+              </h3>
               {openItems[item.id] && (
-                <div className="pb-4 text-gray-700 md:pb-6">
+                <div 
+                  id={`${item.id}-content`}
+                  className="pb-4 text-gray-700 md:pb-6"
+                >
                   {item.answer}
                 </div>
               )}
@@ -84,18 +92,19 @@ export function IndustriesFAQ() {
           ))}
         </div>
         <div className="mx-auto mt-12 max-w-md text-center md:mt-18 lg:mt-20">
-          <h4 className="mb-3 text-2xl font-bold text-[#1F1946] md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
+          <h3 className="mb-3 text-2xl font-bold text-[#1F1946] md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
             Still have questions?
-          </h4>
+          </h3>
           <p className="text-gray-700 md:text-md">We're here to help!</p>
-          <div className="mt-6 md:mt-8">
+          <nav className="mt-6 md:mt-8" aria-label="Contact navigation">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-6 py-3 text-center font-medium text-[#BD1550] transition hover:bg-[#BD1550] hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-6 py-3 text-center font-medium text-[#BD1550] transition hover:bg-[#BD1550] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
+              aria-label="Contact us with your questions about our industry solutions"
             >
               Contact
             </Link>
-          </div>
+          </nav>
         </div>
       </div>
     </section>

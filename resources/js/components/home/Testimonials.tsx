@@ -143,11 +143,11 @@ export function Testimonials() {
           </p>
         </div>
         
-        <div ref={containerRef} className="relative">
+        <div ref={containerRef} className="relative" aria-roledescription="carousel" aria-label="Client testimonials carousel">
           <div className="overflow-hidden">
-            <div className="flex">
+            <div className="flex" role="region" aria-live="polite">
               {getVisibleTestimonials().map(({ testimonial, index }) => (
-                <div 
+                <article 
                   key={index} 
                   className={clsx(
                     "w-full shrink-0 px-3",
@@ -156,40 +156,43 @@ export function Testimonials() {
                       "sm:w-1/2 lg:w-1/3": visibleItems === 3
                     }
                   )}
+                  aria-labelledby={`testimonial-author-${index}`}
                 >
                   <div className="flex h-full w-full flex-col items-start justify-between border border-gray-200 rounded-lg p-6 md:p-8">
-                    <div className="mb-5 flex text-accent-yellow md:mb-6">
+                    <div className="mb-5 flex text-accent-yellow md:mb-6" aria-label={`${testimonial.numberOfStars} out of 5 stars rating`}>
                       {Array(testimonial.numberOfStars)
                         .fill(null)
                         .map((_, starIndex) => (
-                          <Star key={starIndex} className="size-5 fill-current" />
+                          <Star key={starIndex} className="size-5 fill-current" aria-hidden="true" />
                         ))}
                     </div>
                     <blockquote className="text-gray-700 md:text-lg italic">"{testimonial.quote}"</blockquote>
-                    <div className="mt-5 flex w-full flex-col items-start gap-4 md:mt-6 md:w-auto md:flex-row md:items-center">
+                    <footer className="mt-5 flex w-full flex-col items-start gap-4 md:mt-6 md:w-auto md:flex-row md:items-center">
                       <div>
                         <img
                           src={testimonial.avatar.src}
                           alt={testimonial.avatar.alt}
                           className="size-12 min-h-12 min-w-12 rounded-full object-cover"
                           loading="lazy"
+                          width="48"
+                          height="48"
                         />
                       </div>
                       <div>
-                        <p className="font-semibold text-primary">{testimonial.name}</p>
+                        <p id={`testimonial-author-${index}`} className="font-semibold text-primary">{testimonial.name}</p>
                         <p className="text-gray-600">
                           <span>{testimonial.position}</span>, <span>{testimonial.companyName}</span>
                         </p>
                       </div>
-                    </div>
+                    </footer>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
           
           <div className="mt-8 flex items-center justify-between">
-            <div className="flex items-start justify-start">
+            <div className="flex items-start justify-start" role="tablist" aria-label="Testimonial pagination">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
@@ -201,23 +204,26 @@ export function Testimonials() {
                     "bg-gray-300": index !== current,
                   })}
                   aria-label={`Go to testimonial ${index + 1}`}
+                  aria-selected={index === current}
+                  role="tab"
+                  tabIndex={index === current ? 0 : -1}
                 />
               ))}
             </div>
-            <div className="flex items-end justify-end gap-2 md:gap-4">
+            <div className="flex items-end justify-end gap-2 md:gap-4" role="navigation" aria-label="Testimonial carousel controls">
               <button 
                 onClick={prev}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-primary hover:bg-gray-50"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-primary hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
               </button>
               <button 
                 onClick={next}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-primary hover:bg-gray-50"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-primary hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>

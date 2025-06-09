@@ -26,68 +26,92 @@ export function MvpOverview() {
     }
   ];
 
+  const handleKeyDown = (e: React.KeyboardEvent, tabId: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setActiveTab(tabId);
+    }
+  };
+
   return (
-    <section id="mvp-overview" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="mvp-overview" className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="mvp-overview-heading">
       <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 md:w-auto lg:mb-20">
           <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">The Micro Agency Advantage</p>
-          <h2 className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
+          <h2 id="mvp-overview-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
             Personalized MVP Development with Senior Expertise
           </h2>
           <p className="text-gray-700 md:text-lg">
             As a boutique micro agency, Empuls3 empowers startups and businesses with personalized MVP development services and direct access to our senior developers. We deliver faster validation and iteration without compromising quality, all with the focused attention and reduced overhead that larger firms simply can't match.
           </p>
-          <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
+          <nav className="mt-6 flex items-center justify-center gap-x-4 md:mt-8" aria-label="MVP overview navigation">
             <Link
               href="/solutions"
               className="inline-flex h-10 items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-4 py-2 text-sm font-medium text-[#BD1550] transition-colors hover:bg-[#BD1550]/10 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2"
+              aria-label="Learn more about our MVP development solutions"
             >
               Learn More
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-10 items-center justify-center text-sm font-medium text-[#BD1550] transition-colors hover:text-[#BD1550]/90 focus:outline-none"
+              className="inline-flex h-10 items-center justify-center text-sm font-medium text-[#BD1550] transition-colors hover:text-[#BD1550]/90 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2"
+              aria-label="Start your MVP development project"
             >
               Start A Project
-              <ChevronRight className="ml-1 size-4" />
+              <ChevronRight className="ml-1 size-4" aria-hidden="true" />
             </Link>
-          </div>
+          </nav>
         </div>
         <div className="grid grid-cols-1 items-center gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1" aria-live="polite">
             {tabs.map((tab) => (
-              <div 
+              <figure 
                 key={tab.id}
                 className={`transition-opacity duration-300 ${activeTab === tab.id ? 'block' : 'hidden'}`}
+                aria-hidden={activeTab !== tab.id}
               >
                 <img
                   src={tab.image}
-                  alt={tab.title}
+                  alt={`${tab.title} illustration`}
                   className="w-full rounded-image h-auto aspect-[4/3] object-cover"
+                  width="600"
+                  height="450"
+                  loading="lazy"
                 />
-              </div>
+                <figcaption className="sr-only">{tab.title} - Visual representation of our {tab.title.toLowerCase()} approach</figcaption>
+              </figure>
             ))}
           </div>
           <div className="order-1 md:order-2">
-            <div className="grid grid-cols-1 items-center gap-x-4">
+            <div role="tablist" aria-label="MVP development features" className="grid grid-cols-1 items-center gap-x-4">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
+                  onKeyDown={(e) => handleKeyDown(e, tab.id)}
+                  role="tab"
+                  aria-selected={activeTab === tab.id}
+                  aria-controls={`${tab.id}-panel`}
+                  id={`${tab.id}-tab`}
                   className={`flex flex-col items-start border-0 border-l-2 ${
                     activeTab === tab.id ? 'border-[#BD1550]' : 'border-gray-200'
-                  } bg-transparent py-4 pr-0 pl-6 text-left whitespace-normal md:pl-8`}
+                  } bg-transparent py-4 pr-0 pl-6 text-left whitespace-normal md:pl-8 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2`}
                 >
                   <h3 className={`mb-3 text-2xl font-bold font-header ${
                     activeTab === tab.id ? 'text-primary' : 'text-gray-500'
                   } md:mb-4 md:text-3xl md:leading-[1.3]`}>
                     {tab.title}
                   </h3>
-                  <p className={`${
-                    activeTab === tab.id ? 'text-gray-700' : 'text-gray-500'
-                  }`}>
-                    {tab.content}
-                  </p>
+                  <div 
+                    role="tabpanel"
+                    id={`${tab.id}-panel`}
+                    aria-labelledby={`${tab.id}-tab`}
+                    className={`${
+                      activeTab === tab.id ? 'text-gray-700' : 'text-gray-500'
+                    }`}
+                  >
+                    <p>{tab.content}</p>
+                  </div>
                 </button>
               ))}
             </div>

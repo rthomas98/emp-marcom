@@ -131,7 +131,11 @@ export function ContactFormAdvanced() {
   };
 
   return (
-    <section id="contact-form" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section 
+      id="contact-form" 
+      className="px-[5%] py-16 md:py-24 lg:py-28"
+      aria-labelledby="contact-form-heading"
+    >
       <Toast
         isVisible={showToast}
         title={toastType === "success" ? "Success" : "Error"}
@@ -142,17 +146,20 @@ export function ContactFormAdvanced() {
       />
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-          <div>
-            <h2 className="mb-6 text-3xl font-bold text-[#1F1946] md:text-4xl lg:text-5xl">
+          <div className="contact-info">
+            <h2 
+              id="contact-form-heading"
+              className="mb-6 text-3xl font-bold text-[#1F1946] md:text-4xl lg:text-5xl"
+            >
               Contact Information
             </h2>
             <p className="mb-8 text-gray-700 md:text-md">
               Fill out the form and our team will get back to you within 24 hours. You can also reach us directly using the contact information below.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-6" role="list" aria-label="Contact methods">
               <div className="flex items-start">
-                <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10">
+                <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10" aria-hidden="true">
                   <Mail className="h-6 w-6 text-[#BD1550]" />
                 </div>
                 <div>
@@ -162,8 +169,8 @@ export function ContactFormAdvanced() {
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10">
+              <div className="flex items-start" role="listitem">
+                <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10" aria-hidden="true">
                   <Phone className="h-6 w-6 text-[#BD1550]" />
                 </div>
                 <div>
@@ -172,8 +179,8 @@ export function ContactFormAdvanced() {
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10">
+              <div className="flex items-start" role="listitem">
+                <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10" aria-hidden="true">
                   <MapPin className="h-6 w-6 text-[#BD1550]" />
                 </div>
                 <div>
@@ -184,16 +191,23 @@ export function ContactFormAdvanced() {
             </div>
           </div>
           
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm md:p-8">
-            <h2 className="mb-6 text-2xl font-bold text-[#1F1946] md:text-3xl">
+          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm md:p-8" role="form">
+            <h2 
+              id="contact-form-title"
+              className="mb-6 text-2xl font-bold text-[#1F1946] md:text-3xl"
+            >
               Send Us a Message
             </h2>
             
-            <div className="mb-6 flex space-x-4">
+            <div className="mb-6 flex space-x-4" role="tablist" aria-label="Contact form types">
               <button
                 type="button"
+                id="tab-general"
+                role="tab"
+                aria-selected={formType === "general"}
+                aria-controls="panel-general"
                 onClick={() => handleFormTypeChange("general")}
-                className={`flex-1 rounded-md border px-4 py-2 text-center transition ${
+                className={`flex-1 rounded-md border px-4 py-2 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 ${
                   formType === "general"
                     ? "border-[#BD1550] bg-[#BD1550] text-white"
                     : "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
@@ -203,8 +217,12 @@ export function ContactFormAdvanced() {
               </button>
               <button
                 type="button"
+                id="tab-project"
+                role="tab"
+                aria-selected={formType === "project"}
+                aria-controls="panel-project"
                 onClick={() => handleFormTypeChange("project")}
-                className={`flex-1 rounded-md border px-4 py-2 text-center transition ${
+                className={`flex-1 rounded-md border px-4 py-2 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 ${
                   formType === "project"
                     ? "border-[#BD1550] bg-[#BD1550] text-white"
                     : "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
@@ -214,7 +232,7 @@ export function ContactFormAdvanced() {
               </button>
             </div>
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} aria-labelledby="contact-form-title">
               <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#1F1946]">
@@ -228,7 +246,10 @@ export function ContactFormAdvanced() {
                     onChange={handleChange}
                     className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
                     required
+                    aria-required="true"
+                    aria-describedby="name-required"
                   />
+                  <span id="name-required" className="sr-only">Required field</span>
                 </div>
                 
                 <div>
@@ -243,7 +264,11 @@ export function ContactFormAdvanced() {
                     onChange={handleChange}
                     className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
                     required
+                    aria-required="true"
+                    aria-describedby="email-required"
+                    autoComplete="email"
                   />
+                  <span id="email-required" className="sr-only">Required field</span>
                 </div>
                 
                 <div>
@@ -257,6 +282,7 @@ export function ContactFormAdvanced() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    autoComplete="tel"
                   />
                 </div>
                 
@@ -271,11 +297,13 @@ export function ContactFormAdvanced() {
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    autoComplete="organization"
                   />
                 </div>
               </div>
               
               {formType === "general" && (
+                <div id="panel-general" role="tabpanel" aria-labelledby="tab-general">
                 <div className="mb-6">
                   <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#1F1946]">
                     Your Message *
@@ -288,11 +316,16 @@ export function ContactFormAdvanced() {
                     rows={5}
                     className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
                     required
+                    aria-required="true"
+                    aria-describedby="message-required"
                   ></textarea>
+                  <span id="message-required" className="sr-only">Required field</span>
+                </div>
                 </div>
               )}
               
               {formType === "project" && (
+                <div id="panel-project" role="tabpanel" aria-labelledby="tab-project">
                 <>
                   <div className="mb-6">
                     <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-[#1F1946]">
@@ -305,7 +338,10 @@ export function ContactFormAdvanced() {
                       onChange={handleChange}
                       className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
                       required
+                      aria-required="true"
+                      aria-describedby="projectType-required"
                     >
+                      <span id="projectType-required" className="sr-only">Required field</span>
                       <option value="web-development">Web Development</option>
                       <option value="mobile-development">Mobile Development</option>
                       <option value="e-commerce">E-Commerce</option>
@@ -371,8 +407,11 @@ export function ContactFormAdvanced() {
                       rows={4}
                       className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
                       required
+                      aria-required="true"
+                      aria-describedby="projectDescription-required"
                       placeholder="Please describe your project, including its goals and objectives."
                     ></textarea>
+                    <span id="projectDescription-required" className="sr-only">Required field</span>
                   </div>
                   
                   <div className="mb-6">
@@ -390,16 +429,18 @@ export function ContactFormAdvanced() {
                     ></textarea>
                   </div>
                 </>
+                </div>
               )}
               
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] disabled:opacity-70 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
+                aria-live="polite"
               >
                 {isSubmitting ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" role="status">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>

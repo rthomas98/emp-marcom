@@ -26,47 +26,59 @@ export function BackendAPI() {
           </div>
         </div>
         <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 lg:gap-x-12">
-          <div>
-            <div className="mb-6 md:mb-8">
+          <article aria-labelledby="backend-services-heading">
+            <figure className="mb-6 md:mb-8">
               <img 
                 src="/images/site-images/rob_thomas23_African_American_Coders_working_in_a_Software_deve_7c130fd9-be51-4ae4-a3d4-cd7c6117e8b8.png" 
                 alt="Back-End Services" 
                 className="rounded-image w-full h-auto" 
+                width="600"
+                height="400"
+                loading="lazy"
               />
-            </div>
-            <h3 className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
+              <figcaption className="sr-only">Team of developers working on back-end services</figcaption>
+            </figure>
+            <h3 id="backend-services-heading" className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
               Choose Our Back-End Services
             </h3>
             <p className="text-white/90">
               We offer customized back-end solutions designed to evolve and
               expand alongside your growing business needs.
             </p>
-          </div>
-          <div>
-            <div className="mb-6 md:mb-8">
+          </article>
+          <article aria-labelledby="api-integrations-heading">
+            <figure className="mb-6 md:mb-8">
               <img 
                 src="/images/site-images/rob_thomas23_African_American_Web_Developers_in_a_working_envir_a57b60ac-00f5-4255-937e-d7408bd3b519.png" 
                 alt="API Integrations" 
                 className="rounded-image w-full h-auto" 
+                width="600"
+                height="400"
+                loading="lazy"
               />
-            </div>
-            <h3 className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
+              <figcaption className="sr-only">Web developers working on API integration solutions</figcaption>
+            </figure>
+            <h3 id="api-integrations-heading" className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
               Our Expertise in API Integrations
             </h3>
             <p className="text-white/90">
               We guarantee that your applications will communicate seamlessly
               and effectively through our robust API solutions.
             </p>
-          </div>
-          <div>
-            <div className="mb-6 md:mb-8">
+          </article>
+          <article aria-labelledby="database-management-heading">
+            <figure className="mb-6 md:mb-8">
               <img 
                 src="/images/site-images/rob_thomas23_African_American_Programmer_working_in_a_software__b8f0beff-e05e-4cb9-9bdd-0fe9e598f779.png" 
                 alt="Database Management" 
                 className="rounded-image w-full h-auto" 
+                width="600"
+                height="400"
+                loading="lazy"
               />
-            </div>
-            <h3 className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
+              <figcaption className="sr-only">Programmer optimizing database performance</figcaption>
+            </figure>
+            <h3 id="database-management-heading" className="mb-5 text-2xl font-bold text-white md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
               Database Management for Optimal Performance
             </h3>
             <p className="text-white/90">
@@ -74,21 +86,23 @@ export function BackendAPI() {
               exceptional speed and unwavering reliability for all your data
               needs.
             </p>
-          </div>
+          </article>
         </div>
-        <div className="mt-12 flex items-center gap-4 md:mt-18 lg:mt-20">
+        <div className="mt-12 flex items-center gap-4 md:mt-18 lg:mt-20" role="navigation" aria-label="Backend and API solutions actions">
           <Link
             href="/solutions/backend-api-development"
             className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+            aria-label="Learn more about our backend and API development solutions"
           >
             Learn More
           </Link>
           <Link
             href="/contact"
             className="inline-flex items-center text-white hover:text-white/80"
+            aria-label="Get started with our backend and API development services"
           >
             Get Started
-            <ChevronRight className="ml-1 h-4 w-4" />
+            <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
       </div>

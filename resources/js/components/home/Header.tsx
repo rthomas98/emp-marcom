@@ -87,18 +87,23 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <section id="hero" className="relative h-[250vh]" aria-labelledby="hero-heading">
+      {/* Skip to main content link for keyboard users */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4 focus:text-primary">
+        Skip to main content
+      </a>
       <div className="px-[5%] pt-16 md:pt-24 lg:pt-28">
         <div className="container mx-auto">
           <div className="w-full max-w-3xl">
             <h1 id="hero-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">{title}</h1>
             <p className="text-lg text-gray-700">{description}</p>
-            <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
+            <div className="mt-6 flex flex-wrap gap-4 md:mt-8" role="navigation" aria-label="Primary call to action">
               {buttons.map((button, index) => (
                 button.variant === "secondary" ? (
                   <Link
                     key={index}
                     href={button.href}
                     className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-label={`${button.title}: Learn more about our services`}
                   >
                     {button.title}
                   </Link>
@@ -107,6 +112,7 @@ export const Header = (props: HeaderProps) => {
                     key={index}
                     href={button.href}
                     className="inline-flex h-10 items-center justify-center rounded-md bg-accent-pink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-pink/90 focus:outline-none focus:ring-2 focus:ring-accent-pink focus:ring-offset-2"
+                    aria-label={`${button.title}: Contact us about your project`}
                   >
                     {button.title}
                   </Link>
@@ -116,6 +122,7 @@ export const Header = (props: HeaderProps) => {
           </div>
         </div>
       </div>
+      <div id="main-content"></div>
 
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
         <motion.div
@@ -125,6 +132,7 @@ export const Header = (props: HeaderProps) => {
           <motion.div
             className="grid grid-flow-col grid-cols-1 justify-items-end gap-4 justify-self-end px-4"
             style={leftImageGroup}
+            aria-hidden="true" /* Decorative image gallery */
           >
             <div className="relative top-[5%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
               <img 
@@ -132,6 +140,8 @@ export const Header = (props: HeaderProps) => {
                 src={images[0].src} 
                 alt={images[0].alt}
                 loading="lazy" 
+                width="400"
+                height="600"
               />
             </div>
 
@@ -142,6 +152,8 @@ export const Header = (props: HeaderProps) => {
                   src={images[1].src} 
                   alt={images[1].alt}
                   loading="lazy" 
+                  width="300"
+                  height="300"
                 />
               </div>
               <div className="relative w-[30vw] flex-none md:w-[15vw]">
@@ -150,6 +162,8 @@ export const Header = (props: HeaderProps) => {
                   src={images[2].src} 
                   alt={images[2].alt}
                   loading="lazy" 
+                  width="300"
+                  height="400"
                 />
               </div>
             </div>
@@ -160,22 +174,27 @@ export const Header = (props: HeaderProps) => {
                 src={images[3].src} 
                 alt={images[3].alt}
                 loading="lazy" 
+                width="400"
+                height="400"
               />
             </div>
           </motion.div>
 
-          <motion.div className="relative" style={centerImageContainer}>
+          <motion.div className="relative" style={centerImageContainer} aria-hidden="true">
             <img 
               className="size-full object-cover rounded-lg border border-gray-200" 
               src={images[4].src} 
               alt={images[4].alt}
               loading="lazy" 
+              width="600"
+              height="800"
             />
           </motion.div>
 
           <motion.div
             className="grid grid-flow-col grid-cols-1 gap-4 justify-self-start px-4"
             style={rightImage}
+            aria-hidden="true"
           >
             <div className="relative top-[5%] w-[40vw] md:w-[25vw] lg:w-[22vw]">
               <img 
@@ -183,6 +202,8 @@ export const Header = (props: HeaderProps) => {
                 src={images[5].src} 
                 alt={images[5].alt}
                 loading="lazy" 
+                width="400"
+                height="600"
               />
             </div>
           </motion.div>

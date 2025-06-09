@@ -15,29 +15,35 @@ export function SoftwareDevelopmentHeader() {
               <p className="text-gray-700 md:text-lg">
                 As a specialized micro agency, Empuls3 delivers personalized software development with direct access to our senior developers. We transform your vision into reality through collaborative partnerships that larger firms simply can't offer, combining innovative design with robust architecture for both front-end and back-end excellence.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+              <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8" role="navigation" aria-label="Software development information links">
                 <Link
                   href="/solutions"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Learn more about our software development solutions"
                 >
                   Learn More
                 </Link>
                 <Link
                   href="/contact"
                   className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Contact us about your software development needs"
                 >
                   Contact Us
                 </Link>
               </div>
             </div>
             <div className="flex items-center justify-center h-full">
-              <div className="relative h-full w-full overflow-hidden rounded-r-lg">
+              <figure className="relative h-full w-full overflow-hidden rounded-r-lg">
                 <img
                   src="/images/site-images/rob_thomas23_African_American_Coders_working_in_a_Software_deve_390a7a57-d7d7-4496-88ad-dce46e0c4c80.png"
                   alt="Software development team working"
                   className="h-full w-full object-cover"
+                  width="800"
+                  height="600"
+                  loading="lazy"
                 />
-              </div>
+                <figcaption className="sr-only">Team of diverse software developers collaborating on code</figcaption>
+              </figure>
             </div>
           </div>
         </div>

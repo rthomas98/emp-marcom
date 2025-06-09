@@ -30,31 +30,47 @@ export function CompanyHeader({
   imagesPartTwo = defaultImagesPartTwo,
 }: Partial<Props>) {
   return (
-    <section id="company-header" className="relative px-[5%]">
+    <section 
+      id="company-header" 
+      className="relative px-[5%]"
+      aria-labelledby="company-header-heading"
+    >
       <div className="flex max-h-[60rem] min-h-svh items-center">
         <div className="container py-16 md:py-24 lg:py-28 mx-auto">
-          <div className="relative z-10 mx-auto max-w-3xl text-center">
-            <h1 className="mb-5 text-5xl font-bold text-white md:mb-6 md:text-6xl lg:text-7xl">
+          <header className="relative z-10 mx-auto max-w-3xl text-center">
+            <h1 
+              id="company-header-heading"
+              className="mb-5 text-5xl font-bold text-white md:mb-6 md:text-6xl lg:text-7xl"
+            >
               {heading}
             </h1>
             <p className="text-white md:text-md">{description}</p>
-            <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
+            <nav 
+              className="mt-6 flex items-center justify-center gap-x-4 md:mt-8"
+              aria-label="Company navigation"
+            >
               <Link
                 href="/company/about"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245]"
+                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F1946]"
+                aria-label="Learn more about our company history and values"
               >
                 About Us
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md border border-white bg-transparent px-6 py-3 text-center font-medium text-white transition hover:bg-white hover:text-[#1F1946]"
+                className="inline-flex items-center justify-center rounded-md border border-white bg-transparent px-6 py-3 text-center font-medium text-white transition hover:bg-white hover:text-[#1F1946] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F1946]"
+                aria-label="Contact our team to discuss your project"
               >
                 Contact
               </Link>
-            </div>
-          </div>
+            </nav>
+          </header>
         </div>
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 overflow-hidden"
+          aria-hidden="true"
+          role="presentation"
+        >
           <div className="absolute inset-0 z-10 bg-[#1F1946]/70" />
           <div className="grid w-full grid-cols-2 gap-x-4 px-4 md:grid-cols-3 lg:grid-cols-5">
             {imageColumns.map((column, index) => (

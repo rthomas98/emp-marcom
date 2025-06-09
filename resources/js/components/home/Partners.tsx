@@ -28,6 +28,8 @@ const TabItem = ({ tabItem, index, activeTab }: TabItemProps) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
       className="relative flex items-center justify-center size-full"
+      role="img"
+      aria-label={`Image representing partnership with ${tabItem.heading}`}
     >
       {tabItem.image && (
         <img
@@ -35,6 +37,8 @@ const TabItem = ({ tabItem, index, activeTab }: TabItemProps) => {
           alt={tabItem.image.alt}
           className="rounded-lg mb-6 md:mb-0 w-full"
           loading="lazy"
+          width="800"
+          height="600"
         />
       )}
     </motion.div>
@@ -133,12 +137,27 @@ export function Partners() {
               </p>
             </div>
             <div className="static flex flex-col flex-wrap justify-stretch md:block">
-              <div className="relative grid auto-cols-fr grid-cols-1 grid-rows-[auto_auto] items-start md:mb-0 md:items-stretch">
+              <div 
+                className="relative grid auto-cols-fr grid-cols-1 grid-rows-[auto_auto] items-start md:mb-0 md:items-stretch"
+                role="tablist"
+                aria-label="Partner companies"
+              >
                 {tabItems.map((item, index) => (
                   <div
                     key={index}
                     onClick={setActiveTabSetter(index)}
                     className={getActiveTabButtonStyles(index)}
+                    role="tab"
+                    id={`tab-${index}`}
+                    aria-selected={activeTab === index}
+                    aria-controls={`tabpanel-${index}`}
+                    tabIndex={activeTab === index ? 0 : -1}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setActiveTab(index);
+                      }
+                    }}
                   >
                     <h3 className="text-xl font-bold text-primary md:text-2xl">
                       {item.heading}
@@ -148,6 +167,10 @@ export function Partners() {
                       animate={getActiveTabButtonContentStyles(index)}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
+                      role="tabpanel"
+                      id={`tabpanel-${index}`}
+                      aria-labelledby={`tab-${index}`}
+                      hidden={activeTab !== index}
                     >
                       <p className="mt-2 text-gray-700">
                         {item.description}
@@ -157,19 +180,21 @@ export function Partners() {
                 ))}
               </div>
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8" role="navigation" aria-label="Partner information links">
               <Link
                 href="/case-studies"
                 className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="Learn more about our partner case studies"
               >
                 Learn More
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center text-primary hover:text-accent-pink"
+                aria-label="Contact us about partnership opportunities"
               >
                 Contact
-                <ChevronRight className="ml-1 h-4 w-4" />
+                <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

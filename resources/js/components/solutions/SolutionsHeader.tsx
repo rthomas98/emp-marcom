@@ -14,6 +14,8 @@ export function SolutionsHeader() {
           alt="Team of developers working on software solutions"
           className="w-full object-cover lg:h-screen lg:max-h-[60rem]"
           loading="lazy"
+          width="1200"
+          height="800"
         />
       </div>
       <div className="order-1 mx-[5%] sm:max-w-md md:justify-self-start lg:order-2 lg:mr-[5vw] lg:ml-20">
@@ -23,16 +25,18 @@ export function SolutionsHeader() {
         <p className="text-gray-700 md:text-lg">
           As a specialized micro agency, Empuls3 delivers tailored development solutions with the personalized attention that larger firms simply can't match. Our senior team works directly with you throughout your project, ensuring exceptional quality, faster turnaround times, and a truly collaborative experience.
         </p>
-        <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
+        <div className="mt-6 flex flex-wrap gap-4 md:mt-8" role="navigation" aria-label="Solutions page navigation">
           <Link
             href="/company/about"
             className="inline-flex h-10 items-center justify-center rounded-md bg-accent-pink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-pink/90 focus:outline-none focus:ring-2 focus:ring-accent-pink focus:ring-offset-2"
+            aria-label="Learn about who we are at Empuls3"
           >
             Who We Are
           </Link>
           <Link
             href="/contact"
             className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Contact us about other services not listed"
           >
             Need Another Service?
           </Link>

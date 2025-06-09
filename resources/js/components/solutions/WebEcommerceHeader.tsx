@@ -6,40 +6,47 @@ export function WebEcommerceHeader() {
     <section
       id="web-ecommerce-header"
       className="grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0"
+      aria-labelledby="web-ecommerce-heading"
     >
       <div className="mx-[5%] max-w-[40rem] justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
-        <h1 className="mb-5 text-5xl font-bold font-header text-primary md:mb-6 md:text-6xl lg:text-7xl">
+        <h1 id="web-ecommerce-heading" className="mb-5 text-5xl font-bold font-header text-primary md:mb-6 md:text-6xl lg:text-7xl">
           Boutique Web & E-commerce Development with Senior Expertise
         </h1>
         <p className="text-gray-700 md:text-lg">
           As a specialized micro agency, we deliver personalized web and e-commerce solutions with direct access to our senior developers. Our boutique approach combines custom WordPress solutions, robust e-commerce platforms, and innovative Progressive Web Apps—all with the focused attention and faster turnaround that larger agencies simply can't match.
         </p>
-        <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
+        <div className="mt-6 flex flex-wrap gap-4 md:mt-8" role="navigation" aria-label="Web and e-commerce development actions">
           <Link
             href="/solutions"
             className="inline-flex h-10 items-center justify-center rounded-md bg-[#BD1550] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#BD1550]/90 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2"
+            aria-label="Learn more about our web and e-commerce development services"
           >
             Learn More
           </Link>
           <Link
             href="/contact"
             className="inline-flex h-10 items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-4 py-2 text-sm font-medium text-[#BD1550] transition-colors hover:bg-[#BD1550]/10 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2"
+            aria-label="Start a web or e-commerce development project with us"
           >
             Start A Project
           </Link>
         </div>
       </div>
-      <div className="h-[30rem] overflow-hidden pr-[5vw] pl-[5vw] md:h-[40rem] lg:h-screen lg:pl-0">
+      <div className="h-[30rem] overflow-hidden pr-[5vw] pl-[5vw] md:h-[40rem] lg:h-screen lg:pl-0" aria-label="Web and e-commerce development showcase" role="region">
         <div className="grid w-full grid-cols-2 gap-x-4">
           <div className="-mt-[120%] grid size-full animate-loop-vertically columns-2 grid-cols-1 gap-4 self-center">
             <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
+              <figure className="relative w-full pt-[120%]">
                 <img
                   className="absolute inset-0 size-full rounded-image object-cover"
                   src="/images/site-images/rob_thomas23_African_American_Business_professionals_in_a_moder_aa9cdc13-5800-4ce5-8074-5d754c6002f1.png"
                   alt="E-commerce website on laptop"
+                  width="400"
+                  height="480"
+                  loading="lazy"
                 />
-              </div>
+                <figcaption className="sr-only">Professional showcasing e-commerce website on laptop</figcaption>
+              </figure>
             </div>
             <div className="grid size-full grid-cols-1 gap-4">
               <div className="relative w-full pt-[120%]">

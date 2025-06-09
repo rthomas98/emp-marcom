@@ -30,10 +30,10 @@ export function MobileTestimonials() {
   ];
   
   return (
-    <section id="mobile-testimonials" className="px-[5%] py-16 md:py-24 lg:py-28 bg-gray-50">
+    <section id="mobile-testimonials" className="px-[5%] py-16 md:py-24 lg:py-28 bg-gray-50" aria-labelledby="mobile-testimonials-heading">
       <div className="container mx-auto">
-        <div className="mb-12 w-full md:mb-18 lg:mb-20">
-          <h2 className="mb-5 text-5xl font-bold text-primary md:mb-6 md:text-7xl lg:text-6xl">
+        <header className="mb-12 w-full md:mb-18 lg:mb-20">
+          <h2 id="mobile-testimonials-heading" className="mb-5 text-5xl font-bold text-primary md:mb-6 md:text-7xl lg:text-6xl">
             Customer Testimonials
           </h2>
           <p className="md:text-md text-gray-700 max-w-4xl">
@@ -43,13 +43,22 @@ export function MobileTestimonials() {
             only meet your vision but also elevate the overall user experience,
             ensuring every interaction is smooth and enjoyable.
           </p>
-        </div>
+        </header>
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-x-8 lg:gap-x-12 lg:gap-y-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="flex h-full max-w-lg flex-col items-start justify-start text-left">
-              <div className="mb-6 flex md:mb-8">
+            <article key={index} className="flex h-full max-w-lg flex-col items-start justify-start text-left">
+              <div className="mb-6 flex md:mb-8" aria-label="5 out of 5 stars rating" role="img">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#BD1550" className="h-6 w-6 mr-1">
+                  <svg 
+                    key={i} 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="#BD1550" 
+                    className="h-6 w-6 mr-1"
+                    aria-hidden="true"
+                  >
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ))}
@@ -57,21 +66,24 @@ export function MobileTestimonials() {
               <blockquote className="text-md leading-[1.4] font-bold text-primary md:text-xl">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
-                <div className="mb-4">
+              <footer className="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
+                <figure className="mb-4">
                   <img
                     src={testimonial.avatar}
-                    alt={`${testimonial.author} avatar`}
+                    alt={`${testimonial.author}, ${testimonial.position}`}
                     className="h-14 w-14 min-h-14 min-w-14 rounded-full object-cover"
+                    width="56"
+                    height="56"
+                    loading="lazy"
                   />
-                </div>
+                </figure>
                 <div className="mb-3 md:mb-4">
-                  <p className="font-semibold text-primary">{testimonial.author}</p>
+                  <cite className="font-semibold text-primary not-italic">{testimonial.author}</cite>
                   <p className="text-gray-700">{testimonial.position}</p>
                 </div>
-                <div className="hidden w-px self-stretch bg-gray-300 md:block" />
-              </div>
-            </div>
+                <div className="hidden w-px self-stretch bg-gray-300 md:block" aria-hidden="true" />
+              </footer>
+            </article>
           ))}
         </div>
       </div>

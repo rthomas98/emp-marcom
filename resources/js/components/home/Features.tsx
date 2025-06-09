@@ -48,41 +48,57 @@ export const Features = (props: FeaturesProps) => {
 
   return (
     <section id="features" className="px-[5%]" aria-labelledby="features-heading">
-      <h2 id="features-heading" className="sr-only">Our Features</h2>
+      <h2 id="features-heading" className="sr-only">Our Core Services and Features</h2>
       <div className="container mx-auto">
         <div className="relative grid gap-x-12 py-16 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20">
-          <div className="sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center">
+          <div 
+            className="sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center" 
+            role="region"
+            aria-label="Feature images gallery"
+          >
             {images.map((image, index) => (
-              <img
-                key={index}
-                src={image.src}
-                className={clsx("absolute w-full rounded-lg border border-gray-200 transition-opacity duration-500", {
+              <figure 
+                key={index} 
+                className={clsx("absolute w-full transition-opacity duration-500", {
                   "opacity-100": activeSection === index,
                   "opacity-0": activeSection !== index,
                 })}
-                alt={image.alt || `Feature image ${index + 1}`}
-                loading="lazy"
-              />
+                aria-hidden={activeSection !== index}
+              >
+                <img
+                  src={image.src}
+                  className="w-full rounded-lg border border-gray-200"
+                  alt={image.alt || `Feature image ${index + 1}`}
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+                <figcaption className="sr-only">{contents[index]?.tagline} - {contents[index]?.heading}</figcaption>
+              </figure>
             ))}
           </div>
 
           <div className="grid grid-cols-1 gap-12 md:block">
             {contents.map((content, index) => (
-              <div key={index}>
+              <article key={index} id={`feature-${index + 1}`} className="feature-item" aria-labelledby={`feature-heading-${index + 1}`}>
                 <div className="flex flex-col items-start justify-center md:h-screen">
                   <p className="mb-3 font-semibold text-accent-pink md:mb-4">{content.tagline}</p>
-                  <h3 className="mb-5 text-3xl font-bold font-header text-primary md:mb-6 md:text-4xl lg:text-5xl">
+                  <h3 
+                    id={`feature-heading-${index + 1}`} 
+                    className="mb-5 text-3xl font-bold font-header text-primary md:mb-6 md:text-4xl lg:text-5xl"
+                  >
                     {content.heading}
                   </h3>
                   <p className="text-gray-700 md:text-lg">{content.description}</p>
-                  <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-                    {content.buttons.map((button, index) => {
+                  <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8" role="navigation" aria-labelledby={`feature-heading-${index + 1}`}>
+                    {content.buttons.map((button, buttonIndex) => {
                       if (button.variant === "secondary") {
                         return (
                           <Link
-                            key={index}
+                            key={buttonIndex}
                             href={button.href}
                             className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                            aria-label={`${button.title} about ${content.tagline}`}
                           >
                             {button.title}
                           </Link>
@@ -90,20 +106,22 @@ export const Features = (props: FeaturesProps) => {
                       } else if (button.variant === "link") {
                         return (
                           <Link
-                            key={index}
+                            key={buttonIndex}
                             href={button.href}
                             className="inline-flex items-center text-primary hover:text-accent-pink"
+                            aria-label={`${button.title} about ${content.tagline}`}
                           >
                             {button.title}
-                            <ChevronRight className="ml-1 h-4 w-4" />
+                            <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                           </Link>
                         );
                       } else {
                         return (
                           <Link
-                            key={index}
+                            key={buttonIndex}
                             href={button.href}
                             className="inline-flex h-10 items-center justify-center rounded-md bg-accent-pink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-pink/90 focus:outline-none focus:ring-2 focus:ring-accent-pink focus:ring-offset-2"
+                            aria-label={`${button.title} about ${content.tagline}`}
                           >
                             {button.title}
                           </Link>
@@ -111,16 +129,19 @@ export const Features = (props: FeaturesProps) => {
                       }
                     })}
                   </div>
-                  <div className="mt-10 block w-full md:hidden">
+                  <figure className="mt-10 block w-full md:hidden">
                     <img 
                       src={content.image.src} 
-                      className="w-full rounded-lg" 
+                      className="w-full rounded-lg border border-gray-200" 
                       alt={content.image.alt || `Feature mobile image ${index + 1}`} 
                       loading="lazy"
+                      width="600"
+                      height="400"
                     />
-                  </div>
+                    <figcaption className="sr-only">{content.tagline} - {content.heading}</figcaption>
+                  </figure>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
