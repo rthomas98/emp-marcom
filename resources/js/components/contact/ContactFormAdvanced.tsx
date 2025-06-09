@@ -23,7 +23,7 @@ export function ContactFormAdvanced() {
     formType: "general",
     
     // Project request specific fields
-    projectType: "web-development",
+    projectType: "",
     budget: "",
     timeline: "",
     projectDescription: "",
@@ -71,9 +71,18 @@ export function ContactFormAdvanced() {
       // Configure axios with CSRF token
       axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
       
+      // Prepare data for submission - only include projectType if form type is 'project'
+      const submissionData = {...formData};
+      
+      // If form type is general, set projectType to 'web-development' to satisfy backend validation
+      // but it won't be used for general inquiries
+      if (formType === 'general') {
+        submissionData.projectType = 'web-development';
+      }
+      
       // Send form data to backend
       console.log('Sending request to /contact/submit');
-      const response = await axios.post('/contact/submit', formData);
+      const response = await axios.post('/contact/submit', submissionData);
       
       if (response.data.success) {
         // Reset form after successful submission
@@ -84,7 +93,7 @@ export function ContactFormAdvanced() {
           company: "",
           message: "",
           formType: formType,
-          projectType: "web-development",
+          projectType: "",
           budget: "",
           timeline: "",
           projectDescription: "",
@@ -331,6 +340,7 @@ export function ContactFormAdvanced() {
                     <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-[#1F1946]">
                       Project Type *
                     </label>
+                    <span id="projectType-required" className="sr-only">Required field</span>
                     <select
                       id="projectType"
                       name="projectType"
@@ -341,7 +351,7 @@ export function ContactFormAdvanced() {
                       aria-required="true"
                       aria-describedby="projectType-required"
                     >
-                      <span id="projectType-required" className="sr-only">Required field</span>
+                      <option value="">Select Project Type</option>
                       <option value="web-development">Web Development</option>
                       <option value="mobile-development">Mobile Development</option>
                       <option value="e-commerce">E-Commerce</option>

@@ -64,7 +64,7 @@ export function ContactSchedule() {
             
             <div className="mt-8">
               <a
-                href="https://calendly.com/empuls3/consultation"
+                href="https://calendly.com/empuls3/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245]"
