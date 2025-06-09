@@ -65,6 +65,34 @@ class CaseStudy extends Model
         return [];
     }
     
+    /**
+     * Get the featured image URL
+     */
+    public function getFeaturedImageAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        // If it's already a full URL, return it
+        if (filter_var($value, FILTER_VALIDATE_URL)) {
+            return $value;
+        }
+        
+        // If it starts with /storage/, remove that prefix
+        if (str_starts_with($value, '/storage/')) {
+            $value = substr($value, 9);
+        }
+        
+        // If it starts with /, remove that prefix
+        if (str_starts_with($value, '/')) {
+            $value = substr($value, 1);
+        }
+        
+        // Return the URL using Laravel's Storage facade
+        return url('storage/' . $value);
+    }
+    
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;
