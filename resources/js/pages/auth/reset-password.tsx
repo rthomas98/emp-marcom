@@ -49,7 +49,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                             name="email"
                             autoComplete="email"
                             value={data.email}
-                            className="mt-1 block w-full"
+                            className="mt-1 block w-full text-gray-900"
                             readOnly
                             onChange={(e) => setData('email', e.target.value)}
                         />
@@ -64,7 +64,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                             name="password"
                             autoComplete="new-password"
                             value={data.password}
-                            className="mt-1 block w-full"
+                            className="mt-1 block w-full text-gray-900"
                             autoFocus
                             onChange={(e) => setData('password', e.target.value)}
                             placeholder="Password"
@@ -80,15 +80,19 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                             name="password_confirmation"
                             autoComplete="new-password"
                             value={data.password_confirmation}
-                            className="mt-1 block w-full"
+                            className="mt-1 block w-full text-gray-900"
                             onChange={(e) => setData('password_confirmation', e.target.value)}
                             placeholder="Confirm password"
                         />
                         <InputError message={errors.password_confirmation} className="mt-2" />
                     </div>
 
-                    <Button type="submit" className="mt-4 w-full" disabled={processing}>
-                        {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
+                    <Button 
+                        type="submit" 
+                        className="mt-4 w-full bg-[#BD1550] hover:bg-[#9A1040] text-white" 
+                        disabled={processing}
+                    >
+                        {processing && <LoaderCircle className="h-4 w-4 animate-spin mr-2" />}
                         Reset password
                     </Button>
                 </div>

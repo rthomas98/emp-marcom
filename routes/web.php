@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
 
 // Main Pages
 Route::get('/', function () {
