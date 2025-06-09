@@ -31,6 +31,7 @@ class MarcomPanelProvider extends PanelProvider
             ->brandLogoHeight('50px')
             ->path('marcom')
             ->login()
+            ->passwordReset()
             ->authGuard('web')
             ->colors([
                 'primary' => '#BD1550',
