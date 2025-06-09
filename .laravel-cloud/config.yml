@@ -1,0 +1,25 @@
+name: empuls3-marcom
+
+environments:
+  production:
+    build:
+      - 'composer install --no-dev --optimize-autoloader'
+      - 'npm ci'
+      - 'npm run build'
+    deploy:
+      - '.laravel-cloud/deploy.sh'
+    cron:
+      - '* * * * * cd /var/www/html && php artisan schedule:run >> /dev/null 2>&1'
+    storage:
+      - 'storage/app/public'
+      - 'storage/framework/cache'
+      - 'storage/framework/sessions'
+      - 'storage/framework/views'
+      - 'storage/logs'
+    env:
+      APP_ENV: production
+      APP_DEBUG: false
+      LOG_CHANNEL: stack
+      CACHE_DRIVER: file
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: database
