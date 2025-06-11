@@ -84,6 +84,9 @@ class EditCaseStudy extends EditRecord
             return null;
         }
         
+        // Debug information
+        $originalPath = $path;
+        
         // If it's already in the expected format (just the filename in the directory), return it
         if (str_contains($path, $expectedDirectory . '/')) {
             return $path;
@@ -101,6 +104,11 @@ class EditCaseStudy extends EditRecord
             $path = substr($path, 9);
         }
         
+        // If it starts with storage/, remove that prefix too
+        if (str_starts_with($path, 'storage/')) {
+            $path = substr($path, 8);
+        }
+        
         // If it starts with /, remove that prefix
         if (str_starts_with($path, '/')) {
             $path = substr($path, 1);
@@ -112,6 +120,12 @@ class EditCaseStudy extends EditRecord
             $filename = end($pathParts);
             return $expectedDirectory . '/' . $filename;
         }
+        
+        // Log the path transformation for debugging
+        \Illuminate\Support\Facades\Log::info("Image path normalized", [
+            'original' => $originalPath,
+            'normalized' => $path
+        ]);
         
         return $path;
     }
