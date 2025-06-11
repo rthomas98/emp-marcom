@@ -1,0 +1,32 @@
+CASE STUDY IMAGES UPLOAD INSTRUCTIONS
+====================================
+
+Follow these steps to upload the case study images to your production server:
+
+1. Upload the ZIP file 'case-study-images.zip' to your production server
+   (Use SFTP, Laravel Cloud dashboard, or any other method)
+
+2. SSH into your production server
+
+3. Extract the ZIP file:
+   unzip case-study-images.zip
+
+4. Copy the images to the storage directory:
+   cp -r case-study-images/* storage/app/public/
+
+5. Make sure the storage link is created:
+   php artisan storage:link
+
+6. Set proper permissions:
+   chmod -R 775 storage/app/public/case-studies
+
+7. Clear the cache:
+   php artisan cache:clear
+   php artisan view:clear
+
+8. Visit your website to verify that the case study images are now displaying correctly
+
+If you still have issues, check:
+- File permissions
+- Web server logs for 404 errors
+- That the image paths in the database match the actual file locations
