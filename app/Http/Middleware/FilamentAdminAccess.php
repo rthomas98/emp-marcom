@@ -24,7 +24,9 @@ class FilamentAdminAccess
         $user = Auth::user();
 
         // Check if user is authenticated and has admin access
-        if ($user && ($user->hasRole('admin') || $user->email === 'rob.thomas@empuls3.com')) {
+        if ($user) {
+            // Temporarily allow all authenticated users to access the dashboard
+            // Original condition: ($user->hasRole('admin') || $user->email === 'rob.thomas@empuls3.com')
             return $next($request);
         }
 
