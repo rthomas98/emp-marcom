@@ -13,15 +13,21 @@ class CaseStudyController extends Controller
      */
     public function index()
     {
+        // Get all published case studies
         $caseStudies = CaseStudy::where('status', 'published')
             ->orderBy('created_at', 'desc')
             ->get();
             
-        $featuredCaseStudies = CaseStudy::where('status', 'published')
-            ->where('is_featured', true)
-            ->orderBy('created_at', 'desc')
-            ->take(3)
-            ->get();
+        // Get featured case studies only if we have case studies
+        $featuredCaseStudies = collect([]);
+        
+        if ($caseStudies->count() > 0) {
+            $featuredCaseStudies = CaseStudy::where('status', 'published')
+                ->where('is_featured', true)
+                ->orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+        }
             
         return Inertia::render('CaseStudies/Index', [
             'caseStudies' => $caseStudies,
@@ -69,8 +75,12 @@ class CaseStudyController extends Controller
         
         $caseStudies = $query->orderBy('created_at', 'desc')->get();
         
+        // Empty featured case studies when filtering
+        $featuredCaseStudies = collect([]);
+        
         return Inertia::render('CaseStudies/Index', [
             'caseStudies' => $caseStudies,
+            'featuredCaseStudies' => $featuredCaseStudies,
             'filter' => [
                 'industry' => $request->industry ?? null,
                 'service_type' => $request->service_type ?? null,

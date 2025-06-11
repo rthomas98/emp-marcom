@@ -42,7 +42,7 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
   return (
     <>
       <Head>
-        <title>Case Studies | Empuls3</title>
+        <title>Success Stories | Empuls3</title>
         <meta name="description" content="Explore our portfolio of successful client projects and case studies across various industries and service types." />
         <meta name="keywords" content="case studies, client projects, success stories, web development, mobile development, software solutions" />
       </Head>
@@ -67,7 +67,7 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
         </div>
       </section>
       
-      {/* Featured Case Studies */}
+      {/* Featured Case Studies - Only shown if there are case studies */}
       {featuredCaseStudies && featuredCaseStudies.length > 0 && (
         <section 
           className="py-16 bg-gray-50" 
@@ -133,7 +133,7 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
             <header>
-              <h2 id="all-case-studies-heading" className="text-3xl font-bold">All Case Studies</h2>
+              <h2 id="all-case-studies-heading" className="text-3xl font-bold">Success Stories</h2>
             </header>
             <button 
               onClick={() => setShowFilters(!showFilters)}
@@ -266,12 +266,12 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
             </div>
           ) : (
             <div 
-              className="text-center py-16"
+              className="text-center py-16 bg-white rounded-lg shadow-sm border border-gray-200"
               role="region"
               aria-label="No case studies found message"
             >
-              <h3 className="text-xl font-medium text-gray-600 mb-4">No case studies found</h3>
-              <p className="text-gray-500">Try adjusting your filters or check back later for new case studies.</p>
+              <h3 className="text-xl font-medium text-gray-600 mb-4">No Success Stories Available</h3>
+              <p className="text-gray-500 max-w-lg mx-auto">We're currently working on documenting our client success stories. Check back soon to see how we've helped businesses achieve their goals.</p>
             </div>
           )}
         </div>
@@ -319,5 +319,5 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
   );
 }
 
-Index.layout = (page: React.ReactNode) => <SiteLayout children={page} title="Case Studies | Empuls3" />;
+Index.layout = (page: React.ReactNode) => <SiteLayout children={page} title="Success Stories | Empuls3" />;
 

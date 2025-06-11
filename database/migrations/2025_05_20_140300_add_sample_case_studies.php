@@ -41,8 +41,10 @@ return new class extends Migration
             });
         }
         
-        // Create sample case studies
-        $sampleCaseStudies = [
+        // Only create sample case studies in non-production environments
+        if (!app()->environment('production')) {
+            // Create sample case studies
+            $sampleCaseStudies = [
             [
                 'title' => 'Mobile Banking App Development',
                 'slug' => 'mobile-banking-app',
@@ -102,8 +104,9 @@ return new class extends Migration
             ],
         ];
 
-        foreach ($sampleCaseStudies as $caseStudy) {
-            CaseStudy::create($caseStudy);
+            foreach ($sampleCaseStudies as $caseStudy) {
+                CaseStudy::create($caseStudy);
+            }
         }
     }
 
