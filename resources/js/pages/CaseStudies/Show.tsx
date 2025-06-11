@@ -1,7 +1,6 @@
 import React from 'react';
 import { Head } from '@inertiajs/react';
-import Layout from '@/Layouts/Layout';
-import { PageProps } from '@/types';
+import SiteLayout from '@/layouts/site-layout';
 import { Link } from '@inertiajs/react';
 
 interface CaseStudy {
@@ -31,14 +30,14 @@ interface CaseStudy {
   status: string;
 }
 
-interface Props extends PageProps {
+interface Props {
   caseStudy: CaseStudy;
   relatedCaseStudies: CaseStudy[];
 }
 
 export default function Show({ caseStudy, relatedCaseStudies }: Props) {
   return (
-    <Layout>
+    <SiteLayout>
       <Head title={caseStudy.meta_title || caseStudy.title} />
       
       <div className="bg-white">
@@ -199,6 +198,6 @@ export default function Show({ caseStudy, relatedCaseStudies }: Props) {
           </div>
         </div>
       </div>
-    </Layout>
+    </SiteLayout>
   );
 }
