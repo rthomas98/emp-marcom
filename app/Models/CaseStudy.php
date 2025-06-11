@@ -74,12 +74,17 @@ class CaseStudy extends Model
             return null;
         }
         
-        // If it's already a full URL, return it
+        // For Filament admin panel, return the raw value
+        if (request()->is('marcom*')) {
+            return $value;
+        }
+        
+        // If it's already a full URL with our domain, return it
         if (filter_var($value, FILTER_VALIDATE_URL)) {
             return $value;
         }
         
-        // If it starts with /storage/, remove that prefix
+        // If it starts with /storage/, remove that prefix for storage
         if (str_starts_with($value, '/storage/')) {
             $value = substr($value, 9);
         }
@@ -89,7 +94,7 @@ class CaseStudy extends Model
             $value = substr($value, 1);
         }
         
-        // Return the URL using Laravel's Storage facade
+        // Return the URL using Laravel's url helper
         return url('storage/' . $value);
     }
     

@@ -16,4 +16,9 @@ class ListCaseStudies extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+    
+    protected function getDefaultTableRecordUrlUsing(): ?\Closure
+    {
+        return fn ($record): string => static::getResource()::getUrl('view', ['record' => $record]);
+    }
 }

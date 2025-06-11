@@ -151,12 +151,14 @@ class CaseStudyResource extends Resource
                             ->directory('case-studies/featured')
                             ->maxSize(2048)
                             ->visibility('public')
+                            ->preserveFilenames()
                             ->columnSpanFull(),
                             
                         FileUpload::make('logo')
                             ->image()
                             ->disk('public')
                             ->directory('case-studies/logos')
+                            ->preserveFilenames()
                             ->maxSize(2048),
 
                         Repeater::make('gallery_images')
@@ -167,6 +169,7 @@ class CaseStudyResource extends Resource
                                     ->image()
                                     ->disk('public')
                                     ->directory('case-studies/gallery')
+                                    ->preserveFilenames()
                                     ->maxSize(2048)
                                     ->required(),
                                 TextInput::make('alt')
@@ -287,6 +290,7 @@ class CaseStudyResource extends Resource
                     ->indicator('Featured'),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -308,6 +312,7 @@ class CaseStudyResource extends Resource
         return [
             'index' => Pages\ListCaseStudies::route('/'),
             'create' => Pages\CreateCaseStudy::route('/create'),
+            'view' => Pages\ViewCaseStudy::route('/{record}'),
             'edit' => Pages\EditCaseStudy::route('/{record}/edit'),
         ];
     }
