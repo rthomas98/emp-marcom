@@ -19,7 +19,14 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [
+        env('APP_URL', 'https://empuls3.com'),
+        'https://empuls3.com',
+        'https://www.empuls3.com',
+        // Add development URLs only if in local/development environment
+        env('APP_ENV') === 'local' ? 'http://localhost:3000' : null,
+        env('APP_ENV') === 'local' ? 'http://localhost:8000' : null,
+    ],
 
     'allowed_origins_patterns' => [],
 
@@ -27,7 +34,7 @@ return [
 
     'exposed_headers' => [],
 
-    'max_age' => 0,
+    'max_age' => 3600,
 
     'supports_credentials' => true,
 

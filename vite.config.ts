@@ -22,4 +22,15 @@ export default defineConfig({
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
         },
     },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'vendor-react': ['react', 'react-dom'],
+                    'vendor-ui': ['@headlessui/react', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+                    'vendor-utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
+                },
+            },
+        },
+    },
 });

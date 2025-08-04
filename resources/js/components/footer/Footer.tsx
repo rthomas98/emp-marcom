@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,23 +10,37 @@ export default function Footer() {
           <div className="mb-12 grid grid-cols-1 gap-x-[8vw] gap-y-12 md:mb-18 md:gap-y-16 lg:mb-20 lg:grid-cols-[1fr_0.5fr] lg:gap-y-20">
             <div className="rb-6 max-w-md">
               <h1 className="mb-5 text-4xl font-bold font-header md:mb-6 md:text-5xl lg:text-6xl">
-                Boutique Technology Solutions with Senior Expertise
+                Dallas's Premier Remote Technology Partner
               </h1>
               <p className="text-white/80">
-                As a specialized micro agency, Empuls3 delivers truly personalized solutions with direct access to our senior specialists. Experience faster implementation times and more dedicated attention than larger firms can offer.
+                Serving Dallas-Fort Worth businesses remotely since 2009, Empuls3 delivers personalized software development and IT consulting solutions. Experience senior expertise with the flexibility of remote collaboration.
               </p>
+              <div className="mt-4 space-y-2 text-white/80">
+                <div className="flex items-center gap-2">
+                  <MapPin className="size-5" />
+                  <span>Serving Dallas, TX Remotely</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="size-5" />
+                  <a href="tel:+12145550100" className="hover:text-white">(214) 555-0100</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="size-5" />
+                  <a href="mailto:dallas@empuls3.com" className="hover:text-white">dallas@empuls3.com</a>
+                </div>
+              </div>
               <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
                 <Link 
                   href={route('solutions')} 
                   className="inline-flex h-10 items-center justify-center rounded-md bg-accent-pink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-pink/90 focus:outline-none focus:ring-2 focus:ring-accent-pink focus:ring-offset-2"
                 >
-                  Learn More
+                  See Our Track Record
                 </Link>
                 <Link 
                   href={route('contact')} 
                   className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
                 >
-                  Contact
+                  Get Help Now
                 </Link>
               </div>
             </div>

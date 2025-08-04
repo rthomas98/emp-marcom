@@ -10,15 +10,15 @@ export function ManagedITHeader() {
         <div className="flex h-full flex-col justify-between">
           <header>
             <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">
-              Boutique IT Support Services
+              24/7 IT Support That Actually Works
             </p>
             <h1 id="managed-it-heading" className="mb-5 text-5xl font-bold text-[#1F1946] md:mb-6 md:text-6xl lg:text-7xl">
-              Personalized IT Solutions with Senior Expertise
+              Stop Losing $10K/Month to IT Problems
             </h1>
           </header>
           <div className="ml-[7.5%]">
             <p className="text-gray-700 md:text-md">
-              As a specialized micro agency, Empuls3 delivers personalized Managed IT & Support Services with direct access to our senior specialists. Unlike larger firms where your tickets might be handled by junior staff, our boutique team ensures your technology runs smoothly with faster response times and more dedicated attention—allowing you to focus on growth while we handle the technical details.
+              Every hour your team can't work costs you money. When your email crashes, servers die, or "the system is slow," you're bleeding cash. We keep Dallas businesses running 24/7 with IT support that actually fixes problems, not just creates tickets. Real techs, real solutions, 15-minute response times.
             </p>
             <nav className="mt-6 flex flex-wrap gap-4 md:mt-8 md:flex-wrap" aria-label="Managed IT services navigation">
               <Link
@@ -26,14 +26,14 @@ export function ManagedITHeader() {
                 className="inline-flex items-center justify-center rounded-md bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
                 aria-label="Learn more about our managed IT services"
               >
-                Learn More
+                Stop the IT Bleeding
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-6 py-3 text-center font-medium text-[#BD1550] transition hover:bg-[#BD1550] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
                 aria-label="Contact us about managed IT support services"
               >
-                Contact Us
+                Get Emergency IT Help
               </Link>
             </nav>
           </div>

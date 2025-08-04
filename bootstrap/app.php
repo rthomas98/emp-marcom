@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\ContactFormRateLimit;
+use App\Http\Middleware\EnsureProductionSecurity;
 use App\Http\Middleware\HandleAppearance;
 use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Foundation\Application;
@@ -17,9 +19,15 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
         $middleware->web(append: [
+            EnsureProductionSecurity::class,
             HandleAppearance::class,
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
+        ]);
+
+        // Add rate limiting middleware alias
+        $middleware->alias([
+            'throttle.contact' => ContactFormRateLimit::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

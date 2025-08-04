@@ -6,7 +6,7 @@ import { Server, Scale, DollarSign, Zap, ChevronRight } from "lucide-react";
 
 export function AppDevOpsInfrastructure() {
   return (
-    <section id="app-devops-infrastructure" className="relative px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="infrastructure-heading">
+    <section id="app-devops-infrastructure" className="relative overflow-hidden px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="infrastructure-heading">
       <div className="relative z-10 container mx-auto">
         <header className="mb-12 max-w-lg md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-white md:mb-4">

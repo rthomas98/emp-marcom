@@ -40,19 +40,25 @@ export default function MainMenu({ className }: MainMenuProps) {
 
   // Check if a link is active
   const isActive = (href: string) => {
-    // For HubSpot & CRM Development page
-    if (url === route('solutions.hubspot-crm-development') && 
-        href === route('solutions.hubspot-crm-development')) {
-      return true;
-    }
-    return url.startsWith(href);
+    // Normalize URLs by removing domain and trailing slashes
+    const normalizeUrl = (urlString: string) => {
+      try {
+        // If it's a full URL, extract pathname
+        const urlObj = new URL(urlString, window.location.origin);
+        return urlObj.pathname.replace(/\/$/, '');
+      } catch {
+        // If it's already a path, just remove trailing slash
+        return urlString.replace(/\/$/, '');
+      }
+    };
+    
+    const currentPath = normalizeUrl(url);
+    const linkPath = normalizeUrl(href);
+    
+    // Direct match only - no parent route matching
+    return currentPath === linkPath;
   };
 
-  // Check if the current item is the HubSpot & CRM Development page
-  const isHubspotPage = (href: string) => {
-    return url === route('solutions.hubspot-crm-development') && 
-           href === route('solutions.hubspot-crm-development');
-  };
 
   return (
     <header className={`bg-white fixed top-0 left-0 right-0 z-50 ${className}`}>
@@ -91,21 +97,21 @@ export default function MainMenu({ className }: MainMenuProps) {
                 {solutions.map((item) => (
                   <div
                     key={item.name}
-                    className={`group relative rounded-lg p-4 text-sm hover:bg-[#1F1946] ${isHubspotPage(item.href) ? 'bg-[#1F1946]/10' : ''}`}
+                    className={`group relative rounded-lg p-4 text-sm hover:bg-[#1F1946] ${isActive(item.href) ? 'bg-[#1F1946]' : ''}`}
                   >
                     <div className="flex items-start gap-x-3">
-                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20">
+                      <div className={`flex h-10 w-10 flex-none items-center justify-center rounded-lg ${isActive(item.href) ? 'bg-[#BD1550]/20' : 'bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20'}`}>
                         <item.icon className="h-6 w-6 text-[#BD1550] group-hover:text-[#BD1550]" />
                       </div>
                       <div>
                         <Link 
                           href={item.href} 
-                          className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-white'}`}
+                          className={`block text-sm font-semibold ${isActive(item.href) ? 'text-white' : 'text-primary group-hover:text-white'}`}
                         >
                           {item.name}
                           <span className="absolute inset-0" />
                         </Link>
-                        <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                        <p className={`mt-1 text-sm ${isActive(item.href) ? 'text-white' : 'text-gray-700 group-hover:text-white'}`}>{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -125,21 +131,21 @@ export default function MainMenu({ className }: MainMenuProps) {
                 {services.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative rounded-lg p-4 text-sm hover:bg-[#1F1946]"
+                    className={`group relative rounded-lg p-4 text-sm hover:bg-[#1F1946] ${isActive(item.href) ? 'bg-[#1F1946]' : ''}`}
                   >
                     <div className="flex items-start gap-x-3">
-                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20">
+                      <div className={`flex h-10 w-10 flex-none items-center justify-center rounded-lg ${isActive(item.href) ? 'bg-[#BD1550]/20' : 'bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20'}`}>
                         <item.icon className="h-6 w-6 text-[#BD1550] group-hover:text-[#BD1550]" />
                       </div>
                       <div>
                         <Link 
                           href={item.href} 
-                          className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-white'}`}
+                          className={`block text-sm font-semibold ${isActive(item.href) ? 'text-white' : 'text-primary group-hover:text-white'}`}
                         >
                           {item.name}
                           <span className="absolute inset-0" />
                         </Link>
-                        <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                        <p className={`mt-1 text-sm ${isActive(item.href) ? 'text-white' : 'text-gray-700 group-hover:text-white'}`}>{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -170,20 +176,20 @@ export default function MainMenu({ className }: MainMenuProps) {
 
             <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-white p-4 shadow-lg ring-1 ring-gray-900/5">
               {company.map((item) => (
-                <div key={item.name} className="group relative rounded-lg p-4 hover:bg-[#1F1946]">
+                <div key={item.name} className={`group relative rounded-lg p-4 hover:bg-[#1F1946] ${isActive(item.href) ? 'bg-[#1F1946]' : ''}`}>
                   <div className="flex items-start gap-x-3">
-                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20">
+                    <div className={`flex h-10 w-10 flex-none items-center justify-center rounded-lg ${isActive(item.href) ? 'bg-[#BD1550]/20' : 'bg-[#BD1550]/10 group-hover:bg-[#BD1550]/20'}`}>
                       {item.icon && <item.icon className="h-6 w-6 text-[#BD1550] group-hover:text-[#BD1550]" />}
                     </div>
                     <div>
                       <Link 
                         href={item.href} 
-                        className={`block text-sm font-semibold ${isActive(item.href) ? 'text-accent-pink' : 'text-primary group-hover:text-white'}`}
+                        className={`block text-sm font-semibold ${isActive(item.href) ? 'text-white' : 'text-primary group-hover:text-white'}`}
                       >
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
-                      <p className="mt-1 text-sm text-gray-700 group-hover:text-white">{item.description}</p>
+                      <p className={`mt-1 text-sm ${isActive(item.href) ? 'text-white' : 'text-gray-700 group-hover:text-white'}`}>{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -236,7 +242,7 @@ export default function MainMenu({ className }: MainMenuProps) {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 pl-6 text-base font-semibold ${isHubspotPage(item.href) ? 'bg-[#1F1946]/10 text-accent-pink' : isActive(item.href) ? 'text-accent-pink' : 'text-primary/80 hover:text-accent-pink'}`}
+                      className={`-mx-3 block rounded-lg px-3 py-2 pl-6 text-base font-semibold ${isActive(item.href) ? 'bg-[#1F1946]/10 text-accent-pink' : 'text-primary/80 hover:text-accent-pink'}`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}

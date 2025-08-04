@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class EnsureProductionSecurity
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        // Only enforce in production environment
+        if (app()->environment('production')) {
+            // Ensure debug mode is off
+            if (config('app.debug') === true) {
+                abort(500, 'Debug mode must be disabled in production.');
+            }
+
+            // Ensure HTTPS is used
+            if (!$request->secure()) {
+                return redirect()->secure($request->getRequestUri());
+            }
+
+            // Add security headers
+            $response = $next($request);
+
+            $response->headers->set('X-Content-Type-Options', 'nosniff');
+            $response->headers->set('X-Frame-Options', 'DENY');
+            $response->headers->set('X-XSS-Protection', '1; mode=block');
+            $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
+            $response->headers->set('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+            
+            // Content Security Policy
+            $csp = "default-src 'self'; " .
+                   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; " .
+                   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " .
+                   "font-src 'self' https://fonts.gstatic.com; " .
+                   "img-src 'self' data: https:; " .
+                   "connect-src 'self';";
+            
+            $response->headers->set('Content-Security-Policy', $csp);
+
+            return $response;
+        }
+
+        return $next($request);
+    }
+}

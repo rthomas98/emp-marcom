@@ -31,20 +31,20 @@ export function EngineeringHeader() {
   const slides = [
     {
       image: "/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_0.png",
-      title: "Direct Access to Senior Engineers",
-      description: "As a boutique micro agency, we provide personalized solutions with direct access to our senior engineers. Unlike larger firms where your project might be handed off to junior staff, our specialists work directly with you to address your unique challenges.",
+      title: "You Work With The Developers, Not Account Managers",
+      description: "Tired of playing telephone through account managers who can't spell API? Work directly with developers who've been coding since the 90s. We answer our own emails, pick up our phones, and actually understand your problems.",
       altText: "Senior software engineers collaborating on a project at Empuls3 micro agency"
     },
     {
       image: "/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_2.png",
-      title: "Faster Implementation & Personalized Attention",
-      description: "Our boutique team leverages cutting-edge technologies with faster implementation times and more dedicated attention than larger firms can offer—building scalable, robust solutions without the overhead and complexity.",
+      title: "We Fix It In Weeks, Not Months",
+      description: "Big agencies need 6 months for a 2-week project. We don't. Our senior developers have seen your problem before and know exactly how to fix it. No learning on your dime, no endless meetings, just results.",
       altText: "Software engineering team working on implementing solutions with personalized attention"
     },
     {
       image: "/images/site-images/rob_thomas23_African_American_Software_Engineers_standing_fac_1c490440-96b8-4333-88cd-7c5e0c406ec0_3.png",
-      title: "Boutique IT Consulting",
-      description: "Experience the micro agency advantage with strategic guidance from our senior specialists who help you make informed technology decisions aligned with your business objectives—with the personalized attention that only a boutique firm can provide.",
+      title: "Honest Advice That Saves You Money",
+      description: "We'll tell you the truth - even if it means less money for us. Need a $5K fix instead of a $50K rebuild? We'll say so. Can another company do it better? We'll tell you. That's why Dallas businesses trust us.",
       altText: "IT consultants providing strategic guidance to clients at Empuls3"
     }
   ];
@@ -57,13 +57,13 @@ export function EngineeringHeader() {
     >
       <div className="mx-[5%] max-w-md justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
         <header>
-          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Boutique Software Engineering</p>
+          <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Real Developers. Real Solutions.</p>
           <h1 id="engineering-header-title" className="mb-5 text-6xl font-bold text-[#1F1946] md:mb-6 md:text-7xl lg:text-7xl">
-            Personalized Solutions with Senior Expertise
+            We Fix Software That Other Agencies Broke
           </h1>
         </header>
         <p className="text-gray-700 md:text-md">
-          As a specialized micro agency, Empuls3 offers personalized software engineering and IT consulting services with direct access to our senior specialists. Unlike larger firms where your project might be handed off to junior staff, our boutique team works directly with you to deliver tailored solutions that meet your unique technical needs—with faster implementation times and more dedicated attention.
+          Let's be honest - your software is probably a mess. Maybe your last developer disappeared. Maybe it crashes daily. Maybe it takes forever to add simple features. We've seen it all, and we fix it all. No junior developers, no excuses, just experienced pros who get it done remotely for 40% less than Dallas agencies.
         </p>
         <nav className="mt-6 flex flex-wrap gap-4 md:mt-8" aria-label="Engineering services navigation">
           <Link 

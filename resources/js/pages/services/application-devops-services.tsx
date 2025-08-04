@@ -12,9 +12,9 @@ export default function ApplicationDevopsServices() {
   return (
     <SiteLayout>
       <Head>
-        <title>Boutique Application & DevOps Services - Empuls3</title>
-        <meta name="description" content="Experience personalized application and DevOps services from our boutique micro agency. Direct collaboration with senior specialists for streamlined CI/CD pipelines without the overhead of larger firms." />
-        <meta name="keywords" content="micro agency, boutique DevOps, application services, senior DevOps specialists, personalized CI/CD, cloud infrastructure, containerization" />
+        <title>Fix Your Deployments - DevOps That Works | Empuls3 Dallas</title>
+        <meta name="description" content="Tired of deployments that break production? We fix your CI/CD pipeline, stop the 3am emergencies, and make deployments boring again. Dallas DevOps experts, remote service, real results." />
+        <meta name="keywords" content="Dallas DevOps, fix deployments, CI/CD pipeline repair, cloud infrastructure Dallas, DevOps emergency help, production fixes, deployment automation Dallas" />
       </Head>
       <AppDevOpsHeader />
       <AppDevOpsOverview />

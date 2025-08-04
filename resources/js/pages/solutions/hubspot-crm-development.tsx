@@ -14,9 +14,9 @@ export default function HubspotCrmDevelopment() {
   return (
     <SiteLayout>
       <Head>
-        <title>Boutique HubSpot & CRM Development - Empuls3</title>
-        <meta name="description" content="Experience personalized HubSpot and CRM development from our boutique micro agency. Direct collaboration with senior specialists for streamlined solutions without the overhead of larger firms." />
-        <meta name="keywords" content="micro agency, boutique HubSpot development, CRM solutions, senior specialists, personalized CRM services, HubSpot integration, automation" />
+        <title>Your Sales Team Hates Your CRM. HubSpot Fixed in 30 Days | Empuls3</title>
+        <meta name="description" content="CRM is a mess? Sales team using spreadsheets? Losing deals? We fix HubSpot in 30 days. Automate follow-ups, track deals, close more. Dallas CRM experts." />
+        <meta name="keywords" content="HubSpot development Dallas, CRM implementation, sales automation, HubSpot integration, CRM optimization, marketing automation" />
       </Head>
       <Header9 />
       <HubspotOverview />

@@ -15,16 +15,16 @@ export default function SoftwareDevelopmentDesign() {
   return (
     <SiteLayout>
       <Head>
-        <title>Boutique Software Development & Design - Empuls3</title>
-        <meta name="description" content="Experience the micro agency advantage with Empuls3's boutique software development services. Direct access to senior developers, personalized attention, and enterprise-quality results." />
-        <meta name="keywords" content="micro agency, boutique software development, senior developers, custom software solutions, personalized development, software design" />
+        <title>Your Software Is Costing You $50K+/Year in Lost Revenue | Empuls3</title>
+        <meta name="description" content="Bad software costs Dallas businesses $50K+ yearly. Slow, buggy, doesn't work on mobile. We fix it in 90 days or less. Senior developers only. 40% cheaper than local agencies." />
+        <meta name="keywords" content="custom software development Dallas, fix broken software, software redesign, enterprise software solutions, software modernization, legacy system replacement" />
         <link rel="canonical" href="https://empuls3.com/solutions/software-development-design" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Boutique Software Development & Design Services",
-            "description": "Experience the micro agency advantage with Empuls3's boutique software development services. Direct access to senior developers, personalized attention, and enterprise-quality results.",
+            "name": "Custom Software Development & Redesign Services",
+            "description": "Fix broken software that's costing you money. Senior developers who modernize legacy systems, integrate disconnected tools, and build software that actually works.",
             "url": "https://empuls3.com/solutions/software-development-design",
             "speakable": {
               "@type": "SpeakableSpecification",
@@ -32,8 +32,8 @@ export default function SoftwareDevelopmentDesign() {
             },
             "mainEntity": {
               "@type": "Service",
-              "name": "Boutique Software Development Services",
-              "description": "Personalized software development with direct access to senior developers. We transform your vision into reality through collaborative partnerships.",
+              "name": "Custom Software Development Services",
+              "description": "Fix software that's losing you $50K+ yearly. We modernize legacy systems, integrate tools, and build solutions that actually work. 90-day transformations.",
               "provider": {
                 "@type": "Organization",
                 "name": "Empuls3",

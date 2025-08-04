@@ -1,2 +1,12 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: *.pdf$
+
+# Sitemap location
+Sitemap: https://empuls3.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

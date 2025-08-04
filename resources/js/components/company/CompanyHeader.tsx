@@ -24,8 +24,8 @@ const imageColumns = [
 ];
 
 export function CompanyHeader({
-  heading = "The Micro Agency Advantage",
-  description = "Founded in 2009 by Robert Thomas, Empuls3 is a specialized micro agency providing personalized technology solutions with direct access to senior specialists. Unlike larger firms, our boutique team delivers faster implementation times and more dedicated attention without the overhead of traditional agencies.",
+  heading = "We're Not Another Faceless Agency",
+  description = "Since 2009, we've been fixing what other agencies break. No junior developers, no account managers, no BS. Just experienced developers who answer their phones and actually understand your problems. We work remotely, which means you save 40% and get better results.",
   imagesPartOne = defaultImagesPartOne,
   imagesPartTwo = defaultImagesPartTwo,
 }: Partial<Props>) {
@@ -54,14 +54,14 @@ export function CompanyHeader({
                 className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F1946]"
                 aria-label="Learn more about our company history and values"
               >
-                About Us
+                Our Story
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-md border border-white bg-transparent px-6 py-3 text-center font-medium text-white transition hover:bg-white hover:text-[#1F1946] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F1946]"
                 aria-label="Contact our team to discuss your project"
               >
-                Contact
+                Let's Talk
               </Link>
             </nav>
           </header>

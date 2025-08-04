@@ -29,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
         URL::macro('assetFrom', function (string $path) {
             return config('app.url') . '/' . ltrim($path, '/');
         });
+
+        // Register model observers
+        \App\Models\CaseStudy::observe(\App\Observers\CaseStudyObserver::class);
     }
 }

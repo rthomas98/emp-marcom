@@ -9,16 +9,28 @@ export default function Faqs() {
   // FAQ data for structured data
   const faqData = [
     {
-      question: "What is a micro agency?",
-      answer: "A micro agency is a specialized boutique firm that provides personalized solutions with direct access to senior specialists, offering faster implementation times and more dedicated attention than larger agencies."
+      question: "How much will this actually cost?",
+      answer: "Projects start at $25K. Most Dallas businesses spend $50-150K for custom software, $5-25K for websites, and $5-10K/month for managed IT. We're 40% cheaper than Dallas agencies because we work remotely. We'll give you a fixed price after a 30-minute call."
     },
     {
-      question: "When was Empuls3 founded?",
-      answer: "Empuls3 was founded in 2009 by Robert Thomas as a specialized micro agency dedicated to empowering businesses with personalized technology solutions."
+      question: "Why should I trust a remote agency?",
+      answer: "Because we've been doing this since 2009 and saved Dallas businesses over $10M. We use Zoom, Slack, and modern tools to stay connected. Plus, no office means lower costs for you. If you need face-to-face, we can meet at your office."
     },
     {
-      question: "What makes Empuls3 different from larger agencies?",
-      answer: "Unlike larger firms where projects are handed off to junior staff, our boutique team provides personalized solutions with direct access to senior specialists, helping clients thrive with faster implementation times."
+      question: "What if my current developer disappears?",
+      answer: "It happens all the time. We've rescued 50+ Dallas projects from vanished developers. We'll review your code, tell you exactly what's salvageable, and get you back on track. Usually takes 2-4 weeks to fix someone else's mess."
+    },
+    {
+      question: "Do you work with my industry?",
+      answer: "Probably. We've built software for Dallas healthcare, finance, energy, retail, and manufacturing companies. The tech is usually similar - it's understanding your business that matters. We'll tell you upfront if we're not a good fit."
+    },
+    {
+      question: "How fast can you fix my problem?",
+      answer: "Emergency fixes: same day. Small projects: 2-4 weeks. Custom software: 2-4 months. We move fast because we use senior developers who've done this before, not juniors learning on your dime."
+    },
+    {
+      question: "What if it doesn't work out?",
+      answer: "We offer a 30-day money-back guarantee on new projects. If we can't fix your problem or you're not happy, you don't pay. Simple as that. We'd rather lose money than have an unhappy client."
     }
   ];
 
@@ -39,8 +51,8 @@ export default function Faqs() {
   return (
     <SiteLayout>
       <Head>
-        <title>Boutique Agency FAQs - Empuls3</title>
-        <meta name="description" content="Frequently asked questions about Empuls3, a specialized micro agency founded in 2009 by Robert Thomas. Learn about our personalized technology solutions and direct access to senior specialists." />
+        <title>Straight Answers About Costs, Timelines & Results | Empuls3 Dallas</title>
+        <meta name="description" content="No BS answers to your questions. How much it costs, how long it takes, and why Dallas businesses trust us. Real prices, real timelines, real talk." />
         <meta name="keywords" content="micro agency FAQs, boutique technology firm, personalized solutions, senior specialists, direct collaboration, faster implementation times" />
         
         {/* Open Graph tags for social sharing */}

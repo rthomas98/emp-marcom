@@ -9,53 +9,42 @@ import { Partners } from '@/components/home/Partners';
 import { Testimonials } from '@/components/home/Testimonials';
 import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
 import { Head } from '@inertiajs/react';
+import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/utils/schema';
+import { generateLocalTitle, generateLocalDescription, dallasKeywords } from '@/utils/seo';
 
 export default function Home() {
+  const localBusinessSchema = generateLocalBusinessSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://empuls3.com' }
+  ]);
+
   return (
-    <SiteLayout title="Empuls3 - Software Development & IT Consulting">
+    <SiteLayout title={generateLocalTitle('Software Development & IT Consulting')}>
       <Head>
-        <meta name="description" content="Empuls3 delivers custom software development, web applications, and IT consulting services that transform your business and drive growth in the digital landscape." />
-        <meta name="keywords" content="software development, web development, IT consulting, custom applications, digital transformation, boutique agency, enterprise solutions" />
+        <meta name="description" content={generateLocalDescription('Premier software development, web applications, and IT consulting services for Dallas businesses. Transform your business with local expertise.')} />
+        <meta name="keywords" content={dallasKeywords.general.concat(['Dallas boutique agency', 'Dallas enterprise solutions', 'Dallas digital transformation']).join(', ')} />
         {/* Open Graph Tags for better social sharing */}
-        <meta property="og:title" content="Empuls3 - Software Development & IT Consulting" />
-        <meta property="og:description" content="Boutique expertise with enterprise-level results. Custom software, web development, and IT consulting services that drive business growth." />
+        <meta property="og:title" content="Empuls3 - Dallas Software Development & IT Consulting" />
+        <meta property="og:description" content="Dallas's premier boutique tech agency. Custom software, web development, and IT consulting services for DFW businesses." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://empuls3.com" />
         <meta property="og:image" content="/images/empuls3-og-image.jpg" />
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Empuls3 - Software Development & IT Consulting" />
-        <meta name="twitter:description" content="Boutique expertise with enterprise-level results. Custom software, web development, and IT consulting services that drive business growth." />
+        <meta name="twitter:title" content="Empuls3 Dallas - Software Development & IT Consulting" />
+        <meta name="twitter:description" content="Dallas's premier tech agency delivering custom software, web development, and IT consulting services to DFW businesses." />
         <meta name="twitter:image" content="/images/empuls3-og-image.jpg" />
         {/* Canonical URL */}
         <link rel="canonical" href="https://empuls3.com" />
-        {/* Structured Data for Organization */}
-        <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Empuls3",
-            "url": "https://empuls3.com",
-            "logo": "https://empuls3.com/images/logo.png",
-            "description": "Boutique software development and IT consulting agency delivering enterprise-level results.",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-555-555-5555",
-              "contactType": "customer service",
-              "email": "info@empuls3.com"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Dallas",
-              "addressRegion": "TX",
-              "addressCountry": "US"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/company/empuls3",
-              "https://twitter.com/empuls3"
-            ]
-          }
-        `}</script>
+        {/* Local Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
         
         {/* Structured Data for Services */}
         <script type="application/ld+json">{`

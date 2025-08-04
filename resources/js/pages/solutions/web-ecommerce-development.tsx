@@ -12,16 +12,16 @@ export default function WebEcommerceDevelopment() {
   return (
     <SiteLayout>
       <Head>
-        <title>Boutique Web & E-commerce Development - Empuls3</title>
-        <meta name="description" content="Experience personalized web and e-commerce development from our boutique micro agency. Direct collaboration with senior developers for WordPress, e-commerce, and PWA solutions." />
-        <meta name="keywords" content="micro agency, boutique web development, WordPress development, e-commerce solutions, senior developers, personalized web services, progressive web apps" />
+        <title>Your Website Is Killing Sales. We Fix It in 30 Days | Empuls3</title>
+        <meta name="description" content="Slow site? Cart abandonment? Can't update content? Dallas businesses lose $10K+ monthly from bad websites. We fix WordPress, Shopify, and custom sites in 30 days or less." />
+        <meta name="keywords" content="ecommerce development Dallas, fix slow website, WordPress optimization, Shopify development, website redesign, conversion optimization" />
         <link rel="canonical" href="https://empuls3.com/solutions/web-ecommerce-development" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Boutique Web & E-commerce Development Services",
-            "description": "Experience personalized web and e-commerce development from our boutique micro agency. Direct collaboration with senior developers for WordPress, e-commerce, and PWA solutions.",
+            "name": "Web & E-commerce Development Services",
+            "description": "Fix websites that kill sales. We optimize slow sites, reduce cart abandonment, and build e-commerce that converts. WordPress, Shopify, custom solutions.",
             "url": "https://empuls3.com/solutions/web-ecommerce-development",
             "speakable": {
               "@type": "SpeakableSpecification",
@@ -30,7 +30,7 @@ export default function WebEcommerceDevelopment() {
             "mainEntity": {
               "@type": "Service",
               "name": "Web & E-commerce Development Services",
-              "description": "Personalized web and e-commerce development with direct access to senior developers. Our boutique approach combines custom WordPress solutions, robust e-commerce platforms, and innovative Progressive Web Apps.",
+              "description": "Fix broken websites losing you $10K+ monthly. We optimize speed, fix checkout flows, and build sites that convert. 30-day transformations guaranteed.",
               "provider": {
                 "@type": "Organization",
                 "name": "Empuls3",

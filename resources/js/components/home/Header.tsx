@@ -215,18 +215,18 @@ export const Header = (props: HeaderProps) => {
 };
 
 export const HeaderDefaults: Props = {
-  title: "Agile Software Solutions from Your Dedicated Micro Agency Partner",
+  title: "Your Software Is Broken. We Fix It Fast.",
   description:
-    "Empuls3 delivers personalized software development and IT consulting with the agility of a micro agency and the expertise of industry veterans. We transform your business challenges into tailored digital solutions that drive growth.",
+    "Most agencies hand you off to juniors and disappear. Not us. Work directly with senior developers who've been fixing Dallas tech disasters since 2009. No BS, no excuses, just results.",
   buttons: [
     {
-      title: "Explore Solutions",
-      href: "/solutions",
+      title: "Fix My Software Now",
+      href: "/contact",
       variant: "primary",
     },
     {
-      title: "Contact Us",
-      href: "/contact",
+      title: "See How We Saved Others $2M+",
+      href: "/case-studies",
       variant: "secondary",
     },
   ],

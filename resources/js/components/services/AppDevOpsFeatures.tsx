@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 export function AppDevOpsFeatures() {
   return (
-    <section id="app-devops-features" className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="devops-features-heading">
+    <section id="app-devops-features" className="relative z-10 px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="devops-features-heading">
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
           <header className="mb-12 text-center md:mb-18 lg:mb-20">

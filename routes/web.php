@@ -14,7 +14,9 @@ Route::get('/contact', function () {
     return Inertia::render('contact');
 })->name('contact');
 
-Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
+Route::post('/contact/submit', [ContactController::class, 'submit'])
+    ->middleware('throttle.contact')
+    ->name('contact.submit');
 
 // Solutions Pages
 Route::prefix('solutions')->group(function () {
@@ -95,10 +97,12 @@ Route::prefix('company')->group(function () {
 // Case Studies
 Route::prefix('case-studies')->name('case-studies.')->group(function () {
     Route::get('/', function () {
-        // Get all published case studies
-        $caseStudies = \App\Models\CaseStudy::where('status', 'published')
-            ->orderBy('created_at', 'desc')
-            ->get();
+        // Cache case studies for 1 hour
+        $caseStudies = cache()->remember('case-studies.published', 3600, function () {
+            return \App\Models\CaseStudy::where('status', 'published')
+                ->orderBy('created_at', 'desc')
+                ->get();
+        });
             
         return Inertia::render('case-studies', [
             'caseStudies' => $caseStudies,
@@ -114,12 +118,18 @@ Route::prefix('case-studies')->name('case-studies.')->group(function () {
             abort(404);
         }
         
-        // Get related case studies with the same service type
-        $relatedCaseStudies = \App\Models\CaseStudy::where('status', 'published')
-            ->where('id', '!=', $caseStudy->id)
-            ->where('service_type', $caseStudy->service_type)
-            ->take(3)
-            ->get();
+        // Cache related case studies based on service type
+        $relatedCaseStudies = cache()->remember(
+            "case-studies.related.{$caseStudy->service_type}.{$caseStudy->id}", 
+            3600, 
+            function () use ($caseStudy) {
+                return \App\Models\CaseStudy::where('status', 'published')
+                    ->where('id', '!=', $caseStudy->id)
+                    ->where('service_type', $caseStudy->service_type)
+                    ->take(3)
+                    ->get();
+            }
+        );
             
         return Inertia::render('case-study', [
             'caseStudy' => $caseStudy,
@@ -131,6 +141,29 @@ Route::prefix('case-studies')->name('case-studies.')->group(function () {
     Route::get('/{caseStudy:slug}/detail', function (\App\Models\CaseStudy $caseStudy) {
         return redirect()->route('case-studies.show', $caseStudy->slug);
     });
+});
+
+// Dallas Landing Pages
+Route::prefix('dallas')->name('dallas.')->group(function () {
+    Route::get('/software-development', function () {
+        return Inertia::render('dallas/software-development');
+    })->name('software-development');
+    
+    Route::get('/web-development', function () {
+        return Inertia::render('dallas/web-development');
+    })->name('web-development');
+    
+    Route::get('/it-consulting', function () {
+        return Inertia::render('dallas/it-consulting');
+    })->name('it-consulting');
+    
+    Route::get('/managed-it-services', function () {
+        return Inertia::render('dallas/managed-it-services');
+    })->name('managed-it-services');
+    
+    Route::get('/mobile-app-development', function () {
+        return Inertia::render('dallas/mobile-app-development');
+    })->name('mobile-app-development');
 });
 
 // Legal Pages
@@ -163,35 +196,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
-// Test route for email
-Route::get('/test-mail', function () {
-    try {
-        \Illuminate\Support\Facades\Mail::raw('Test email from Empuls3 contact form', function($message) {
-            $message->to('robt84@gmail.com')
-                   ->subject('Test Email');
-        });
-        return 'Email sent successfully!';
-    } catch (\Exception $e) {
-        return 'Error sending email: ' . $e->getMessage();
-    }
-});
-
-// Debug route for contact form submissions
-Route::post('/debug-contact', function (\Illuminate\Http\Request $request) {
-    // Log all request data
-    \Illuminate\Support\Facades\Log::info('Debug contact form submission received', [
-        'all_data' => $request->all(),
-        'headers' => $request->headers->all()
-    ]);
-    
-    // Return success response
-    return response()->json([
-        'success' => true,
-        'message' => 'Debug data received and logged',
-        'data' => $request->all()
-    ]);
-});
-
 // CSRF token endpoint for simple contact form
 Route::get('/csrf-token', function () {
     return response()->json([
@@ -199,55 +203,6 @@ Route::get('/csrf-token', function () {
     ]);
 });
 
-// Direct email test route
-Route::get('/direct-email-test', function () {
-    try {
-        // Sample form data
-        $formData = [
-            'name' => 'Direct Test User',
-            'email' => 'test@example.com',
-            'phone' => '555-555-5555',
-            'company' => 'Test Company',
-            'message' => 'This is a direct test message',
-            'formType' => 'test',
-            'projectType' => 'web-development',
-            'projectDescription' => 'Test project description',
-            'requirements' => 'Test requirements',
-            'budget' => 'test-budget',
-            'timeline' => 'test-timeline',
-            'submit_time' => time()
-        ];
-        
-        // Log attempt
-        \Illuminate\Support\Facades\Log::info('Direct email test initiated');
-        
-        // Create mail instance
-        $mail = new \App\Mail\ContactFormMail($formData);
-        
-        // Send using Laravel's Mail facade
-        \Illuminate\Support\Facades\Mail::to('info@empuls3.com')
-            ->send($mail);
-        
-        // Log success
-        \Illuminate\Support\Facades\Log::info('Direct email test succeeded');
-        
-        return response()->json([
-            'success' => true,
-            'message' => 'Email sent successfully! Check your inbox at info@empuls3.com'
-        ]);
-    } catch (\Exception $e) {
-        // Log error
-        \Illuminate\Support\Facades\Log::error('Direct email test failed', [
-            'error' => $e->getMessage(),
-            'trace' => $e->getTraceAsString()
-        ]);
-        
-        return response()->json([
-            'success' => false,
-            'message' => 'Error sending email: ' . $e->getMessage()
-        ], 500);
-    }
-});
-
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
+require __DIR__.'/debug.php';

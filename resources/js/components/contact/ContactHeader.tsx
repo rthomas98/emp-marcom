@@ -11,25 +11,25 @@ export function ContactHeader() {
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
             <div className="mx-auto w-full max-w-lg">
               <h1 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-                Get in Touch with Our Experts
+                Got a Software Emergency? We Answer in 2 Hours.
               </h1>
               <p className="text-gray-700 md:text-md">
-                At Empuls3, we are dedicated to helping you achieve digital
-                excellence. Our team is ready to assist you in transforming your
-                business with tailored technology solutions.
+                Here's the deal: Tell us what's broken, we'll tell you exactly how to fix it. 
+                No sales pitch, no jargon, just straight answers from developers who've 
+                been solving these problems since 2009.
               </p>
               <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
                 <Link
                   href="#contact-form"
                   className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245]"
                 >
-                  Contact
+                  Get Emergency Help
                 </Link>
                 <Link
                   href="#schedule-meeting"
                   className="inline-flex items-center justify-center rounded-md border border-[#1F1946] bg-transparent px-6 py-3 text-center font-medium text-[#1F1946] transition hover:bg-[#1F1946] hover:text-white"
                 >
-                  Schedule
+                  Book Free Tech Audit
                 </Link>
               </div>
             </div>

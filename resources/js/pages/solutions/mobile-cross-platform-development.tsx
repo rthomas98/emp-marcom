@@ -15,9 +15,9 @@ export default function MobileCrossPlatformDevelopment() {
   return (
     <SiteLayout>
       <Head>
-        <title>Boutique Mobile & Cross-Platform Development - Empuls3</title>
-        <meta name="description" content="Experience personalized mobile and cross-platform development from our boutique micro agency. Direct collaboration with senior developers for native-like apps without the overhead of larger firms." />
-        <meta name="keywords" content="micro agency, boutique mobile development, cross-platform solutions, React Native, PWA, senior developers, personalized development services" />
+        <title>No Mobile App = Losing 60% of Users. Fixed in 90 Days | Empuls3</title>
+        <meta name="description" content="Your competitors' apps have 10K+ downloads. You have nothing. We build iOS/Android apps in 90 days. React Native saves you 40% vs native. Dallas's mobile experts." />
+        <meta name="keywords" content="mobile app development Dallas, React Native development, cross-platform apps, iOS Android development, mobile development agency" />
       </Head>
       <MobileHeader />
       <MobileOverview />

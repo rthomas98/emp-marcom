@@ -8,13 +8,13 @@ export function Services() {
       <div className="container mx-auto">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-accent-pink md:mb-4">
-            Outstanding performance in all endeavors.
+            We fix what others break. Fast.
           </p>
           <h2 id="services-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Boutique Expertise, Enterprise-Level Results
+            Real Solutions from Developers Who Get It
           </h2>
           <p className="text-gray-700 md:text-lg">
-            As a specialized micro agency, we combine deep technical expertise with personalized attention that larger firms can't match. Our nimble team delivers tailored solutions that drive innovation, enhance efficiency, and foster growth—without the overhead and complexity of traditional agencies.
+            Big agencies hand you off to juniors. Freelancers disappear. We're different - senior developers who answer their phones, fix problems fast, and charge 40% less because we work remotely. No BS, just results.
           </p>
         </div>
         <div className="grid auto-cols-fr gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
@@ -30,11 +30,10 @@ export function Services() {
                   </div>
                 </div>
                 <h3 id="service-tech-heading" className="mb-3 text-2xl font-bold text-primary md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                  Modern Tech Solutions
+                  We Speak Your Tech
                 </h3>
                 <p className="text-gray-700">
-                  Our team possesses extensive expertise across a wide range of
-                  diverse technology stacks and platforms.
+                  React, Node, Python, AWS - whatever mess you're in, we've fixed it before. No learning on your dime.
                 </p>
               </div>
               <div className="mt-5 md:mt-6">
@@ -43,7 +42,7 @@ export function Services() {
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                   aria-label="Learn more about our modern tech solutions"
                 >
-                  Learn More
+                  See What We Fix
                   <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -75,7 +74,7 @@ export function Services() {
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                   aria-label="Learn more about our comprehensive solutions"
                 >
-                  Learn More
+                  See What We Fix
                   <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -105,7 +104,7 @@ export function Services() {
                   className="inline-flex items-center text-primary hover:text-accent-pink"
                   aria-label="Learn more about our secure and reliable solutions"
                 >
-                  Learn More
+                  See What We Fix
                   <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
