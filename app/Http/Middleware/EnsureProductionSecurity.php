@@ -38,12 +38,16 @@ class EnsureProductionSecurity
             
             // Content Security Policy
             $csp = "default-src 'self'; " .
-                   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.googletagmanager.com; " .
+                   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://googletagmanager.com; " .
                    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net; " .
                    "font-src 'self' https://fonts.gstatic.com https://fonts.bunny.net; " .
-                   "img-src 'self' data: https:; " .
-                   "connect-src 'self';";
+                   "img-src 'self' data: https: blob:; " .
+                   "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://googletagmanager.com;";
             
+            // Remove any existing CSP headers first
+            $response->headers->remove('Content-Security-Policy');
+            
+            // Set our CSP header
             $response->headers->set('Content-Security-Policy', $csp);
 
             return $response;
