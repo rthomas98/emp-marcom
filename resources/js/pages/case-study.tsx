@@ -91,7 +91,7 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
       {caseStudy.gallery_images && caseStudy.gallery_images.length > 0 ? (
         <CaseStudyGallery7 
           images={caseStudy.gallery_images.slice(0, 3).map((img: GalleryImage) => ({
-            src: img.src.startsWith('http') ? img.src : `/storage/${img.src.startsWith('/') ? img.src.substring(1) : img.src}`,
+            src: img.src, // The Laravel model already provides the full URL
             alt: img.alt || caseStudy.title 
           }))}
         />
@@ -100,7 +100,7 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
           <div className="container mx-auto px-4">
             <div className="rounded-xl overflow-hidden shadow-lg h-[400px]">
               <img 
-                src={caseStudy.featured_image.startsWith('http') ? caseStudy.featured_image : `/storage/${caseStudy.featured_image.startsWith('/') ? caseStudy.featured_image.substring(1) : caseStudy.featured_image}`}
+                src={caseStudy.featured_image}
                 alt={caseStudy.title} 
                 className="w-full h-full object-cover border-0"
               />
@@ -135,7 +135,7 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
                 {caseStudy.logo && (
                   <div className="mb-6">
                     <img 
-                      src={caseStudy.logo.startsWith('http') ? caseStudy.logo : `/storage/${caseStudy.logo.startsWith('/') ? caseStudy.logo.substring(1) : caseStudy.logo}`}
+                      src={caseStudy.logo}
                       alt={`${caseStudy.client_name} logo`} 
                       className="max-h-16 border-0"
                     />

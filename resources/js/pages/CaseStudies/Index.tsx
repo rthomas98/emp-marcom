@@ -96,7 +96,7 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
                   >
                     <figure className="h-48 overflow-hidden">
                       <img 
-                        src={`/storage/${caseStudy.featured_image}`} 
+                        src={caseStudy.featured_image} 
                         alt={`${caseStudy.title} case study featured image`} 
                         className="w-full h-full object-cover transition-transform hover:scale-105"
                         width="400"
@@ -236,7 +236,7 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
                   >
                     <figure className="h-48 overflow-hidden">
                       <img 
-                        src={`/storage/${caseStudy.featured_image}`} 
+                        src={caseStudy.featured_image} 
                         alt={`${caseStudy.title} case study featured image`} 
                         className="w-full h-full object-cover transition-transform hover:scale-105"
                         width="400"
