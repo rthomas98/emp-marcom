@@ -22,11 +22,11 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="size-5" />
-                  <a href="tel:+12145550100" className="hover:text-white">(214) 555-0100</a>
+                  <a href="tel:+19727988914" className="hover:text-white">(972) 798-8914</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="size-5" />
-                  <a href="mailto:dallas@empuls3.com" className="hover:text-white">dallas@empuls3.com</a>
+                  <a href="mailto:info@empuls3.com" className="hover:text-white">info@empuls3.com</a>
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
