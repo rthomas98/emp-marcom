@@ -1,7 +1,8 @@
 import React from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import SiteLayout from '@/layouts/site-layout';
-import { Link } from '@inertiajs/react';
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/utils/schema';
+import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
 
 interface CaseStudy {
   id: number;
@@ -36,9 +37,60 @@ interface Props {
 }
 
 export default function Show({ caseStudy, relatedCaseStudies }: Props) {
+  const pageTitle = caseStudy.meta_title || caseStudy.title;
+  const pageDescription = caseStudy.meta_description || `${caseStudy.title} - Case study for ${caseStudy.client_name}. ${caseStudy.service_type} services in ${caseStudy.industry} industry.`;
+  
+  // Generate breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://empuls3.com' },
+    { name: 'Case Studies', url: 'https://empuls3.com/case-studies' },
+    { name: caseStudy.title, url: `https://empuls3.com/case-studies/${caseStudy.slug}` }
+  ]);
+  
+  // Generate article schema
+  const articleSchema = generateArticleSchema({
+    headline: caseStudy.title,
+    description: pageDescription,
+    image: [caseStudy.featured_image],
+    datePublished: caseStudy.completion_date ? new Date(caseStudy.completion_date).toISOString() : new Date().toISOString(),
+    dateModified: new Date().toISOString(),
+    publisher: {
+      name: 'Empuls3',
+      logo: 'https://empuls3.com/images/logo.png'
+    }
+  });
+  
   return (
     <SiteLayout>
-      <Head title={caseStudy.meta_title || caseStudy.title} />
+      <Head>
+        <title>{generateLocalTitle(pageTitle)}</title>
+        <meta name="description" content={generateLocalDescription(pageDescription)} />
+        <meta name="keywords" content={`${caseStudy.service_type}, ${caseStudy.industry}, Dallas case study, ${caseStudy.client_name}`} />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={generateLocalDescription(pageDescription)} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://empuls3.com/case-studies/${caseStudy.slug}`} />
+        <meta property="og:image" content={caseStudy.featured_image} />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={generateLocalDescription(pageDescription)} />
+        <meta name="twitter:image" content={caseStudy.featured_image} />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={`https://empuls3.com/case-studies/${caseStudy.slug}`} />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Head>
       
       <div className="bg-white">
         {/* Hero Section */}

@@ -25,11 +25,36 @@ export function generateLocalTitle(pageTitle: string, includeLocation: boolean =
   const fullTitle = `${pageTitle}${location}${brandName}`;
   
   if (fullTitle.length > 60) {
-    // Shorten if needed
+    // Shorten if needed, prioritize keywords over location if too long
+    if (pageTitle.length + brandName.length + 3 > 60) {
+      return `${pageTitle} | Empuls3`;
+    }
     return `${pageTitle}${location} | Empuls3`;
   }
   
   return fullTitle;
+}
+
+// Generate meta description with validation
+export function generateMetaDescription(description: string, maxLength: number = 160): string {
+  if (description.length <= maxLength) {
+    return description;
+  }
+  
+  // Truncate at last complete sentence or word
+  const truncated = description.substring(0, maxLength - 3);
+  const lastSentence = truncated.lastIndexOf('.');
+  const lastWord = truncated.lastIndexOf(' ');
+  
+  if (lastSentence > maxLength - 50) {
+    return truncated.substring(0, lastSentence + 1);
+  }
+  
+  if (lastWord > 0) {
+    return truncated.substring(0, lastWord) + '...';
+  }
+  
+  return truncated + '...';
 }
 
 // Generate location-optimized description
@@ -42,10 +67,14 @@ export function generateLocalDescription(baseDescription: string, includeLocatio
   const fullDescription = `${baseDescription}${locationContext}`;
   
   if (fullDescription.length > 160) {
-    return `${baseDescription} Serving Dallas-Fort Worth businesses.`;
+    // Try shorter location context
+    const shortContext = includeLocation ? ' Serving Dallas-Fort Worth businesses since 2009.' : '';
+    const shorterDescription = `${baseDescription}${shortContext}`;
+    
+    return generateMetaDescription(shorterDescription);
   }
   
-  return fullDescription;
+  return generateMetaDescription(fullDescription);
 }
 
 // Dallas-specific keywords for different services

@@ -59,8 +59,8 @@ export const dallasBusinessInfo = {
   addressRegion: "TX",
   postalCode: "75201",
   addressCountry: "US",
-  telephone: "+1-214-555-0100", // Dallas area code for local presence
-  email: "dallas@empuls3.com",
+  telephone: "+1-972-798-8914",
+  email: "info@empuls3.com",
   // Dallas coordinates (city center for service area)
   latitude: 32.7767,
   longitude: -96.7970,
@@ -262,5 +262,55 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
       "name": item.name,
       "item": item.url
     }))
+  };
+}
+
+// Article Schema generator for case studies and blog posts
+export function generateArticleSchema(article: {
+  headline: string;
+  description: string;
+  image?: string | string[];
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  publisher?: {
+    name: string;
+    logo?: string;
+  };
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.headline,
+    "description": article.description,
+    ...(article.image && { "image": article.image }),
+    "datePublished": article.datePublished,
+    ...(article.dateModified && { "dateModified": article.dateModified }),
+    ...(article.author && { "author": { "@type": "Person", "name": article.author } }),
+    "publisher": article.publisher || {
+      "@type": "Organization",
+      "name": dallasBusinessInfo.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://empuls3.com/images/logo.png"
+      }
+    }
+  };
+}
+
+// AggregateRating Schema generator
+export function generateAggregateRatingSchema(rating: {
+  ratingValue: number;
+  reviewCount: number;
+  bestRating?: number;
+  worstRating?: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "ratingValue": rating.ratingValue,
+    "reviewCount": rating.reviewCount,
+    ...(rating.bestRating && { "bestRating": rating.bestRating }),
+    ...(rating.worstRating && { "worstRating": rating.worstRating })
   };
 }

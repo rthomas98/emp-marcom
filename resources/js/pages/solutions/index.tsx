@@ -9,23 +9,24 @@ import { MobileCrossPlatform } from '@/components/solutions/MobileCrossPlatform'
 import { HubspotSolutions } from '@/components/solutions/HubspotSolutions';
 import { CallToAction } from '@/components/solutions/CallToAction';
 import { Head } from '@inertiajs/react';
+import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
 
 export default function SolutionsPage() {
   return (
-    <SiteLayout title="Solutions & Services - Empuls3">
+    <SiteLayout title={generateLocalTitle('Software Development Solutions', true)}>
       <Head>
-        <meta name="description" content="Empuls3 is a specialized micro agency delivering personalized software development solutions with the direct attention of senior developers that larger firms can't match." />
-        <meta name="keywords" content="micro agency, boutique development firm, personalized software development, senior developers, custom applications, web development, mobile apps, API integration, direct client collaboration" />
+        <meta name="description" content={generateLocalDescription("Professional Dallas software development solutions including custom web applications, mobile apps, API development, and UX/UI design. Serving DFW businesses with personalized technology solutions.")} />
+        <meta name="keywords" content="Dallas software development, Dallas web development, Dallas mobile app development, Dallas API development, Dallas UX UI design, custom software Dallas, Dallas tech solutions, DFW software company" />
         {/* Open Graph Tags for better social sharing */}
-        <meta property="og:title" content="Solutions & Services - Empuls3" />
-        <meta property="og:description" content="Specialized software development solutions with direct senior developer attention that larger firms can't match." />
+        <meta property="og:title" content={generateLocalTitle('Software Development Solutions', true)} />
+        <meta property="og:description" content="Professional Dallas software development solutions with direct senior developer attention. Custom web apps, mobile apps, and technology solutions for DFW businesses." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://empuls3.com/solutions" />
         <meta property="og:image" content="/images/empuls3-solutions-og-image.jpg" />
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Solutions & Services - Empuls3" />
-        <meta name="twitter:description" content="Specialized software development solutions with direct senior developer attention that larger firms can't match." />
+        <meta name="twitter:title" content={generateLocalTitle('Software Development Solutions', true)} />
+        <meta name="twitter:description" content="Dallas software development solutions with personalized senior developer attention." />
         <meta name="twitter:image" content="/images/empuls3-solutions-og-image.jpg" />
         {/* Canonical URL */}
         <link rel="canonical" href="https://empuls3.com/solutions" />
