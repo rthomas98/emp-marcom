@@ -9,15 +9,45 @@ import { MvpTestimonials } from '@/components/solutions/MvpTestimonials';
 import { MvpCTA } from '@/components/solutions/MvpCTA';
 import { MvpFinalCTA } from '@/components/solutions/MvpFinalCTA';
 import { Head } from '@inertiajs/react';
+import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
+import { generateBreadcrumbSchema } from '@/utils/schema';
 
 export default function MvpProductDevelopment() {
+  const pageTitle = 'MVP Product Development Dallas';
+  const pageDescription = 'Launch MVPs in 60 days. Dallas startups get real products, real users, real feedback with $25K minimum. Senior developers serving DFW metroplex.';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://empuls3.com' },
+    { name: 'Solutions', url: 'https://empuls3.com/solutions' },
+    { name: 'MVP Product Development', url: 'https://empuls3.com/solutions/mvp-product-development' }
+  ]);
+  
   return (
-    <SiteLayout>
+    <SiteLayout title={generateLocalTitle(pageTitle)}>
       <Head>
-        <title>Your Idea Is Dying in PowerPoint. We Build MVPs in 60 Days | Empuls3</title>
-        <meta name="description" content="Stop wasting time on decks. Dallas startups launch MVPs in 60 days with us. Real product, real users, real feedback. $25K gets you to market. Senior developers only." />
-        <meta name="keywords" content="MVP development Dallas, startup development, rapid prototyping, product development, lean startup, minimum viable product" />
+        <title>{generateLocalTitle(pageTitle)}</title>
+        <meta name="description" content={generateLocalDescription(pageDescription)} />
+        <meta name="keywords" content="MVP development Dallas, Dallas startup developers, rapid prototyping DFW, product development Dallas, lean startup, minimum viable product" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={generateLocalTitle(pageTitle)} />
+        <meta property="og:description" content={generateLocalDescription(pageDescription)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://empuls3.com/solutions/mvp-product-development" />
+        <meta property="og:image" content="https://empuls3.com/images/mvp-development-og.jpg" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={generateLocalTitle(pageTitle)} />
+        <meta name="twitter:description" content="Launch MVPs in 60 days. Dallas startups get real products with $25K minimum by senior developers." />
+        <meta name="twitter:image" content="https://empuls3.com/images/mvp-development-og.jpg" />
+        
         <link rel="canonical" href="https://empuls3.com/solutions/mvp-product-development" />
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",

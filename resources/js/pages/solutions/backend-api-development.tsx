@@ -6,15 +6,45 @@ import { BackendFeatures } from '@/components/solutions/BackendFeatures';
 import { BackendTestimonials } from '@/components/solutions/BackendTestimonials';
 import { BackendCTA } from '@/components/solutions/BackendCTA';
 import { Head } from '@inertiajs/react';
+import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
+import { generateBreadcrumbSchema } from '@/utils/schema';
 
 export default function BackendApiDevelopment() {
+  const pageTitle = 'Backend API Development Dallas';
+  const pageDescription = 'Fix broken APIs costing Dallas businesses $5K+ monthly. We connect systems that don\'t talk, automate manual processes in 30 days. Senior developers serving DFW metroplex.';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://empuls3.com' },
+    { name: 'Solutions', url: 'https://empuls3.com/solutions' },
+    { name: 'Backend API Development', url: 'https://empuls3.com/solutions/backend-api-development' }
+  ]);
+  
   return (
-    <SiteLayout>
+    <SiteLayout title={generateLocalTitle(pageTitle)}>
       <Head>
-        <title>Your API Is a Disaster. Data Doesn't Sync. We Fix It | Empuls3</title>
-        <meta name="description" content="Systems don't talk? Manual data entry killing productivity? Dallas businesses waste $5K+ monthly on broken APIs. We fix integrations in 30 days. Senior developers only." />
-        <meta name="keywords" content="API development Dallas, fix broken integrations, backend development, database optimization, system integration, API security" />
+        <title>{generateLocalTitle(pageTitle)}</title>
+        <meta name="description" content={generateLocalDescription(pageDescription)} />
+        <meta name="keywords" content="API development Dallas, Dallas backend developers, fix broken integrations, database optimization Dallas, system integration DFW, API security" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={generateLocalTitle(pageTitle)} />
+        <meta property="og:description" content={generateLocalDescription(pageDescription)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://empuls3.com/solutions/backend-api-development" />
+        <meta property="og:image" content="https://empuls3.com/images/backend-development-og.jpg" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={generateLocalTitle(pageTitle)} />
+        <meta name="twitter:description" content="Fix broken APIs costing Dallas businesses $5K+ monthly. 30-day transformations by senior developers." />
+        <meta name="twitter:image" content="https://empuls3.com/images/backend-development-og.jpg" />
+        
         <link rel="canonical" href="https://empuls3.com/solutions/backend-api-development" />
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
