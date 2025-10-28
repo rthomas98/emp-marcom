@@ -10,15 +10,45 @@ import { SoftwareTestimonials } from '@/components/solutions/SoftwareTestimonial
 import { DevelopmentProcessOverview } from '@/components/solutions/DevelopmentProcessOverview';
 import { SoftwareDevelopmentCTA } from '@/components/solutions/SoftwareDevelopmentCTA';
 import { Head } from '@inertiajs/react';
+import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
+import { generateBreadcrumbSchema } from '@/utils/schema';
 
 export default function SoftwareDevelopmentDesign() {
+  const pageTitle = 'Custom Software Development Dallas';
+  const pageDescription = 'Fix broken software costing Dallas businesses $50K+ yearly. Senior developers modernize legacy systems in 90 days or less. Serving DFW metroplex with custom software solutions.';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://empuls3.com' },
+    { name: 'Solutions', url: 'https://empuls3.com/solutions' },
+    { name: 'Software Development', url: 'https://empuls3.com/solutions/software-development-design' }
+  ]);
+  
   return (
-    <SiteLayout>
+    <SiteLayout title={generateLocalTitle(pageTitle)}>
       <Head>
-        <title>Your Software Is Costing You $50K+/Year in Lost Revenue | Empuls3</title>
-        <meta name="description" content="Bad software costs Dallas businesses $50K+ yearly. Slow, buggy, doesn't work on mobile. We fix it in 90 days or less. Senior developers only. 40% cheaper than local agencies." />
-        <meta name="keywords" content="custom software development Dallas, fix broken software, software redesign, enterprise software solutions, software modernization, legacy system replacement" />
+        <title>{generateLocalTitle(pageTitle)}</title>
+        <meta name="description" content={generateLocalDescription(pageDescription)} />
+        <meta name="keywords" content="custom software development Dallas, Dallas software engineers, fix broken software, enterprise software Dallas, software modernization Dallas, legacy system replacement DFW" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={generateLocalTitle(pageTitle)} />
+        <meta property="og:description" content={generateLocalDescription(pageDescription)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://empuls3.com/solutions/software-development-design" />
+        <meta property="og:image" content="https://empuls3.com/images/software-development-og.jpg" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={generateLocalTitle(pageTitle)} />
+        <meta name="twitter:description" content="Fix broken software costing Dallas businesses $50K+ yearly. 90-day transformations by senior developers." />
+        <meta name="twitter:image" content="https://empuls3.com/images/software-development-og.jpg" />
+        
         <link rel="canonical" href="https://empuls3.com/solutions/software-development-design" />
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
