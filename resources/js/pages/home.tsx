@@ -8,6 +8,8 @@ import { Approach } from '@/components/home/Approach';
 import { Partners } from '@/components/home/Partners';
 import { Testimonials } from '@/components/home/Testimonials';
 import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
+import { StatsBar } from '@/components/common/StatsBar';
+import { TrustSignals } from '@/components/common/TrustSignals';
 import { Head } from '@inertiajs/react';
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/utils/schema';
 import { generateLocalTitle, generateLocalDescription, dallasKeywords } from '@/utils/seo';
@@ -125,6 +127,8 @@ export default function Home() {
       </Head>
       <HomeComponentWrapper>
         <Header />
+        <StatsBar />
+        <TrustSignals />
         <Features />
         <Services />
         <Industries />
