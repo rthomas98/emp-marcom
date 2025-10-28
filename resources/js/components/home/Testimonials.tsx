@@ -136,11 +136,24 @@ export function Testimonials() {
       <div className="container mx-auto">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <h2 id="testimonials-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Client Testimonials
+            200+ Satisfied Dallas Clients Can't Be Wrong
           </h2>
           <p className="text-gray-700 md:text-lg">
-            Don't just take our word for it. Here's what our clients have to say about working with Empuls3.
+            We don't just deliver code—we save businesses time, money, and headaches. See what Dallas companies say about working with senior developers who actually get things done.
           </p>
+          <div className="mt-6 inline-flex items-center gap-6 text-sm md:text-base">
+            <div className="flex items-center gap-2">
+              <div className="flex text-accent-yellow">
+                {Array(5).fill(null).map((_, i) => (
+                  <Star key={i} className="size-5 fill-current" />
+                ))}
+              </div>
+              <span className="font-semibold text-primary">4.9/5 Rating</span>
+            </div>
+            <div className="text-gray-600">
+              <span className="font-semibold text-primary">200+ Projects</span> Delivered
+            </div>
+          </div>
         </div>
         
         <div ref={containerRef} className="relative" aria-roledescription="carousel" aria-label="Client testimonials carousel">
@@ -166,7 +179,7 @@ export function Testimonials() {
                           <Star key={starIndex} className="size-5 fill-current" aria-hidden="true" />
                         ))}
                     </div>
-                    <blockquote className="text-gray-700 md:text-lg italic">"{testimonial.quote}"</blockquote>
+                    <blockquote className="text-gray-700 md:text-lg leading-relaxed">"{testimonial.quote}"</blockquote>
                     <footer className="mt-5 flex w-full flex-col items-start gap-4 md:mt-6 md:w-auto md:flex-row md:items-center">
                       <div>
                         <img
