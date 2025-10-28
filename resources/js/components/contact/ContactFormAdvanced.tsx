@@ -261,7 +261,7 @@ export function ContactFormAdvanced() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                     required
                     aria-required="true"
                     aria-describedby="name-required"
@@ -279,7 +279,7 @@ export function ContactFormAdvanced() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                     required
                     aria-required="true"
                     aria-describedby="email-required"
@@ -298,7 +298,7 @@ export function ContactFormAdvanced() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                     autoComplete="tel"
                   />
                 </div>
@@ -313,7 +313,7 @@ export function ContactFormAdvanced() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                     autoComplete="organization"
                   />
                 </div>
@@ -331,7 +331,7 @@ export function ContactFormAdvanced() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                     required
                     aria-required="true"
                     aria-describedby="message-required"
@@ -354,7 +354,7 @@ export function ContactFormAdvanced() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                      className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                       required
                       aria-required="true"
                       aria-describedby="projectType-required"
@@ -380,7 +380,7 @@ export function ContactFormAdvanced() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                        className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                       >
                         <option value="">Select Budget Range</option>
                         <option value="under-5k">Under $5,000</option>
@@ -401,7 +401,7 @@ export function ContactFormAdvanced() {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleChange}
-                        className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                        className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                       >
                         <option value="">Select Timeline</option>
                         <option value="urgent">Urgent (ASAP)</option>
@@ -423,7 +423,7 @@ export function ContactFormAdvanced() {
                       value={formData.projectDescription}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                      className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                       required
                       aria-required="true"
                       aria-describedby="projectDescription-required"
@@ -442,7 +442,7 @@ export function ContactFormAdvanced() {
                       value={formData.requirements}
                       onChange={handleChange}
                       rows={3}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-1 focus:ring-[#BD1550]"
+                      className="w-full rounded-md border border-gray-300 px-4 py-3 min-h-[44px] text-base text-[#1F1946] focus:border-[#BD1550] focus:outline-none focus:ring-2 focus:ring-[#BD1550]"
                       placeholder="Any specific features, technologies, or requirements for your project."
                     ></textarea>
                   </div>
