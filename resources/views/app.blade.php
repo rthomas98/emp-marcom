@@ -44,14 +44,47 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         @if (app()->environment('production'))
-        <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GYXH0ED2H"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+          function gtag(){ dataLayer.push(arguments); }
 
+          // Initialize GA4
+          gtag('js', new Date());
           gtag('config', 'G-7GYXH0ED2H');
+
+          // Track contact form submissions and CTA clicks
+          // Use event delegation to handle dynamically loaded content (Inertia.js)
+          document.addEventListener('submit', function(e) {
+            var form = e.target;
+            if (form && form.matches && form.matches('form[aria-labelledby="contact-form-title"]')) {
+              // Recommended event for GA4 form submissions
+              gtag('event', 'form_submit', {
+                event_category: 'engagement',
+                event_label: 'Contact form submission',
+                value: 1
+              });
+            }
+          });
+
+          // Track CTA button clicks using event delegation
+          document.addEventListener('click', function(e) {
+            var target = e.target;
+            // Traverse up the DOM tree to find the link element
+            while (target && target.tagName !== 'A') {
+              target = target.parentElement;
+            }
+            
+            if (target && target.href && (target.href.includes('/contact') || target.pathname === '/contact')) {
+              var buttonText = target.textContent.trim() || target.querySelector('span')?.textContent.trim() || 'CTA Button';
+              gtag('event', 'button_click', {
+                event_category: 'engagement',
+                event_label: buttonText,
+                value: 1
+              });
+            }
+          });
         </script>
         @endif
 

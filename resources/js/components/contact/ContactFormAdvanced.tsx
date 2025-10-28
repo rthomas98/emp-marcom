@@ -61,6 +61,15 @@ export function ContactFormAdvanced() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Track form submission with Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_submit', {
+        event_category: 'engagement',
+        event_label: 'Contact form submission',
+        value: 1
+      });
+    }
+    
     // Set submitting state
     setIsSubmitting(true);
     
