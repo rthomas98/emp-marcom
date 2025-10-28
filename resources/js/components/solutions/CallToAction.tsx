@@ -7,26 +7,25 @@ export function CallToAction() {
       <div className="container mx-auto flex flex-col items-center">
         <div className="mb-12 max-w-3xl text-center md:mb-18 lg:mb-20">
           <h2 id="call-to-action-heading" className="mb-5 text-4xl font-bold font-header text-primary md:mb-6 md:text-5xl lg:text-6xl">
-            Get Started with Empuls3
+            Ready to Stop Losing Money to Bad Software?
           </h2>
           <p className="text-gray-700 md:text-lg">
-            Elevate your business to new heights by leveraging our expert
-            development solutions tailored to your needs. Don't wait any
-            longer—schedule a consultation with us today and discover how we can
-            help you achieve your goals!
+            Dallas businesses save an average of $50K per year with our solutions. 
+            Limited to 5 new clients per month for personalized attention. Get your 
+            free tech audit ($2,500 value) and see exactly what's broken.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
             <Link
               href="/contact"
-              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-accent-pink px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-pink/90 focus:outline-none focus:ring-2 focus:ring-accent-pink focus:ring-offset-2 min-h-[44px]"
             >
-              Contact
+              Get My Free Tech Audit
             </Link>
             <Link
-              href="/solutions"
-              className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              href="/case-studies"
+              className="inline-flex h-11 items-center justify-center rounded-md border-2 border-primary bg-transparent px-6 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px]"
             >
-              Learn More
+              See How We Saved Others $2M+
             </Link>
           </div>
         </div>
