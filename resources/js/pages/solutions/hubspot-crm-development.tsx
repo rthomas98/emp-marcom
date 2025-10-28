@@ -9,14 +9,44 @@ import { HubspotTraining } from '@/components/solutions/HubspotTraining';
 import { HubspotTestimonial } from '@/components/solutions/HubspotTestimonial';
 import { HubspotCTA } from '@/components/solutions/HubspotCTA';
 import { Head } from '@inertiajs/react';
+import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
+import { generateBreadcrumbSchema } from '@/utils/schema';
 
 export default function HubspotCrmDevelopment() {
+  const pageTitle = 'HubSpot CRM Development Dallas';
+  const pageDescription = 'Fix HubSpot CRM in 30 days. Dallas businesses automate sales, track deals, close more. Expert HubSpot implementation serving DFW metroplex.';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://empuls3.com' },
+    { name: 'Solutions', url: 'https://empuls3.com/solutions' },
+    { name: 'HubSpot CRM Development', url: 'https://empuls3.com/solutions/hubspot-crm-development' }
+  ]);
   return (
-    <SiteLayout>
+    <SiteLayout title={generateLocalTitle(pageTitle)}>
       <Head>
-        <title>Your Sales Team Hates Your CRM. HubSpot Fixed in 30 Days | Empuls3</title>
-        <meta name="description" content="CRM is a mess? Sales team using spreadsheets? Losing deals? We fix HubSpot in 30 days. Automate follow-ups, track deals, close more. Dallas CRM experts." />
-        <meta name="keywords" content="HubSpot development Dallas, CRM implementation, sales automation, HubSpot integration, CRM optimization, marketing automation" />
+        <title>{generateLocalTitle(pageTitle)}</title>
+        <meta name="description" content={generateLocalDescription(pageDescription)} />
+        <meta name="keywords" content="HubSpot development Dallas, Dallas CRM experts, CRM implementation DFW, sales automation, HubSpot integration Dallas, marketing automation Dallas" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={generateLocalTitle(pageTitle)} />
+        <meta property="og:description" content={generateLocalDescription(pageDescription)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://empuls3.com/solutions/hubspot-crm-development" />
+        <meta property="og:image" content="https://empuls3.com/images/hubspot-development-og.jpg" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={generateLocalTitle(pageTitle)} />
+        <meta name="twitter:description" content="Fix HubSpot CRM in 30 days. Dallas businesses automate sales and close more deals." />
+        <meta name="twitter:image" content="https://empuls3.com/images/hubspot-development-og.jpg" />
+        
+        <link rel="canonical" href="https://empuls3.com/solutions/hubspot-crm-development" />
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Head>
       <Header9 />
       <HubspotOverview />
