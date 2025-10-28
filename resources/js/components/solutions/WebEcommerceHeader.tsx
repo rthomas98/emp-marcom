@@ -10,25 +10,25 @@ export function WebEcommerceHeader() {
     >
       <div className="mx-[5%] max-w-[40rem] justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
         <h1 id="web-ecommerce-heading" className="mb-5 text-5xl font-bold font-header text-primary md:mb-6 md:text-6xl lg:text-7xl">
-          Boutique Web & E-commerce Development with Senior Expertise
+          Your Website Loses Sales Every Day. We Fix It in 30 Days.
         </h1>
         <p className="text-gray-700 md:text-lg">
-          As a specialized micro agency, we deliver personalized web and e-commerce solutions with direct access to our senior developers. Our boutique approach combines custom WordPress solutions, robust e-commerce platforms, and innovative Progressive Web Apps—all with the focused attention and faster turnaround that larger agencies simply can't match.
+          Slow load times kill conversions. Cart abandonment costs Dallas e-commerce businesses $10K+ monthly. We fix broken websites, optimize WooCommerce stores, and build platforms that actually convert—fast. Average timeline: 30 days. Average client savings: $50K/year.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 md:mt-8" role="navigation" aria-label="Web and e-commerce development actions">
           <Link
-            href="/solutions"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-[#BD1550] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#BD1550]/90 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2"
-            aria-label="Learn more about our web and e-commerce development services"
+            href="/contact"
+            className="inline-flex h-11 items-center justify-center rounded-md bg-[#BD1550] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#BD1550]/90 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2 min-h-[44px]"
+            aria-label="Fix my website now"
           >
-            Learn More
+            Fix My Website Now
           </Link>
           <Link
-            href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-4 py-2 text-sm font-medium text-[#BD1550] transition-colors hover:bg-[#BD1550]/10 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2"
-            aria-label="Start a web or e-commerce development project with us"
+            href="/case-studies"
+            className="inline-flex h-11 items-center justify-center rounded-md border-2 border-[#BD1550] bg-transparent px-6 py-2.5 text-sm font-medium text-[#BD1550] transition-colors hover:bg-[#BD1550]/10 focus:outline-none focus:ring-2 focus:ring-[#BD1550] focus:ring-offset-2 min-h-[44px]"
+            aria-label="See successful websites we built"
           >
-            Start A Project
+            See Our Results
           </Link>
         </div>
       </div>
