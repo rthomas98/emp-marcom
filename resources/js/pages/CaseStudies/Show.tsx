@@ -3,6 +3,7 @@ import { Head, Link } from '@inertiajs/react';
 import SiteLayout from '@/layouts/site-layout';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/utils/schema';
 import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
+import { CaseStudyMetrics } from '@/components/case-studies/CaseStudyMetrics';
 
 interface CaseStudy {
   id: number;
@@ -177,7 +178,15 @@ export default function Show({ caseStudy, relatedCaseStudies }: Props) {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">The Results</h2>
               <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: caseStudy.results }}></div>
             </div>
-            
+          </div>
+        </div>
+        
+        {/* Metrics Section */}
+        <CaseStudyMetrics />
+        
+        {/* Main Content Continued */}
+        <div className="container mx-auto px-4 md:px-6 pb-12">
+          <div className="max-w-4xl mx-auto">
             {/* Testimonial Section */}
             {caseStudy.testimonial && (
               <div className="bg-gray-50 p-8 rounded-lg mb-12">
