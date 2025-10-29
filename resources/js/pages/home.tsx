@@ -10,6 +10,7 @@ import { Testimonials } from '@/components/home/Testimonials';
 import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
 import { StatsBar } from '@/components/common/StatsBar';
 import { TrustSignals } from '@/components/common/TrustSignals';
+import { ProcessTransparency } from '@/components/common/ProcessTransparency';
 import { Head } from '@inertiajs/react';
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/utils/schema';
 import { generateLocalTitle, generateLocalDescription, dallasKeywords } from '@/utils/seo';
@@ -134,6 +135,7 @@ export default function Home() {
         <Industries />
         <Innovation />
         <Approach />
+        <ProcessTransparency />
         <Partners />
         <Testimonials />
       </HomeComponentWrapper>
