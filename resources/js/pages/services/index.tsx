@@ -5,6 +5,7 @@ import { ServicesDevOps } from '@/components/services/ServicesDevOps';
 import { ServicesConsulting } from '@/components/services/ServicesConsulting';
 import { ServicesSupport } from '@/components/services/ServicesSupport';
 import { ServicesCTA } from '@/components/services/ServicesCTA';
+import { PricingTransparency } from '@/components/common/PricingTransparency';
 import { Head } from '@inertiajs/react';
 
 export default function ServicesIndex() {
@@ -20,6 +21,7 @@ export default function ServicesIndex() {
       <ServicesDevOps />
       <ServicesConsulting />
       <ServicesSupport />
+      <PricingTransparency />
       <ServicesCTA />
     </SiteLayout>
   );
