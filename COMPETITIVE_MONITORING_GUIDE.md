@@ -218,3 +218,4 @@ Regular competitive monitoring ensures Empuls3 stays ahead of the competition an
 3. Bookmark competitor websites
 4. Create simple tracking spreadsheet
 
+
