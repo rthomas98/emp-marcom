@@ -1,5 +1,8 @@
 <?php
 
+$defaultDisk = env('FILESYSTEM_DISK', 'local');
+$mediaDisk = env('MEDIA_FILESYSTEM_DISK', $defaultDisk === 'local' ? 'public' : $defaultDisk);
+
 return [
 
     /*
@@ -13,7 +16,27 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => $defaultDisk,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Public-facing media storage
+    |--------------------------------------------------------------------------
+    |
+    | Local development uses the public disk. Hosted environments may inject
+    | an S3-compatible default disk (Laravel Cloud does this for attached
+    | object storage), which keeps uploads durable across deployments.
+    |
+    */
+
+    'media' => $mediaDisk,
+
+    'media_visibility' => env(
+        'MEDIA_FILESYSTEM_VISIBILITY',
+        $mediaDisk === 'public' ? 'public' : 'private'
+    ),
+
+    'media_url_ttl' => (int) env('MEDIA_URL_TTL_MINUTES', 1440),
 
     /*
     |--------------------------------------------------------------------------
