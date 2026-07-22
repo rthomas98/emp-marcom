@@ -1,90 +1,116 @@
-import { FAQsCategories } from '@/components/company/FAQsCategories';
-import { FAQsContact } from '@/components/company/FAQsContact';
-import { FAQsHeader } from '@/components/company/FAQsHeader';
 import SiteLayout from '@/layouts/site-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
+
+const faqs = [
+    {
+        question: 'What kinds of problems are the best fit for Empuls3?',
+        answer: 'We are strongest when an established service business depends on aging software, disconnected systems, manual workflows, or technology that lacks a dependable senior owner. We also handle focused website, CRM, mobile, DevOps, and managed IT work when it supports a defined operating outcome.',
+    },
+    {
+        question: 'Can you take over software built by another developer or agency?',
+        answer: 'Yes. We begin by reviewing access, source code, environments, dependencies, data, deployment, documentation, known incidents, and the business workflow. We do not assume the system must be rebuilt until the evidence supports that recommendation.',
+    },
+    {
+        question: 'How does a software review work?',
+        answer: 'The first conversation establishes the business impact, system boundaries, urgency, stakeholders, and available access. If a technical assessment is appropriate, we define its scope and deliverables before beginning. The output identifies immediate risk, options, sequencing, and the recommended next decision.',
+    },
+    {
+        question: 'Do you repair systems or replace them?',
+        answer: 'Both are possible. The responsible path may be stabilization, incremental modernization, targeted replacement, or a full rebuild. We compare those options against continuity, data, cost drivers, dependencies, team capability, and future ownership.',
+    },
+    {
+        question: 'What is your minimum project size?',
+        answer: 'Product and substantial implementation engagements generally begin at $25,000. A focused assessment may be smaller when it has a clearly defined system, evidence set, and decision outcome. Ongoing support is scoped after we review the environment and ownership need.',
+    },
+    {
+        question: 'Will we work directly with senior specialists?',
+        answer: 'Yes. Senior specialists remain involved in discovery, recommendations, delivery decisions, and client communication. Any additional contributors are introduced with clear responsibilities rather than hidden behind an account-management layer.',
+    },
+    {
+        question: 'How do you handle security and access?',
+        answer: 'We request only the access needed for the agreed work, identify authorized client contacts, avoid sharing credentials in ordinary messages, and document ownership and removal of access. System-specific security, privacy, or regulatory requirements must be identified during scoping so the appropriate controls and specialists can be included.',
+    },
+    {
+        question: 'Who owns the work and source code?',
+        answer: 'Ownership, licensing, third-party dependencies, repositories, credentials, and handoff obligations are defined in the engagement agreement. We aim to leave clients with the access and documentation required to operate the delivered work under those terms.',
+    },
+    {
+        question: 'Do you work remotely?',
+        answer: 'Yes. Empuls3 is remote-first and serves Dallas–Fort Worth businesses through scheduled working sessions, secure system access, written decisions, and direct communication. We do not advertise a walk-in support office.',
+    },
+    {
+        question: 'How quickly will you respond to an inquiry?',
+        answer: 'A senior specialist will review a legitimate business inquiry and normally respond within one business day. That response target is for initial inquiries, not an emergency-support guarantee or a universal incident service level.',
+    },
+    {
+        question: 'Can you work with our current vendors and internal team?',
+        answer: 'Yes. We define the client sponsor, decision rights, system access, provider responsibilities, dependencies, and escalation path. We can collaborate with an incumbent provider without overstating the relationship or assigning blame before reviewing the facts.',
+    },
+    {
+        question: 'What should we send before the first call?',
+        answer: 'Send a short description of the affected workflow, who depends on it, the consequence of the problem, systems involved, urgency, current owner or vendor, and the decision leadership needs to make. Do not send passwords, private keys, regulated data, or confidential source files through the public form.',
+    },
+];
 
 export default function Faqs() {
-    // FAQ data for structured data
-    const faqData = [
-        {
-            question: 'How much will this actually cost?',
-            answer: 'New software and modernization projects start at $25,000. Focused assessments and ongoing support are scoped separately. After a discovery conversation, we provide a written scope with assumptions, pricing, and delivery expectations.',
-        },
-        {
-            question: 'Why should I trust a remote agency?',
-            answer: 'Empuls3 has operated since 2009. We use video calls, shared project tools, written decisions, and regular demonstrations so stakeholders can see progress and speak directly with the people doing the work.',
-        },
-        {
-            question: 'What if my current developer disappears?',
-            answer: 'We begin with a technical assessment of the code, infrastructure, documentation, access, and business risks. You receive a practical recovery plan that explains what can be retained, what needs attention, and what should happen first.',
-        },
-        {
-            question: 'Do you work with my industry?',
-            answer: "Probably. We've built software for Dallas healthcare, finance, energy, retail, and manufacturing companies. The tech is usually similar - it's understanding your business that matters. We'll tell you upfront if we're not a good fit.",
-        },
-        {
-            question: 'How fast can you fix my problem?',
-            answer: 'Timing depends on the condition of the system, access, scope, and operational risk. We define milestones and response expectations in writing before work begins, and we identify urgent stabilization work during discovery.',
-        },
-        {
-            question: "What if it doesn't work out?",
-            answer: 'We use a written scope, milestones, acceptance criteria, and regular demonstrations to surface concerns early. If priorities change, we document the impact and agree on the next step before changing the work.',
-        },
-    ];
-
-    // JSON-LD structured data for FAQs
     const faqSchema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: faqData.map((item) => ({
+        mainEntity: faqs.map((faq) => ({
             '@type': 'Question',
-            name: item.question,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: item.answer,
-            },
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
         })),
     };
 
     return (
-        <SiteLayout>
+        <SiteLayout title="Software & Engineering FAQs | Empuls3">
             <Head>
-                <title>Software Consulting FAQs for Dallas Businesses</title>
                 <meta
                     name="description"
-                    content="Clear answers about Empuls3 software modernization, integrations, engineering support, pricing, delivery, and remote collaboration."
+                    content="Answers about software rescue, inherited systems, engagement size, security, ownership, remote delivery, and ongoing engineering support."
                 />
-                <meta
-                    name="keywords"
-                    content="micro agency FAQs, boutique technology firm, personalized solutions, senior specialists, direct collaboration, faster implementation times"
-                />
-
-                {/* Open Graph tags for social sharing */}
-                <meta property="og:title" content="Boutique Agency FAQs - Empuls3" />
-                <meta
-                    property="og:description"
-                    content="Frequently asked questions about Empuls3, a specialized micro agency. Learn about our personalized technology solutions."
-                />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.empuls3.com/company/faqs" />
-                <meta property="og:image" content="https://www.empuls3.com/images/faqs-cover.jpg" />
-
-                {/* Twitter Card tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Boutique Agency FAQs - Empuls3" />
-                <meta name="twitter:description" content="Frequently asked questions about our specialized micro agency." />
-                <meta name="twitter:image" content="https://www.empuls3.com/images/faqs-cover.jpg" />
-
-                {/* JSON-LD structured data */}
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
             </Head>
 
-            <main id="main-content">
-                <FAQsHeader />
-                <FAQsCategories />
-                <FAQsContact />
-            </main>
+            <section className="px-[5%] py-16 md:py-24">
+                <div className="container mx-auto max-w-4xl">
+                    <p className="text-accent-pink font-semibold tracking-wide uppercase">Frequently asked questions</p>
+                    <h1 className="text-primary mt-4 text-4xl font-bold md:text-6xl">What leaders ask before trusting us with a critical system</h1>
+                    <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-700">
+                        These answers explain fit, assessment, ownership, access, delivery, and what to expect before an engagement begins.
+                    </p>
+
+                    <div className="mt-12 space-y-4">
+                        {faqs.map((faq) => (
+                            <details key={faq.question} className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                                <summary className="text-primary cursor-pointer list-none pr-8 text-lg font-bold marker:hidden">
+                                    {faq.question}
+                                </summary>
+                                <p className="mt-4 leading-7 text-gray-700">{faq.answer}</p>
+                            </details>
+                        ))}
+                    </div>
+
+                    <div className="bg-primary mt-12 rounded-2xl p-8 text-white md:p-10">
+                        <h2 className="text-3xl font-bold">Have a system-specific question?</h2>
+                        <p className="mt-4 max-w-2xl leading-7 text-white/80">
+                            Send the business impact and the decision you need to make. A senior specialist will respond within one business day.
+                        </p>
+                        <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+                            <Link href="/contact#contact-form" className="bg-accent-pink rounded-lg px-6 py-3 text-center font-semibold text-white">
+                                Request a Software Review
+                            </Link>
+                            <a
+                                href="mailto:info@empuls3.com"
+                                className="rounded-lg border border-white px-6 py-3 text-center font-semibold text-white"
+                            >
+                                info@empuls3.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </SiteLayout>
     );
 }

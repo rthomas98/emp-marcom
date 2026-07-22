@@ -13,6 +13,20 @@ it('permanently redirects indexed legacy paths to their current pages', function
     ['/capabilities', '/solutions'],
     ['/request-proposal', '/contact'],
     ['/portfolio', '/case-studies'],
+    ['/about', '/company/about'],
+    ['/faq', '/company/faqs'],
+    ['/resources', '/case-studies'],
+    ['/careers', '/company/about'],
+    ['/company/values', '/company/about'],
+    ['/company/achievements', '/case-studies'],
+    ['/company/case-studies', '/case-studies'],
+    ['/company/partnerships', '/company/partners'],
+    ['/industries/healthcare', '/industries'],
+    ['/industries/finance', '/industries'],
+    ['/industries/ecommerce', '/industries'],
+    ['/industries/manufacturing', '/industries'],
+    ['/industries/education', '/industries'],
+    ['/industries/startups', '/industries'],
 ]);
 
 it('redirects the production apex host to the canonical www host and preserves the query', function () {

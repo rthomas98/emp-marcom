@@ -14,20 +14,20 @@ export default function Contact() {
     return (
         <SiteLayout>
             <Head>
-                <title>{generateLocalTitle('Contact Empuls3 in Dallas')}</title>
+                <title>{generateLocalTitle('Request a Software Review')}</title>
                 <meta
                     name="description"
                     content={generateLocalDescription(
-                        'Contact Empuls3, a remote agency serving Dallas. Get direct access to senior specialists for personalized technology solutions. Serving Dallas, Fort Worth, and DFW metroplex remotely.',
+                        'Tell Empuls3 what is breaking, disconnected, delayed, or consuming staff time. A senior specialist will respond within one business day.',
                     )}
                 />
                 <meta
                     name="keywords"
-                    content="contact Empuls3 Dallas, Dallas software company contact, Dallas IT consulting contact, DFW technology agency, Dallas tech support, Dallas web development contact"
+                    content="software review Dallas, software rescue consultation, systems integration consultation, senior engineering support DFW"
                 />
 
                 {/* Open Graph tags for social sharing */}
-                <meta property="og:title" content="Contact Empuls3 in Dallas" />
+                <meta property="og:title" content="Request a Software Review | Empuls3" />
                 <meta
                     property="og:description"
                     content="Talk with a senior specialist about software rescue, systems integration, or ongoing engineering support for your Dallas-Fort Worth business."
@@ -38,8 +38,11 @@ export default function Contact() {
 
                 {/* Twitter Card tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Contact Our Boutique Agency - Empuls3" />
-                <meta name="twitter:description" content="Get in touch with our specialized micro agency for personalized solutions." />
+                <meta name="twitter:title" content="Request a Software Review | Empuls3" />
+                <meta
+                    name="twitter:description"
+                    content="Discuss software rescue, systems integration, or ongoing senior engineering support for your DFW business."
+                />
                 <meta name="twitter:image" content="https://www.empuls3.com/images/contact-cover.jpg" />
 
                 {/* JSON-LD structured data */}

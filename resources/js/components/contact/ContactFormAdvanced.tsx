@@ -1,12 +1,84 @@
 'use client';
 
 import { Toast } from '@/components/common/Toast';
+import { ContactFormPanel, type ContactFormData, type FormType } from '@/components/contact/ContactFormPanel';
 import { trackAnalyticsEvent } from '@/utils/analytics';
 import axios from 'axios';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-type FormType = 'general' | 'project';
+function createEmptyForm(formType: FormType): ContactFormData {
+    return {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: '',
+        formType,
+        projectType: '',
+        budget: '',
+        timeline: '',
+        projectDescription: '',
+        requirements: '',
+        website: '',
+        submit_time: Math.floor(Date.now() / 1000),
+    };
+}
+
+function ContactMethods() {
+    return (
+        <div className="contact-info">
+            <h2 id="contact-form-heading" className="mb-6 text-3xl font-bold text-[#1F1946] md:text-4xl lg:text-5xl">
+                Contact Information
+            </h2>
+            <p className="md:text-md mb-8 text-gray-700">
+                Tell us what is breaking, disconnected, delayed, or consuming staff time. A senior specialist will review the inquiry and normally
+                respond within one business day.
+            </p>
+
+            <ul className="space-y-6" aria-label="Contact methods">
+                <li className="flex items-start">
+                    <div className="mr-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10" aria-hidden="true">
+                        <Mail className="h-6 w-6 text-[#BD1550]" />
+                    </div>
+                    <div>
+                        <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Email</h3>
+                        <a className="block text-gray-700 hover:text-[#BD1550]" href="mailto:info@empuls3.com">
+                            info@empuls3.com
+                        </a>
+                        <a className="block text-gray-700 hover:text-[#BD1550]" href="mailto:support@empuls3.com">
+                            support@empuls3.com
+                        </a>
+                    </div>
+                </li>
+
+                <li className="flex items-start">
+                    <div className="mr-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10" aria-hidden="true">
+                        <Phone className="h-6 w-6 text-[#BD1550]" />
+                    </div>
+                    <div>
+                        <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Phone</h3>
+                        <a className="text-gray-700 hover:text-[#BD1550] hover:underline" href="tel:+19727988914">
+                            972.798.8914
+                        </a>
+                    </div>
+                </li>
+
+                <li className="flex items-start">
+                    <div className="mr-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10" aria-hidden="true">
+                        <MapPin className="h-6 w-6 text-[#BD1550]" />
+                    </div>
+                    <div>
+                        <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Remote-First DFW Service</h3>
+                        <p className="text-gray-700">
+                            We serve established Dallas–Fort Worth businesses through scheduled sessions and secure remote access.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    );
+}
 
 export function ContactFormAdvanced() {
     const [formType, setFormType] = useState<FormType>('general');
@@ -14,128 +86,42 @@ export function ContactFormAdvanced() {
     const [toastMessage, setToastMessage] = useState("Thank you for your message. We'll get back to you soon!");
     const [toastType, setToastType] = useState<'success' | 'error'>('success');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [formData, setFormData] = useState({
-        // Common fields
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: '',
-        formType: 'general',
+    const [formData, setFormData] = useState<ContactFormData>(() => createEmptyForm('general'));
 
-        // Project request specific fields
-        projectType: '',
-        budget: '',
-        timeline: '',
-        projectDescription: '',
-        requirements: '',
-
-        // Hidden fields for spam protection
-        website: '', // Honeypot field
-        submit_time: 0,
-    });
-
-    // Set the initial timestamp when component mounts
-    useEffect(() => {
-        setFormData((prev) => ({
-            ...prev,
-            submit_time: Math.floor(Date.now() / 1000),
-        }));
-    }, []);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = event.target;
+        setFormData((previous) => ({ ...previous, [name]: value }));
     };
 
     const handleFormTypeChange = (type: FormType) => {
         setFormType(type);
-        setFormData((prev) => ({
-            ...prev,
-            formType: type,
-        }));
+        setFormData((previous) => ({ ...previous, formType: type }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+        if (isSubmitting) return;
 
-        if (isSubmitting) {
-            return;
-        }
-
-        // Set submitting state
         setIsSubmitting(true);
 
         try {
-            // Get CSRF token from meta tag
             const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
-
-            // Configure axios with CSRF token
             axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 
-            // Prepare data for submission - only include projectType if form type is 'project'
             const submissionData = { ...formData };
+            if (formType === 'general') submissionData.projectType = 'general-inquiry';
 
-            // General inquiries use a stable value to satisfy backend validation.
-            // but it won't be used for general inquiries
-            if (formType === 'general') {
-                submissionData.projectType = 'general-inquiry';
-            }
-
-            // Send form data to backend
             const response = await axios.post('/contact/submit', submissionData);
+            if (!response.data.success) throw new Error(response.data.message || 'Something went wrong. Please try again.');
 
-            if (response.data.success) {
-                trackAnalyticsEvent('generate_lead', {
-                    form_type: formType,
-                    project_type: submissionData.projectType,
-                });
-                trackAnalyticsEvent('contact_form_success', {
-                    form_type: formType,
-                    project_type: submissionData.projectType,
-                });
-
-                // Reset form after successful submission
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    company: '',
-                    message: '',
-                    formType: formType,
-                    projectType: '',
-                    budget: '',
-                    timeline: '',
-                    projectDescription: '',
-                    requirements: '',
-                    website: '',
-                    submit_time: Math.floor(Date.now() / 1000),
-                });
-
-                // Show success toast notification
-                setToastType('success');
-                setToastMessage(response.data.message || "Thank you for your message. We'll get back to you soon!");
-                setShowToast(true);
-            } else {
-                throw new Error(response.data.message || 'Something went wrong. Please try again.');
-            }
+            trackAnalyticsEvent('generate_lead', { form_type: formType, project_type: submissionData.projectType });
+            trackAnalyticsEvent('contact_form_success', { form_type: formType, project_type: submissionData.projectType });
+            setFormData(createEmptyForm(formType));
+            setToastType('success');
+            setToastMessage(response.data.message || "Thank you for your message. We'll get back to you soon!");
+            setShowToast(true);
         } catch (error) {
             console.error('Form submission error:', error);
-
-            // Log more detailed error information
-            if (axios.isAxiosError(error)) {
-                console.error('Axios error details:', {
-                    status: error.response?.status,
-                    statusText: error.response?.statusText,
-                    data: error.response?.data,
-                    headers: error.response?.headers,
-                });
-            }
-
-            // Show error toast notification
             setToastType('error');
             setToastMessage(
                 axios.isAxiosError(error) && error.response?.data?.message
@@ -150,355 +136,27 @@ export function ContactFormAdvanced() {
         }
     };
 
-    const handleCloseToast = () => {
-        setShowToast(false);
-    };
-
     return (
         <section id="contact-form" className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="contact-form-heading">
             <Toast
                 isVisible={showToast}
                 title={toastType === 'success' ? 'Success' : 'Error'}
                 message={toastMessage}
-                onClose={handleCloseToast}
+                onClose={() => setShowToast(false)}
                 duration={5000}
                 type={toastType}
             />
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-                    <div className="contact-info">
-                        <h2 id="contact-form-heading" className="mb-6 text-3xl font-bold text-[#1F1946] md:text-4xl lg:text-5xl">
-                            Contact Information
-                        </h2>
-                        <p className="md:text-md mb-8 text-gray-700">
-                            Fill out the form and a senior specialist will respond within one business day. You can also reach us directly using the
-                            contact information below.
-                        </p>
-
-                        <div className="space-y-6" role="list" aria-label="Contact methods">
-                            <div className="flex items-start">
-                                <div
-                                    className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10"
-                                    aria-hidden="true"
-                                >
-                                    <Mail className="h-6 w-6 text-[#BD1550]" />
-                                </div>
-                                <div>
-                                    <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Email</h3>
-                                    <p className="text-gray-700">info@empuls3.com</p>
-                                    <p className="text-gray-700">support@empuls3.com</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start" role="listitem">
-                                <div
-                                    className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10"
-                                    aria-hidden="true"
-                                >
-                                    <Phone className="h-6 w-6 text-[#BD1550]" />
-                                </div>
-                                <div>
-                                    <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Phone</h3>
-                                    <a className="text-gray-700 hover:text-[#BD1550] hover:underline" href="tel:+19727988914">
-                                        972.798.8914
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start" role="listitem">
-                                <div
-                                    className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#BD1550]/10"
-                                    aria-hidden="true"
-                                >
-                                    <MapPin className="h-6 w-6 text-[#BD1550]" />
-                                </div>
-                                <div>
-                                    <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Remote Agency</h3>
-                                    <p className="text-gray-700">We operate as a fully remote agency, serving clients worldwide.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm md:p-8" role="form">
-                        <h2 id="contact-form-title" className="mb-6 text-2xl font-bold text-[#1F1946] md:text-3xl">
-                            Send Us a Message
-                        </h2>
-
-                        <div className="mb-6 flex space-x-4" role="tablist" aria-label="Contact form types">
-                            <button
-                                type="button"
-                                id="tab-general"
-                                role="tab"
-                                aria-selected={formType === 'general'}
-                                aria-controls="panel-general"
-                                onClick={() => handleFormTypeChange('general')}
-                                className={`flex-1 rounded-md border px-4 py-2 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 ${
-                                    formType === 'general'
-                                        ? 'border-[#BD1550] bg-[#BD1550] text-white'
-                                        : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
-                                }`}
-                            >
-                                General Enquiry
-                            </button>
-                            <button
-                                type="button"
-                                id="tab-project"
-                                role="tab"
-                                aria-selected={formType === 'project'}
-                                aria-controls="panel-project"
-                                onClick={() => handleFormTypeChange('project')}
-                                className={`flex-1 rounded-md border px-4 py-2 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 ${
-                                    formType === 'project'
-                                        ? 'border-[#BD1550] bg-[#BD1550] text-white'
-                                        : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
-                                }`}
-                            >
-                                Project Request
-                            </button>
-                        </div>
-
-                        <form onSubmit={handleSubmit} aria-labelledby="contact-form-title">
-                            <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                <div>
-                                    <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                        Full Name *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                        required
-                                        aria-required="true"
-                                        aria-describedby="name-required"
-                                    />
-                                    <span id="name-required" className="sr-only">
-                                        Required field
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                        Email Address *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                        required
-                                        aria-required="true"
-                                        aria-describedby="email-required"
-                                        autoComplete="email"
-                                    />
-                                    <span id="email-required" className="sr-only">
-                                        Required field
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                        Phone Number
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                        autoComplete="tel"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="company" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                        Company Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="company"
-                                        name="company"
-                                        value={formData.company}
-                                        onChange={handleChange}
-                                        className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                        autoComplete="organization"
-                                    />
-                                </div>
-                            </div>
-
-                            {formType === 'general' && (
-                                <div id="panel-general" role="tabpanel" aria-labelledby="tab-general">
-                                    <div className="mb-6">
-                                        <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                            Your Message *
-                                        </label>
-                                        <textarea
-                                            id="message"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            rows={5}
-                                            className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                            required
-                                            aria-required="true"
-                                            aria-describedby="message-required"
-                                        ></textarea>
-                                        <span id="message-required" className="sr-only">
-                                            Required field
-                                        </span>
-                                    </div>
-                                </div>
-                            )}
-
-                            {formType === 'project' && (
-                                <div id="panel-project" role="tabpanel" aria-labelledby="tab-project">
-                                    <>
-                                        <div className="mb-6">
-                                            <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                                Project Type *
-                                            </label>
-                                            <span id="projectType-required" className="sr-only">
-                                                Required field
-                                            </span>
-                                            <select
-                                                id="projectType"
-                                                name="projectType"
-                                                value={formData.projectType}
-                                                onChange={handleChange}
-                                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                                required
-                                                aria-required="true"
-                                                aria-describedby="projectType-required"
-                                            >
-                                                <option value="">Select Project Type</option>
-                                                <option value="software-rescue">Software Rescue & Legacy Modernization</option>
-                                                <option value="systems-integration">CRM, API & Workflow Integration</option>
-                                                <option value="engineering-support">Ongoing Senior Engineering Support</option>
-                                                <option value="web-modernization">Website & E-Commerce Modernization</option>
-                                                <option value="mobile-development">Mobile Product Development</option>
-                                                <option value="managed-it">Managed IT Services</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                        </div>
-
-                                        <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                            <div>
-                                                <label htmlFor="budget" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                                    Budget Range
-                                                </label>
-                                                <select
-                                                    id="budget"
-                                                    name="budget"
-                                                    value={formData.budget}
-                                                    onChange={handleChange}
-                                                    className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                                >
-                                                    <option value="">Select Budget Range</option>
-                                                    <option value="25k-50k">$25,000 - $50,000</option>
-                                                    <option value="50k-100k">$50,000 - $100,000</option>
-                                                    <option value="over-100k">Over $100,000</option>
-                                                </select>
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                                    Timeline
-                                                </label>
-                                                <select
-                                                    id="timeline"
-                                                    name="timeline"
-                                                    value={formData.timeline}
-                                                    onChange={handleChange}
-                                                    className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                                >
-                                                    <option value="">Select Timeline</option>
-                                                    <option value="urgent">Urgent (ASAP)</option>
-                                                    <option value="1-month">Within 1 month</option>
-                                                    <option value="1-3-months">1-3 months</option>
-                                                    <option value="3-6-months">3-6 months</option>
-                                                    <option value="6-plus-months">6+ months</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div className="mb-6">
-                                            <label htmlFor="projectDescription" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                                Project Description *
-                                            </label>
-                                            <textarea
-                                                id="projectDescription"
-                                                name="projectDescription"
-                                                value={formData.projectDescription}
-                                                onChange={handleChange}
-                                                rows={4}
-                                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                                required
-                                                aria-required="true"
-                                                aria-describedby="projectDescription-required"
-                                                placeholder="Please describe your project, including its goals and objectives."
-                                            ></textarea>
-                                            <span id="projectDescription-required" className="sr-only">
-                                                Required field
-                                            </span>
-                                        </div>
-
-                                        <div className="mb-6">
-                                            <label htmlFor="requirements" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                                Specific Requirements
-                                            </label>
-                                            <textarea
-                                                id="requirements"
-                                                name="requirements"
-                                                value={formData.requirements}
-                                                onChange={handleChange}
-                                                rows={3}
-                                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                                placeholder="Any specific features, technologies, or requirements for your project."
-                                            ></textarea>
-                                        </div>
-                                    </>
-                                </div>
-                            )}
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70"
-                                aria-live="polite"
-                            >
-                                {isSubmitting ? (
-                                    <>
-                                        <svg
-                                            className="mr-3 -ml-1 h-5 w-5 animate-spin text-white"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true"
-                                            role="status"
-                                        >
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                            <path
-                                                className="opacity-75"
-                                                fill="currentColor"
-                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                            ></path>
-                                        </svg>
-                                        Processing...
-                                    </>
-                                ) : formType === 'general' ? (
-                                    'Send Message'
-                                ) : (
-                                    'Submit Project Request'
-                                )}
-                            </button>
-                        </form>
-                    </div>
+                    <ContactMethods />
+                    <ContactFormPanel
+                        formType={formType}
+                        formData={formData}
+                        isSubmitting={isSubmitting}
+                        onFormTypeChange={handleFormTypeChange}
+                        onChange={handleChange}
+                        onSubmit={handleSubmit}
+                    />
                 </div>
             </div>
         </section>

@@ -38,13 +38,13 @@ export default function Footer() {
                                     href={route('solutions')}
                                     className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
                                 >
-                                    See Our Track Record
+                                    Review Our Solutions
                                 </Link>
                                 <Link
                                     href={route('contact')}
                                     className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
                                 >
-                                    Get Help Now
+                                    Request a Software Review
                                 </Link>
                             </div>
                         </div>
