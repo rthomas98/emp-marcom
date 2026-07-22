@@ -20,7 +20,7 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        env('APP_URL', 'https://empuls3.com'),
+        env('APP_URL', 'https://www.empuls3.com'),
         'https://empuls3.com',
         'https://www.empuls3.com',
         // Add development URLs only if in local/development environment

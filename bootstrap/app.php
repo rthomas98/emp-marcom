@@ -4,6 +4,7 @@ use App\Http\Middleware\ContactFormRateLimit;
 use App\Http\Middleware\EnsureProductionSecurity;
 use App\Http\Middleware\HandleAppearance;
 use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\RedirectToCanonicalHost;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -19,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
         $middleware->web(append: [
+            RedirectToCanonicalHost::class,
             EnsureProductionSecurity::class,
             HandleAppearance::class,
             HandleInertiaRequests::class,

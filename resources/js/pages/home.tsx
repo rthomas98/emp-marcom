@@ -1,96 +1,102 @@
-import SiteLayout from '@/layouts/site-layout';
-import { Header } from '@/components/home/Header';
-import { Features } from '@/components/home/Features';
-import { Services } from '@/components/home/Services';
-import { Industries } from '@/components/home/Industries';
-import { Innovation } from '@/components/home/Innovation';
-import { Approach } from '@/components/home/Approach';
-import { Partners } from '@/components/home/Partners';
-import { Testimonials } from '@/components/home/Testimonials';
-import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
+import { ProcessTransparency } from '@/components/common/ProcessTransparency';
 import { StatsBar } from '@/components/common/StatsBar';
 import { TrustSignals } from '@/components/common/TrustSignals';
-import { ProcessTransparency } from '@/components/common/ProcessTransparency';
+import { Approach } from '@/components/home/Approach';
+import { Features } from '@/components/home/Features';
+import { Header } from '@/components/home/Header';
+import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
+import { Industries } from '@/components/home/Industries';
+import { Innovation } from '@/components/home/Innovation';
+import { Partners } from '@/components/home/Partners';
+import { Services } from '@/components/home/Services';
+import { Testimonials } from '@/components/home/Testimonials';
+import SiteLayout from '@/layouts/site-layout';
+import { generateBreadcrumbSchema, generateLocalBusinessSchema } from '@/utils/schema';
+import { dallasKeywords } from '@/utils/seo';
 import { Head } from '@inertiajs/react';
-import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/utils/schema';
-import { generateLocalTitle, generateLocalDescription, dallasKeywords } from '@/utils/seo';
 
 export default function Home() {
-  const localBusinessSchema = generateLocalBusinessSchema();
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://empuls3.com' }
-  ]);
+    const localBusinessSchema = generateLocalBusinessSchema();
+    const breadcrumbSchema = generateBreadcrumbSchema([{ name: 'Home', url: 'https://www.empuls3.com' }]);
 
-  return (
-    <SiteLayout title={generateLocalTitle('Software Development & IT Consulting')}>
-      <Head>
-        <meta name="description" content={generateLocalDescription('Premier software development, web applications, and IT consulting services for Dallas businesses. Transform your business with local expertise.')} />
-        <meta name="keywords" content={dallasKeywords.general.concat(['Dallas boutique agency', 'Dallas enterprise solutions', 'Dallas digital transformation']).join(', ')} />
-        {/* Open Graph Tags for better social sharing */}
-        <meta property="og:title" content="Empuls3 - Dallas Software Development & IT Consulting" />
-        <meta property="og:description" content="Dallas's premier boutique tech agency. Custom software, web development, and IT consulting services for DFW businesses." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://empuls3.com" />
-        <meta property="og:image" content="/images/empuls3-og-image.jpg" />
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Empuls3 Dallas - Software Development & IT Consulting" />
-        <meta name="twitter:description" content="Dallas's premier tech agency delivering custom software, web development, and IT consulting services to DFW businesses." />
-        <meta name="twitter:image" content="/images/empuls3-og-image.jpg" />
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://empuls3.com" />
-        {/* Local Business Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-        
-        {/* Breadcrumb Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        
-        {/* Structured Data for Services */}
-        <script type="application/ld+json">{`
+    return (
+        <SiteLayout title="Software Rescue & Integration for DFW Businesses | Empuls3">
+            <Head>
+                <meta
+                    name="description"
+                    content="Senior software rescue, legacy modernization, CRM and API integration, and ongoing engineering support for established Dallas–Fort Worth service businesses."
+                />
+                <meta
+                    name="keywords"
+                    content={dallasKeywords.general
+                        .concat(['legacy software modernization Dallas', 'Dallas systems integration', 'senior engineering support DFW'])
+                        .join(', ')}
+                />
+                {/* Open Graph Tags for better social sharing */}
+                <meta property="og:title" content="Software Rescue & Integration for DFW Businesses | Empuls3" />
+                <meta
+                    property="og:description"
+                    content="Senior engineers who stabilize aging software, connect critical systems, and provide ongoing technical ownership for established DFW businesses."
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.empuls3.com" />
+                <meta property="og:image" content="/images/empuls3-og-image.jpg" />
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Software Rescue & Integration for DFW Businesses | Empuls3" />
+                <meta
+                    name="twitter:description"
+                    content="Senior software rescue, systems integration, and ongoing engineering support for established Dallas–Fort Worth businesses."
+                />
+                <meta name="twitter:image" content="/images/empuls3-og-image.jpg" />
+                {/* Local Business Schema */}
+                <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+
+                {/* Breadcrumb Schema */}
+                <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+
+                {/* Structured Data for Services */}
+                <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "ItemList",
             "itemListElement": [
               {
                 "@type": "Service",
-                "serviceType": "Custom Software Development",
+                "serviceType": "Software Rescue and Legacy Modernization",
                 "provider": {
                   "@type": "Organization",
                   "name": "Empuls3"
                 },
-                "description": "We build custom software applications that solve your specific business challenges.",
-                "url": "https://empuls3.com/solutions/software-development-design"
+                "description": "We stabilize aging or unreliable software and create a controlled modernization path.",
+                "url": "https://www.empuls3.com/solutions/software-development-design"
               },
               {
                 "@type": "Service",
-                "serviceType": "Web Development",
+                "serviceType": "CRM, API, and Workflow Integration",
                 "provider": {
                   "@type": "Organization",
                   "name": "Empuls3"
                 },
-                "description": "We create responsive, user-friendly websites and web applications that engage your audience.",
-                "url": "https://empuls3.com/services/web-development"
+                "description": "We connect business systems, data, and workflows to reduce manual work and operational risk.",
+                "url": "https://www.empuls3.com/solutions/backend-api-development"
               },
               {
                 "@type": "Service",
-                "serviceType": "IT Consulting",
+                "serviceType": "Ongoing Senior Engineering Support",
                 "provider": {
                   "@type": "Organization",
                   "name": "Empuls3"
                 },
-                "description": "Our consulting services help you navigate the complex digital landscape and make informed technology decisions.",
-                "url": "https://empuls3.com/services/software-engineering-it-consulting"
+                "description": "We provide ongoing senior-level engineering ownership for critical applications and infrastructure.",
+                "url": "https://www.empuls3.com/services/software-engineering-it-consulting"
               }
             ]
           }
         `}</script>
-        
-        {/* Structured Data for Testimonials */}
-        <script type="application/ld+json">{`
+
+                {/* Structured Data for Testimonials */}
+                <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -125,20 +131,20 @@ export default function Home() {
             ]
           }
         `}</script>
-      </Head>
-      <HomeComponentWrapper>
-        <Header />
-        <StatsBar />
-        <TrustSignals />
-        <Features />
-        <Services />
-        <Industries />
-        <Innovation />
-        <Approach />
-        <ProcessTransparency />
-        <Partners />
-        <Testimonials />
-      </HomeComponentWrapper>
-    </SiteLayout>
-  );
+            </Head>
+            <HomeComponentWrapper>
+                <Header />
+                <StatsBar />
+                <TrustSignals />
+                <Features />
+                <Services />
+                <Industries />
+                <Innovation />
+                <Approach />
+                <ProcessTransparency />
+                <Partners />
+                <Testimonials />
+            </HomeComponentWrapper>
+        </SiteLayout>
+    );
 }

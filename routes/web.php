@@ -1,9 +1,15 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProfileController;
+
+// Permanent redirects for URLs indexed from the legacy WordPress site.
+Route::permanentRedirect('/about-us', '/company/about');
+Route::permanentRedirect('/contact-us', '/contact');
+Route::permanentRedirect('/capabilities', '/solutions');
+Route::permanentRedirect('/request-proposal', '/contact');
+Route::permanentRedirect('/portfolio', '/case-studies');
 
 // Main Pages
 Route::get('/', function () {
@@ -23,31 +29,31 @@ Route::prefix('solutions')->group(function () {
     Route::get('/', function () {
         return Inertia::render('solutions/index');
     })->name('solutions');
-    
+
     Route::get('/software-development-design', function () {
         return Inertia::render('solutions/software-development-design');
     })->name('solutions.software-development-design');
-    
+
     Route::get('/web-ecommerce-development', function () {
         return Inertia::render('solutions/web-ecommerce-development');
     })->name('solutions.web-ecommerce-development');
-    
+
     Route::get('/backend-api-development', function () {
         return Inertia::render('solutions/backend-api-development');
     })->name('solutions.backend-api-development');
-    
+
     Route::get('/frontend-development-uxui-design', function () {
         return Inertia::render('solutions/frontend-development-uxui-design');
     })->name('solutions.frontend-development-uxui-design');
-    
+
     Route::get('/mvp-product-development', function () {
         return Inertia::render('solutions/mvp-product-development');
     })->name('solutions.mvp-product-development');
-    
+
     Route::get('/mobile-cross-platform-development', function () {
         return Inertia::render('solutions/mobile-cross-platform-development');
     })->name('solutions.mobile-cross-platform-development');
-    
+
     Route::get('/hubspot-crm-development', function () {
         return Inertia::render('solutions/hubspot-crm-development');
     })->name('solutions.hubspot-crm-development');
@@ -58,15 +64,15 @@ Route::prefix('services')->group(function () {
     Route::get('/', function () {
         return Inertia::render('services/index');
     })->name('services');
-    
+
     Route::get('/software-engineering-it-consulting', function () {
         return Inertia::render('services/software-engineering-it-consulting');
     })->name('services.software-engineering-it-consulting');
-    
+
     Route::get('/application-devops-services', function () {
         return Inertia::render('services/application-devops-services');
     })->name('services.application-devops-services');
-    
+
     Route::get('/managed-it-support-services', function () {
         return Inertia::render('services/managed-it-support-services');
     })->name('services.managed-it-support-services');
@@ -84,11 +90,11 @@ Route::prefix('company')->group(function () {
     Route::get('/about', function () {
         return Inertia::render('company/about');
     })->name('company.about');
-    
+
     Route::get('/partners', function () {
         return Inertia::render('company/partners');
     })->name('company.partners');
-    
+
     Route::get('/faqs', function () {
         return Inertia::render('company/faqs');
     })->name('company.faqs');
@@ -103,25 +109,25 @@ Route::prefix('case-studies')->name('case-studies.')->group(function () {
                 ->orderBy('created_at', 'desc')
                 ->get();
         });
-            
+
         return Inertia::render('case-studies', [
             'caseStudies' => $caseStudies,
         ]);
     })->name('index');
-    
+
     Route::get('/filter', [\App\Http\Controllers\CaseStudyController::class, 'filter'])->name('filter');
-    
+
     // Original case study page
     Route::get('/{caseStudy:slug}', function (\App\Models\CaseStudy $caseStudy) {
         // Make sure only published case studies are viewable
         if ($caseStudy->status !== 'published') {
             abort(404);
         }
-        
+
         // Cache related case studies based on service type
         $relatedCaseStudies = cache()->remember(
-            "case-studies.related.{$caseStudy->service_type}.{$caseStudy->id}", 
-            3600, 
+            "case-studies.related.{$caseStudy->service_type}.{$caseStudy->id}",
+            3600,
             function () use ($caseStudy) {
                 return \App\Models\CaseStudy::where('status', 'published')
                     ->where('id', '!=', $caseStudy->id)
@@ -130,13 +136,13 @@ Route::prefix('case-studies')->name('case-studies.')->group(function () {
                     ->get();
             }
         );
-            
+
         return Inertia::render('case-study', [
             'caseStudy' => $caseStudy,
             'relatedCaseStudies' => $relatedCaseStudies,
         ]);
     })->name('show');
-    
+
     // Redirect detail route to main case study page
     Route::get('/{caseStudy:slug}/detail', function (\App\Models\CaseStudy $caseStudy) {
         return redirect()->route('case-studies.show', $caseStudy->slug);
@@ -148,19 +154,19 @@ Route::prefix('dallas')->name('dallas.')->group(function () {
     Route::get('/software-development', function () {
         return Inertia::render('dallas/software-development');
     })->name('software-development');
-    
+
     Route::get('/web-development', function () {
         return Inertia::render('dallas/web-development');
     })->name('web-development');
-    
+
     Route::get('/it-consulting', function () {
         return Inertia::render('dallas/it-consulting');
     })->name('it-consulting');
-    
+
     Route::get('/managed-it-services', function () {
         return Inertia::render('dallas/managed-it-services');
     })->name('managed-it-services');
-    
+
     Route::get('/mobile-app-development', function () {
         return Inertia::render('dallas/mobile-app-development');
     })->name('mobile-app-development');
@@ -171,19 +177,19 @@ Route::prefix('legal')->name('legal.')->group(function () {
     Route::get('/privacy-policy', function () {
         return Inertia::render('legal/privacy-policy');
     })->name('privacy-policy');
-    
+
     Route::get('/terms-of-service', function () {
         return Inertia::render('legal/terms-of-service');
     })->name('terms-of-service');
-    
+
     Route::get('/cookie-policy', function () {
         return Inertia::render('legal/cookie-policy');
     })->name('cookie-policy');
-    
+
     Route::get('/accessibility-statement', function () {
         return Inertia::render('legal/accessibility-statement');
     })->name('accessibility-statement');
-    
+
     Route::get('/sitemap', function () {
         return Inertia::render('legal/sitemap');
     })->name('sitemap');
@@ -199,7 +205,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // CSRF token endpoint for simple contact form
 Route::get('/csrf-token', function () {
     return response()->json([
-        'token' => csrf_token()
+        'token' => csrf_token(),
     ]);
 });
 

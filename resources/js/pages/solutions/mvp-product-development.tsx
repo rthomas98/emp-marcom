@@ -1,60 +1,63 @@
-import SiteLayout from '@/layouts/site-layout';
+import { MvpApproach } from '@/components/solutions/MvpApproach';
+import { MvpCTA } from '@/components/solutions/MvpCTA';
+import { MvpFeatures } from '@/components/solutions/MvpFeatures';
+import { MvpFinalCTA } from '@/components/solutions/MvpFinalCTA';
 import { MvpHeader } from '@/components/solutions/MvpHeader';
 import { MvpOverview } from '@/components/solutions/MvpOverview';
 import { MvpProcess } from '@/components/solutions/MvpProcess';
 import { MvpScalability } from '@/components/solutions/MvpScalability';
-import { MvpApproach } from '@/components/solutions/MvpApproach';
-import { MvpFeatures } from '@/components/solutions/MvpFeatures';
 import { MvpTestimonials } from '@/components/solutions/MvpTestimonials';
-import { MvpCTA } from '@/components/solutions/MvpCTA';
-import { MvpFinalCTA } from '@/components/solutions/MvpFinalCTA';
-import { Head } from '@inertiajs/react';
-import { generateLocalTitle, generateLocalDescription } from '@/utils/seo';
+import SiteLayout from '@/layouts/site-layout';
 import { generateBreadcrumbSchema } from '@/utils/schema';
+import { generateLocalDescription, generateLocalTitle } from '@/utils/seo';
+import { Head } from '@inertiajs/react';
 
 export default function MvpProductDevelopment() {
-  const pageTitle = 'MVP Product Development Dallas';
-  const pageDescription = 'Launch MVPs in 60 days. Dallas startups get real products, real users, real feedback with $25K minimum. Senior developers serving DFW metroplex.';
-  
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://empuls3.com' },
-    { name: 'Solutions', url: 'https://empuls3.com/solutions' },
-    { name: 'MVP Product Development', url: 'https://empuls3.com/solutions/mvp-product-development' }
-  ]);
-  
-  return (
-    <SiteLayout title={generateLocalTitle(pageTitle)}>
-      <Head>
-        <title>{generateLocalTitle(pageTitle)}</title>
-        <meta name="description" content={generateLocalDescription(pageDescription)} />
-        <meta name="keywords" content="MVP development Dallas, Dallas startup developers, rapid prototyping DFW, product development Dallas, lean startup, minimum viable product" />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={generateLocalTitle(pageTitle)} />
-        <meta property="og:description" content={generateLocalDescription(pageDescription)} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://empuls3.com/solutions/mvp-product-development" />
-        <meta property="og:image" content="https://empuls3.com/images/mvp-development-og.jpg" />
-        
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={generateLocalTitle(pageTitle)} />
-        <meta name="twitter:description" content="Launch MVPs in 60 days. Dallas startups get real products with $25K minimum by senior developers." />
-        <meta name="twitter:image" content="https://empuls3.com/images/mvp-development-og.jpg" />
-        
-        <link rel="canonical" href="https://empuls3.com/solutions/mvp-product-development" />
-        
-        {/* Breadcrumb Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">{`
+    const pageTitle = 'MVP Product Development Dallas';
+    const pageDescription =
+        'MVP and product development for Dallas startups and established businesses. Senior-led discovery, product design, engineering, and launch support with a $25K minimum.';
+
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://www.empuls3.com' },
+        { name: 'Solutions', url: 'https://www.empuls3.com/solutions' },
+        { name: 'MVP Product Development', url: 'https://www.empuls3.com/solutions/mvp-product-development' },
+    ]);
+
+    return (
+        <SiteLayout title={generateLocalTitle(pageTitle)}>
+            <Head>
+                <title>{generateLocalTitle(pageTitle)}</title>
+                <meta name="description" content={generateLocalDescription(pageDescription)} />
+                <meta
+                    name="keywords"
+                    content="MVP development Dallas, Dallas startup developers, rapid prototyping DFW, product development Dallas, lean startup, minimum viable product"
+                />
+
+                {/* Open Graph Tags */}
+                <meta property="og:title" content={generateLocalTitle(pageTitle)} />
+                <meta property="og:description" content={generateLocalDescription(pageDescription)} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.empuls3.com/solutions/mvp-product-development" />
+                <meta property="og:image" content="https://www.empuls3.com/images/mvp-development-og.jpg" />
+
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={generateLocalTitle(pageTitle)} />
+                <meta
+                    name="twitter:description"
+                    content="Senior-led MVP and product development for Dallas businesses, with a $25K minimum engagement."
+                />
+                <meta name="twitter:image" content="https://www.empuls3.com/images/mvp-development-og.jpg" />
+
+                {/* Breadcrumb Schema */}
+                <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+                <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "MVP & Product Development Services",
-            "description": "Launch MVPs in 60 days, not 6 months. We build real products that get user feedback fast. $25K minimum, senior developers only, no BS.",
-            "url": "https://empuls3.com/solutions/mvp-product-development",
+            "description": "Senior-led MVP and product development for Dallas businesses, from discovery and product design through engineering and launch support. $25K minimum engagement.",
+            "url": "https://www.empuls3.com/solutions/mvp-product-development",
             "speakable": {
               "@type": "SpeakableSpecification",
               "cssSelector": ["#mvp-header h1"]
@@ -62,12 +65,12 @@ export default function MvpProductDevelopment() {
             "mainEntity": {
               "@type": "Service",
               "name": "MVP & Product Development Services",
-              "description": "Stop talking, start building. We launch MVPs in 60 days so you can get real user feedback. Senior developers, fixed price, guaranteed delivery.",
+              "description": "Plan, design, and build a focused product with senior specialists, clear milestones, and regular user feedback.",
               "provider": {
                 "@type": "Organization",
                 "name": "Empuls3",
-                "url": "https://empuls3.com",
-                "logo": "https://empuls3.com/images/logos/empuls3-logo.svg"
+                "url": "https://www.empuls3.com",
+                "logo": "https://www.empuls3.com/images/logos/empuls3-logo.svg"
               },
               "serviceType": "Product Development",
               "areaServed": {
@@ -103,35 +106,7 @@ export default function MvpProductDevelopment() {
                     }
                   }
                 ]
-              },
-              "review": [
-                {
-                  "@type": "Review",
-                  "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                  },
-                  "author": {
-                    "@type": "Person",
-                    "name": "Sarah Johnson"
-                  },
-                  "reviewBody": "Spent 6 months on pitch decks. These guys built our MVP in 6 weeks. Got 500 users in first month. Raised $2M seed round. Should've called them sooner."
-                },
-                {
-                  "@type": "Review",
-                  "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                  },
-                  "author": {
-                    "@type": "Person",
-                    "name": "Michael Chen"
-                  },
-                  "reviewBody": "Competitors were eating our lunch. Built and launched MVP in 45 days. Now we're ahead. Fixed price, no surprises. Worth every penny."
-                }
-              ]
+              }
             },
             "faq": {
               "@type": "FAQPage",
@@ -141,7 +116,7 @@ export default function MvpProductDevelopment() {
                   "name": "How does a micro agency approach benefit MVP development?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Big agencies take 6 months and $200K. We do it in 60 days for $25-50K. You work directly with senior developers, not account managers. Remote = 40% cheaper. Launch fast or die slow."
+                    "text": "You work directly with senior product and engineering specialists. The engagement begins with a defined business case, scope, assumptions, milestones, and a $25K minimum."
                   }
                 },
                 {
@@ -157,23 +132,23 @@ export default function MvpProductDevelopment() {
                   "name": "How long does it take to develop an MVP?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Simple MVPs: 30-45 days. Complex MVPs: 60-90 days. We've launched 50+ MVPs for Dallas startups. Most get first users within 2 weeks of launch. Stop planning, start shipping."
+                    "text": "Timing depends on product scope, integrations, compliance requirements, and the validation plan. We provide a milestone-based delivery schedule after discovery."
                   }
                 }
               ]
             }
           }
         `}</script>
-      </Head>
-      <MvpHeader />
-      <MvpOverview />
-      <MvpProcess />
-      <MvpScalability />
-      <MvpApproach />
-      <MvpFeatures />
-      <MvpTestimonials />
-      <MvpCTA />
-      <MvpFinalCTA />
-    </SiteLayout>
-  );
+            </Head>
+            <MvpHeader />
+            <MvpOverview />
+            <MvpProcess />
+            <MvpScalability />
+            <MvpApproach />
+            <MvpFeatures />
+            <MvpTestimonials />
+            <MvpCTA />
+            <MvpFinalCTA />
+        </SiteLayout>
+    );
 }

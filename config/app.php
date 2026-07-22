@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'canonical_url' => env('APP_CANONICAL_URL', 'https://www.empuls3.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

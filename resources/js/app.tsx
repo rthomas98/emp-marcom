@@ -1,10 +1,12 @@
 import '../css/app.css';
 
 import { createInertiaApp } from '@inertiajs/react';
+import axios from 'axios';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { initializeTheme } from './hooks/use-appearance';
-import axios from 'axios';
+import { initializeConversionTracking } from './utils/analytics';
+import { formatDocumentTitle } from './utils/title';
 
 // Configure Axios to include CSRF token in all requests
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -16,10 +18,8 @@ if (csrfToken) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 }
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
-
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: formatDocumentTitle,
     resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
     setup({ el, App, props }) {
         const root = createRoot(el);
@@ -33,3 +33,4 @@ createInertiaApp({
 
 // This will set light / dark mode on load...
 initializeTheme();
+initializeConversionTracking();

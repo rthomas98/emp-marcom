@@ -47,13 +47,15 @@ class CaseStudyObserver
     protected function clearRelatedCache(CaseStudy $caseStudy): void
     {
         // Clear all related case studies cache for this service type
-        Cache::tags(['case-studies.related'])->flush();
-        
+        if (Cache::supportsTags()) {
+            Cache::tags(['case-studies.related'])->flush();
+        }
+
         // Alternatively, if tags are not available:
         $caseStudies = CaseStudy::where('status', 'published')
             ->where('service_type', $caseStudy->service_type)
             ->pluck('id');
-            
+
         foreach ($caseStudies as $id) {
             Cache::forget("case-studies.related.{$caseStudy->service_type}.{$id}");
         }
