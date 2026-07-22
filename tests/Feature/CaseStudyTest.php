@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\CaseStudy;
-use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 class CaseStudyTest extends TestCase
 {
@@ -29,12 +29,12 @@ class CaseStudyTest extends TestCase
     {
         // Create some published case studies
         $publishedStudies = CaseStudy::factory()->count(3)->create([
-            'status' => 'published'
+            'status' => 'published',
         ]);
 
         // Create a draft case study (should not appear)
         CaseStudy::factory()->create([
-            'status' => 'draft'
+            'status' => 'draft',
         ]);
 
         $response = $this->get('/case-studies');
@@ -53,13 +53,13 @@ class CaseStudyTest extends TestCase
     {
         $caseStudy = CaseStudy::factory()->create([
             'status' => 'published',
-            'service_type' => 'web-development'
+            'service_type' => 'web-development',
         ]);
 
         // Create related case studies
         CaseStudy::factory()->count(2)->create([
             'status' => 'published',
-            'service_type' => 'web-development'
+            'service_type' => 'web-development',
         ]);
 
         $response = $this->get("/case-studies/{$caseStudy->slug}");
@@ -78,7 +78,7 @@ class CaseStudyTest extends TestCase
     public function test_draft_case_study_not_accessible()
     {
         $caseStudy = CaseStudy::factory()->create([
-            'status' => 'draft'
+            'status' => 'draft',
         ]);
 
         $response = $this->get("/case-studies/{$caseStudy->slug}");
@@ -95,7 +95,7 @@ class CaseStudyTest extends TestCase
 
         // Create case studies
         CaseStudy::factory()->count(5)->create([
-            'status' => 'published'
+            'status' => 'published',
         ]);
 
         // First request should cache the results
@@ -107,7 +107,7 @@ class CaseStudyTest extends TestCase
 
         // Create a new case study
         $newStudy = CaseStudy::factory()->create([
-            'status' => 'published'
+            'status' => 'published',
         ]);
 
         // Cache should be cleared by observer
@@ -123,12 +123,12 @@ class CaseStudyTest extends TestCase
 
         $caseStudy = CaseStudy::factory()->create([
             'status' => 'published',
-            'service_type' => 'web-development'
+            'service_type' => 'web-development',
         ]);
 
         CaseStudy::factory()->count(3)->create([
             'status' => 'published',
-            'service_type' => 'web-development'
+            'service_type' => 'web-development',
         ]);
 
         // First request should cache the results
@@ -147,12 +147,12 @@ class CaseStudyTest extends TestCase
     {
         CaseStudy::factory()->count(3)->create([
             'status' => 'published',
-            'service_type' => 'web-development'
+            'service_type' => 'web-development',
         ]);
 
         CaseStudy::factory()->count(2)->create([
             'status' => 'published',
-            'service_type' => 'mobile-development'
+            'service_type' => 'mobile-development',
         ]);
 
         $response = $this->get('/case-studies/filter?service_type=web-development');
@@ -163,5 +163,52 @@ class CaseStudyTest extends TestCase
                 ->has('caseStudies', 3)
                 ->where('filter.service_type', 'web-development')
             );
+    }
+
+    public function test_case_study_media_uses_the_configured_public_disk(): void
+    {
+        config([
+            'filesystems.media' => 'case-study-test',
+            'filesystems.media_visibility' => 'public',
+            'filesystems.disks.case-study-test' => [
+                'driver' => 'local',
+                'root' => storage_path('framework/testing/disks/case-study-test'),
+                'url' => 'https://media.example.test',
+                'visibility' => 'public',
+                'throw' => false,
+            ],
+        ]);
+
+        Storage::forgetDisk('case-study-test');
+
+        $caseStudy = new CaseStudy([
+            'featured_image' => '/storage/case-studies/featured/example.png',
+            'logo' => 'case-studies/logos/example.svg',
+            'gallery_images' => [
+                ['src' => 'storage/case-studies/gallery/example.png', 'alt' => 'Example'],
+            ],
+        ]);
+
+        $this->assertSame(
+            'https://media.example.test/case-studies/featured/example.png',
+            $caseStudy->featured_image
+        );
+        $this->assertSame(
+            'https://media.example.test/case-studies/logos/example.svg',
+            $caseStudy->logo
+        );
+        $this->assertSame(
+            'https://media.example.test/case-studies/gallery/example.png',
+            $caseStudy->gallery_images[0]['src']
+        );
+    }
+
+    public function test_case_study_media_keeps_versioned_public_images_on_the_site_domain(): void
+    {
+        $caseStudy = new CaseStudy([
+            'featured_image' => 'images/emp-logo.svg',
+        ]);
+
+        $this->assertSame(url('images/emp-logo.svg'), $caseStudy->featured_image);
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CaseStudyResource\Pages;
-use App\Filament\Resources\CaseStudyResource\RelationManagers;
 use App\Models\CaseStudy;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
@@ -23,8 +22,6 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class CaseStudyResource extends Resource
@@ -32,11 +29,11 @@ class CaseStudyResource extends Resource
     protected static ?string $model = CaseStudy::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    
+
     protected static ?string $navigationGroup = 'Content';
-    
+
     protected static ?string $navigationLabel = 'Case Studies';
-    
+
     protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
@@ -50,16 +47,16 @@ class CaseStudyResource extends Resource
                             ->maxLength(255)
                             ->live(onBlur: true)
                             ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
-                            
+
                         TextInput::make('slug')
                             ->required()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true),
-                            
+
                         TextInput::make('client_name')
                             ->required()
                             ->maxLength(255),
-                            
+
                         Select::make('industry')
                             ->required()
                             ->options([
@@ -76,7 +73,7 @@ class CaseStudyResource extends Resource
                                 'Entertainment' => 'Entertainment',
                                 'Other' => 'Other',
                             ]),
-                            
+
                         Select::make('service_type')
                             ->required()
                             ->options([
@@ -91,14 +88,14 @@ class CaseStudyResource extends Resource
                                 'Managed IT Services' => 'Managed IT Services',
                                 'Other' => 'Other',
                             ]),
-                            
+
                         DatePicker::make('completion_date'),
-                        
+
                         TextInput::make('website_url')
                             ->url()
                             ->maxLength(255),
                     ])->columns(2),
-                    
+
                 Section::make('Case Study Content')
                     ->schema([
                         RichEditor::make('challenge')
@@ -108,7 +105,7 @@ class CaseStudyResource extends Resource
                                 'h2', 'h3', 'paragraph', 'blockquote',
                             ])
                             ->columnSpanFull(),
-                            
+
                         RichEditor::make('solution')
                             ->required()
                             ->toolbarButtons([
@@ -116,7 +113,7 @@ class CaseStudyResource extends Resource
                                 'h2', 'h3', 'paragraph', 'blockquote',
                             ])
                             ->columnSpanFull(),
-                            
+
                         RichEditor::make('results')
                             ->required()
                             ->toolbarButtons([
@@ -125,7 +122,7 @@ class CaseStudyResource extends Resource
                             ])
                             ->columnSpanFull(),
                     ]),
-                    
+
                 Section::make('Testimonial')
                     ->schema([
                         RichEditor::make('testimonial')
@@ -134,30 +131,31 @@ class CaseStudyResource extends Resource
                                 'paragraph', 'blockquote',
                             ])
                             ->columnSpanFull(),
-                            
+
                         TextInput::make('testimonial_author')
                             ->maxLength(255),
-                            
+
                         TextInput::make('testimonial_position')
                             ->maxLength(255),
                     ])->columns(2),
-                    
+
                 Section::make('Media')
                     ->schema([
                         FileUpload::make('featured_image')
                             ->required()
                             ->image()
-                            ->disk('public')
+                            ->disk(config('filesystems.media', 'public'))
                             ->directory('case-studies/featured')
                             ->maxSize(2048)
-                            ->visibility('public')
+                            ->visibility(config('filesystems.media_visibility', 'public'))
                             ->preserveFilenames()
                             ->columnSpanFull(),
-                            
+
                         FileUpload::make('logo')
                             ->image()
-                            ->disk('public')
+                            ->disk(config('filesystems.media', 'public'))
                             ->directory('case-studies/logos')
+                            ->visibility(config('filesystems.media_visibility', 'public'))
                             ->preserveFilenames()
                             ->maxSize(2048),
 
@@ -167,8 +165,9 @@ class CaseStudyResource extends Resource
                                 FileUpload::make('src')
                                     ->label('Image')
                                     ->image()
-                                    ->disk('public')
+                                    ->disk(config('filesystems.media', 'public'))
                                     ->directory('case-studies/gallery')
+                                    ->visibility(config('filesystems.media_visibility', 'public'))
                                     ->preserveFilenames()
                                     ->maxSize(2048)
                                     ->required(),
@@ -180,15 +179,15 @@ class CaseStudyResource extends Resource
                             ->addActionLabel('Add Image to Gallery')
                             ->columnSpanFull(),
                     ]),
-                    
+
                 Section::make('SEO & Settings')
                     ->schema([
                         TextInput::make('meta_title')
                             ->maxLength(60),
-                            
+
                         TextInput::make('meta_description')
                             ->maxLength(160),
-                            
+
                         Select::make('status')
                             ->required()
                             ->options([
@@ -196,7 +195,7 @@ class CaseStudyResource extends Resource
                                 'published' => 'Published',
                             ])
                             ->default('draft'),
-                            
+
                         Toggle::make('is_featured')
                             ->label('Feature this case study')
                             ->default(false),
@@ -211,27 +210,27 @@ class CaseStudyResource extends Resource
                 ImageColumn::make('featured_image')
                     ->square()
                     ->label('Image'),
-                    
+
                 TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
-                    
+
                 TextColumn::make('client_name')
                     ->searchable()
                     ->sortable(),
-                    
+
                 TextColumn::make('industry')
                     ->searchable()
                     ->sortable(),
-                    
+
                 TextColumn::make('service_type')
                     ->searchable()
                     ->sortable(),
-                    
+
                 IconColumn::make('is_featured')
                     ->boolean()
                     ->sortable(),
-                    
+
                 TextColumn::make('status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
@@ -239,12 +238,12 @@ class CaseStudyResource extends Resource
                         'draft' => 'gray',
                     })
                     ->sortable(),
-                    
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                    
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
@@ -264,7 +263,7 @@ class CaseStudyResource extends Resource
                         'Entertainment' => 'Entertainment',
                         'Other' => 'Other',
                     ]),
-                    
+
                 SelectFilter::make('service_type')
                     ->options([
                         'Web Development' => 'Web Development',
@@ -278,13 +277,13 @@ class CaseStudyResource extends Resource
                         'Managed IT Services' => 'Managed IT Services',
                         'Other' => 'Other',
                     ]),
-                    
+
                 SelectFilter::make('status')
                     ->options([
                         'draft' => 'Draft',
                         'published' => 'Published',
                     ]),
-                    
+
                 TernaryFilter::make('is_featured')
                     ->label('Featured')
                     ->indicator('Featured'),
