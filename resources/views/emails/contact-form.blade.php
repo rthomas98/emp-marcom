@@ -107,10 +107,12 @@
             </div>
             @endif
             
-            <div class="field">
-                <p class="field-label">Message:</p>
-                <p>{{ $formData['message'] }}</p>
-            </div>
+            @if(!empty($formData['message']))
+                <div class="field">
+                    <p class="field-label">Message:</p>
+                    <p>{{ $formData['message'] }}</p>
+                </div>
+            @endif
         </div>
         <div class="footer">
             <p>This email was sent from the contact form on the Empuls3 website.</p>

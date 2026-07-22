@@ -12,6 +12,16 @@ class CaseStudyTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // Historical migrations seed sample case studies outside production.
+        // Each test owns its fixtures so assertions remain deterministic.
+        CaseStudy::query()->delete();
+        Cache::flush();
+    }
+
     /**
      * Test case studies index page.
      */
@@ -148,6 +158,10 @@ class CaseStudyTest extends TestCase
         $response = $this->get('/case-studies/filter?service_type=web-development');
 
         $response->assertStatus(200)
-            ->assertJsonCount(3, 'data');
+            ->assertInertia(fn ($page) => $page
+                ->component('CaseStudies/Index')
+                ->has('caseStudies', 3)
+                ->where('filter.service_type', 'web-development')
+            );
     }
 }

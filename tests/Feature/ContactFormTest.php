@@ -44,6 +44,29 @@ class ContactFormTest extends TestCase
     }
 
     /**
+     * Test a valid project request without the optional message field.
+     */
+    public function test_contact_form_submission_without_optional_message()
+    {
+        Mail::fake();
+
+        $response = $this->postJson('/contact/submit', [
+            'name' => 'Project Contact',
+            'email' => 'project@example.com',
+            'projectType' => 'custom-software',
+            'projectDescription' => 'Modernize an internal workflow application.',
+            'submit_time' => time() - 10,
+        ]);
+
+        $response->assertStatus(200)
+            ->assertJson([
+                'success' => true,
+            ]);
+
+        Mail::assertSent(ContactFormMail::class);
+    }
+
+    /**
      * Test contact form validation errors.
      */
     public function test_contact_form_validation_errors()
@@ -118,6 +141,7 @@ class ContactFormTest extends TestCase
                 'name' => 'Test User',
                 'email' => 'test@example.com',
                 'projectType' => 'web-development',
+                'message' => 'Rate limit test submission.',
                 'submit_time' => time() - 10,
             ]);
 
@@ -129,6 +153,7 @@ class ContactFormTest extends TestCase
             'name' => 'Test User',
             'email' => 'test@example.com',
             'projectType' => 'web-development',
+            'message' => 'Rate limit test submission.',
             'submit_time' => time() - 10,
         ]);
 
