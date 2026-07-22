@@ -2,7 +2,7 @@ import CaseStudiesCta from '@/components/case-studies/CaseStudiesCta';
 import CaseStudyGallery from '@/components/case-studies/CaseStudyGallery';
 import CaseStudyGallery7 from '@/components/case-studies/CaseStudyGallery7';
 import SiteLayout from '@/layouts/site-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { Calendar, Globe } from 'lucide-react';
 import React from 'react';
 
@@ -40,31 +40,45 @@ interface CaseStudyProps {
     relatedCaseStudies: CaseStudy[];
 }
 
+const verifiedOutcomeOverrides: Record<string, string> = {
+    'hebert-thomas-law-website-refresh':
+        '<p>The delivered outcome was a responsive WordPress website with updated information architecture, service presentation, and calls to action. Empuls3 has not received client-approved traffic or lead measurements for publication, so no quantitative performance outcome is claimed here.</p>',
+    'solushiens-modern-website-redesign':
+        '<p>The delivered outcome was a redesigned responsive website with updated navigation, visual presentation, and service content. Empuls3 has not received client-approved engagement, bounce-rate, or lead measurements for publication, so no quantitative performance outcome is claimed here.</p>',
+    'codegig-strategic-pivot-new-website-for-new-audiences':
+        '<p>The delivered outcome was a new website, message structure, and service architecture aligned to CodeGig’s AI and machine-learning positioning. Empuls3 has not received client-approved inquiry or growth measurements for publication, so no quantitative performance outcome is claimed here.</p>',
+};
+
+function formatDate(dateString: string | null) {
+    if (!dateString) return null;
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+
 export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyProps) {
-    const formatDate = (dateString: string | null) => {
-        if (!dateString) return null;
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-    };
+    const publishedOutcome = verifiedOutcomeOverrides[caseStudy.slug] || caseStudy.results;
+    const metaDescription =
+        caseStudy.meta_description ||
+        `Review the challenge, delivered scope, and approved outcome for ${caseStudy.client_name}'s ${caseStudy.service_type.toLowerCase()} engagement with Empuls3.`;
 
     return (
         <>
             <Head>
                 <title>{caseStudy.meta_title || `${caseStudy.title} | Empuls3 Case Study`}</title>
-                {caseStudy.meta_description && <meta name="description" content={caseStudy.meta_description} />}
+                <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={caseStudy.meta_title || `${caseStudy.title} | Empuls3 Case Study`} />
-                {caseStudy.meta_description && <meta property="og:description" content={caseStudy.meta_description} />}
+                <meta property="og:description" content={metaDescription} />
                 <meta property="og:url" content={`https://www.empuls3.com/case-studies/${caseStudy.slug}`} />
             </Head>
 
             {/* Hero Section */}
-            <section className="from-secondary to-primary bg-gradient-to-r py-20 text-white">
+            <section className="from-secondary to-primary bg-linear-to-r py-20 text-white">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl">
                         <div className="mb-6 flex items-center gap-4">
-                            <a href="/case-studies" className="text-white/80 transition-colors hover:text-white">
+                            <Link href="/case-studies" className="text-white/80 transition-colors hover:text-white">
                                 ← Back to Case Studies
-                            </a>
+                            </Link>
                         </div>
                         <h1 className="mb-4 text-4xl font-bold md:text-5xl">{caseStudy.title}</h1>
                         <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -119,8 +133,12 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
                             </div>
 
                             <div>
-                                <h2 className="text-secondary mb-6 text-2xl font-bold">The Results</h2>
-                                <div className="prose text-secondary max-w-none" dangerouslySetInnerHTML={{ __html: caseStudy.results }} />
+                                <h2 className="text-secondary mb-6 text-2xl font-bold">Delivered Outcome</h2>
+                                <div className="prose text-secondary max-w-none" dangerouslySetInnerHTML={{ __html: publishedOutcome }} />
+                                <p className="mt-5 rounded-lg bg-gray-50 p-4 text-sm leading-6 text-gray-600">
+                                    Evidence note: business-impact measurements are published only when the client has approved the supporting data. A
+                                    completed deliverable is not presented as proof of traffic, leads, revenue, savings, or engagement by itself.
+                                </p>
                             </div>
                         </div>
 
@@ -179,4 +197,4 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
     );
 }
 
-CaseStudy.layout = (page: React.ReactNode) => <SiteLayout children={page} title="Case Study | Empuls3" />;
+CaseStudy.layout = (page: React.ReactNode) => <SiteLayout title="Case Study | Empuls3">{page}</SiteLayout>;

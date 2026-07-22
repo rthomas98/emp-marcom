@@ -10,6 +10,20 @@ Route::permanentRedirect('/contact-us', '/contact');
 Route::permanentRedirect('/capabilities', '/solutions');
 Route::permanentRedirect('/request-proposal', '/contact');
 Route::permanentRedirect('/portfolio', '/case-studies');
+Route::permanentRedirect('/about', '/company/about');
+Route::permanentRedirect('/faq', '/company/faqs');
+Route::permanentRedirect('/resources', '/case-studies');
+Route::permanentRedirect('/careers', '/company/about');
+Route::permanentRedirect('/company/values', '/company/about');
+Route::permanentRedirect('/company/achievements', '/case-studies');
+Route::permanentRedirect('/company/case-studies', '/case-studies');
+Route::permanentRedirect('/company/partnerships', '/company/partners');
+Route::permanentRedirect('/industries/healthcare', '/industries');
+Route::permanentRedirect('/industries/finance', '/industries');
+Route::permanentRedirect('/industries/ecommerce', '/industries');
+Route::permanentRedirect('/industries/manufacturing', '/industries');
+Route::permanentRedirect('/industries/education', '/industries');
+Route::permanentRedirect('/industries/startups', '/industries');
 
 // Main Pages
 Route::get('/', function () {
