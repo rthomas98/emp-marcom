@@ -1,5 +1,6 @@
 'use client';
 
+import { portfolioCaptures } from '@/content/portfolio-captures';
 import { Link } from '@inertiajs/react';
 
 interface CaseStudy {
@@ -34,25 +35,34 @@ export function CaseStudiesGallery({ caseStudies = [] }: CaseStudiesGalleryProps
                     <p className="rounded-xl bg-gray-50 p-8 text-center text-gray-700">No published case studies are available right now.</p>
                 ) : (
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {displayCaseStudies.map((caseStudy) => (
-                            <Link key={caseStudy.id} href={`/case-studies/${caseStudy.slug}`} className="group mb-8 block w-full">
-                                <div className="relative h-[300px] overflow-hidden rounded-lg">
-                                    <img
-                                        src={caseStudy.featured_image}
-                                        alt={caseStudy.title}
-                                        className="size-full border-0 object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-linear-to-t from-[#1F1946]/80 to-transparent opacity-80"></div>
-                                    <div className="absolute bottom-0 left-0 p-6 text-white">
-                                        <span className="mb-3 inline-block rounded-full bg-[#BD1550] px-3 py-1 text-xs font-semibold">
-                                            {caseStudy.service_type}
-                                        </span>
-                                        <h3 className="mb-2 text-xl font-bold">{caseStudy.title}</h3>
-                                        <p className="text-white/80">{caseStudy.client_name}</p>
+                        {displayCaseStudies.map((caseStudy) => {
+                            const capture = portfolioCaptures[caseStudy.slug];
+
+                            return (
+                                <Link key={caseStudy.id} href={`/case-studies/${caseStudy.slug}`} className="group mb-8 block w-full">
+                                    <div className="relative h-[300px] overflow-hidden rounded-lg">
+                                        <img
+                                            src={capture?.src ?? caseStudy.featured_image}
+                                            alt={capture?.alt ?? caseStudy.title}
+                                            className={`size-full border-0 object-cover transition-transform duration-500 group-hover:scale-105 ${capture ? 'object-top' : ''}`}
+                                        />
+                                        <div className="absolute inset-0 bg-linear-to-t from-[#1F1946]/80 to-transparent opacity-80"></div>
+                                        {capture && (
+                                            <span className="absolute top-4 right-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#1F1946]">
+                                                Live site · {capture.capturedOn}
+                                            </span>
+                                        )}
+                                        <div className="absolute bottom-0 left-0 p-6 text-white">
+                                            <span className="mb-3 inline-block rounded-full bg-[#BD1550] px-3 py-1 text-xs font-semibold">
+                                                {caseStudy.service_type}
+                                            </span>
+                                            <h3 className="mb-2 text-xl font-bold">{caseStudy.title}</h3>
+                                            <p className="text-white/80">{caseStudy.client_name}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                        ))}
+                                </Link>
+                            );
+                        })}
                     </div>
                 )}
             </div>

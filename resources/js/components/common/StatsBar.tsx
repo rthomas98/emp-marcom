@@ -31,8 +31,8 @@ export function StatsBar() {
             label: 'Add ongoing senior engineering capacity',
         },
         {
-            value: 'Modernize',
-            label: 'Replace manual processes with dependable systems',
+            value: 'Build',
+            label: 'Plan and launch a new website or web app',
         },
     ];
 

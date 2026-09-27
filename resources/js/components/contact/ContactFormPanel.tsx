@@ -145,7 +145,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                     <div id="panel-general" role="tabpanel" aria-labelledby="tab-general">
                         <div className="mb-6">
                             <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                What is slowing the business down? *
+                                How can we help? *
                             </label>
                             <textarea
                                 id="message"
@@ -157,7 +157,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                                 required
                                 aria-required="true"
                                 aria-describedby="message-required"
-                                placeholder="Describe the affected workflow, who depends on it, and the consequence of the problem."
+                                placeholder="Tell us about the new project, consultation topic, or problem you are dealing with, and who it affects."
                             />
                             <span id="message-required" className="sr-only">
                                 Required field
@@ -186,6 +186,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                                 aria-describedby="projectType-required"
                             >
                                 <option value="">Select Engagement Type</option>
+                                <option value="new-website-app">New Website or Web App Build</option>
                                 <option value="software-rescue">Software Rescue & Legacy Modernization</option>
                                 <option value="systems-integration">CRM, API & Workflow Integration</option>
                                 <option value="engineering-support">Ongoing Senior Engineering Support</option>
@@ -199,7 +200,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                         <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                             <div>
                                 <label htmlFor="budget" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                    Implementation Budget
+                                    Budget Range <span className="font-normal text-gray-500">(optional)</span>
                                 </label>
                                 <select
                                     id="budget"
@@ -207,12 +208,18 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                                     value={formData.budget}
                                     onChange={onChange}
                                     className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
+                                    aria-describedby="budget-help"
                                 >
                                     <option value="">Select Budget Range</option>
+                                    <option value="not-sure">Not sure yet</option>
+                                    <option value="focused-assessment">Focused assessment first</option>
                                     <option value="25k-50k">$25,000 - $50,000</option>
                                     <option value="50k-100k">$50,000 - $100,000</option>
                                     <option value="over-100k">Over $100,000</option>
                                 </select>
+                                <p id="budget-help" className="mt-2 text-sm text-gray-600">
+                                    Build and substantial implementation engagements generally begin at $25,000. A focused assessment can be smaller.
+                                </p>
                             </div>
 
                             <div>
@@ -238,7 +245,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
 
                         <div className="mb-6">
                             <label htmlFor="projectDescription" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                Business and System Context *
+                                What do you want to build or fix? *
                             </label>
                             <textarea
                                 id="projectDescription"
@@ -250,7 +257,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                                 required
                                 aria-required="true"
                                 aria-describedby="projectDescription-required"
-                                placeholder="Describe the workflow, systems involved, current owner or vendor, business impact, and the decision leadership needs to make."
+                                placeholder="For a new website or app, describe who will use it and what it needs to do. For an existing system, describe the workflow, systems involved, current owner or vendor, and business impact."
                             />
                             <span id="projectDescription-required" className="sr-only">
                                 Required field
@@ -280,7 +287,7 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70"
                     aria-live="polite"
                 >
-                    {isSubmitting ? 'Sending…' : formType === 'general' ? 'Send Inquiry' : 'Request a Software Review'}
+                    {isSubmitting ? 'Sending…' : formType === 'general' ? 'Send Inquiry' : 'Send Project Request'}
                 </button>
             </form>
         </div>

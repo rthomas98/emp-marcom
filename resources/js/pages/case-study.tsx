@@ -1,6 +1,7 @@
 import CaseStudiesCta from '@/components/case-studies/CaseStudiesCta';
 import CaseStudyGallery from '@/components/case-studies/CaseStudyGallery';
 import CaseStudyGallery7 from '@/components/case-studies/CaseStudyGallery7';
+import { portfolioCaptureCaption, portfolioCaptures, unavailableClientSites } from '@/content/portfolio-captures';
 import SiteLayout from '@/layouts/site-layout';
 import { Head, Link } from '@inertiajs/react';
 import { Calendar, Globe } from 'lucide-react';
@@ -57,6 +58,8 @@ function formatDate(dateString: string | null) {
 
 export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyProps) {
     const publishedOutcome = verifiedOutcomeOverrides[caseStudy.slug] || caseStudy.results;
+    const liveCapture = portfolioCaptures[caseStudy.slug];
+    const siteUnavailable = unavailableClientSites[caseStudy.slug];
     const metaDescription =
         caseStudy.meta_description ||
         `Review the challenge, delivered scope, and approved outcome for ${caseStudy.client_name}'s ${caseStudy.service_type.toLowerCase()} engagement with Empuls3.`;
@@ -98,6 +101,35 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
                     </div>
                 </div>
             </section>
+
+            {/* A genuine live capture leads; decorative gallery images follow */}
+            {liveCapture && (
+                <section className="py-12" aria-labelledby="live-site-heading">
+                    <div className="container mx-auto px-4">
+                        <h2 id="live-site-heading" className="text-secondary mb-6 text-2xl font-bold">
+                            The Live Site
+                        </h2>
+                        <figure>
+                            <div className="overflow-hidden rounded-xl border border-gray-200 shadow-lg">
+                                <div className="flex items-center gap-1.5 border-b border-gray-200 bg-gray-100 px-4 py-3" aria-hidden="true">
+                                    <span className="size-3 rounded-full bg-gray-300" />
+                                    <span className="size-3 rounded-full bg-gray-300" />
+                                    <span className="size-3 rounded-full bg-gray-300" />
+                                </div>
+                                <img
+                                    src={liveCapture.src}
+                                    alt={liveCapture.alt}
+                                    width={liveCapture.width}
+                                    height={liveCapture.height}
+                                    loading="lazy"
+                                    className="block h-auto w-full border-0"
+                                />
+                            </div>
+                            <figcaption className="mt-3 text-sm text-gray-600">{portfolioCaptureCaption(liveCapture)}</figcaption>
+                        </figure>
+                    </div>
+                </section>
+            )}
 
             {/* Project Gallery or Featured Image */}
             {caseStudy.gallery_images && caseStudy.gallery_images.length > 0 ? (
@@ -163,7 +195,17 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
                                         </div>
                                     )}
 
-                                    {caseStudy.website_url && (
+                                    {caseStudy.website_url && siteUnavailable && (
+                                        <div className="flex items-center gap-3">
+                                            <Globe size={20} className="text-primary" />
+                                            <div>
+                                                <p className="text-secondary text-sm">Website</p>
+                                                <p className="text-secondary font-medium">Unavailable when checked {siteUnavailable.checkedOn}</p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {caseStudy.website_url && !siteUnavailable && (
                                         <div className="flex items-center gap-3">
                                             <Globe size={20} className="text-primary" />
                                             <div>

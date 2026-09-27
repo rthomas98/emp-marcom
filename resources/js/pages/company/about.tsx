@@ -1,6 +1,11 @@
+import { FounderIntro } from '@/components/home/FounderIntro';
 import { LeadPage } from '@/components/marketing/LeadPage';
 import { leadPages } from '@/content/lead-pages';
 
 export default function About() {
-    return <LeadPage config={leadPages.about} />;
+    return (
+        <LeadPage config={leadPages.about}>
+            <FounderIntro showAboutLink={false} />
+        </LeadPage>
+    );
 }

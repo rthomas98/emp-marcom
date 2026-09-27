@@ -212,7 +212,7 @@ export const leadPages = {
         introduction:
             'Empuls3 designs and repairs integrations for established businesses whose teams are re-entering data, chasing status, reconciling reports, or compensating for brittle automation.',
         primaryAction: { label: 'Discuss Your Systems', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book an Integration Call', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request an Integration Call', href: '/contact#schedule-meeting' },
         problemHeading: 'Integration gaps hide in daily work',
         problemIntroduction: 'When systems do not agree, people become the integration layer and operational visibility suffers.',
         problems: [
@@ -374,7 +374,7 @@ export const leadPages = {
         introduction:
             'Empuls3 helps established organizations evaluate and deliver mobile experiences for field teams, customer self-service, inspections, approvals, data capture, and other device-dependent work.',
         primaryAction: { label: 'Discuss a Mobile Workflow', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book a Product Call', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request a Product Call', href: '/contact#schedule-meeting' },
         problemHeading: 'A mobile app should solve a specific access problem',
         problemIntroduction:
             'We first determine whether native or cross-platform software is justified, or whether a responsive web experience would serve the workflow more responsibly.',
@@ -426,7 +426,7 @@ export const leadPages = {
         introduction:
             'We help established service businesses repair CRM structure, connect surrounding systems, automate dependable handoffs, and create reporting leaders can trust.',
         primaryAction: { label: 'Discuss Your CRM', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book a Systems Call', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request a Systems Call', href: '/contact#schedule-meeting' },
         problemHeading: 'CRM problems usually cross teams and systems',
         problemIntroduction: 'Adding fields and automation without resolving ownership often creates more complexity, not better adoption.',
         problems: [
@@ -542,7 +542,7 @@ export const leadPages = {
         introduction:
             'Empuls3 works through focused rescue and integration projects or an ongoing senior engineering relationship. The right structure depends on urgency, uncertainty, and who will own the system afterward.',
         primaryAction: { label: 'Discuss an Engagement', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book a Consultation', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request a Consultation', href: '/contact#schedule-meeting' },
         problemHeading: 'Choose by ownership need, not a menu of technologies',
         problemIntroduction: 'The engagement should match the operating responsibility the business needs to establish.',
         problems: [
@@ -593,7 +593,7 @@ export const leadPages = {
         introduction:
             'Empuls3 supports established businesses that need consistent senior engineering judgment and delivery but do not need—or cannot yet justify—a full internal software department.',
         primaryAction: { label: 'Discuss Engineering Support', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book an Ownership Call', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request an Ownership Call', href: '/contact#schedule-meeting' },
         problemHeading: 'What an ownership gap looks like',
         problemIntroduction: 'Work keeps moving, but decisions, maintenance, and risk are spread across vendors and overloaded employees.',
         problems: [
@@ -1032,7 +1032,7 @@ export const leadPages = {
         introduction:
             'Empuls3 helps DFW owners, COOs, and IT leaders assess software risk, vendor recommendations, architecture choices, delivery plans, and ownership gaps.',
         primaryAction: { label: 'Discuss a Technical Decision', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book a Consultation', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request a Consultation', href: '/contact#schedule-meeting' },
         problemHeading: 'Leadership needs more than technical activity',
         problemIntroduction: 'The value of consulting is a clear decision, responsible plan, and accountable owner.',
         problems: [
@@ -1149,7 +1149,7 @@ export const leadPages = {
         introduction:
             'Empuls3 plans and builds mobile experiences for DFW organizations with a defined field, customer, approval, inspection, or data-capture need.',
         primaryAction: { label: 'Discuss a Mobile Workflow', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Book a Product Call', href: '/contact#schedule-meeting' },
+        secondaryAction: { label: 'Request a Product Call', href: '/contact#schedule-meeting' },
         problemHeading: 'The strongest mobile cases begin with access and context',
         problemIntroduction: 'We evaluate whether a mobile app is necessary before choosing native, cross-platform, or responsive web delivery.',
         problems: [

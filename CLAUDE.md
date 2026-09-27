@@ -1,3 +1,5 @@
+For Orca paired work, read `AGENTS.md`, `ORCA_WORKFLOW.md` and `.claude/agents/emp-marcom-frontend.md`. Byterover availability follows the guidance in `AGENTS.md`.
+
 # Project-Specific Instructions for Claude
 
 ## Project Overview

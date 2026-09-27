@@ -1,3 +1,4 @@
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import { CheckCircle, Clock, DollarSign, Shield, Users } from 'lucide-react';
 import React from 'react';
@@ -75,7 +76,7 @@ export function ProcessTransparency() {
         },
         {
             icon: <Clock className="h-8 w-8" />,
-            title: '2-Hour Response Time',
+            title: 'One-Business-Day Response',
             description: 'Tell us what is urgent and we will respond within one business day with the most practical next step.',
         },
         {
@@ -85,8 +86,8 @@ export function ProcessTransparency() {
         },
         {
             icon: <CheckCircle className="h-8 w-8" />,
-            title: 'Results Focused',
-            description: "We don't get paid until you're happy. Your success is our success.",
+            title: 'Agreed Scope and Acceptance',
+            description: 'Each deliverable is reviewed against the scope and acceptance criteria agreed in your proposal.',
         },
     ];
 
@@ -153,12 +154,12 @@ export function ProcessTransparency() {
                 <div className="text-center">
                     <p className="mb-6 text-lg text-gray-700">Ready to see how this process works for your business?</p>
                     <Link
-                        href="/contact"
+                        href={contactHref('consultation')}
                         className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-11 min-h-[44px] items-center justify-center rounded-md px-6 py-2.5 text-base font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
                     >
-                        Schedule Your Free Discovery Call
+                        Request a Free Discovery Call
                     </Link>
-                    <p className="mt-4 text-sm text-gray-500">30-minute call • No obligation • Get honest advice about your project</p>
+                    <p className="mt-4 text-sm text-gray-500">Reply within one business day • No obligation • Get honest advice about your project</p>
                 </div>
             </div>
         </section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from '@inertiajs/react';
+import { requestContactIntent } from '@/utils/contact-intent';
 
 export function ContactHeader() {
     return (
@@ -10,25 +10,30 @@ export function ContactHeader() {
                     <div className="mb-12 text-center md:mb-18 lg:mb-20">
                         <div className="mx-auto w-full max-w-lg">
                             <h1 className="mb-5 text-4xl font-bold text-[#1F1946] md:mb-6 md:text-5xl lg:text-6xl">
-                                Tell Us What Is Slowing Your Business Down
+                                Tell Us What You Want to Build or Fix
                             </h1>
                             <p className="md:text-md text-gray-700">
-                                Share what is broken, disconnected, or consuming too much staff time. A senior specialist will review your request and
-                                respond within one business day with a practical next step.
+                                New website or web app projects are welcome, and so are aging systems that are broken, disconnected, or consuming too
+                                much staff time. A senior specialist will review your request and respond within one business day with a practical
+                                next step.
                             </p>
-                            <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
-                                <Link
-                                    href="#contact-form"
-                                    className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245]"
+                            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
+                                <button
+                                    type="button"
+                                    aria-controls="contact-form"
+                                    onClick={() => requestContactIntent('new-project')}
+                                    className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
+                                >
+                                    Start a New Project
+                                </button>
+                                <button
+                                    type="button"
+                                    aria-controls="contact-form"
+                                    onClick={() => requestContactIntent('project')}
+                                    className="inline-flex items-center justify-center rounded-md border border-[#1F1946] bg-transparent px-6 py-3 text-center font-medium text-[#1F1946] transition hover:bg-[#1F1946] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
                                 >
                                     Request a Software Review
-                                </Link>
-                                <Link
-                                    href="#schedule-meeting"
-                                    className="inline-flex items-center justify-center rounded-md border border-[#1F1946] bg-transparent px-6 py-3 text-center font-medium text-[#1F1946] transition hover:bg-[#1F1946] hover:text-white"
-                                >
-                                    Book a Consultation
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>

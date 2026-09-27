@@ -3,9 +3,17 @@
 import { Toast } from '@/components/common/Toast';
 import { ContactFormPanel, type ContactFormData, type FormType } from '@/components/contact/ContactFormPanel';
 import { trackAnalyticsEvent } from '@/utils/analytics';
+import {
+    CONTACT_INTENT_EVENT,
+    readContactIntentFromUrl,
+    resolveContactIntent,
+    type ContactIntent,
+    type ResolvedContactIntent,
+} from '@/utils/contact-intent';
+import { usePage } from '@inertiajs/react';
 import axios from 'axios';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 function createEmptyForm(formType: FormType): ContactFormData {
     return {
@@ -32,8 +40,8 @@ function ContactMethods() {
                 Contact Information
             </h2>
             <p className="md:text-md mb-8 text-gray-700">
-                Tell us what is breaking, disconnected, delayed, or consuming staff time. A senior specialist will review the inquiry and normally
-                respond within one business day.
+                Planning a new website or web app, or dealing with software that is breaking, disconnected, or consuming staff time? A senior
+                specialist will review your request and respond within one business day.
             </p>
 
             <ul className="space-y-6" aria-label="Contact methods">
@@ -70,9 +78,7 @@ function ContactMethods() {
                     </div>
                     <div>
                         <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Remote-First DFW Service</h3>
-                        <p className="text-gray-700">
-                            We serve established Dallas–Fort Worth businesses through scheduled sessions and secure remote access.
-                        </p>
+                        <p className="text-gray-700">We serve Dallas–Fort Worth businesses through scheduled sessions and secure remote access.</p>
                     </div>
                 </li>
             </ul>
@@ -87,6 +93,7 @@ export function ContactFormAdvanced() {
     const [toastType, setToastType] = useState<'success' | 'error'>('success');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState<ContactFormData>(() => createEmptyForm('general'));
+    const { url } = usePage();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = event.target;
@@ -97,6 +104,27 @@ export function ContactFormAdvanced() {
         setFormType(type);
         setFormData((previous) => ({ ...previous, formType: type }));
     };
+
+    const applyIntent = useCallback((intent: ResolvedContactIntent | null) => {
+        if (!intent) return;
+        setFormType(intent.formType);
+        setFormData((previous) => ({
+            ...previous,
+            formType: intent.formType,
+            projectType: intent.projectType ?? previous.projectType,
+            message: intent.message && !previous.message.trim() ? intent.message : previous.message,
+        }));
+    }, []);
+
+    useEffect(() => {
+        applyIntent(readContactIntentFromUrl(url));
+    }, [applyIntent, url]);
+
+    useEffect(() => {
+        const handleIntent = (event: Event) => applyIntent(resolveContactIntent((event as CustomEvent<ContactIntent>).detail));
+        window.addEventListener(CONTACT_INTENT_EVENT, handleIntent);
+        return () => window.removeEventListener(CONTACT_INTENT_EVENT, handleIntent);
+    }, [applyIntent]);
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();

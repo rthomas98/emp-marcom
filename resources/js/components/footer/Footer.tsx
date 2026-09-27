@@ -87,19 +87,19 @@ export default function Footer() {
                         <div className="ml-3 flex">
                             <img
                                 src="/images/site-images/rob_thomas23_African_American_developers_development_standing_76853597-7d40-4b8f-be75-50c1ad6629b1_3 (1).png"
-                                alt="Empuls3 team member - Software developer"
+                                alt="Watercolor illustration of a software developer"
                                 className="relative -ml-3 size-12 min-h-12 min-w-12 rounded-full border-2 border-white object-cover"
                                 loading="lazy"
                             />
                             <img
                                 src="/images/site-images/rob_thomas23_An_African_American_developer_holding_an_iPhone__a97a063e-c229-46b4-842d-bcf7c11542ff_2.png"
-                                alt="Empuls3 team member - Mobile developer"
+                                alt="Watercolor illustration of a developer holding a phone"
                                 className="relative -ml-3 size-12 min-h-12 min-w-12 rounded-full border-2 border-white object-cover"
                                 loading="lazy"
                             />
                             <img
                                 src="/images/site-images/rob_thomas23_Young_African_American_designer_developing_websi_2331add1-208d-4bd5-94de-874c37b309b8_2 (1).png"
-                                alt="Empuls3 team member - Web designer"
+                                alt="Watercolor illustration of a web designer at work"
                                 className="relative -ml-3 size-12 min-h-12 min-w-12 rounded-full border-2 border-white object-cover"
                                 loading="lazy"
                             />

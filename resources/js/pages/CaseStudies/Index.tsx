@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Head } from '@inertiajs/react';
 import SiteLayout from '@/layouts/site-layout';
+import { portfolioCaptures } from '@/content/portfolio-captures';
 import { Filter } from 'lucide-react';
 
 interface CaseStudy {
@@ -96,9 +97,9 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
                   >
                     <figure className="h-48 overflow-hidden">
                       <img 
-                        src={caseStudy.featured_image} 
-                        alt={`${caseStudy.title} case study featured image`} 
-                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                        src={portfolioCaptures[caseStudy.slug]?.src ?? caseStudy.featured_image}
+                        alt={portfolioCaptures[caseStudy.slug]?.alt ?? `${caseStudy.title} case study featured image`}
+                        className={`w-full h-full object-cover transition-transform hover:scale-105 ${portfolioCaptures[caseStudy.slug] ? 'object-top' : ''}`}
                         width="400"
                         height="225"
                         loading="lazy"
@@ -236,9 +237,9 @@ export default function Index({ caseStudies = [], featuredCaseStudies = [], filt
                   >
                     <figure className="h-48 overflow-hidden">
                       <img 
-                        src={caseStudy.featured_image} 
-                        alt={`${caseStudy.title} case study featured image`} 
-                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                        src={portfolioCaptures[caseStudy.slug]?.src ?? caseStudy.featured_image}
+                        alt={portfolioCaptures[caseStudy.slug]?.alt ?? `${caseStudy.title} case study featured image`}
+                        className={`w-full h-full object-cover transition-transform hover:scale-105 ${portfolioCaptures[caseStudy.slug] ? 'object-top' : ''}`}
                         width="400"
                         height="225"
                         loading="lazy"

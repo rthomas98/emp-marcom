@@ -1,6 +1,7 @@
 import SiteLayout from '@/layouts/site-layout';
 import { Head, Link } from '@inertiajs/react';
 import { ArrowRight, CheckCircle2, CircleAlert, CircleX, MapPin, Phone } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 export interface ContentCard {
     title: string;
@@ -63,7 +64,7 @@ function ActionLink({ action, secondary = false }: { action: LinkAction; seconda
     );
 }
 
-export function LeadPage({ config }: { config: LeadPageConfig }) {
+export function LeadPage({ config, children }: { config: LeadPageConfig; children?: ReactNode }) {
     const serviceSchema = {
         '@context': 'https://schema.org',
         '@type': config.serviceType ? 'Service' : 'WebPage',
@@ -234,6 +235,8 @@ export function LeadPage({ config }: { config: LeadPageConfig }) {
                     </div>
                 </section>
             )}
+
+            {children}
 
             <section className="px-[5%] py-16 text-center md:py-24">
                 <div className="bg-accent-yellow/20 container mx-auto max-w-3xl rounded-3xl p-8 md:p-12">

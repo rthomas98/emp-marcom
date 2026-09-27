@@ -26,7 +26,7 @@ export function FAQsContact() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold text-[#1F1946]">Email a Senior Specialist</h3>
                         <p className="mb-6 text-gray-700">
-                            Email us directly and receive a response from a senior specialist within 24 hours—faster than larger firms can offer.
+                            Email us directly and receive a response from a senior specialist within one business day.
                         </p>
                         <Link
                             href="mailto:support@empuls3.com"

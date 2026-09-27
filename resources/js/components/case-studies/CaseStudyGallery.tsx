@@ -1,3 +1,4 @@
+import { portfolioCaptures } from '@/content/portfolio-captures';
 import { Link } from '@inertiajs/react';
 
 interface CaseStudy {
@@ -31,9 +32,9 @@ export function CaseStudyGallery({ relatedCaseStudies = [] }: CaseStudyGalleryPr
                         <Link key={caseStudy.id} href={`/case-studies/${caseStudy.slug}`} className="group block w-full">
                             <div className="relative h-[300px] overflow-hidden rounded-lg">
                                 <img
-                                    src={caseStudy.featured_image}
-                                    alt={caseStudy.title}
-                                    className="size-full border-0 object-cover transition-transform duration-500 group-hover:scale-105"
+                                    src={portfolioCaptures[caseStudy.slug]?.src ?? caseStudy.featured_image}
+                                    alt={portfolioCaptures[caseStudy.slug]?.alt ?? caseStudy.title}
+                                    className={`size-full border-0 object-cover transition-transform duration-500 group-hover:scale-105 ${portfolioCaptures[caseStudy.slug] ? 'object-top' : ''}`}
                                 />
                                 <div className="from-primary/90 absolute inset-0 bg-linear-to-t to-transparent" />
                                 <div className="absolute bottom-0 left-0 p-6 text-white">

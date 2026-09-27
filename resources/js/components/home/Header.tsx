@@ -1,3 +1,4 @@
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React from 'react';
@@ -81,7 +82,7 @@ export const Header = (props: HeaderProps) => {
                                         key={index}
                                         href={button.href}
                                         className="border-primary text-primary hover:bg-primary/10 focus:ring-primary inline-flex h-10 items-center justify-center rounded-md border bg-transparent px-4 py-2 text-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                                        aria-label={`${button.title}: Learn more about our services`}
+                                        aria-label={button.title}
                                     >
                                         {button.title}
                                     </Link>
@@ -90,7 +91,7 @@ export const Header = (props: HeaderProps) => {
                                         key={index}
                                         href={button.href}
                                         className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                                        aria-label={`${button.title}: Contact us about your project`}
+                                        aria-label={button.title}
                                     >
                                         {button.title}
                                     </Link>
@@ -191,7 +192,7 @@ export const Header = (props: HeaderProps) => {
 export const HeaderDefaults: Props = {
     title: 'Senior Software Rescue and Integration for DFW Businesses',
     description:
-        'For Dallas–Fort Worth owners, COOs, and IT leaders losing time or revenue to aging software, disconnected systems, manual workflows, or unreliable vendors. Work directly with senior engineers from diagnosis through long-term support.',
+        'For Dallas–Fort Worth owners, COOs, and IT leaders losing time or revenue to aging software, disconnected systems, manual workflows, or unreliable vendors—or planning a new website or web app. Work directly with senior engineers from diagnosis or first plan through long-term support.',
     buttons: [
         {
             title: 'Request a Software Review',
@@ -199,8 +200,8 @@ export const HeaderDefaults: Props = {
             variant: 'primary',
         },
         {
-            title: 'Explore Our Core Services',
-            href: '#features',
+            title: 'Start a New Project',
+            href: contactHref('new-project'),
             variant: 'secondary',
         },
     ],

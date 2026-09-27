@@ -14,23 +14,23 @@ export default function Contact() {
     return (
         <SiteLayout>
             <Head>
-                <title>{generateLocalTitle('Request a Software Review')}</title>
+                <title>{generateLocalTitle('Start a Project or Request a Software Review')}</title>
                 <meta
                     name="description"
                     content={generateLocalDescription(
-                        'Tell Empuls3 what is breaking, disconnected, delayed, or consuming staff time. A senior specialist will respond within one business day.',
+                        'Tell Empuls3 about a new website or web app, or what is breaking, disconnected, or consuming staff time. A senior specialist will respond within one business day.',
                     )}
                 />
                 <meta
                     name="keywords"
-                    content="software review Dallas, software rescue consultation, systems integration consultation, senior engineering support DFW"
+                    content="web app development Dallas, new website project DFW, software review Dallas, software rescue consultation, systems integration consultation, senior engineering support DFW"
                 />
 
                 {/* Open Graph tags for social sharing */}
                 <meta property="og:title" content="Request a Software Review | Empuls3" />
                 <meta
                     property="og:description"
-                    content="Talk with a senior specialist about software rescue, systems integration, or ongoing engineering support for your Dallas-Fort Worth business."
+                    content="Talk with a senior specialist about a new website or web app, software rescue, systems integration, or ongoing engineering support for your Dallas-Fort Worth business."
                 />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.empuls3.com/contact" />
@@ -41,7 +41,7 @@ export default function Contact() {
                 <meta name="twitter:title" content="Request a Software Review | Empuls3" />
                 <meta
                     name="twitter:description"
-                    content="Discuss software rescue, systems integration, or ongoing senior engineering support for your DFW business."
+                    content="Discuss a new website or web app, software rescue, systems integration, or ongoing senior engineering support for your DFW business."
                 />
                 <meta name="twitter:image" content="https://www.empuls3.com/images/contact-cover.jpg" />
 

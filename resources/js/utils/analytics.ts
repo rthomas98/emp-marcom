@@ -25,8 +25,6 @@ export function initializeConversionTracking(): void {
             trackAnalyticsEvent('phone_click', { link_url: href, link_text: link.textContent?.trim() });
         } else if (href.startsWith('mailto:')) {
             trackAnalyticsEvent('email_click', { link_url: href, link_text: link.textContent?.trim() });
-        } else if (href.includes('calendly.com')) {
-            trackAnalyticsEvent('schedule_consultation_click', { link_url: href, link_text: link.textContent?.trim() });
         }
     });
 }
