@@ -13,23 +13,23 @@ export default function Contact() {
     return (
         <SiteLayout>
             <Head>
-                <title>{generateLocalTitle('Start a Project or Request a Software Review')}</title>
+                <title>{generateLocalTitle('Talk About Your App Idea or Project')}</title>
                 <meta
                     name="description"
                     content={generateLocalDescription(
-                        'Tell Empuls3 about a new website or web app, or a system you want to improve. We normally reply within one business day by email.',
+                        'Tell Empuls3 about your app idea, a new website or web app, or a system you want to improve. Product Blueprint planning starts at $2,500. We normally reply within one business day by email.',
                     )}
                 />
                 <meta
                     name="keywords"
-                    content="web app development Dallas, new website project DFW, software review Dallas, software rescue consultation, systems integration consultation, senior engineering support DFW"
+                    content="app development for founders, MVP planning Dallas, web app development Dallas, new website project DFW, software review Dallas, software rescue consultation, systems integration consultation, senior engineering support DFW"
                 />
 
                 {/* Open Graph tags for social sharing */}
                 <meta property="og:title" content="Let’s Talk About Your Project | Empuls3" />
                 <meta
                     property="og:description"
-                    content="Talk with a senior developer about a new website or web app, software rescue, systems integration, or ongoing engineering support for your Dallas-Fort Worth business."
+                    content="Talk with an experienced developer about your app idea, a new website or web app, software rescue, systems integration, or ongoing support."
                 />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.empuls3.com/contact" />
@@ -40,7 +40,7 @@ export default function Contact() {
                 <meta name="twitter:title" content="Let’s Talk About Your Project | Empuls3" />
                 <meta
                     name="twitter:description"
-                    content="Discuss a new website or web app, software rescue, systems integration, or ongoing senior engineering support for your DFW business."
+                    content="Discuss your app idea, a new website or web app, software rescue, systems integration, or ongoing support with an experienced developer."
                 />
                 <meta name="twitter:image" content="https://www.empuls3.com/images/contact-cover.jpg" />
 

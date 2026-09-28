@@ -1,21 +1,10 @@
+import { founderPath } from '@/components/founders/founder-content';
 import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import { Check, ChevronRight } from 'lucide-react';
 
-const steps = [
-    {
-        title: 'Scope and plan',
-        description: 'Define who will use it, the must-have features, and a realistic first release.',
-    },
-    {
-        title: 'Design and build',
-        description: 'Responsive, maintainable websites, web apps, and business systems built by a senior developer.',
-    },
-    {
-        title: 'Launch and support',
-        description: 'Keep the same developer for ongoing support after launch, without a handoff to a new vendor.',
-    },
-];
+// Same three steps and pricing wording as /for-founders.
+const steps = founderPath.map((step) => ({ title: `${step.title} (${step.price.toLowerCase()})`, description: step.description }));
 
 export function NewProject() {
     return (
@@ -23,13 +12,13 @@ export function NewProject() {
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
                     <div>
-                        <p className="text-accent-pink mb-3 font-semibold md:mb-4">New Websites & Web Apps</p>
+                        <p className="text-accent-pink mb-3 font-semibold md:mb-4">For Founders</p>
                         <h2 id="new-project-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
-                            Planning Something New? Start With a Senior Developer
+                            Have an Idea? Start With a Plan
                         </h2>
                         <p className="text-gray-700 md:text-lg">
-                            If you are planning a new website, customer portal, internal tool, or web application, we help you shape the scope, choose
-                            a practical approach, and build it.
+                            You do not need a technical background. We help you decide what your first release should do, explain the scope and cost
+                            in plain language, and build it in clear milestones.
                         </p>
                         <ul className="mt-6 space-y-4 md:mt-8">
                             {steps.map((step) => (
@@ -48,21 +37,19 @@ export function NewProject() {
                         </ul>
                         <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
                             <Link
-                                href={contactHref('new-project')}
+                                href={contactHref('product-planning')}
                                 className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
                             >
-                                Start a New Project
+                                Plan Your Product
                             </Link>
-                            <Link
-                                href="/solutions/web-ecommerce-development"
-                                className="text-primary hover:text-accent-pink inline-flex items-center text-sm font-medium"
-                            >
-                                Explore Web Development
+                            <Link href="/for-founders" className="text-primary hover:text-accent-pink inline-flex items-center text-sm font-medium">
+                                How It Works for Founders
                                 <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                             </Link>
                         </div>
                         <p className="mt-4 text-sm text-gray-600">
-                            Projects start at $2,500; the final estimate depends on scope. Not sure yet? A consultation is a good first step.
+                            Product Blueprint planning starts at $2,500. Building the first release is estimated separately. Not sure yet? A
+                            consultation is a good first step.
                         </p>
                     </div>
                     <div>

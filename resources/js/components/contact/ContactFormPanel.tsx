@@ -14,6 +14,10 @@ export interface ContactFormData {
     timeline: string;
     projectDescription: string;
     requirements: string;
+    /** Optional. One of projectStageOptions values, or '' when not chosen. */
+    projectStage: string;
+    /** Optional free text, max INTENDED_USERS_MAX_LENGTH characters. */
+    intendedUsers: string;
     website: string;
     submit_time: number;
 }
@@ -21,7 +25,19 @@ export interface ContactFormData {
 /** Sent when the visitor does not choose a project type. The backend requires a projectType string. */
 export const DEFAULT_PROJECT_TYPE = 'other';
 
+export const INTENDED_USERS_MAX_LENGTH = 1000;
+
+export const projectStageOptions = [
+    // Labels match the backend email rendering (resources/views/emails/contact-form.blade.php).
+    { value: 'idea', label: 'An idea' },
+    { value: 'validating', label: 'Talking to potential customers' },
+    { value: 'prototype', label: 'A prototype' },
+    { value: 'live', label: 'A live product' },
+    { value: 'not-sure', label: 'Not sure yet' },
+] as const;
+
 export const projectTypeOptions = [
+    { value: 'product-planning', label: 'Product Blueprint (Planning a New App)' },
     { value: 'new-website-app', label: 'New Website or Web App Build' },
     { value: 'software-rescue', label: 'Software Rescue & Legacy Modernization' },
     { value: 'systems-integration', label: 'CRM, API & Workflow Integration' },
@@ -164,6 +180,43 @@ export function ContactFormPanel({ formData, isSubmitting, detailsOpen, onDetail
                             </div>
                         </div>
 
+                        <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <div>
+                                <label htmlFor="projectStage" className={labelClass}>
+                                    Where Is the Project Today? {optional}
+                                </label>
+                                <select
+                                    id="projectStage"
+                                    name="projectStage"
+                                    value={formData.projectStage}
+                                    onChange={onChange}
+                                    className={fieldClass}
+                                >
+                                    <option value="">Select a Stage</option>
+                                    {projectStageOptions.map((option) => (
+                                        <option key={option.value} value={option.value}>
+                                            {option.label}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div>
+                                <label htmlFor="intendedUsers" className={labelClass}>
+                                    Who Will Use It? {optional}
+                                </label>
+                                <input
+                                    type="text"
+                                    id="intendedUsers"
+                                    name="intendedUsers"
+                                    value={formData.intendedUsers}
+                                    onChange={onChange}
+                                    className={fieldClass}
+                                    maxLength={INTENDED_USERS_MAX_LENGTH}
+                                    placeholder="For example: independent gym owners, or our field staff"
+                                />
+                            </div>
+                        </div>
+
                         <div className="mb-6">
                             <label htmlFor="projectType" className={labelClass}>
                                 Project Type {optional}
@@ -204,7 +257,7 @@ export function ContactFormPanel({ formData, isSubmitting, detailsOpen, onDetail
                                     <option value="not-sure">Not sure yet</option>
                                 </select>
                                 <p id="budget-help" className="mt-2 text-sm text-gray-600">
-                                    Projects start at $2,500; the final estimate depends on scope.
+                                    Product Blueprint planning starts at $2,500. Building the first release is estimated separately.
                                 </p>
                             </div>
 

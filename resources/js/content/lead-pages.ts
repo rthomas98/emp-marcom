@@ -575,11 +575,11 @@ export const leadPages = {
     mvp: {
         title: 'MVP & First-Version Product Development Dallas | Empuls3',
         metaDescription:
-            'Test your product idea and build a first version customers can use, with a senior developer based in Dallas–Fort Worth, from planning through launch.',
+            'Plan and build an MVP, the first usable release of your product, with an experienced developer based in Dallas–Fort Worth. Product Blueprint planning starts at $2,500; the build is estimated separately.',
         eyebrow: 'MVP and first-version products',
         heading: 'Test your product idea and build a first version customers can use',
         introduction:
-            'This service suits small businesses, startups, and established organizations with a defined user and a plan for the first version. Projects start at $2,500; the final estimate depends on scope.',
+            'An MVP is the first usable release of your product: the smallest version real customers can use for the main task. Product Blueprint planning starts at $2,500, and building the first release is estimated separately.',
         primaryAction: { label: 'Discuss Product Fit', href: contactHref('new-project') },
         secondaryAction: { label: 'Review Engagement Questions', href: '/company/faqs' },
         problemHeading: 'The riskiest assumptions are not always technical',
@@ -623,7 +623,7 @@ export const leadPages = {
         process: seniorDelivery,
         fitHeading: 'Product development is a strong fit when',
         fit: [
-            'Someone can make product decisions, and there is a budget for a first version. Projects start at $2,500; the final estimate depends on scope.',
+            'Someone can make product decisions, and there is a budget for planning and a first release. Product Blueprint planning starts at $2,500; the build is estimated separately.',
             'The target user and business problem have been researched beyond an internal idea session.',
             'The team is prepared to own launch, support, adoption, and decisions after release.',
         ],
@@ -929,11 +929,11 @@ export const leadPages = {
     about: {
         title: 'About Empuls3 | Independent Developer in Dallas–Fort Worth',
         metaDescription:
-            'Founded in 2009 by Robert Thomas, Empuls3 designs and builds websites, web apps, and business systems, and improves the ones you already use. Work directly with Robert.',
+            'Founded in 2009 by independent developer Robert Thomas, Empuls3 helps nontechnical founders plan and launch web and mobile apps, and helps businesses improve the software they use. Work directly with Robert.',
         eyebrow: 'About Empuls3',
         heading: 'Direct access to a senior developer since 2009',
         introduction:
-            'Empuls3 is a remote-first Dallas–Fort Worth software and technology firm founded in 2009 and run by independent developer Robert Thomas. We design and build websites, web apps, and business systems, and improve the ones you already use. You work directly with Robert from the first plan through launch and ongoing support.',
+            'Empuls3 is a remote-first Dallas–Fort Worth development practice founded in 2009 and run by independent developer Robert Thomas. Robert helps nontechnical founders plan and launch web and mobile apps, and helps businesses improve the software they already use. You work directly with him from the first plan through launch and ongoing support.',
         primaryAction: { label: 'Discuss Your Situation', href: '/contact#contact-form' },
         secondaryAction: { label: 'Review Our Services', href: '/services' },
         problemHeading: 'Why the firm exists',

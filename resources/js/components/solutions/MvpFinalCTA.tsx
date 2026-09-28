@@ -11,7 +11,8 @@ export function MvpFinalCTA() {
                     </h2>
                     <p className="text-white/90 md:text-lg">
                         Tell us who the product is for, the problem it solves, and what you have tested so far. If the idea still needs testing, we
-                        can help with that first. We normally reply within one business day.
+                        can help with that first. Product Blueprint planning starts at $2,500, and the first release is estimated separately. We
+                        normally reply within one business day.
                     </p>
                     <nav className="mt-6 flex flex-wrap gap-4 md:mt-8" aria-label="Final call to action">
                         <Link

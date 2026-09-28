@@ -11,7 +11,7 @@ type AboutHeaderProps = {
 const facts = [
     { label: 'Founded', value: '2009' },
     { label: 'Based in', value: 'Dallas–Fort Worth' },
-    { label: 'Working model', value: 'Remote-first, senior-led' },
+    { label: 'Working model', value: 'Independent developer, remote-first' },
 ];
 
 export function AboutHeader({ eyebrow, heading, introduction }: AboutHeaderProps) {

@@ -79,6 +79,20 @@
                 <p>{{ $formData['projectType'] }}</p>
             </div>
             
+            @if(!empty($formData['projectStage']))
+            <div class="field">
+                <p class="field-label">Project Stage:</p>
+                <p>{{ ['idea' => 'An idea', 'validating' => 'Talking to potential customers', 'prototype' => 'A prototype', 'live' => 'A live product', 'not-sure' => 'Not sure yet'][$formData['projectStage']] ?? $formData['projectStage'] }}</p>
+            </div>
+            @endif
+
+            @if(!empty($formData['intendedUsers']))
+            <div class="field">
+                <p class="field-label">Intended Users:</p>
+                <p>{{ $formData['intendedUsers'] }}</p>
+            </div>
+            @endif
+
             @if(isset($formData['projectDescription']) && $formData['projectDescription'])
             <div class="field">
                 <p class="field-label">Project Description:</p>

@@ -17,7 +17,7 @@ export const founder = {
 export const aboutHero = {
     heading: 'Direct access to a senior developer since 2009',
     introduction:
-        'Empuls3 is a remote-first Dallas–Fort Worth software and technology firm founded in 2009 and run by independent developer Robert Thomas. We design and build websites, web apps, and business systems, and improve the ones you already use. You work directly with Robert from the first plan through launch and ongoing support.',
+        'Empuls3 is a remote-first Dallas–Fort Worth development practice founded in 2009 and run by independent developer Robert Thomas. Robert helps nontechnical founders plan and launch web and mobile apps, and helps businesses improve the software they already use. You work directly with him from the first plan through launch and ongoing support.',
 };
 
 export const aboutImages = {

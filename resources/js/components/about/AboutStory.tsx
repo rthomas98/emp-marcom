@@ -24,14 +24,15 @@ export function AboutStory() {
                         Build something new, or improve what you already run
                     </h2>
                     <p className="text-lg leading-8 text-gray-700">
-                        Some clients come to us with a new website or app to plan. Others need help with software, integrations, or systems their
-                        business already depends on. In both cases, the same senior developer stays involved from planning through launch and support.
+                        Some clients are founders with a business idea and no technical co-founder. Others need help with software, integrations, or
+                        systems their business already depends on. In both cases, the same developer, Robert, stays involved from planning through
+                        launch and support.
                     </p>
                     <dl className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
                         <div className="border-accent-pink border-l-2 pl-5">
                             <dt className="text-primary text-lg font-semibold">Building something new</dt>
                             <dd className="mt-2 leading-7 text-gray-700">
-                                Shape the scope, choose a practical approach, and launch a website or web application you can keep improving.
+                                Decide what to build first, understand the scope, and launch a web or mobile app you can keep improving.
                             </dd>
                         </div>
                         <div className="border-primary border-l-2 pl-5">

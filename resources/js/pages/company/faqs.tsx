@@ -8,7 +8,7 @@ import { Head } from '@inertiajs/react';
 
 const title = 'Software & Engineering FAQs | Empuls3';
 const description =
-    'Answers about new website and app projects, inherited systems, project size, security, ownership, remote delivery, and ongoing engineering support.';
+    'Answers for founders planning a first app, plus new website and app projects, inherited systems, project size, security, ownership, remote delivery, and ongoing engineering support.';
 
 const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://www.empuls3.com' },

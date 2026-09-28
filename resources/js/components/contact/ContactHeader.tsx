@@ -13,8 +13,8 @@ export function ContactHeader() {
                                 Tell Us What You Want to Build or Fix
                             </h1>
                             <p className="md:text-md text-gray-700">
-                                Planning a new website or web app, or need to improve a system you already use? Send a short note. We normally reply
-                                within one business day by email, and we can go through the details after that.
+                                Have a business idea for an app, planning a new website, or need to improve a system you already use? Send a short
+                                note. We normally reply within one business day by email, and we can go through the details after that.
                             </p>
                             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
                                 <button

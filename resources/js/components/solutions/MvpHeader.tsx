@@ -12,8 +12,8 @@ export function MvpHeader() {
                             Build a First Version Your Customers Can Use
                         </h1>
                         <p className="text-white md:text-lg">
-                            Empuls3 helps DFW businesses and funded teams test product ideas and build the first version. You work directly with
-                            Robert, a senior developer, from defining the user and the problem through design, build, launch, and what to build next.
+                            An MVP is your first usable release: the smallest version of the product real customers can use for the main task. You
+                            work directly with Robert, an experienced developer, from planning through design, build, launch, and what to build next.
                         </p>
                     </div>
                     <nav className="mt-6 flex flex-wrap items-center gap-4 md:mt-8" aria-label="MVP development next steps">
@@ -24,10 +24,10 @@ export function MvpHeader() {
                             Tell Us About Your Product
                         </Link>
                         <Link
-                            href="/company/faqs"
+                            href="/for-founders"
                             className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
                         >
-                            Review Engagement Questions
+                            For Founders
                         </Link>
                     </nav>
                 </div>

@@ -6,7 +6,7 @@ export function AboutCta() {
         <section className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="about-cta-heading">
             <div className="container mx-auto max-w-3xl text-center">
                 <h2 id="about-cta-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl">
-                    Talk directly with the people who will do the work
+                    Talk directly with the developer who will do the work
                 </h2>
                 <p className="text-lg leading-8 text-gray-700">
                     Tell us about the website or app you are planning, or the system you need to improve. We normally reply within one business day.

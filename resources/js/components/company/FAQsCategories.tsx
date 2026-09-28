@@ -19,8 +19,8 @@ export function FAQsCategories() {
                             Answers Before You Reach Out
                         </h2>
                         <p className="md:text-md text-gray-700">
-                            Browse by topic: getting started, how assessments and delivery work, project size, and how access and ownership are
-                            handled.
+                            Browse by topic: planning a first app, getting started, how assessments and delivery work, project size, and how access
+                            and ownership are handled.
                         </p>
                     </header>
                 </div>

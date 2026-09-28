@@ -35,38 +35,39 @@ const PricingTier = ({ service, range, timeline, features }: PricingTierProps) =
 };
 
 export function PricingTransparency() {
+    // Truthful founder offer: planning has a starting price; build and support are scoped and quoted separately.
     const pricingTiers = [
         {
-            service: 'Focused Software Project',
-            range: '$25,000+',
-            timeline: 'Scoped after discovery',
+            service: 'Product Blueprint',
+            range: 'From $2,500',
+            timeline: 'Scope agreed before work begins',
             features: [
-                'Defined business outcome and scope',
-                'Dedicated senior developer',
-                'Direct communication, no account managers',
-                'Fixed scope, predictable pricing',
+                'Who the product is for and the problem it solves',
+                'What the first release must do, and what can wait',
+                'Key screens, user flows, and technical approach',
+                'Written estimate and milestones for the build',
             ],
         },
         {
-            service: 'Standard Project',
-            range: '$50,000+',
+            service: 'First Release',
+            range: 'Quoted separately',
             timeline: 'Milestone-based delivery',
             features: [
-                'Most common project size',
-                'Full-stack development team',
-                'Professional design & development',
-                'Includes testing & deployment',
+                'Estimated after planning, based on scope',
+                'Built by the developer who planned it',
+                'Working software to review at each milestone',
+                'Testing and launch help included in the plan',
             ],
         },
         {
-            service: 'Enterprise Solution',
-            range: '$50,000+',
-            timeline: '3-6 months',
+            service: 'Ongoing Support',
+            range: 'Scoped to your needs',
+            timeline: 'Agreed after launch',
             features: [
-                'Complex, mission-critical systems',
-                'Dedicated team of specialists',
-                'Ongoing support & optimization',
-                'Custom SLAs & guarantees',
+                'Fixes and improvements after launch',
+                'Priced once we know what needs covering',
+                'Direct access to the same developer',
+                'Terms set out in a separate agreement',
             ],
         },
     ];
@@ -83,8 +84,8 @@ export function PricingTransparency() {
                         No Surprises. Just Clear Pricing.
                     </h2>
                     <p className="text-gray-700 md:text-lg">
-                        We believe in honest pricing. Here's what Dallas businesses typically invest for our services. All prices include direct
-                        access to senior developers—no junior teams, no account managers.
+                        Planning, building, and support are priced as separate steps. Product Blueprint planning starts at $2,500; building the first
+                        release is quoted separately once the scope is clear. You work directly with Robert, the developer doing the work.
                     </p>
                 </div>
 
@@ -93,29 +94,27 @@ export function PricingTransparency() {
                     <h3 className="text-primary mb-4 text-2xl font-bold">Why We're Transparent About Pricing</h3>
                     <div className="grid gap-4 text-gray-700 md:grid-cols-2">
                         <div>
-                            <div className="text-primary mb-2 font-semibold">Senior-Led Delivery</div>
+                            <div className="text-primary mb-2 font-semibold">Direct Access</div>
                             <p className="text-sm">
-                                Work directly with experienced specialists who can connect technical choices to business priorities.
+                                Work directly with an experienced developer who connects technical choices to your business priorities.
                             </p>
                         </div>
                         <div>
                             <div className="text-primary mb-2 font-semibold">No Hidden Costs</div>
                             <p className="text-sm">
-                                What you see is what you get. We'll quote everything upfront with a detailed breakdown before we start.
+                                You receive a written estimate before each step starts. If something falls outside the agreed scope, we tell you
+                                first.
                             </p>
                         </div>
                         <div>
-                            <div className="text-primary mb-2 font-semibold">Fixed or Hourly—Your Choice</div>
+                            <div className="text-primary mb-2 font-semibold">Planning Is Not the Whole App</div>
                             <p className="text-sm">
-                                Most projects work best with fixed pricing for predictable budgets. We also offer hourly ($75-125/hr) for flexible
-                                work.
+                                A Product Blueprint is planning, not a finished app. Completing one does not commit you to the build.
                             </p>
                         </div>
                         <div>
-                            <div className="text-primary mb-2 font-semibold">Free Discovery Call</div>
-                            <p className="text-sm">
-                                Get a custom quote tailored to your exact needs. No obligation, no sales pitch— just honest advice.
-                            </p>
+                            <div className="text-primary mb-2 font-semibold">Start With a Conversation</div>
+                            <p className="text-sm">Tell us about your idea and we will suggest a sensible next step and whether we are a good fit.</p>
                         </div>
                     </div>
                 </div>
@@ -130,15 +129,15 @@ export function PricingTransparency() {
                 {/* CTA */}
                 <div className="text-center">
                     <p className="mb-6 text-gray-700">
-                        <strong>Your project is unique.</strong> Get a free, no-obligation quote tailored to your specific needs.
+                        <strong>Every product is different.</strong> Tell us what you want to build and we will reply with a practical next step.
                     </p>
                     <Link
                         href="/contact"
                         className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-11 min-h-[44px] items-center justify-center rounded-md px-6 py-2.5 text-base font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
                     >
-                        Get Your Custom Quote
+                        Let’s Talk About Your Project
                     </Link>
-                    <p className="mt-4 text-sm text-gray-500">Response within one business day • No obligation • Discovery conversation included</p>
+                    <p className="mt-4 text-sm text-gray-500">We normally reply within one business day by email.</p>
                 </div>
             </div>
         </section>

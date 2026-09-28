@@ -13,8 +13,8 @@ export function CaseStudiesCta() {
                             Planning a website or software project?
                         </h2>
                         <p className="md:text-md text-gray-700">
-                            Tell us who it is for and what it needs to do. Projects start at $2,500, and we normally reply within one business day by
-                            email.
+                            Tell us who it is for and what it needs to do. For a new app, Product Blueprint planning starts at $2,500 and the build is
+                            estimated separately. We normally reply within one business day by email.
                         </p>
                         <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
                             <Link

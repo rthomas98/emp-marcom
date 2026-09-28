@@ -27,10 +27,11 @@ export default function WebEcommerceDevelopment() {
                 serviceType="Website and e-commerce development and modernization"
             />
             <WebEcommerceHeader />
+            {/* What the project delivers comes before the platforms used to build it. */}
+            <WebEcommerceFeatures />
             <WordPressSolutions />
             <EcommercePlatforms />
             <ProgressiveWebApps />
-            <WebEcommerceFeatures />
             <WebEcommerceTestimonials />
             <WebEcommerceCTA />
         </SiteLayout>

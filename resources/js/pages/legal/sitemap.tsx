@@ -8,7 +8,7 @@ export default function Sitemap() {
             <Head title="Sitemap | Empuls3">
                 <meta
                     name="description"
-                    content="Browse the public pages for Empuls3 solutions, services, client work, company information, Dallas resources, and legal policies."
+                    content="Browse the public pages for Empuls3 founder services, solutions, services, client work, company information, Dallas resources, and legal policies."
                 />
             </Head>
             <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
@@ -21,6 +21,16 @@ export default function Sitemap() {
                             <li>
                                 <Link href={route('home')} className="text-primary hover:text-accent-pink">
                                     Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/for-founders" className="text-primary hover:text-accent-pink">
+                                    For Founders
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/for-incubators" className="text-primary hover:text-accent-pink">
+                                    For Incubators
                                 </Link>
                             </li>
                             <li>

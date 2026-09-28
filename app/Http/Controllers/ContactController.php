@@ -97,6 +97,8 @@ class ContactController extends Controller
             'projectType' => 'required|string|max:255',
             'projectDescription' => 'nullable|string|max:5000',
             'requirements' => 'nullable|string|max:5000',
+            'projectStage' => 'nullable|string|in:idea,validating,prototype,live,not-sure',
+            'intendedUsers' => 'nullable|string|max:1000',
             'budget' => 'nullable|string|max:255',
             'timeline' => 'nullable|string|max:255',
             'submit_time' => 'nullable|numeric',

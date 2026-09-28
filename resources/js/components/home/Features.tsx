@@ -49,9 +49,12 @@ export const Features = (props: FeaturesProps) => {
 
     return (
         <section id="features" className="px-[5%]" aria-labelledby="features-heading">
-            <h2 id="features-heading" className="sr-only">
-                Improve, Connect, and Support Existing Systems
-            </h2>
+            <div className="container mx-auto pt-16 text-center md:pt-24">
+                <p className="text-accent-pink mb-3 font-semibold md:mb-4">Already Running a Business?</p>
+                <h2 id="features-heading" className="font-header text-primary text-3xl font-bold md:text-4xl">
+                    Improve, Connect, and Support Existing Systems
+                </h2>
+            </div>
             <div className="container mx-auto">
                 <div className="relative grid gap-x-12 py-16 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20">
                     <div

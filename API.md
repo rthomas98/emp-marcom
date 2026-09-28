@@ -49,6 +49,8 @@ X-CSRF-TOKEN: {csrf_token}
   "projectType": "string (required)",
   "projectDescription": "string (optional, max 5000 chars)",
   "requirements": "string (optional, max 5000 chars)",
+  "projectStage": "idea | validating | prototype | live | not-sure (optional)",
+  "intendedUsers": "string (optional, max 1000 chars)",
   "budget": "string (optional)",
   "timeline": "string (optional)",
   "submit_time": "number (optional, unix timestamp)"

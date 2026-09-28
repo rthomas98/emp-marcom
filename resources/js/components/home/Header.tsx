@@ -190,9 +190,9 @@ export const Header = (props: HeaderProps) => {
 };
 
 export const HeaderDefaults: Props = {
-    title: 'Websites and Software Built Around Your Business',
+    title: 'Turn your business idea into software your customers can use',
     description:
-        'We design and build websites, web apps, and business systems—and improve the ones you already use. Work directly with Robert, an independent senior developer, from the first plan through launch and ongoing support.',
+        'Empuls3 helps nontechnical founders plan, build, and launch web and mobile apps. Work directly with an experienced developer to decide what to build first, understand the scope, and move toward launch with clear milestones.',
     buttons: [
         {
             title: 'Let’s Talk About Your Project',

@@ -14,14 +14,22 @@ import { generateBreadcrumbSchema, generateLocalBusinessSchema } from '@/utils/s
 import { dallasKeywords } from '@/utils/seo';
 import { Head } from '@inertiajs/react';
 
-const pageTitle = 'Websites and Software Built Around Your Business | Empuls3';
+const pageTitle = 'Turn Your Business Idea Into Software | Empuls3';
 const pageDescription =
-    'Empuls3 designs and builds websites, web apps, and business systems for Dallas–Fort Worth businesses, and improves, connects, and supports the ones you already use. Work directly with a senior developer.';
+    'Empuls3 helps nontechnical founders plan, build, and launch web and mobile apps. Work directly with an experienced developer to decide what to build first, understand the scope, and move toward launch with clear milestones.';
 
 const servicesSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     itemListElement: [
+        {
+            '@type': 'Service',
+            serviceType: 'Product Blueprint and First-Release App Development for Founders',
+            provider: { '@type': 'Organization', name: 'Empuls3' },
+            description:
+                'Product Blueprint planning, from $2,500, followed by a separately scoped and estimated first release of a web or mobile app, and ongoing support.',
+            url: 'https://www.empuls3.com/for-founders',
+        },
         {
             '@type': 'Service',
             serviceType: 'New Website and Web Application Development',
@@ -64,7 +72,14 @@ export default function Home() {
                 <meta
                     name="keywords"
                     content={dallasKeywords.general
-                        .concat(['web app development Dallas', 'Dallas systems integration', 'software modernization Dallas', 'senior developer DFW'])
+                        .concat([
+                            'app development for founders',
+                            'MVP development Dallas',
+                            'web app development Dallas',
+                            'Dallas systems integration',
+                            'software modernization Dallas',
+                            'senior developer DFW',
+                        ])
                         .join(', ')}
                 />
                 {/* Open Graph Tags for better social sharing */}
@@ -87,7 +102,7 @@ export default function Home() {
                 {/* Structured Data for Services */}
                 <script type="application/ld+json">{JSON.stringify(servicesSchema)}</script>
             </Head>
-            {/* Journey: promise, recognizable needs, approved work, direct access and founder, process, one project CTA. */}
+            {/* Journey: founder promise, founder path (plan, build, support), existing-business paths, approved work, direct access, process, one project CTA. */}
             <HomeComponentWrapper>
                 <Header />
                 <StatsBar />

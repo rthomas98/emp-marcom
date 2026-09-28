@@ -30,6 +30,9 @@ Route::get('/', function () {
     return Inertia::render('home');
 })->name('home');
 
+Route::get('/for-founders', fn () => Inertia::render('for-founders'))->name('for-founders');
+Route::get('/for-incubators', fn () => Inertia::render('for-incubators'))->name('for-incubators');
+
 Route::get('/contact', function () {
     return Inertia::render('contact');
 })->name('contact');

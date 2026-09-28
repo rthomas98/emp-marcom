@@ -2,6 +2,12 @@ import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from 'lucide-react';
 
+// Plain paths: these routes are not referenced through Ziggy names.
+const founderLinks = [
+    { label: 'For Founders', href: '/for-founders' },
+    { label: 'For Incubators', href: '/for-incubators' },
+];
+
 const companyLinks = [
     { label: 'Solutions', routeName: 'solutions' },
     { label: 'Case Studies', routeName: 'case-studies.index' },
@@ -41,8 +47,8 @@ export default function Footer() {
                         </Link>
                         <h2 className="font-header mt-6 text-3xl leading-tight font-bold lg:text-4xl">Let&rsquo;s Talk About Your Next Project</h2>
                         <p className="mt-4 max-w-md text-white/80">
-                            Planning a new website or app, or need help with software you already rely on? Empuls3 has worked directly with
-                            Dallas–Fort Worth businesses since 2009.
+                            Turning a business idea into an app, or need help with software you already rely on? Empuls3 has worked directly with
+                            clients since 2009.
                         </p>
                         <div className="mt-6 flex flex-wrap gap-3">
                             <Link
@@ -85,6 +91,13 @@ export default function Footer() {
                     <nav aria-label="Company" className="lg:col-span-2">
                         <h3 className={groupHeadingClass}>Company</h3>
                         <ul className="space-y-3">
+                            {founderLinks.map((link) => (
+                                <li key={link.href}>
+                                    <Link href={link.href} className={linkClass}>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
                             {companyLinks.map((link) => (
                                 <li key={link.routeName}>
                                     <Link href={route(link.routeName)} className={linkClass}>

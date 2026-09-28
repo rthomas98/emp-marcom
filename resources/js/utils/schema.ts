@@ -53,7 +53,7 @@ export interface LocalBusinessSchema {
 export const dallasBusinessInfo = {
     name: 'Empuls3',
     description:
-        'Dallas–Fort Worth independent developer practice, run by Robert Thomas, that designs and builds websites, web apps, and business systems, and improves, connects, and supports the ones businesses already use.',
+        'Dallas–Fort Worth independent developer practice, run by Robert Thomas, that helps nontechnical founders plan, build, and launch web and mobile apps, and improves, connects, and supports the software businesses already use.',
     // Remote agency - no physical address
     streetAddress: '',
     addressLocality: 'Dallas',
@@ -65,7 +65,7 @@ export const dallasBusinessInfo = {
     // Dallas coordinates (city center for service area)
     latitude: 32.7767,
     longitude: -96.797,
-    priceRange: 'From $2,500',
+    priceRange: 'Product planning from $2,500; development quoted separately',
     openingHours: [
         {
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -154,6 +154,15 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
             '@type': 'OfferCatalog',
             name: 'Website, Software, and IT Services',
             itemListElement: [
+                {
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Service',
+                        name: 'Product Blueprint and App Development for Founders',
+                        description:
+                            'Product Blueprint planning from $2,500, then a separately scoped and estimated first release of a web or mobile app, and ongoing support',
+                    },
+                },
                 {
                     '@type': 'Offer',
                     itemOffered: {

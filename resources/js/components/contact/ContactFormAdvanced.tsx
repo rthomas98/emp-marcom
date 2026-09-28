@@ -28,6 +28,8 @@ function createEmptyForm(formType: FormType): ContactFormData {
         timeline: '',
         projectDescription: '',
         requirements: '',
+        projectStage: '',
+        intendedUsers: '',
         website: '',
         submit_time: Math.floor(Date.now() / 1000),
     };
