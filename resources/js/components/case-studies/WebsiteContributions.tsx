@@ -59,6 +59,20 @@ const contributions: WebsiteContribution[] = [
             height: 720,
         },
     },
+    {
+        id: 'foodsmart',
+        name: 'Foodsmart',
+        role: 'Custom HubSpot development',
+        summary: 'Built the Foodsmart website on HubSpot, covering both the custom frontend and the backend development.',
+        href: 'https://foodsmart.com/',
+        linkLabel: 'foodsmart.com',
+        capture: {
+            src: '/images/case-studies/foodsmart-live.png',
+            alt: 'Homepage of the Foodsmart website',
+            width: 1728,
+            height: 997,
+        },
+    },
 ];
 
 export function WebsiteContributions() {
@@ -71,7 +85,7 @@ export function WebsiteContributions() {
                     </h2>
                 </div>
 
-                <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     {contributions.map((item) => (
                         <li key={item.id} className="flex">
                             <article
