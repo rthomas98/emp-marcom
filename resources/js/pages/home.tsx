@@ -1,13 +1,10 @@
 import { ProcessTransparency } from '@/components/common/ProcessTransparency';
 import { StatsBar } from '@/components/common/StatsBar';
 import { TrustSignals } from '@/components/common/TrustSignals';
-import { Approach } from '@/components/home/Approach';
 import { Features } from '@/components/home/Features';
 import { FounderIntro } from '@/components/home/FounderIntro';
 import { Header } from '@/components/home/Header';
 import { HomeComponentWrapper } from '@/components/home/HomeComponentWrapper';
-import { Industries } from '@/components/home/Industries';
-import { Innovation } from '@/components/home/Innovation';
 import { NewProject } from '@/components/home/NewProject';
 import { Partners } from '@/components/home/Partners';
 import { Services } from '@/components/home/Services';
@@ -17,44 +14,69 @@ import { generateBreadcrumbSchema, generateLocalBusinessSchema } from '@/utils/s
 import { dallasKeywords } from '@/utils/seo';
 import { Head } from '@inertiajs/react';
 
+const pageTitle = 'Websites and Software Built Around Your Business | Empuls3';
+const pageDescription =
+    'Empuls3 designs and builds websites, web apps, and business systems for Dallas–Fort Worth businesses, and improves, connects, and supports the ones you already use. Work directly with a senior developer.';
+
+const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [
+        {
+            '@type': 'Service',
+            serviceType: 'New Website and Web Application Development',
+            provider: { '@type': 'Organization', name: 'Empuls3' },
+            description: 'We plan, design, and build new websites, web applications, and business systems, and support them after launch.',
+            url: 'https://www.empuls3.com/solutions/web-ecommerce-development',
+        },
+        {
+            '@type': 'Service',
+            serviceType: 'Software Improvement and Modernization',
+            provider: { '@type': 'Organization', name: 'Empuls3' },
+            description: 'We fix, stabilize, and modernize websites and software your business already uses.',
+            url: 'https://www.empuls3.com/solutions/software-development-design',
+        },
+        {
+            '@type': 'Service',
+            serviceType: 'CRM, API, and Workflow Integration',
+            provider: { '@type': 'Organization', name: 'Empuls3' },
+            description: 'We connect business systems, data, and workflows so information moves between them without re-entry.',
+            url: 'https://www.empuls3.com/solutions/backend-api-development',
+        },
+        {
+            '@type': 'Service',
+            serviceType: 'Ongoing Senior Developer Support',
+            provider: { '@type': 'Organization', name: 'Empuls3' },
+            description: 'We provide ongoing support, fixes, and improvements from a senior developer after launch.',
+            url: 'https://www.empuls3.com/services/software-engineering-it-consulting',
+        },
+    ],
+};
+
 export default function Home() {
-    const localBusinessSchema = generateLocalBusinessSchema();
+    const localBusinessSchema = { ...generateLocalBusinessSchema(), description: pageDescription };
     const breadcrumbSchema = generateBreadcrumbSchema([{ name: 'Home', url: 'https://www.empuls3.com' }]);
 
     return (
-        <SiteLayout title="Software Rescue & Integration for DFW Businesses | Empuls3">
+        <SiteLayout title={pageTitle}>
             <Head>
-                <meta
-                    name="description"
-                    content="Senior software rescue, new website and web app builds, CRM and API integration, and ongoing engineering support for Dallas–Fort Worth businesses."
-                />
+                <meta name="description" content={pageDescription} />
                 <meta
                     name="keywords"
                     content={dallasKeywords.general
-                        .concat([
-                            'legacy software modernization Dallas',
-                            'Dallas systems integration',
-                            'senior engineering support DFW',
-                            'web app development Dallas',
-                        ])
+                        .concat(['web app development Dallas', 'Dallas systems integration', 'software modernization Dallas', 'senior developer DFW'])
                         .join(', ')}
                 />
                 {/* Open Graph Tags for better social sharing */}
-                <meta property="og:title" content="Software Rescue & Integration for DFW Businesses | Empuls3" />
-                <meta
-                    property="og:description"
-                    content="Senior engineers who stabilize aging software, connect critical systems, and provide ongoing technical ownership for established DFW businesses."
-                />
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageDescription} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.empuls3.com" />
                 <meta property="og:image" content="/images/empuls3-og-image.jpg" />
                 {/* Twitter Card Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Software Rescue & Integration for DFW Businesses | Empuls3" />
-                <meta
-                    name="twitter:description"
-                    content="Senior software rescue, systems integration, and ongoing engineering support for established Dallas–Fort Worth businesses."
-                />
+                <meta name="twitter:title" content={pageTitle} />
+                <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content="/images/empuls3-og-image.jpg" />
                 {/* Local Business Schema */}
                 <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
@@ -63,106 +85,20 @@ export default function Home() {
                 <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
 
                 {/* Structured Data for Services */}
-                <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "Service",
-                "serviceType": "Software Rescue and Legacy Modernization",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Empuls3"
-                },
-                "description": "We stabilize aging or unreliable software and create a controlled modernization path.",
-                "url": "https://www.empuls3.com/solutions/software-development-design"
-              },
-              {
-                "@type": "Service",
-                "serviceType": "New Website and Web Application Development",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Empuls3"
-                },
-                "description": "We plan, design, and build new websites and web applications with senior engineers who can support them after launch.",
-                "url": "https://www.empuls3.com/solutions/web-ecommerce-development"
-              },
-              {
-                "@type": "Service",
-                "serviceType": "CRM, API, and Workflow Integration",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Empuls3"
-                },
-                "description": "We connect business systems, data, and workflows to reduce manual work and operational risk.",
-                "url": "https://www.empuls3.com/solutions/backend-api-development"
-              },
-              {
-                "@type": "Service",
-                "serviceType": "Ongoing Senior Engineering Support",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Empuls3"
-                },
-                "description": "We provide ongoing senior-level engineering ownership for critical applications and infrastructure.",
-                "url": "https://www.empuls3.com/services/software-engineering-it-consulting"
-              }
-            ]
-          }
-        `}</script>
-
-                {/* Structured Data for Testimonials */}
-                <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Empuls3",
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Anthony Bearden"
-                },
-                "reviewBody": "I gladly managed and collaborated with Rob at Monkeytag. When Rob joined our company, he jumped right into a fast-moving project for a large client. This challenge required him to learn everything quickly and apply his front-end/back-end development skills, knowledge, and understanding to execute efficiently. His personality and team player approach made challenges like this a continued success."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Palmer Dean"
-                },
-                "reviewBody": "Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with! Easy, fun, and talented."
-              }
-            ]
-          }
-        `}</script>
+                <script type="application/ld+json">{JSON.stringify(servicesSchema)}</script>
             </Head>
+            {/* Journey: promise, recognizable needs, approved work, direct access and founder, process, one project CTA. */}
             <HomeComponentWrapper>
                 <Header />
                 <StatsBar />
                 <TrustSignals />
-                <Features />
                 <NewProject />
-                <Services />
-                <Industries />
-                <Innovation />
-                <Approach />
-                <ProcessTransparency />
+                <Features />
                 <Partners />
-                <FounderIntro />
                 <Testimonials />
+                <Services />
+                <FounderIntro />
+                <ProcessTransparency />
             </HomeComponentWrapper>
         </SiteLayout>
     );

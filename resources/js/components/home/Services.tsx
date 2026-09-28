@@ -6,13 +6,13 @@ export function Services() {
         <section id="services" className="px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="services-heading">
             <div className="container mx-auto">
                 <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
-                    <p className="text-accent-pink mb-3 font-semibold md:mb-4">Built for established service businesses</p>
+                    <p className="text-accent-pink mb-3 font-semibold md:mb-4">Why Work With Empuls3</p>
                     <h2 id="services-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
-                        Clear Ownership for Difficult Software Problems
+                        Work Directly With a Senior Developer
                     </h2>
                     <p className="text-gray-700 md:text-lg">
-                        Empuls3 works with DFW owners, COOs, and IT leaders who need an experienced technical partner to understand the business
-                        impact, take responsibility for the system, and communicate clearly from diagnosis through delivery.
+                        You talk with Robert, the developer who plans and builds your project. He stays involved from the first plan through launch
+                        and ongoing support.
                     </p>
                 </div>
                 <div className="grid auto-cols-fr gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
@@ -42,18 +42,18 @@ export function Services() {
                                     id="service-tech-heading"
                                     className="text-primary mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl"
                                 >
-                                    Senior Technical Diagnosis
+                                    Straight Answers From the Start
                                 </h3>
                                 <p className="text-gray-700">
-                                    We trace failures across applications, APIs, databases, cloud infrastructure, and vendor systems before
-                                    recommending a repair or modernization path.
+                                    Before recommending a new build, a repair, or an integration, we look at your current systems and goals and
+                                    explain the options in plain language.
                                 </p>
                             </div>
                             <div className="mt-5 md:mt-6">
                                 <Link
                                     href="/solutions"
                                     className="text-primary hover:text-accent-pink inline-flex items-center"
-                                    aria-label="Learn more about our modern tech solutions"
+                                    aria-label="Explore our solutions"
                                 >
                                     Explore Solutions
                                     <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
@@ -91,18 +91,18 @@ export function Services() {
                                     id="service-comprehensive-heading"
                                     className="text-primary mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl"
                                 >
-                                    Business-First Delivery
+                                    Recommendations Tied to Your Business
                                 </h3>
                                 <p className="text-gray-700">
-                                    Recommendations are tied to operational risk, staff time, revenue, and customer experience—not technology for its
-                                    own sake.
+                                    We weigh each option against operational risk, staff time, revenue, and customer experience, not technology for
+                                    its own sake.
                                 </p>
                             </div>
                             <div className="mt-5 md:mt-6">
                                 <Link
                                     href="/solutions/software-development-design"
                                     className="text-primary hover:text-accent-pink inline-flex items-center"
-                                    aria-label="Learn more about our comprehensive solutions"
+                                    aria-label="See our approach to software development"
                                 >
                                     See Our Approach
                                     <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
@@ -136,18 +136,17 @@ export function Services() {
                                     id="service-secure-heading"
                                     className="text-primary mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl"
                                 >
-                                    Dependable Operations
+                                    Built to Keep Working After Launch
                                 </h3>
                                 <p className="text-gray-700">
-                                    We design for security, monitoring, recoverability, and maintainable ownership so improvements remain dependable
-                                    after launch.
+                                    We plan for security, monitoring, backups, and maintainable code so the work stays dependable after launch.
                                 </p>
                             </div>
                             <div className="mt-5 md:mt-6">
                                 <Link
                                     href="/services/software-engineering-it-consulting"
                                     className="text-primary hover:text-accent-pink inline-flex items-center"
-                                    aria-label="Learn more about our secure and reliable solutions"
+                                    aria-label="Explore ongoing support"
                                 >
                                     Explore Support
                                     <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
@@ -162,7 +161,7 @@ export function Services() {
                         <div className="flex size-full flex-col items-center justify-center self-start bg-gray-100 p-4 lg:h-auto">
                             <img
                                 src="/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_2d8255b5-eb2b-4d1c-b57d-58077e6d9d44.png"
-                                alt="Team presenting digital transformation strategy"
+                                alt="Illustration of a project manager presenting a plan to a group"
                                 className="h-full w-full rounded-md border border-gray-200 object-cover"
                                 loading="lazy"
                                 width="600"
@@ -171,25 +170,25 @@ export function Services() {
                         </div>
                         <div className="block flex-1 p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
                             <div>
-                                <p className="text-accent-pink mb-2 font-semibold">Innovation</p>
+                                <p className="text-accent-pink mb-2 font-semibold">Existing Systems</p>
                                 <h3
                                     id="service-innovation-heading"
                                     className="text-primary mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl"
                                 >
-                                    Modernization Without Unnecessary Disruption
+                                    Improve What You Already Use
                                 </h3>
                                 <p className="text-gray-700">
-                                    Improve the highest-risk parts of your technology environment in a controlled sequence while preserving the
-                                    workflows that already serve the business.
+                                    Improve the riskiest parts of your current systems one step at a time, while keeping the workflows your team
+                                    already relies on.
                                 </p>
                             </div>
                             <div className="mt-5 md:mt-6">
                                 <Link
                                     href="/solutions/software-development-design"
                                     className="text-primary hover:text-accent-pink inline-flex items-center"
-                                    aria-label="Get started with digital transformation solutions"
+                                    aria-label="Explore software modernization"
                                 >
-                                    Get Started
+                                    Explore Modernization
                                     <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                                 </Link>
                             </div>
@@ -202,7 +201,7 @@ export function Services() {
                         <div className="flex size-full flex-col items-center justify-center self-start bg-gray-100 p-4 lg:h-auto">
                             <img
                                 src="/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_1e9c41b2-97f0-453f-a3ac-3d7547b2c689_3.png"
-                                alt="Diverse team working on enterprise solutions"
+                                alt="Illustration of people working together at a table"
                                 className="h-full w-full rounded-md border border-gray-200 object-cover"
                                 loading="lazy"
                                 width="800"
@@ -211,25 +210,24 @@ export function Services() {
                         </div>
                         <div className="block flex-1 p-6 sm:flex sm:flex-col sm:justify-center md:p-8">
                             <div>
-                                <p className="text-accent-pink mb-2 font-semibold">Scalability</p>
+                                <p className="text-accent-pink mb-2 font-semibold">Direct Access</p>
                                 <h3
                                     id="service-enterprise-heading"
                                     className="text-primary mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl"
                                 >
-                                    Direct Access to the People Doing the Work
+                                    Direct Access to the Developer Doing the Work
                                 </h3>
                                 <p className="text-gray-700">
-                                    Work with senior specialists who can explain tradeoffs, make decisions, and remain accountable throughout the
-                                    engagement.
+                                    Ask questions, review tradeoffs, and get decisions from the senior developer who stays accountable for the work.
                                 </p>
                             </div>
                             <div className="mt-5 md:mt-6">
                                 <Link
-                                    href="/case-studies"
+                                    href="/services"
                                     className="text-primary hover:text-accent-pink inline-flex items-center"
-                                    aria-label="Explore our case studies with industry leaders"
+                                    aria-label="Explore our services"
                                 >
-                                    Explore
+                                    Explore Services
                                     <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
                                 </Link>
                             </div>

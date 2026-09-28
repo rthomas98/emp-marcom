@@ -24,8 +24,8 @@ const sections: LegalSection[] = [
         heading: 'Third-party services',
         content: (
             <p>
-                Scheduling, maps, social networks, client websites, and other linked services are controlled by their providers. We cannot guarantee
-                their accessibility, but feedback about barriers in a path originating on our site is still useful.
+                Social networks, client websites, and other linked services are controlled by their providers. We cannot guarantee their
+                accessibility, but feedback about barriers in a path originating on our site is still useful.
             </p>
         ),
     },

@@ -1,6 +1,8 @@
 import CaseStudiesCta from '@/components/case-studies/CaseStudiesCta';
 import CaseStudiesGallery from '@/components/case-studies/CaseStudiesGallery';
 import CaseStudiesHeader from '@/components/case-studies/CaseStudiesHeader';
+import SoftwareProjects from '@/components/case-studies/SoftwareProjects';
+import WebsiteContributions from '@/components/case-studies/WebsiteContributions';
 import SiteLayout from '@/layouts/site-layout';
 import { Head } from '@inertiajs/react';
 import React from 'react';
@@ -22,13 +24,13 @@ interface CaseStudiesProps {
 export default function CaseStudies({ caseStudies }: CaseStudiesProps) {
     return (
         <>
-            <Head title="Case Studies | Empuls3">
+            <Head title="Case Studies: Websites and Software | Empuls3">
                 <meta
                     name="description"
-                    content="See how Empuls3 approaches software modernization, web transformation, systems integration, and ongoing engineering work for growing organizations."
+                    content="Websites delivered for Hebert Thomas Law, CodeGig, and Solushiens, plus current software and platform projects including AEC Unites, Carbon Capture, Kinesics Health, and EcoGlobe."
                 />
-                <meta property="og:title" content="Technology Case Studies | Empuls3" />
-                <meta property="og:description" content="Selected Empuls3 client work across software, integration, and digital modernization." />
+                <meta property="og:title" content="Case Studies: Websites and Software | Empuls3" />
+                <meta property="og:description" content="Client websites and current software and platform projects by Empuls3." />
                 <meta property="og:url" content="https://www.empuls3.com/case-studies" />
             </Head>
 
@@ -38,10 +40,16 @@ export default function CaseStudies({ caseStudies }: CaseStudiesProps) {
             {/* Gallery Component */}
             <CaseStudiesGallery caseStudies={caseStudies} />
 
+            {/* Selected website contributions */}
+            <WebsiteContributions />
+
+            {/* Current software and platform projects (anchored sections, no detail routes) */}
+            <SoftwareProjects />
+
             {/* CTA Component */}
             <CaseStudiesCta />
         </>
     );
 }
 
-CaseStudies.layout = (page: React.ReactNode) => <SiteLayout children={page} title="Case Studies | Empuls3" />;
+CaseStudies.layout = (page: React.ReactNode) => <SiteLayout children={page} title="Case Studies: Websites and Software | Empuls3" />;

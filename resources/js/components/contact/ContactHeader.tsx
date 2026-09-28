@@ -13,9 +13,8 @@ export function ContactHeader() {
                                 Tell Us What You Want to Build or Fix
                             </h1>
                             <p className="md:text-md text-gray-700">
-                                New website or web app projects are welcome, and so are aging systems that are broken, disconnected, or consuming too
-                                much staff time. A senior specialist will review your request and respond within one business day with a practical
-                                next step.
+                                Planning a new website or web app, or need to improve a system you already use? Send a short note. We normally reply
+                                within one business day by email, and we can go through the details after that.
                             </p>
                             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
                                 <button
@@ -42,21 +41,21 @@ export function ContactHeader() {
                             <img
                                 className="aspect-[3/4] h-full w-full rounded-lg object-cover"
                                 src="/images/site-images/rob_thomas23_A_Diverse_team_African_American_white_men_and_wo_36e520ed-8877-46b5-8416-655e4dae40c8_0.png"
-                                alt="Diverse team of professionals"
+                                alt="Illustration of business professionals"
                             />
                         </div>
                         <div className="my-[15%] w-full">
                             <img
                                 className="my-[10%] aspect-[3/2] h-full w-full rounded-lg object-cover sm:my-0"
                                 src="/images/site-images/rob_thomas23_An_African_American_team_of_developers_working_col_23a5e847-d8cd-45e5-805c-f2485621fb22.png"
-                                alt="Team of developers working collaboratively"
+                                alt="Illustration of developers collaborating"
                             />
                         </div>
                         <div className="w-full">
                             <img
                                 className="aspect-square h-full w-full rounded-lg object-cover"
                                 src="/images/site-images/rob_thomas23_An_African_American_team_leader_shaking_hands_with_6cd791fa-9847-44b3-be94-fd439a747f57.png"
-                                alt="Team leader shaking hands"
+                                alt="Illustration of two people shaking hands"
                             />
                         </div>
                     </div>

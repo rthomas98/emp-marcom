@@ -1,5 +1,6 @@
 'use client';
 
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 
 export function ManagedITHeader() {
@@ -15,23 +16,21 @@ export function ManagedITHeader() {
                     </header>
                     <div className="ml-[7.5%]">
                         <p className="md:text-md text-gray-700">
-                            When email, devices, servers, or business systems become unreliable, we help Dallas teams establish clear support,
-                            maintenance, backup, and escalation practices. Each engagement defines its service scope and response targets in writing.
+                            Empuls3 provides remote IT support for DFW service businesses: users, devices, access, vendors, business systems, and the
+                            recurring problems that keep interrupting work.
                         </p>
                         <nav className="mt-6 flex flex-wrap gap-4 md:mt-8 md:flex-wrap" aria-label="Managed IT services navigation">
                             <Link
-                                href="#managed-it-services"
+                                href={contactHref('project')}
                                 className="hover:bg-opacity-90 inline-flex items-center justify-center rounded-md bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 focus-visible:outline-none"
-                                aria-label="Learn more about our managed IT services"
                             >
-                                Explore Managed IT Services
+                                Discuss Managed IT Fit
                             </Link>
                             <Link
-                                href="/contact"
+                                href="#managed-it-overview"
                                 className="inline-flex items-center justify-center rounded-md border border-[#BD1550] bg-transparent px-6 py-3 text-center font-medium text-[#BD1550] transition hover:bg-[#BD1550] hover:text-white focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 focus-visible:outline-none"
-                                aria-label="Contact us about managed IT support services"
                             >
-                                Discuss Your IT Needs
+                                See What We Support
                             </Link>
                         </nav>
                     </div>
@@ -40,24 +39,20 @@ export function ManagedITHeader() {
                     <figure className="w-full">
                         <img
                             src="/images/site-images/rob_thomas23_An_African_American_developer_holding_his_computer_160e36fc-9208-4e49-8166-d14de5aa74b0.png"
-                            alt="IT professional with laptop providing managed support services"
+                            alt="IT professional holding a laptop"
                             className="aspect-[2/3] h-full w-full rounded-lg border border-gray-200 object-cover"
                             width="400"
                             height="600"
-                            loading="lazy"
                         />
-                        <figcaption className="sr-only">Senior IT specialist providing personalized support services</figcaption>
                     </figure>
                     <figure className="w-full">
                         <img
                             src="/images/site-images/rob_thomas23_Empty_developer_work_stations_in_a_modern_office_w_249ca82d-c4b9-4af2-9af8-aae352b63f75.png"
-                            alt="Modern IT workspace with managed technology solutions"
+                            alt="Empty developer workstations in a modern office"
                             className="aspect-square h-full w-full rounded-lg border border-gray-200 object-cover"
                             width="300"
                             height="300"
-                            loading="lazy"
                         />
-                        <figcaption className="sr-only">Modern workspace equipped with managed IT infrastructure</figcaption>
                     </figure>
                 </div>
             </div>

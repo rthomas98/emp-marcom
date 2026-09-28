@@ -1,135 +1,131 @@
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from 'lucide-react';
 
+const companyLinks = [
+    { label: 'Solutions', routeName: 'solutions' },
+    { label: 'Case Studies', routeName: 'case-studies.index' },
+    { label: 'About Us', routeName: 'company.about' },
+    { label: 'FAQs', routeName: 'company.faqs' },
+    { label: 'Contact Us', routeName: 'contact' },
+];
+
+const legalLinks = [
+    { label: 'Privacy Policy', routeName: 'legal.privacy-policy' },
+    { label: 'Terms of Service', routeName: 'legal.terms-of-service' },
+    { label: 'Cookie Policy', routeName: 'legal.cookie-policy' },
+    { label: 'Accessibility Statement', routeName: 'legal.accessibility-statement' },
+    { label: 'Sitemap', routeName: 'legal.sitemap' },
+];
+
+const socialLinks = [
+    { label: 'Facebook', href: 'https://www.facebook.com/empuls3/', icon: Facebook },
+    { label: 'Instagram', href: 'https://www.instagram.com/empuls3/?hl=en', icon: Instagram },
+    { label: 'X (Twitter)', href: 'https://x.com/empuls3', icon: Twitter },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/empuls3/?viewAsMember=true', icon: Linkedin },
+    { label: 'YouTube', href: 'https://www.youtube.com/@empuls3', icon: Youtube },
+];
+
+const groupHeadingClass = 'mb-4 text-sm font-semibold tracking-wide text-white/60 uppercase';
+const linkClass = 'text-sm text-white/85 transition-colors hover:text-white focus:outline-none focus-visible:underline';
+
 export default function Footer() {
     return (
-        <footer id="footer" className="bg-primary px-[5%] py-12 text-white md:py-18 lg:py-20">
+        <footer id="footer" className="bg-primary px-[5%] pt-12 pb-8 text-white md:pt-16 lg:pt-20">
             <div className="container mx-auto">
-                <div className="border-b border-white/20">
-                    <div className="mb-12 grid grid-cols-1 gap-x-[8vw] gap-y-12 md:mb-18 md:gap-y-16 lg:mb-20 lg:grid-cols-[1fr_0.5fr] lg:gap-y-20">
-                        <div className="rb-6 max-w-md">
-                            <h2 className="font-header mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
-                                Senior Engineering Support for Dallas–Fort Worth Businesses
-                            </h2>
-                            <p className="text-white/80">
-                                Serving established Dallas–Fort Worth businesses since 2009, Empuls3 rescues aging software, connects critical
-                                systems, and provides ongoing senior-level engineering support.
-                            </p>
-                            <div className="mt-4 space-y-2 text-white/80">
-                                <div className="flex items-center gap-2">
-                                    <MapPin className="size-5" />
-                                    <span>Serving Dallas, TX Remotely</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Phone className="size-5" />
-                                    <a href="tel:+19727988914" className="hover:text-white">
-                                        (972) 798-8914
-                                    </a>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Mail className="size-5" />
-                                    <a href="mailto:info@empuls3.com" className="hover:text-white">
-                                        info@empuls3.com
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
-                                <Link
-                                    href={route('solutions')}
-                                    className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                                >
-                                    Review Our Solutions
-                                </Link>
-                                <Link
-                                    href={route('contact')}
-                                    className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
-                                >
-                                    Request a Software Review
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="grid grid-cols-1 items-start gap-x-6 gap-y-5 sm:grid-cols-2 sm:gap-x-6 md:gap-x-8 md:gap-y-4">
-                            <ul>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('legal.privacy-policy')}>Privacy Policy</Link>
-                                </li>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('legal.terms-of-service')}>Terms of Service</Link>
-                                </li>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('legal.cookie-policy')}>Cookie Policy</Link>
-                                </li>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('legal.accessibility-statement')}>Accessibility Statement</Link>
-                                </li>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('legal.sitemap')}>Sitemap</Link>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('contact')}>Contact Us</Link>
-                                </li>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('case-studies.index')}>Case Studies</Link>
-                                </li>
-                                <li className="py-2 text-sm font-semibold">
-                                    <Link href={route('company.about')}>About Us</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="rb-6 col-span-1 flex flex-col items-start justify-between pb-6 sm:flex-row sm:items-center md:pb-8 lg:col-span-2">
-                        <Link href={route('home')} className="flex items-center">
-                            <img src="/images/w-emp-logo.svg" alt="Empuls3 Logo" className="mb-6 inline-block h-8 sm:mb-0" />
-                            <span className="font-header ml-2 text-xl font-bold text-white">Empuls3</span>
+                <div className="grid grid-cols-1 gap-10 border-b border-white/20 pb-10 sm:grid-cols-2 md:grid-cols-3 md:gap-x-10 lg:grid-cols-12 lg:gap-x-12 lg:pb-14">
+                    <div className="sm:col-span-2 md:col-span-3 lg:col-span-5">
+                        <Link href={route('home')} className="inline-flex items-center">
+                            <img src="/images/w-emp-logo.svg" alt="" className="h-8 w-auto" width="32" height="32" />
+                            <span className="font-header ml-2 text-xl font-bold">Empuls3</span>
                         </Link>
-                        <div className="ml-3 flex">
-                            <img
-                                src="/images/site-images/rob_thomas23_African_American_developers_development_standing_76853597-7d40-4b8f-be75-50c1ad6629b1_3 (1).png"
-                                alt="Watercolor illustration of a software developer"
-                                className="relative -ml-3 size-12 min-h-12 min-w-12 rounded-full border-2 border-white object-cover"
-                                loading="lazy"
-                            />
-                            <img
-                                src="/images/site-images/rob_thomas23_An_African_American_developer_holding_an_iPhone__a97a063e-c229-46b4-842d-bcf7c11542ff_2.png"
-                                alt="Watercolor illustration of a developer holding a phone"
-                                className="relative -ml-3 size-12 min-h-12 min-w-12 rounded-full border-2 border-white object-cover"
-                                loading="lazy"
-                            />
-                            <img
-                                src="/images/site-images/rob_thomas23_Young_African_American_designer_developing_websi_2331add1-208d-4bd5-94de-874c37b309b8_2 (1).png"
-                                alt="Watercolor illustration of a web designer at work"
-                                className="relative -ml-3 size-12 min-h-12 min-w-12 rounded-full border-2 border-white object-cover"
-                                loading="lazy"
-                            />
+                        <h2 className="font-header mt-6 text-3xl leading-tight font-bold lg:text-4xl">Let&rsquo;s Talk About Your Next Project</h2>
+                        <p className="mt-4 max-w-md text-white/80">
+                            Planning a new website or app, or need help with software you already rely on? Empuls3 has worked directly with
+                            Dallas–Fort Worth businesses since 2009.
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                            <Link
+                                href={contactHref('project')}
+                                className="bg-accent-pink hover:bg-accent-pink/90 inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F1946]"
+                            >
+                                Let’s Talk About Your Project
+                            </Link>
+                            <Link
+                                href={contactHref('new-project')}
+                                className="inline-flex h-10 items-center justify-center rounded-md border border-white/70 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1F1946]"
+                            >
+                                Start a New Project
+                            </Link>
                         </div>
                     </div>
-                </div>
-                <div className="flex flex-col-reverse items-start justify-between pt-6 pb-4 text-sm md:flex-row md:items-center md:pt-8 md:pb-0">
-                    <p className="text-white/70">© {new Date().getFullYear()} Empuls3. All rights reserved.</p>
-                    <div className="mb-4 grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3 md:mb-0">
-                        <a href="https://www.facebook.com/empuls3/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                            <Facebook className="hover:text-accent-pink size-6 text-white transition-colors" />
-                        </a>
-                        <a href="https://www.instagram.com/empuls3/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <Instagram className="hover:text-accent-pink size-6 text-white transition-colors" />
-                        </a>
-                        <a href="https://x.com/empuls3" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <Twitter className="hover:text-accent-pink size-6 text-white transition-colors" />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/company/empuls3/?viewAsMember=true"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                        >
-                            <Linkedin className="hover:text-accent-pink size-6 text-white transition-colors" />
-                        </a>
-                        <a href="https://www.youtube.com/@empuls3" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                            <Youtube className="hover:text-accent-pink size-6 text-white transition-colors" />
-                        </a>
+
+                    <div className="sm:col-span-2 md:col-span-1 lg:col-span-3">
+                        <h3 className={groupHeadingClass}>Contact</h3>
+                        <ul className="space-y-3 text-sm text-white/85">
+                            <li className="flex items-start gap-2">
+                                <Phone className="mt-0.5 size-4 flex-none text-white/60" aria-hidden="true" />
+                                <a href="tel:+19727988914" className={linkClass}>
+                                    (972) 798-8914
+                                </a>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <Mail className="mt-0.5 size-4 flex-none text-white/60" aria-hidden="true" />
+                                <a href="mailto:info@empuls3.com" className={linkClass}>
+                                    info@empuls3.com
+                                </a>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <MapPin className="mt-0.5 size-4 flex-none text-white/60" aria-hidden="true" />
+                                <span>Serving Dallas–Fort Worth remotely</span>
+                            </li>
+                        </ul>
                     </div>
+
+                    <nav aria-label="Company" className="lg:col-span-2">
+                        <h3 className={groupHeadingClass}>Company</h3>
+                        <ul className="space-y-3">
+                            {companyLinks.map((link) => (
+                                <li key={link.routeName}>
+                                    <Link href={route(link.routeName)} className={linkClass}>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <nav aria-label="Legal" className="lg:col-span-2">
+                        <h3 className={groupHeadingClass}>Legal</h3>
+                        <ul className="space-y-3">
+                            {legalLinks.map((link) => (
+                                <li key={link.routeName}>
+                                    <Link href={route(link.routeName)} className={linkClass}>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className="flex flex-col-reverse items-start justify-between gap-4 pt-6 text-sm md:flex-row md:items-center">
+                    <p className="text-white/70">© {new Date().getFullYear()} Empuls3. All rights reserved.</p>
+                    <ul className="flex items-center gap-3" aria-label="Empuls3 on social media">
+                        {socialLinks.map(({ label, href, icon: Icon }) => (
+                            <li key={label}>
+                                <a
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Empuls3 on ${label} (opens in a new tab)`}
+                                    className="hover:text-accent-pink inline-flex size-9 items-center justify-center rounded-full text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                                >
+                                    <Icon className="size-5" aria-hidden="true" />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </footer>

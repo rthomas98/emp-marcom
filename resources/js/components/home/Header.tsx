@@ -75,7 +75,7 @@ export const Header = (props: HeaderProps) => {
                             {title}
                         </h1>
                         <p className="text-lg text-gray-700">{description}</p>
-                        <div className="mt-6 flex flex-wrap gap-4 md:mt-8" role="navigation" aria-label="Primary call to action">
+                        <div className="mt-6 flex flex-wrap gap-4 md:mt-8" role="navigation" aria-label="Hero calls to action">
                             {buttons.map((button, index) =>
                                 button.variant === 'secondary' ? (
                                     <Link
@@ -190,45 +190,45 @@ export const Header = (props: HeaderProps) => {
 };
 
 export const HeaderDefaults: Props = {
-    title: 'Senior Software Rescue and Integration for DFW Businesses',
+    title: 'Websites and Software Built Around Your Business',
     description:
-        'For Dallas–Fort Worth owners, COOs, and IT leaders losing time or revenue to aging software, disconnected systems, manual workflows, or unreliable vendors—or planning a new website or web app. Work directly with senior engineers from diagnosis or first plan through long-term support.',
+        'We design and build websites, web apps, and business systems—and improve the ones you already use. Work directly with Robert, an independent senior developer, from the first plan through launch and ongoing support.',
     buttons: [
         {
-            title: 'Request a Software Review',
-            href: '/contact',
+            title: 'Let’s Talk About Your Project',
+            href: contactHref('project'),
             variant: 'primary',
         },
         {
-            title: 'Start a New Project',
-            href: contactHref('new-project'),
+            title: 'See Our Work',
+            href: '/case-studies',
             variant: 'secondary',
         },
     ],
     images: [
         {
             src: '/images/site-images/rob_thomas23_African_American_Designers_and_developers_collabor_074e0918-602f-489f-a994-549f9d1f62fa.png',
-            alt: 'Software developer working on code',
+            alt: 'Illustration of designers and developers collaborating',
         },
         {
             src: '/images/site-images/rob_thomas23_African_American_Web_Developers_in_a_working_envir_008ed057-ce50-4832-bfc4-21051acf71dd.png',
-            alt: 'Web development team collaboration',
+            alt: 'Illustration of web developers at work',
         },
         {
             src: '/images/site-images/rob_thomas23_A_Diverse_team_African_American_Happy__Mobile_de_addb40d4-04d4-481e-9072-f29d1dee05d1_3 (1).png',
-            alt: 'Mobile development team meeting',
+            alt: 'Illustration of people working on a mobile app',
         },
         {
             src: '/images/site-images/rob_thomas23_African_American_Coders_working_in_a_Software_deve_390a7a57-d7d7-4496-88ad-dce46e0c4c80.png',
-            alt: 'Software development team working together',
+            alt: 'Illustration of developers working together',
         },
         {
             src: '/images/site-images/rob_thomas23_African_American_Project_Manager_Makes_a_Presentat_2d8255b5-eb2b-4d1c-b57d-58077e6d9d44.png',
-            alt: 'Project manager presenting to team',
+            alt: 'Illustration of a project manager presenting a plan',
         },
         {
             src: '/images/site-images/rob_thomas23_A_African_American_team_of_professionals_collabora_0c9ec954-2131-4655-b31f-c9a5c027ba39.png',
-            alt: 'Team of professionals collaborating',
+            alt: 'Illustration of professionals collaborating',
         },
     ],
 };

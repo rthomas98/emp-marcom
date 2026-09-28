@@ -59,14 +59,14 @@ export function generateMetaDescription(description: string, maxLength: number =
 
 // Generate location-optimized description
 export function generateLocalDescription(baseDescription: string, includeLocation: boolean = true): string {
-    const locationContext = includeLocation ? ' Serving Dallas, Fort Worth, and the greater DFW metroplex with excellence since 2009.' : '';
+    const locationContext = includeLocation ? ' Based in Dallas–Fort Worth and working with DFW businesses since 2009.' : '';
 
     // Ensure description is under 160 characters
     const fullDescription = `${baseDescription}${locationContext}`;
 
     if (fullDescription.length > 160) {
         // Try shorter location context
-        const shortContext = includeLocation ? ' Serving Dallas-Fort Worth businesses since 2009.' : '';
+        const shortContext = includeLocation ? ' Based in Dallas–Fort Worth since 2009.' : '';
         const shorterDescription = `${baseDescription}${shortContext}`;
 
         return generateMetaDescription(shorterDescription);
@@ -91,7 +91,7 @@ export const dallasKeywords = {
     ],
     softwareDevelopment: [
         'custom software development Dallas',
-        'Dallas software engineers',
+        'Dallas software engineer',
         'enterprise software Dallas',
         'Dallas app development',
         'software development company Dallas TX',
@@ -106,7 +106,7 @@ export const dallasKeywords = {
         'Dallas web design',
         'Dallas website development',
         'ecommerce development Dallas',
-        'Dallas web developers',
+        'Dallas web developer',
         'website design Dallas TX',
         'Dallas responsive web design',
         'Dallas web application development',
@@ -130,7 +130,7 @@ export const dallasKeywords = {
         'Dallas managed IT',
         'IT support Dallas',
         'Dallas IT management',
-        '24/7 IT support Dallas',
+        'remote IT support Dallas',
         'Dallas managed services provider',
         'outsourced IT Dallas',
         'Dallas IT help desk',
@@ -139,7 +139,7 @@ export const dallasKeywords = {
     ],
     mobile: [
         'mobile app development Dallas',
-        'Dallas app developers',
+        'Dallas app developer',
         'iOS development Dallas',
         'Android development Dallas',
         'Dallas mobile development',
@@ -147,7 +147,7 @@ export const dallasKeywords = {
         'Dallas app development company',
         'cross-platform development Dallas',
         'Dallas mobile app design',
-        'app developers Dallas TX',
+        'app developer Dallas TX',
     ],
 };
 
@@ -159,8 +159,8 @@ export function generateServiceMetaTags(service: string, baseTitle: string, base
         title: generateLocalTitle(baseTitle),
         description: generateLocalDescription(baseDescription),
         keywords: keywords.join(', '),
-        ogTitle: `${baseTitle} | Dallas's Premier Tech Agency`,
-        ogDescription: `${baseDescription} Trusted by Dallas businesses for exceptional results.`,
+        ogTitle: `${baseTitle} | Empuls3 Dallas–Fort Worth`,
+        ogDescription: baseDescription,
         twitterTitle: `${baseTitle} | Empuls3 Dallas`,
         twitterDescription: baseDescription,
     };
@@ -171,31 +171,31 @@ export const dallasServicePages = [
     {
         slug: 'software-development-dallas',
         title: 'Custom Software Development',
-        description: 'Expert custom software development services for Dallas businesses',
+        description: 'New business software and improvements to existing applications for DFW businesses',
         keywords: dallasKeywords.softwareDevelopment,
     },
     {
         slug: 'web-development-dallas',
         title: 'Web Development Services',
-        description: 'Professional web development and design for Dallas companies',
+        description: 'New websites and updates to existing sites for DFW businesses',
         keywords: dallasKeywords.webDevelopment,
     },
     {
         slug: 'it-consulting-dallas',
         title: 'IT Consulting Services',
-        description: 'Strategic IT consulting for Dallas-Fort Worth enterprises',
+        description: 'Senior technical advice for Dallas–Fort Worth businesses',
         keywords: dallasKeywords.itConsulting,
     },
     {
         slug: 'managed-it-services-dallas',
         title: 'Managed IT Services',
-        description: '24/7 managed IT support for Dallas metro businesses',
+        description: 'Scoped remote IT support for Dallas–Fort Worth businesses',
         keywords: dallasKeywords.managedIT,
     },
     {
         slug: 'mobile-app-development-dallas',
         title: 'Mobile App Development',
-        description: 'iOS and Android app development for Dallas companies',
+        description: 'iOS and Android apps for DFW businesses',
         keywords: dallasKeywords.mobile,
     },
 ];
@@ -203,25 +203,24 @@ export const dallasServicePages = [
 // Generate local content snippets
 export const dallasContent = {
     hero: {
-        title: "Dallas's Premier Remote Software Development & IT Consulting Agency",
-        subtitle: 'Empowering Dallas Businesses with Custom Technology Solutions',
+        title: 'Websites and software built around your business',
+        subtitle: 'Independent senior developer based in Dallas–Fort Worth',
         description:
-            'Remote-first agency serving Dallas, Fort Worth, and the greater DFW metroplex with enterprise-grade software development, web solutions, and IT consulting services.',
+            'We design and build websites, web apps, and business systems, and improve the ones you already use. Work directly with a senior developer from the first plan through launch and ongoing support.',
     },
     about: {
-        title: 'Your Remote Technology Partner for Dallas',
+        title: 'Independent senior developer based in Dallas–Fort Worth',
         description:
-            'Empuls3 has been serving Dallas businesses remotely since 2009. As a fully remote agency, we provide the same high-quality service without the overhead of physical offices, passing the savings to our Dallas clients.',
+            'Robert Thomas founded Empuls3 in 2009. We work remotely with DFW businesses through scheduled video sessions, secure system access, and written updates.',
     },
     services: {
-        title: 'Remote Technology Services for Dallas Businesses',
+        title: 'Build new, improve what you have',
         description:
-            'We provide comprehensive technology solutions tailored to Dallas companies across all industries, delivered remotely with the flexibility modern businesses need.',
+            'New websites, web apps, and business systems, plus improvements, integrations, and ongoing support for the software you already use.',
     },
     contact: {
-        title: 'Connect with Our Remote Team',
-        description:
-            'Available for virtual meetings across all time zones. We use modern collaboration tools to stay connected with our Dallas clients and deliver exceptional results remotely.',
+        title: 'Tell us about your project',
+        description: 'Send a short description through the contact form or by email. We normally reply within one business day.',
     },
 };
 

@@ -53,7 +53,7 @@ export interface LocalBusinessSchema {
 export const dallasBusinessInfo = {
     name: 'Empuls3',
     description:
-        'Senior-led software development and IT consulting agency serving Dallas-Fort Worth businesses with software rescue, systems integration, and ongoing engineering support.',
+        'Dallas–Fort Worth independent developer practice, run by Robert Thomas, that designs and builds websites, web apps, and business systems, and improves, connects, and supports the ones businesses already use.',
     // Remote agency - no physical address
     streetAddress: '',
     addressLocality: 'Dallas',
@@ -65,7 +65,7 @@ export const dallasBusinessInfo = {
     // Dallas coordinates (city center for service area)
     latitude: 32.7767,
     longitude: -96.797,
-    priceRange: '$$$$',
+    priceRange: 'From $2,500',
     openingHours: [
         {
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -73,10 +73,13 @@ export const dallasBusinessInfo = {
             closes: '18:00',
         },
     ],
+    // Matches the social links published in the site footer.
     socialProfiles: [
-        'https://www.linkedin.com/company/empuls3-dallas',
-        'https://twitter.com/empuls3dallas',
-        'https://www.facebook.com/empuls3dallas',
+        'https://www.linkedin.com/company/empuls3/',
+        'https://x.com/empuls3',
+        'https://www.facebook.com/empuls3/',
+        'https://www.instagram.com/empuls3/',
+        'https://www.youtube.com/@empuls3',
     ],
 };
 
@@ -110,8 +113,8 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
             closes: hours.closes,
         })),
         priceRange: dallasBusinessInfo.priceRange,
-        image: ['https://www.empuls3.com/images/empuls3-dallas-office.jpg', 'https://www.empuls3.com/images/dallas-team.jpg'],
-        logo: 'https://www.empuls3.com/images/logo.png',
+        image: 'https://www.empuls3.com/images/emp-logo.svg',
+        logo: 'https://www.empuls3.com/images/emp-logo.svg',
         sameAs: dallasBusinessInfo.socialProfiles,
         areaServed: [
             {
@@ -146,45 +149,52 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
                 '@type': 'City',
                 name: 'McKinney',
             },
-            {
-                '@type': 'State',
-                name: 'Texas',
-            },
         ],
         hasOfferCatalog: {
             '@type': 'OfferCatalog',
-            name: 'Software Development and IT Services',
+            name: 'Website, Software, and IT Services',
             itemListElement: [
                 {
                     '@type': 'Offer',
                     itemOffered: {
                         '@type': 'Service',
-                        name: 'Custom Software Development Dallas',
-                        description: 'Enterprise software solutions tailored for Dallas businesses',
+                        name: 'New Website and Web App Development',
+                        description:
+                            'New websites, web applications, and business systems planned, designed, and built by a senior developer for Dallas–Fort Worth businesses',
                     },
                 },
                 {
                     '@type': 'Offer',
                     itemOffered: {
                         '@type': 'Service',
-                        name: 'Web Development Dallas',
-                        description: 'Professional web development services for Dallas companies',
+                        name: 'Software Improvement and Modernization',
+                        description:
+                            'Review, repair, and staged improvement of existing websites and applications, including software taken over from another developer',
                     },
                 },
                 {
                     '@type': 'Offer',
                     itemOffered: {
                         '@type': 'Service',
-                        name: 'IT Consulting Dallas',
-                        description: 'Expert IT consulting for Dallas-Fort Worth businesses',
+                        name: 'CRM, API, and Workflow Integration',
+                        description: 'Connecting CRM, website, finance, and operations systems so information moves without manual re-entry',
                     },
                 },
                 {
                     '@type': 'Offer',
                     itemOffered: {
                         '@type': 'Service',
-                        name: 'Managed IT Services Dallas',
-                        description: 'Managed IT support for the Dallas-Fort Worth metro area',
+                        name: 'Ongoing Senior Developer Support',
+                        description:
+                            'Maintenance, updates, technical advice, and ongoing improvements from the senior developer who knows the software',
+                    },
+                },
+                {
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Service',
+                        name: 'Managed IT Services',
+                        description: 'Scoped remote IT support for users, devices, access, and vendors across the Dallas–Fort Worth area',
                     },
                 },
             ],
@@ -274,20 +284,10 @@ export function generateArticleSchema(article: {
             name: dallasBusinessInfo.name,
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.empuls3.com/images/logo.png',
+                url: 'https://www.empuls3.com/images/emp-logo.svg',
             },
         },
     };
 }
 
-// AggregateRating Schema generator
-export function generateAggregateRatingSchema(rating: { ratingValue: number; reviewCount: number; bestRating?: number; worstRating?: number }) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'AggregateRating',
-        ratingValue: rating.ratingValue,
-        reviewCount: rating.reviewCount,
-        ...(rating.bestRating && { bestRating: rating.bestRating }),
-        ...(rating.worstRating && { worstRating: rating.worstRating }),
-    };
-}
+// Review and AggregateRating schema are intentionally not generated: the site has no verified rating source.

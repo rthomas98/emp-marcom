@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 type ImageProps = {
@@ -7,8 +7,12 @@ type ImageProps = {
     alt?: string;
 };
 
+// Anthony Bearden and Sean Daley are former colleagues; their quotes are recommendations, not client reviews.
+// Keep quotes and attribution verbatim. Do not add star ratings or review schema.
+type Relationship = 'Client' | 'Colleague recommendation';
+
 type Testimonial = {
-    numberOfStars: number;
+    relationship: Relationship;
     quote: string;
     avatar: ImageProps;
     name: string;
@@ -41,29 +45,7 @@ export function Testimonials() {
 
     const testimonials: Testimonial[] = [
         {
-            numberOfStars: 5,
-            quote: 'I gladly managed and collaborated with Rob at Monkeytag. When Rob joined our company, he jumped right into a fast-moving project for a large client. This challenge required him to learn everything quickly and apply his front-end/back-end development skills, knowledge, and understanding to execute efficiently. His personality and team player approach made challenges like this a continued success.',
-            avatar: {
-                src: '/images/1723665299718.jpeg',
-                alt: 'Anthony Bearden portrait',
-            },
-            name: 'Anthony Bearden',
-            position: 'Founder',
-            companyName: 'Marketer | Consultant | Investor',
-        },
-        {
-            numberOfStars: 5,
-            quote: 'Robert is a great member of the team. He is enthusiastic and very engaged with the work he is doing. Robert offers input and looks to solve issues before they occur.',
-            avatar: {
-                src: '/images/1716269447337.jpeg',
-                alt: 'Sean Daley portrait',
-            },
-            name: 'Sean Daley',
-            position: 'Business Ecosystem Connector',
-            companyName: 'Customer Obsession Expert',
-        },
-        {
-            numberOfStars: 5,
+            relationship: 'Client',
             quote: 'Rob has been instrumental in helping align our business offering with a terrific website and all the work that comes with that. Would absolutely recommend to anyone looking for a top notch design agency to work with! Easy, fun, and talented.',
             avatar: {
                 src: '/images/1638545534787.jpeg',
@@ -74,7 +56,7 @@ export function Testimonials() {
             companyName: 'Wash Metrix',
         },
         {
-            numberOfStars: 5,
+            relationship: 'Client',
             quote: 'I would highly recommend Empuls3 for any Web design, App Creation, and App Launch. They are knowledgeable, and will ensure your project is completed from beginning to the end.',
             avatar: {
                 src: '/images/305620519_446536930828187_8773084213258704960_n.jpg',
@@ -85,7 +67,7 @@ export function Testimonials() {
             companyName: '24peekview.com',
         },
         {
-            numberOfStars: 5,
+            relationship: 'Client',
             quote: 'Rob is fantastic. Really enjoyed working with him. He is very honest/fair with regards to pricing and turn around time for work is very quick.',
             avatar: {
                 src: '/images/image-800x800.webp',
@@ -96,7 +78,7 @@ export function Testimonials() {
             companyName: 'frienzy.io',
         },
         {
-            numberOfStars: 5,
+            relationship: 'Client',
             quote: 'Rob did a wonderful job on my webpage and was responsive to my needs. The feedback on my website has been greatly positive.',
             avatar: {
                 src: '/images/fx-gs.webp',
@@ -105,6 +87,28 @@ export function Testimonials() {
             name: 'Theron Williams',
             position: 'Client',
             companyName: 'Owner at Theron J Williams Consulting LLC',
+        },
+        {
+            relationship: 'Colleague recommendation',
+            quote: 'I gladly managed and collaborated with Rob at Monkeytag. When Rob joined our company, he jumped right into a fast-moving project for a large client. This challenge required him to learn everything quickly and apply his front-end/back-end development skills, knowledge, and understanding to execute efficiently. His personality and team player approach made challenges like this a continued success.',
+            avatar: {
+                src: '/images/1723665299718.jpeg',
+                alt: 'Anthony Bearden portrait',
+            },
+            name: 'Anthony Bearden',
+            position: 'Founder',
+            companyName: 'Marketer | Consultant | Investor',
+        },
+        {
+            relationship: 'Colleague recommendation',
+            quote: 'Robert is a great member of the team. He is enthusiastic and very engaged with the work he is doing. Robert offers input and looks to solve issues before they occur.',
+            avatar: {
+                src: '/images/1716269447337.jpeg',
+                alt: 'Sean Daley portrait',
+            },
+            name: 'Sean Daley',
+            position: 'Business Ecosystem Connector',
+            companyName: 'Customer Obsession Expert',
         },
     ];
 
@@ -134,14 +138,14 @@ export function Testimonials() {
             <div className="container mx-auto">
                 <div className="mb-12 md:mb-18 lg:mb-20">
                     <h2 id="testimonials-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
-                        What Clients Say About Working With Empuls3
+                        Client Feedback and Recommendations
                     </h2>
                     <p className="text-gray-700 md:text-lg">
-                        Hear directly from people who have worked with our team on websites, applications, and digital products.
+                        What clients and former colleagues have said about working with Robert Thomas and Empuls3.
                     </p>
                 </div>
 
-                <div ref={containerRef} className="relative" aria-roledescription="carousel" aria-label="Client testimonials carousel">
+                <div ref={containerRef} className="relative" aria-roledescription="carousel" aria-label="Client feedback and recommendations">
                     <div className="overflow-hidden">
                         <div className="flex" role="region" aria-live="polite">
                             {getVisibleTestimonials().map(({ testimonial, index }) => (
@@ -154,16 +158,9 @@ export function Testimonials() {
                                     aria-labelledby={`testimonial-author-${index}`}
                                 >
                                     <div className="flex h-full w-full flex-col items-start justify-between rounded-lg border border-gray-200 p-6 md:p-8">
-                                        <div
-                                            className="text-accent-yellow mb-5 flex md:mb-6"
-                                            aria-label={`${testimonial.numberOfStars} out of 5 stars rating`}
-                                        >
-                                            {Array(testimonial.numberOfStars)
-                                                .fill(null)
-                                                .map((_, starIndex) => (
-                                                    <Star key={starIndex} className="size-5 fill-current" aria-hidden="true" />
-                                                ))}
-                                        </div>
+                                        <p className="bg-primary/10 text-primary mb-5 inline-flex rounded-full px-3 py-1 text-sm font-medium md:mb-6">
+                                            {testimonial.relationship}
+                                        </p>
                                         <blockquote className="leading-relaxed text-gray-700 md:text-lg">"{testimonial.quote}"</blockquote>
                                         <footer className="mt-5 flex w-full flex-col items-start gap-4 md:mt-6 md:w-auto md:flex-row md:items-center">
                                             <div>

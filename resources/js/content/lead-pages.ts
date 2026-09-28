@@ -1,47 +1,147 @@
 import type { LeadPageConfig } from '@/components/marketing/LeadPage';
+import { contactHref } from '@/utils/contact-intent';
 
 const seniorDelivery = [
     {
-        title: 'Understand the operating problem',
-        description: 'We review the affected workflow, software, data, people, and business consequences before recommending a technical response.',
-    },
-    {
-        title: 'Define the safest next move',
-        description: 'You receive a practical scope that separates urgent stabilization from improvements that can be sequenced later.',
-    },
-    {
-        title: 'Deliver with visible ownership',
+        title: 'Understand the need',
         description:
-            'Senior specialists remain directly involved, communicate tradeoffs, and leave your team with clear documentation and next steps.',
+            'We learn how the work gets done today, who uses the system, and what the business needs from it before recommending an approach.',
+    },
+    {
+        title: 'Agree a practical plan',
+        description: 'You receive a written scope that separates what must happen first from improvements that can follow later.',
+    },
+    {
+        title: 'Build and hand over',
+        description:
+            'The senior developer who plans the work also builds it, explains tradeoffs as they come up, and leaves clear documentation and next steps.',
+    },
+];
+
+const servicesSteps = [
+    {
+        title: 'Tell us what you need',
+        description: 'Send a few sentences through the contact form or by email. We normally reply within one business day.',
+    },
+    {
+        title: 'Talk it through',
+        description: 'A senior developer asks about your goals, users, systems, timing, and budget, and tells you plainly whether we are a good fit.',
+    },
+    {
+        title: 'Agree the scope',
+        description:
+            'You receive a written plan for a defined project, a focused review, or ongoing support, with what is included and what comes first.',
+    },
+];
+
+const softwareSteps = [
+    {
+        title: 'Discovery and plan',
+        description: 'We learn the workflow, users, data, and systems involved, then agree what the first release must do and what can wait.',
+    },
+    {
+        title: 'Build in reviewable stages',
+        description: 'You review working software at agreed checkpoints and approve changes before they go live.',
+    },
+    {
+        title: 'Launch and handover',
+        description: 'We release carefully, document how the system works, and agree who supports it afterward.',
+    },
+];
+
+const websiteSteps = [
+    {
+        title: 'Plan the site',
+        description: 'We agree the audience, the pages the site needs, and what each page should help a visitor do.',
+    },
+    {
+        title: 'Write, design, and build',
+        description:
+            'We draft the page structure and content, design the key pages for your review, then build and test the site on phones and desktops.',
+    },
+    {
+        title: 'Launch and hand over',
+        description: 'We move the site live, check forms and tracking, and show your team how to publish updates.',
+    },
+];
+
+const consultingSteps = [
+    {
+        title: 'Define the question',
+        description: 'We agree the decision you need to make, who is involved, and what we will review.',
+    },
+    {
+        title: 'Review and interview',
+        description: 'We look at the systems, documents, proposals, or code in scope and talk with the people who use and support them.',
+    },
+    {
+        title: 'Walk through the findings',
+        description:
+            'We present the written assessment, answer questions, and help you choose. If you want help carrying out the plan, we scope that next.',
+    },
+];
+
+const managedItSteps = [
+    {
+        title: 'Tell us what needs support',
+        description: 'Share the number of users, main systems, current vendors, recurring problems, and business hours.',
+    },
+    {
+        title: 'Review and proposal',
+        description:
+            'We review the environment with you and propose coverage, response expectations, authorized contacts, escalation, and exclusions.',
+    },
+    {
+        title: 'Onboarding',
+        description: 'Once you approve the proposal, we document the environment, set up access with your authorized contacts, and begin support.',
+    },
+];
+
+const mobileSteps = [
+    {
+        title: 'Map the workflow and choose a platform',
+        description: 'We look at who uses the app, where, how often, and which device features and systems it needs, then recommend a platform.',
+    },
+    {
+        title: 'Prototype and build',
+        description: 'You try clickable screens early, then test working builds on real devices before launch.',
+    },
+    {
+        title: 'Store release and support',
+        description: 'We prepare store listings, handle App Store and Google Play review submissions, monitor early releases, and plan updates.',
     },
 ];
 
 const establishedBusinessFit = [
-    'An established organization depends on the affected system or workflow to serve customers, manage operations, or protect revenue.',
-    'A business or technical leader can explain the operational impact and participate in decisions.',
-    'The team values a controlled diagnosis and durable implementation over the cheapest short-term patch.',
+    'The business depends on the website, software, or workflow to serve customers, run operations, or bring in revenue.',
+    'Someone on your side can explain how the business works and make decisions during the project.',
+    'You want careful, lasting work more than the cheapest short-term fix.',
 ];
 
 const standardNotFit = [
-    'You need staff augmentation with no defined owner, outcome, or decision-maker.',
-    'The only selection criterion is the lowest hourly rate.',
-    'The request is a speculative idea without an accountable sponsor or realistic implementation budget.',
+    'You need extra developers with no defined goal or decision-maker.',
+    'The lowest hourly rate is the only deciding factor.',
+    'The idea does not yet have a sponsor or a realistic budget.',
 ];
 
-const publishedWorkNote =
-    'Our currently published case studies document website modernization engagements. We do not publish savings, traffic, lead, or performance claims unless the supporting measurement has been verified and approved.';
+const shortNotFit = standardNotFit.slice(0, 2);
+
+const dfwLocation = 'Based in Dallas–Fort Worth';
+
+const publishedWork =
+    'Our case studies cover commissioned website projects for Hebert Thomas Law, CodeGig, and Solushiens, and describe the scope of each project.';
 
 export const leadPages = {
     home: {
-        title: 'Software Rescue & Integration for DFW Businesses | Empuls3',
+        title: 'Websites and Software Built Around Your Business | Empuls3',
         metaDescription:
-            'Senior software rescue, systems integration, and ongoing engineering support for established Dallas–Fort Worth service businesses.',
-        eyebrow: 'Senior engineering for established DFW businesses',
-        heading: 'Fix the software and systems slowing your business down',
+            'We design and build websites, web apps, and business systems, and improve the ones you already use. An independent senior developer based in Dallas–Fort Worth.',
+        eyebrow: 'Independent senior developer based in Dallas–Fort Worth',
+        heading: 'Websites and software built around your business',
         introduction:
-            'Empuls3 helps Dallas–Fort Worth owners, COOs, and IT leaders stabilize aging software, connect disconnected systems, automate manual work, and establish dependable technical ownership.',
-        primaryAction: { label: 'Request a Software Review', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Discuss Your Systems', href: '/contact#schedule-meeting' },
+            'We design and build websites, web apps, and business systems—and improve the ones you already use. Work directly with a senior developer from the first plan through launch and ongoing support.',
+        primaryAction: { label: 'Let’s Talk About Your Project', href: contactHref('project') },
+        secondaryAction: { label: 'See Our Work', href: '/case-studies' },
         problemHeading: 'Technology problems become operating problems',
         problemIntroduction:
             'The warning signs often appear in missed handoffs, duplicate work, delayed reporting, recurring incidents, and growing dependence on a system nobody confidently owns.',
@@ -60,7 +160,7 @@ export const leadPages = {
                 description: 'Vendors respond tactically, internal teams are overloaded, and long-term risk continues to accumulate.',
             },
         ],
-        solutionHeading: 'Three ways we take ownership',
+        solutionHeading: 'How we help',
         solutionIntroduction: 'Each engagement begins with the business consequence, then applies the smallest responsible technical response.',
         solutions: [
             {
@@ -74,7 +174,7 @@ export const leadPages = {
             },
             {
                 title: 'Ongoing senior engineering support',
-                description: 'Add accountable senior-level technical ownership for applications, releases, infrastructure, and improvement planning.',
+                description: 'A senior developer who maintains and improves your applications, releases, and infrastructure over time.',
             },
         ],
         processHeading: 'A clear path from uncertainty to control',
@@ -84,24 +184,24 @@ export const leadPages = {
         fitHeading: 'Best suited to established service businesses',
         fit: establishedBusinessFit,
         notFit: standardNotFit,
-        proofHeading: 'Proof without inflated promises',
-        proofBody: publishedWorkNote,
+        proofHeading: 'Published work',
+        proofBody: publishedWork,
         proofAction: { label: 'Review Published Work', href: '/case-studies' },
         finalHeading: 'Start with the problem, not a technology shopping list',
         finalBody:
-            'Tell us what is breaking, disconnected, delayed, or consuming too much staff time. We will respond within one business day with a practical next step.',
-        serviceType: 'Software rescue, systems integration, and engineering support',
+            'Tell us what you want to build, or what is breaking, disconnected, or taking too much staff time. We normally reply within one business day with a practical next step.',
+        serviceType: 'Website and software development, integration, and support',
     },
     solutions: {
-        title: 'Software Solutions for DFW Businesses | Empuls3',
+        title: 'Software Development Solutions for DFW Businesses | Empuls3',
         metaDescription:
-            'Choose the right path for software rescue, systems integration, or ongoing senior engineering support in Dallas–Fort Worth.',
+            'Custom software, websites, online stores, APIs, mobile apps, and HubSpot work for DFW businesses. New builds or fixes to the systems you already use.',
         eyebrow: 'Solutions organized by business problem',
         heading: 'Choose a path based on what is hurting the business',
         introduction:
             'You do not need to diagnose the technology before contacting us. Start with the operational symptom and we will help determine whether the next move is stabilization, integration, modernization, or ongoing ownership.',
-        primaryAction: { label: 'Request a Software Review', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Talk Through the Problem', href: '/contact#schedule-meeting' },
+        primaryAction: { label: 'Let’s Talk About Your Project', href: contactHref('project') },
+        secondaryAction: { label: 'See Our Work', href: '/case-studies' },
         problemHeading: 'Where should you start?',
         problemIntroduction: 'These are the three situations where Empuls3 is most useful to an established business.',
         problems: [
@@ -138,21 +238,21 @@ export const leadPages = {
             },
         ],
         processHeading: 'One diagnostic approach across every solution',
-        processIntroduction: 'The technology changes. The discipline does not.',
+        processIntroduction: 'The first steps are the same whatever we are building or improving.',
         process: seniorDelivery,
         fitHeading: 'A good solution engagement has',
         fit: establishedBusinessFit,
         notFit: standardNotFit,
-        proofBody: publishedWorkNote,
+        proofBody: publishedWork,
         proofAction: { label: 'See Current Case Studies', href: '/case-studies' },
         finalHeading: 'Not sure which solution fits?',
         finalBody: 'Describe the business impact. We will help translate it into a focused technical next step.',
         serviceType: 'Business software solutions',
     },
     softwareRescue: {
-        title: 'Software Rescue & Legacy Modernization Dallas | Empuls3',
+        title: 'Custom Software Development & Modernization Dallas | Empuls3',
         metaDescription:
-            'Stabilize aging or unreliable software, recover technical knowledge, and create a controlled modernization path with senior engineers.',
+            'Custom software development and modernization for DFW businesses: new applications, plus repair of fragile or undocumented systems, by a senior developer.',
         eyebrow: 'Software rescue and legacy modernization',
         heading: 'Stabilize critical software before risk dictates the roadmap',
         introduction:
@@ -198,15 +298,16 @@ export const leadPages = {
         fitHeading: 'Software rescue is a strong fit when',
         fit: establishedBusinessFit,
         notFit: standardNotFit,
-        proofBody: publishedWorkNote,
-        proofAction: { label: 'Review Our Evidence Policy', href: '/case-studies' },
+        proofBody: publishedWork,
+        proofAction: { label: 'View Case Studies', href: '/case-studies' },
         finalHeading: 'Do not wait for the next failure to force the decision',
         finalBody: 'Share what the system does, where it is failing, and who depends on it. We will help define the safest first step.',
-        serviceType: 'Software rescue and legacy modernization',
+        serviceType: 'Custom software development and modernization',
     },
     integration: {
-        title: 'CRM, API & Workflow Integration Dallas | Empuls3',
-        metaDescription: 'Connect CRM, finance, operations, reporting, and customer systems to reduce duplicate work and unreliable data movement.',
+        title: 'Backend, API & Integration Development Dallas | Empuls3',
+        metaDescription:
+            'Back-end, API, integration, and database development for Dallas–Fort Worth businesses, whether you are connecting existing systems or building a new app.',
         eyebrow: 'CRM, API, and workflow integration',
         heading: 'Make your systems exchange information without staff carrying the process',
         introduction:
@@ -254,12 +355,12 @@ export const leadPages = {
         notFit: standardNotFit,
         finalHeading: 'Show us where information stops moving',
         finalBody: 'Bring the systems, the handoffs, and the manual workarounds. We will help define a reliable integration path.',
-        serviceType: 'CRM, API, and workflow integration',
+        serviceType: 'Backend, API, and integration development',
     },
     frontend: {
-        title: 'Business Application UX & Frontend Development Dallas | Empuls3',
+        title: 'Frontend Development & UX/UI Design Dallas | Empuls3',
         metaDescription:
-            'Improve confusing internal workflows, customer portals, accessibility, and maintainability with senior frontend and UX engineering.',
+            'Design and development of easy-to-use websites, web apps, and customer portals for Dallas–Fort Worth businesses, from early prototypes to accessible screens.',
         eyebrow: 'Business application UX and frontend engineering',
         heading: 'Remove the interface friction that slows customers and staff',
         introduction:
@@ -308,12 +409,12 @@ export const leadPages = {
         finalHeading: 'Bring us the workflow users are fighting',
         finalBody:
             'We will help identify whether the problem is interaction design, frontend engineering, underlying business logic, or a combination.',
-        serviceType: 'Business application UX and frontend development',
+        serviceType: 'Frontend development and UX/UI design',
     },
     webModernization: {
-        title: 'Website & E-commerce Modernization Dallas | Empuls3',
+        title: 'Website & E-commerce Development Dallas | Empuls3',
         metaDescription:
-            'Modernize a business website or e-commerce experience that is difficult to manage, unclear to customers, or no longer supports growth.',
+            'New websites, e-commerce builds, and modernization of hard-to-manage sites for Dallas–Fort Worth businesses. Responsive, accessible, and maintainable.',
         eyebrow: 'Website and e-commerce modernization',
         heading: 'Modernize a website that no longer serves the business',
         introduction:
@@ -360,15 +461,16 @@ export const leadPages = {
         fitHeading: 'Website modernization is a strong fit when',
         fit: establishedBusinessFit,
         notFit: standardNotFit,
-        proofBody: publishedWorkNote,
+        proofBody: publishedWork,
         proofAction: { label: 'Review Website Work', href: '/case-studies' },
         finalHeading: 'Make the site easier to understand, operate, and trust',
         finalBody: 'Share the current site, the audience you need to reach, and the business action it should support.',
-        serviceType: 'Website and e-commerce modernization',
+        serviceType: 'Website and e-commerce development and modernization',
     },
     mobile: {
-        title: 'Business Mobile App Development Dallas | Empuls3',
-        metaDescription: 'Plan and build mobile applications for established businesses with a defined field, customer, or operational workflow.',
+        title: 'Mobile App Development Dallas | Empuls3',
+        metaDescription:
+            'iOS, Android, and cross-platform apps for Dallas–Fort Worth businesses, from field and inspection tools to customer self-service apps.',
         eyebrow: 'Mobile applications for defined business workflows',
         heading: 'Build a mobile product when the workflow truly needs one',
         introduction:
@@ -413,14 +515,15 @@ export const leadPages = {
         process: seniorDelivery,
         fitHeading: 'Mobile development is a strong fit when',
         fit: establishedBusinessFit,
-        notFit: ['You want an app primarily because competitors have one.', ...standardNotFit.slice(1)],
+        notFit: shortNotFit,
         finalHeading: 'Bring the workflow, users, and system dependencies',
         finalBody: 'We will help determine the right mobile approach and the full operating responsibility behind it.',
-        serviceType: 'Business mobile application development',
+        serviceType: 'Mobile application development',
     },
     crm: {
-        title: 'HubSpot & CRM Workflow Integration Dallas | Empuls3',
-        metaDescription: 'Improve CRM data quality, lifecycle handoffs, reporting, adoption, and integrations for established service businesses.',
+        title: 'HubSpot CRM Setup & Integration Dallas | Empuls3',
+        metaDescription:
+            'HubSpot setup, cleanup, and integration for Dallas–Fort Worth businesses dealing with missed follow-ups, duplicate contacts, or reports nobody trusts.',
         eyebrow: 'HubSpot and CRM workflow integration',
         heading: 'Make the CRM reflect how revenue work actually moves',
         introduction:
@@ -467,17 +570,17 @@ export const leadPages = {
         notFit: standardNotFit,
         finalHeading: 'Show us where the customer journey loses continuity',
         finalBody: 'We will help map the handoffs, data, integrations, and reporting needed to restore confidence.',
-        serviceType: 'HubSpot and CRM workflow integration',
+        serviceType: 'HubSpot CRM setup and integration',
     },
     mvp: {
-        title: 'Product Validation & MVP Development Dallas | Empuls3',
+        title: 'MVP & First-Version Product Development Dallas | Empuls3',
         metaDescription:
-            'Product discovery and MVP development for funded teams with an accountable sponsor, validated problem, and realistic delivery budget.',
-        eyebrow: 'Secondary offer: product validation and MVP delivery',
-        heading: 'Turn a validated product problem into a responsible first release',
+            'Test your product idea and build a first version customers can use, with a senior developer based in Dallas–Fort Worth, from planning through launch.',
+        eyebrow: 'MVP and first-version products',
+        heading: 'Test your product idea and build a first version customers can use',
         introduction:
-            'This service is for funded teams and established organizations that have a defined user, accountable sponsor, operational plan, and minimum project budget of $25,000.',
-        primaryAction: { label: 'Discuss Product Fit', href: '/contact#contact-form' },
+            'This service suits small businesses, startups, and established organizations with a defined user and a plan for the first version. Projects start at $2,500; the final estimate depends on scope.',
+        primaryAction: { label: 'Discuss Product Fit', href: contactHref('new-project') },
         secondaryAction: { label: 'Review Engagement Questions', href: '/company/faqs' },
         problemHeading: 'The riskiest assumptions are not always technical',
         problemIntroduction: 'A first release needs a user, decision, distribution path, operating owner, and evidence plan—not just a feature list.',
@@ -520,7 +623,7 @@ export const leadPages = {
         process: seniorDelivery,
         fitHeading: 'Product development is a strong fit when',
         fit: [
-            'There is an accountable sponsor, funded delivery plan, and a minimum implementation budget of $25,000.',
+            'Someone can make product decisions, and there is a budget for a first version. Projects start at $2,500; the final estimate depends on scope.',
             'The target user and business problem have been researched beyond an internal idea session.',
             'The team is prepared to own launch, support, adoption, and decisions after release.',
         ],
@@ -531,63 +634,74 @@ export const leadPages = {
         ],
         finalHeading: 'Start with the decision the product must enable',
         finalBody: 'We will help determine whether the problem is ready for product delivery and what a responsible first release requires.',
-        serviceType: 'Product validation and MVP development',
+        serviceType: 'MVP and first-version product development',
     },
     services: {
-        title: 'Senior Engineering Services Dallas–Fort Worth | Empuls3',
+        title: 'Website & Software Development Services in DFW | Empuls3',
         metaDescription:
-            'Choose a focused rescue project, systems integration project, or ongoing senior engineering engagement for your DFW business.',
-        eyebrow: 'Engagement models',
-        heading: 'Get the level of technical ownership the situation requires',
+            'Build a new website, web app, or business system, or improve, connect, and support the software you use now. An independent senior developer based in Dallas–Fort Worth.',
+        eyebrow: 'Services',
+        heading: 'Build something new or improve what you already use',
         introduction:
-            'Empuls3 works through focused rescue and integration projects or an ongoing senior engineering relationship. The right structure depends on urgency, uncertainty, and who will own the system afterward.',
-        primaryAction: { label: 'Discuss an Engagement', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Request a Consultation', href: '/contact#schedule-meeting' },
-        problemHeading: 'Choose by ownership need, not a menu of technologies',
-        problemIntroduction: 'The engagement should match the operating responsibility the business needs to establish.',
+            'We design and build websites, web apps, and business systems—and improve the ones you already use. Work directly with a senior developer from the first plan through launch and ongoing support.',
+        primaryAction: { label: 'Let’s Talk About Your Project', href: contactHref('project') },
+        secondaryAction: { label: 'Compare Solutions', href: '/solutions' },
+        problemHeading: 'Where most projects start',
+        problemIntroduction: 'You do not need a technical brief. Tell us which of these sounds closest, and we will help shape the next step.',
         problems: [
             {
-                title: 'Focused rescue project',
-                description: 'Use a bounded project to assess, stabilize, document, and create a modernization decision for a critical system.',
+                title: 'A new website, web app, or first product version',
+                description: 'You have a clear business need and want it planned, designed, built, and launched by the same senior developer.',
             },
             {
-                title: 'Integration project',
-                description: 'Use a defined project to connect systems, automate a workflow, establish monitoring, and hand over operating guidance.',
-            },
-            {
-                title: 'Ongoing engineering relationship',
+                title: 'Software you already use needs work',
                 description:
-                    'Use retained senior support for continuous ownership across incidents, maintenance, releases, and prioritized improvements.',
+                    'An existing site or application is slow, hard to change, or was left behind by another developer. We review it and recommend repair, staged improvement, or replacement.',
+            },
+            {
+                title: 'Systems that should share information',
+                description:
+                    'Your CRM, website, finance, and operations tools hold the same information in different places, and staff re-enter it by hand.',
             },
         ],
-        solutionHeading: 'What every engagement includes',
-        solutionIntroduction: 'Direct senior involvement, explicit scope, visible decisions, documentation, and a practical operating handoff.',
+        solutionHeading: 'Services and solutions: what is the difference?',
+        solutionIntroduction:
+            'Solutions describe what we build: websites, custom software, integrations, mobile apps, and HubSpot setups. Services describe how we work with you after or alongside a build: advice and ongoing engineering, release support, or IT help for your team.',
         solutions: [
-            { title: 'Business context', description: 'The work is tied to the process, users, revenue, service, or risk it affects.' },
             {
-                title: 'Technical discipline',
-                description:
-                    'Architecture, security, data, testing, deployment, observability, and recovery are addressed in proportion to the system.',
+                title: 'Software engineering and IT consulting',
+                description: 'Senior engineering advice, maintenance, and ongoing improvements to the software your business depends on.',
             },
             {
-                title: 'Operational continuity',
-                description: 'Responsibilities, documentation, known limitations, and next priorities remain visible after delivery.',
+                title: 'Application delivery and DevOps',
+                description: 'Safer, repeatable releases, with monitoring and a clear way to roll back when an update goes wrong.',
+            },
+            {
+                title: 'Managed IT support',
+                description: 'Scoped remote support for your team’s accounts, devices, access, and vendors, agreed before service begins.',
             },
         ],
-        processHeading: 'Clear decisions at every stage',
-        processIntroduction: 'You know what we learned, what we recommend, what is changing, and what remains.',
-        process: seniorDelivery,
-        fitHeading: 'Our services are designed for',
-        fit: establishedBusinessFit,
-        notFit: standardNotFit,
-        finalHeading: 'Describe the ownership gap',
-        finalBody: 'We will recommend an engagement structure only after understanding what the business needs protected, changed, and owned.',
-        serviceType: 'Senior engineering services',
+        processHeading: 'How a project or support engagement starts',
+        processIntroduction: 'The first steps are the same whether you are building something new or improving what you have.',
+        process: servicesSteps,
+        fitHeading: 'We are a good fit when',
+        fit: [
+            'You want to work directly with the senior developer who plans and builds the work.',
+            'Someone on your side can make decisions and answer questions about how the business works.',
+            'You want work your team can understand and run after launch.',
+        ],
+        notFit: shortNotFit,
+        proofHeading: 'Published work',
+        proofBody: publishedWork,
+        proofAction: { label: 'View Case Studies', href: '/case-studies' },
+        finalHeading: 'Tell us what you want to build or fix',
+        finalBody: 'A short description is enough to start. We normally reply within one business day with a practical next step.',
+        serviceType: 'Website, software, and IT services',
     },
     engineeringSupport: {
-        title: 'Ongoing Senior Engineering Support Dallas | Empuls3',
+        title: 'Software Engineering & IT Consulting Dallas | Empuls3',
         metaDescription:
-            'Add dependable senior engineering ownership for critical applications, releases, incidents, infrastructure, and technical planning.',
+            'Senior engineering advice, maintenance, and ongoing improvements to the software your Dallas–Fort Worth business depends on.',
         eyebrow: 'Ongoing senior engineering support',
         heading: 'Give critical systems a dependable technical owner',
         introduction:
@@ -636,19 +750,19 @@ export const leadPages = {
         notFit: standardNotFit,
         finalHeading: 'Stop managing critical technology through scattered requests',
         finalBody: 'Let us review the systems, vendors, responsibilities, and backlog that need a consistent technical owner.',
-        serviceType: 'Ongoing senior engineering support',
+        serviceType: 'Software engineering, IT consulting, and ongoing support',
     },
     devops: {
         title: 'Application Delivery & DevOps Dallas | Empuls3',
         metaDescription:
-            'Reduce failed releases, manual deployment risk, and incident recovery time with practical CI/CD, observability, and operational ownership.',
+            'Safer, repeatable software releases for DFW teams: automated deployments, monitoring, and a clear way to roll back when an update goes wrong.',
         eyebrow: 'Application delivery and DevOps',
         heading: 'Make releases routine, visible, and recoverable',
         introduction:
             'We help established teams improve application delivery where manual steps, inconsistent environments, weak monitoring, or unclear rollback procedures make every release stressful.',
         primaryAction: { label: 'Request a Deployment Review', href: '/contact#contact-form' },
         secondaryAction: { label: 'Discuss Release Risk', href: '/contact#schedule-meeting' },
-        problemHeading: 'Release risk is an operating condition',
+        problemHeading: 'Why releases feel risky',
         problemIntroduction:
             'Tools alone do not create dependable delivery. Ownership, environments, tests, secrets, visibility, and recovery must work together.',
         problems: [
@@ -695,7 +809,7 @@ export const leadPages = {
     managedIt: {
         title: 'Managed IT Services for DFW Businesses | Empuls3',
         metaDescription:
-            'Operational IT support for established DFW service businesses that need clear scope, escalation, security, and recurring issue ownership.',
+            'Remote IT support for established DFW businesses: accounts, devices, access, and vendors, with coverage and escalation agreed before service begins.',
         eyebrow: 'Managed IT for established service businesses',
         heading: 'Reduce disruption from recurring workplace technology problems',
         introduction:
@@ -755,18 +869,23 @@ export const leadPages = {
         serviceType: 'Managed IT services',
     },
     industries: {
-        title: 'Business Situations We Solve | Empuls3',
+        title: 'Situations We Solve | Empuls3',
         metaDescription:
-            'Empuls3 supports established service businesses facing aging software, disconnected systems, manual workflows, and technical ownership gaps.',
-        eyebrow: 'Business situations, not unsupported industry claims',
-        heading: 'We specialize in operating problems that cross people, process, and software',
+            'Common situations we help DFW businesses solve: a new website or app to build, software that is hard to change, disconnected systems, and nobody owning the whole system.',
+        eyebrow: 'Situations we solve',
+        heading: 'Common situations we help businesses solve',
         introduction:
-            'Empuls3 is most useful where technology directly affects service delivery, customer handoffs, staff productivity, reporting, or business continuity. We do not claim sector expertise without relevant evidence.',
+            'Some businesses need something new built. Others need help with software they already rely on. We start with the situation, not the industry label.',
         primaryAction: { label: 'Discuss Your Situation', href: '/contact#contact-form' },
         secondaryAction: { label: 'Review Our Services', href: '/services' },
         problemHeading: 'The recurring situations we address',
         problemIntroduction: 'Industry context matters, but the engagement begins with the actual workflow, system, users, constraints, and risk.',
         problems: [
+            {
+                title: 'A new website, app, or system is needed',
+                description:
+                    'The business has a process, product, or customer need that current tools do not cover, and wants something built for it.',
+            },
             {
                 title: 'A service workflow depends on fragile software',
                 description: 'Scheduling, intake, delivery, billing, reporting, or customer communication is constrained by an aging application.',
@@ -776,16 +895,16 @@ export const leadPages = {
                 description: 'New tools and teams have been added, but the handoffs and data model have not been redesigned.',
             },
             {
-                title: 'Technical responsibility is fragmented',
-                description: 'Internal employees and several vendors each hold part of the picture, leaving no accountable system owner.',
+                title: 'Nobody owns the whole system',
+                description: 'Employees and several vendors each know part of the picture, and nobody is responsible for how it all fits together.',
             },
         ],
         solutionHeading: 'Context we account for on every engagement',
         solutionIntroduction: 'We learn the business and its constraints before applying technical patterns.',
         solutions: [
             {
-                title: 'Operational criticality',
-                description: 'Who depends on the system, what happens when it fails, and which continuity needs must be protected.',
+                title: 'What depends on the system',
+                description: 'Who uses it, what happens when it fails, and what must keep working while it changes.',
             },
             {
                 title: 'Data and access responsibility',
@@ -804,15 +923,17 @@ export const leadPages = {
         fit: establishedBusinessFit,
         notFit: standardNotFit,
         finalHeading: 'Tell us about the workflow and its consequences',
-        finalBody: 'We will help determine whether the problem matches our software rescue, integration, or engineering ownership capabilities.',
+        finalBody:
+            'We will tell you whether it fits our website, software, integration, or ongoing support work, and what a sensible first step looks like.',
     },
     about: {
-        title: 'About Empuls3 | Senior Engineering for DFW Businesses',
-        metaDescription: 'Learn how Empuls3 provides direct senior engineering support for established Dallas–Fort Worth businesses.',
+        title: 'About Empuls3 | Independent Developer in Dallas–Fort Worth',
+        metaDescription:
+            'Founded in 2009 by Robert Thomas, Empuls3 designs and builds websites, web apps, and business systems, and improves the ones you already use. Work directly with Robert.',
         eyebrow: 'About Empuls3',
-        heading: 'Senior technical ownership without unnecessary layers',
+        heading: 'Direct access to a senior developer since 2009',
         introduction:
-            'Empuls3 is a remote-first Dallas–Fort Worth software and technology firm founded in 2009. We help established service businesses regain control of critical software, system connections, and ongoing technical decisions.',
+            'Empuls3 is a remote-first Dallas–Fort Worth software and technology firm founded in 2009 and run by independent developer Robert Thomas. We design and build websites, web apps, and business systems, and improve the ones you already use. You work directly with Robert from the first plan through launch and ongoing support.',
         primaryAction: { label: 'Discuss Your Situation', href: '/contact#contact-form' },
         secondaryAction: { label: 'Review Our Services', href: '/services' },
         problemHeading: 'Why the firm exists',
@@ -835,11 +956,11 @@ export const leadPages = {
         ],
         solutionHeading: 'How we work',
         solutionIntroduction:
-            'Our model is intentionally direct: understand the business condition, keep senior specialists involved, and make the state of the work visible.',
+            'Our model is intentionally direct: understand the business condition, keep the senior developer involved, and make the state of the work visible.',
         solutions: [
             {
                 title: 'Direct access',
-                description: 'Clients communicate with the people responsible for analysis, delivery, and technical recommendations.',
+                description: 'Clients communicate directly with Robert, who is responsible for analysis, delivery, and technical recommendations.',
             },
             {
                 title: 'Evidence-led recommendations',
@@ -858,21 +979,22 @@ export const leadPages = {
         fitHeading: 'The relationships we do best',
         fit: establishedBusinessFit,
         notFit: standardNotFit,
-        proofBody: publishedWorkNote,
+        proofBody: publishedWork,
         proofAction: { label: 'See Published Work', href: '/case-studies' },
-        finalHeading: 'Work directly with the people responsible for the outcome',
+        finalHeading: 'Work directly with the developer responsible for the outcome',
         finalBody: 'Share the system, workflow, or ownership gap leadership needs to resolve.',
     },
     partners: {
-        title: 'Technology Collaboration & Partners | Empuls3',
-        metaDescription: 'How Empuls3 works with client teams, incumbent vendors, specialist advisors, and technology providers during delivery.',
+        title: 'Collaboration Model: Working With Agencies & Teams | Empuls3',
+        metaDescription:
+            'How Empuls3 works with marketing and web agencies, in-house IT and product teams, and existing vendors, including subcontract and white-label development.',
         eyebrow: 'Collaboration model',
-        heading: 'Clear roles across client teams, vendors, and specialists',
+        heading: 'Development support for agencies and in-house teams',
         introduction:
-            'Empuls3 collaborates with the people and providers already responsible for a client environment. We distinguish client engagements, delivery collaborators, and technology providers rather than presenting every relationship as a formal partnership.',
+            'We work alongside marketing and web agencies, internal IT and product teams, and the vendors already involved in a project. Agencies can bring us in as a subcontractor or white-label developer while they keep the client relationship.',
         primaryAction: { label: 'Discuss a Collaboration', href: '/contact#contact-form' },
         secondaryAction: { label: 'See How We Work', href: '/company/about' },
-        problemHeading: 'Multi-provider work fails when ownership is implied',
+        problemHeading: 'Where shared projects get stuck',
         problemIntroduction:
             'Successful collaboration requires explicit authority, interfaces, decisions, access, and escalation—not logo lists or vague partnership language.',
         problems: [
@@ -881,7 +1003,7 @@ export const leadPages = {
                 description: 'Each provider owns a component, but nobody owns the full workflow or business consequence.',
             },
             {
-                title: 'Access and decision rights are unclear',
+                title: 'Access and approvals are unclear',
                 description: 'Delivery stalls because environments, data, approvals, credentials, or authoritative contacts were never defined.',
             },
             {
@@ -917,281 +1039,315 @@ export const leadPages = {
             'The accountable client sponsor is unavailable to resolve cross-provider decisions.',
             'Access, authority, or commercial responsibilities cannot be documented.',
         ],
-        finalHeading: 'Bring the full delivery environment into view',
+        finalHeading: 'Tell us who is involved',
         finalBody: 'Tell us which teams and providers are involved and where ownership is breaking down.',
     },
     dallasSoftware: {
-        title: 'Dallas Software Rescue & Modernization | Empuls3',
-        metaDescription: 'Senior software rescue and legacy modernization for established Dallas–Fort Worth service businesses.',
-        eyebrow: 'Dallas software rescue',
-        heading: 'Restore control of critical business software in Dallas–Fort Worth',
+        title: 'Software Development in Dallas–Fort Worth | Empuls3',
+        metaDescription:
+            'Custom software development for Dallas–Fort Worth businesses: new web apps and business systems, plus improvements to the software you already use.',
+        eyebrow: 'Dallas–Fort Worth software development',
+        heading: 'Custom software for Dallas–Fort Worth businesses',
         introduction:
-            'Remote-first senior engineers help DFW leadership assess fragile applications, stabilize immediate risk, and define a controlled modernization path.',
-        primaryAction: { label: 'Request a Software Review', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Call the Dallas Team', href: 'tel:+19727988914' },
-        problemHeading: 'When local business continuity depends on old software',
+            'We build new web applications and business systems, and improve the software you already rely on. You work directly with a senior developer from the first plan through launch and support.',
+        primaryAction: { label: 'Let’s Talk About Your Project', href: contactHref('project') },
+        secondaryAction: { label: 'Call (972) 798-8914', href: 'tel:+19727988914' },
+        problemHeading: 'What DFW businesses bring to us',
         problemIntroduction:
-            'We support organizations across Dallas, Fort Worth, Plano, Richardson, Irving, Arlington, and the wider Metroplex without implying a walk-in office.',
+            'We are based in Dallas–Fort Worth and work with businesses across Dallas, Fort Worth, Plano, Richardson, Irving, Arlington, and the rest of the Metroplex. Work happens remotely, through scheduled video sessions, secure system access, and written updates.',
         problems: [
             {
-                title: 'A core application has become fragile',
+                title: 'A process that has outgrown spreadsheets',
                 description:
-                    'Failures, outdated dependencies, or missing knowledge put scheduling, service, billing, reporting, or customer work at risk.',
+                    'Scheduling, intake, quoting, billing, or reporting runs on spreadsheets and email, and the business needs software built around how it works.',
             },
             {
-                title: 'A vendor relationship is ending',
-                description: 'The business needs to recover access, documentation, deployment knowledge, and a realistic transition plan.',
+                title: 'Software that is hard to change',
+                description: 'An existing application breaks often, depends on outdated components, or only one person understands how it works.',
             },
             {
-                title: 'Modernization feels too risky',
-                description: 'Leadership needs repair, staged replacement, and rebuild options grounded in the current system.',
+                title: 'A developer or vendor who has moved on',
+                description: 'You need someone to recover access, document the system, and take over maintenance or plan what comes next.',
             },
         ],
-        solutionHeading: 'Senior software rescue for DFW operators',
-        solutionIntroduction: 'We combine technical assessment with the operating context the system must protect.',
+        solutionHeading: 'New builds and existing software',
+        solutionIntroduction: 'Some projects start from a blank page. Others start with an application you already use. We handle both.',
         solutions: [
-            { title: 'Assess', description: 'Map architecture, dependencies, data, failures, deployment, access, and business-critical workflows.' },
-            { title: 'Stabilize', description: 'Address urgent risk, improve visibility, and document the knowledge required for continuity.' },
-            { title: 'Modernize', description: 'Sequence repair, replacement, or rebuild work around business constraints and ownership.' },
+            {
+                title: 'Build new software',
+                description:
+                    'Plan, design, and build web applications, customer portals, and internal tools around your workflow and the systems they connect to.',
+            },
+            {
+                title: 'Improve existing software',
+                description:
+                    'Review the code, hosting, and data, fix urgent problems, and improve the application in stages rather than starting over by default.',
+            },
+            {
+                title: 'Support after launch',
+                description: 'Keep the software maintained, updated, and documented by the senior developer who already knows it.',
+            },
         ],
-        processHeading: 'Remote delivery with direct senior access',
-        processIntroduction: 'Meetings, system access, decisions, documentation, and delivery are managed remotely with named client contacts.',
-        process: seniorDelivery,
-        fitHeading: 'Best suited to DFW businesses that',
-        fit: establishedBusinessFit,
-        notFit: standardNotFit,
-        proofBody: publishedWorkNote,
-        proofAction: { label: 'Review Published Work', href: '/case-studies' },
-        finalHeading: 'Start before the next failure narrows your options',
-        finalBody: 'Tell us what the software supports and where leadership has lost confidence.',
-        locationLabel: 'Remote service across Dallas–Fort Worth',
-        serviceType: 'Software rescue and modernization',
+        processHeading: 'How a software project runs',
+        processIntroduction:
+            'The details depend on whether you are starting new or improving an existing system. Both begin with understanding the work the software supports.',
+        process: softwareSteps,
+        fitHeading: 'A good fit for DFW businesses that',
+        fit: [
+            'Have a workflow, product, or system the business depends on.',
+            'Want direct access to the senior developer doing the work.',
+            'Can name someone to make decisions and answer questions during the project.',
+        ],
+        notFit: shortNotFit,
+        proofHeading: 'Published work',
+        proofBody: publishedWork,
+        proofAction: { label: 'View Case Studies', href: '/case-studies' },
+        finalHeading: 'Tell us what the software needs to do',
+        finalBody:
+            'Whether it is a new build or a system you already use, a few sentences are enough to start. We normally reply within one business day.',
+        locationLabel: dfwLocation,
+        serviceType: 'Custom software development',
     },
     dallasWeb: {
-        title: 'Dallas Website Modernization | Empuls3',
+        title: 'Website Development in Dallas–Fort Worth | Empuls3',
         metaDescription:
-            'Website modernization for established Dallas–Fort Worth service businesses that need clearer positioning and dependable conversion paths.',
-        eyebrow: 'Dallas website modernization',
-        heading: 'Build a clearer digital front door for your DFW business',
+            'New websites and website redesigns for Dallas–Fort Worth businesses: clear pages, working contact forms, and a site your team can update after launch.',
+        eyebrow: 'Dallas–Fort Worth website development',
+        heading: 'New websites and redesigns for Dallas–Fort Worth businesses',
         introduction:
-            'Empuls3 modernizes websites for established service businesses whose current message, platform, content, or conversion flow no longer supports the company they have become.',
-        primaryAction: { label: 'Request a Website Review', href: '/contact#contact-form' },
+            'We plan, design, and build new websites, and redesign sites that no longer fit the business. You get clear pages, working contact paths, and a site your team can update after launch.',
+        primaryAction: { label: 'Let’s Talk About Your Project', href: contactHref('project') },
         secondaryAction: { label: 'See Website Work', href: '/case-studies' },
-        problemHeading: 'A credible business can still have an unclear website',
-        problemIntroduction: 'The strongest redesign case is tied to buyer understanding, operational ownership, and a measurable conversion path.',
+        problemHeading: 'Why DFW businesses contact us about their website',
+        problemIntroduction:
+            'We are based in Dallas–Fort Worth and build websites for businesses across the Metroplex. Most projects start in one of these places.',
         problems: [
             {
-                title: 'Visitors cannot identify the fit',
-                description: 'The site lists capabilities but does not clearly explain the target buyer, urgent problem, or primary offer.',
+                title: 'You need a new website',
+                description: 'The business has launched, grown, or changed direction, and needs a site that describes what it does now.',
             },
             {
-                title: 'The site is difficult to maintain',
-                description: 'Publishing, plugins, performance, or ownership make routine changes slow and risky.',
+                title: 'Visitors cannot tell what you offer',
+                description: 'The site lists services but does not make clear who you serve, what you do, or how to get in touch.',
             },
             {
-                title: 'Leads are not measured reliably',
-                description: 'Forms, calls, email, scheduling, analytics, and follow-up expectations are incomplete or inconsistent.',
+                title: 'The site is hard to update',
+                description: 'Routine changes need a developer, plugins conflict, or the platform has become slow and fragile.',
             },
         ],
-        solutionHeading: 'A website built around the buyer decision',
-        solutionIntroduction:
-            'We align message, information architecture, design, platform, analytics, and handoff around the business action the site must support.',
+        solutionHeading: 'What a website project includes',
+        solutionIntroduction: 'We cover the content, design, build, and handover so the site works on launch day and after.',
         solutions: [
             {
-                title: 'Positioning and content',
-                description: 'Clarify who the company serves, the problem it owns, the proof available, and the right next step.',
+                title: 'Pages and content',
+                description: 'Clarify who you serve, what you offer, and what visitors should do next, then organize the pages around that.',
             },
             {
-                title: 'Design and development',
-                description: 'Create a responsive, accessible, maintainable site on a platform the operating team can support.',
+                title: 'Design and build',
+                description: 'A responsive, accessible site on a platform your team can manage, such as WordPress.',
             },
             {
-                title: 'Conversion and ownership',
-                description: 'Instrument meaningful actions and document publishing, follow-up, and ongoing responsibility.',
+                title: 'Forms, tracking, and handover',
+                description: 'Working contact forms, analytics for the actions that matter, and documentation for publishing updates.',
             },
         ],
-        processHeading: 'Modernize with a defined business purpose',
-        processIntroduction: 'We agree on audience and outcomes before designing pages.',
-        process: seniorDelivery,
-        fitHeading: 'Best suited to DFW businesses that',
-        fit: establishedBusinessFit,
-        notFit: standardNotFit,
-        proofBody: publishedWorkNote,
-        proofAction: { label: 'Review Website Case Studies', href: '/case-studies' },
-        finalHeading: 'Make the site match the business you operate today',
-        finalBody: 'Share the current website, target buyer, and the action a qualified visitor should take.',
-        locationLabel: 'Remote service across Dallas–Fort Worth',
-        serviceType: 'Website modernization',
+        processHeading: 'How a website project runs',
+        processIntroduction:
+            'The same steps apply to a new site and a redesign. For a redesign, we also review what the current site does well so it is not lost.',
+        process: websiteSteps,
+        fitHeading: 'A good fit for DFW businesses that',
+        fit: [
+            'Need a new website or a redesign that reflects how the business works today.',
+            'Can tell us who their customers are and what a good inquiry looks like.',
+            'Want a site their own team can update after launch.',
+        ],
+        notFit: shortNotFit,
+        proofHeading: 'Published website work',
+        proofBody: publishedWork,
+        proofAction: { label: 'View Website Case Studies', href: '/case-studies' },
+        finalHeading: 'Tell us about the website you need',
+        finalBody:
+            'Share your current site if you have one, who you want to reach, and what visitors should do. We normally reply within one business day.',
+        locationLabel: dfwLocation,
+        serviceType: 'Website development',
     },
     dallasConsulting: {
-        title: 'Dallas Senior Engineering & IT Consulting | Empuls3',
+        title: 'IT Consulting in Dallas–Fort Worth | Empuls3',
         metaDescription:
-            'Senior engineering and IT consulting for DFW leaders facing software risk, systems decisions, and fragmented technical ownership.',
-        eyebrow: 'Dallas senior engineering consulting',
-        heading: 'Turn technical uncertainty into accountable business decisions',
+            'Senior technical advice for Dallas–Fort Worth businesses facing a software, vendor, or systems decision. Get a written assessment and a recommended next step.',
+        eyebrow: 'Dallas–Fort Worth IT consulting',
+        heading: 'Senior technical advice before you commit to a big decision',
         introduction:
-            'Empuls3 helps DFW owners, COOs, and IT leaders assess software risk, vendor recommendations, architecture choices, delivery plans, and ownership gaps.',
-        primaryAction: { label: 'Discuss a Technical Decision', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Request a Consultation', href: '/contact#schedule-meeting' },
-        problemHeading: 'Leadership needs more than technical activity',
-        problemIntroduction: 'The value of consulting is a clear decision, responsible plan, and accountable owner.',
+            'We help DFW owners, operations leaders, and IT managers compare vendor proposals, choose between repairing and replacing a system, and plan the technical work that follows.',
+        primaryAction: { label: 'Request a Consultation', href: contactHref('consultation') },
+        secondaryAction: { label: 'Read Engagement FAQs', href: '/company/faqs' },
+        problemHeading: 'Decisions we help with',
+        problemIntroduction:
+            'We are based in Dallas–Fort Worth and advise businesses across the Metroplex. Work happens remotely, through scheduled video sessions and written updates.',
         problems: [
             {
-                title: 'Conflicting vendor recommendations',
-                description: 'Leadership cannot compare proposals because assumptions, scope, risk, and future ownership are not explicit.',
+                title: 'Comparing vendor proposals',
+                description: 'Two quotes describe different scope, assumptions, and timelines, and you need to know what each one really includes.',
             },
             {
-                title: 'A major system decision is approaching',
-                description: 'Repair, replace, integrate, migrate, or build options need to be evaluated against the operating reality.',
+                title: 'Repair, replace, or rebuild',
+                description: 'An important system is aging, and you need to understand the options, risks, and costs before choosing.',
             },
             {
-                title: 'Delivery lacks technical governance',
-                description: 'Projects move without clear architecture, security, data, testing, deployment, or acceptance responsibility.',
+                title: 'A project that has lost direction',
+                description: 'Work is moving, but nobody is checking the technical plan, security, testing, or what “done” means.',
             },
         ],
-        solutionHeading: 'Consulting that produces a usable operating decision',
-        solutionIntroduction: 'We investigate enough to make tradeoffs visible and translate them into sequenced action.',
+        solutionHeading: 'What you receive from an assessment',
+        solutionIntroduction:
+            'We agree the question and scope first. The result is a written assessment you can act on and share with your team and vendors.',
         solutions: [
             {
-                title: 'Independent assessment',
-                description: 'Review the system, workflow, proposal, architecture, vendor, or delivery condition in scope.',
+                title: 'Findings',
+                description: 'What we reviewed, how the system or proposal works today, and the risks and constraints that affect the decision.',
             },
             {
-                title: 'Options and recommendation',
-                description: 'Compare consequences, assumptions, dependencies, risks, cost drivers, and ownership needs.',
+                title: 'Options compared',
+                description: 'Each realistic option with its tradeoffs, dependencies, main cost drivers, and what it means for your team.',
             },
             {
-                title: 'Execution support',
-                description: 'Help leadership govern delivery, coordinate providers, validate progress, and maintain decision visibility.',
+                title: 'Recommendation and next steps',
+                description: 'The option we recommend, what to do first, and what needs to be in place before the next stage.',
             },
         ],
-        processHeading: 'Advice grounded in the actual environment',
-        processIntroduction: 'We do not sell a predetermined platform as the answer to every problem.',
-        process: seniorDelivery,
-        fitHeading: 'Best suited to DFW leaders who',
-        fit: establishedBusinessFit,
-        notFit: standardNotFit,
-        finalHeading: 'Bring the decision leadership needs to make',
-        finalBody: 'We will identify the evidence, stakeholders, and technical analysis required to make it responsibly.',
-        locationLabel: 'Remote service across Dallas–Fort Worth',
-        serviceType: 'Senior engineering and IT consulting',
+        processHeading: 'From question to decision',
+        processIntroduction: 'An assessment is scoped to the decision in front of you, not a general audit.',
+        process: consultingSteps,
+        fitHeading: 'A good fit for DFW leaders who',
+        fit: [
+            'Face a software, vendor, or systems decision with real cost or risk attached.',
+            'Want a senior developer’s view before signing a proposal or starting a rebuild.',
+            'Can give us access to the people, documents, and systems involved.',
+        ],
+        finalHeading: 'Bring the decision you need to make',
+        finalBody: 'Describe the question, the systems involved, and your timing. We normally reply within one business day.',
+        locationLabel: dfwLocation,
+        serviceType: 'IT consulting and technical assessment',
     },
     dallasManagedIt: {
-        title: 'Dallas Managed IT Services | Empuls3',
+        title: 'Managed IT Services in Dallas–Fort Worth | Empuls3',
         metaDescription:
-            'Remote managed IT for established DFW service businesses needing user support, access discipline, vendor coordination, and recurring issue ownership.',
-        eyebrow: 'Dallas managed IT services',
-        heading: 'Give recurring IT issues a clear owner across DFW',
+            'Scoped remote IT support for Dallas–Fort Worth businesses: users, devices, access, and vendor coordination, with coverage agreed before service begins.',
+        eyebrow: 'Dallas–Fort Worth managed IT',
+        heading: 'Remote IT support for Dallas–Fort Worth businesses',
         introduction:
-            'Empuls3 provides remote-first managed IT for established Dallas–Fort Worth service businesses with defined users, systems, vendors, and operational expectations.',
-        primaryAction: { label: 'Discuss Managed IT Fit', href: '/contact#contact-form' },
+            'We look after your team’s accounts, devices, access, and technology vendors, and work to stop the same problems from coming back. Coverage is documented and agreed before service begins.',
+        primaryAction: { label: 'Discuss Managed IT Support', href: '/contact#contact-form' },
         secondaryAction: { label: 'Call About IT Support', href: 'tel:+19727988914' },
-        problemHeading: 'Support should reduce recurring disruption',
+        problemHeading: 'Signs your business needs managed IT',
         problemIntroduction:
-            'We define coverage after reviewing the environment instead of advertising an unlimited promise disconnected from scope.',
+            'We are based in Dallas–Fort Worth and support businesses across the Metroplex remotely. We do not offer walk-in repair.',
         problems: [
             {
-                title: 'Employees lose time to recurring issues',
-                description: 'Access, devices, software, network, and vendor problems repeatedly interrupt customer-facing work.',
+                title: 'The same issues keep coming back',
+                description: 'Access, device, software, and network problems interrupt work, and nobody tracks the cause.',
             },
             {
-                title: 'Onboarding and offboarding vary',
-                description: 'Accounts, permissions, devices, and vendor access lack a documented lifecycle and owner.',
+                title: 'New hires and departures vary every time',
+                description: 'Accounts, permissions, devices, and vendor access are set up and removed without a checklist or an owner.',
             },
             {
-                title: 'No one coordinates providers',
-                description: 'Leadership or office staff spend time moving incidents between internet, software, hardware, and security vendors.',
+                title: 'Staff are stuck coordinating vendors',
+                description: 'Someone in the office spends time passing problems between internet, software, hardware, and security providers.',
             },
         ],
-        solutionHeading: 'Remote IT operations with defined responsibility',
-        solutionIntroduction:
-            'Coverage, service targets, authorized contacts, escalation, exclusions, and improvement priorities are documented before service begins.',
+        solutionHeading: 'What managed IT covers',
+        solutionIntroduction: 'Exact coverage is agreed before service begins. It usually includes these three areas.',
         solutions: [
             {
                 title: 'User and access support',
-                description: 'Support agreed users, devices, accounts, permissions, onboarding, offboarding, and workplace tools.',
+                description: 'Help for agreed users with accounts, permissions, devices, workplace tools, onboarding, and offboarding.',
             },
             {
-                title: 'Vendor and issue coordination',
-                description: 'Own triage and communication across supported providers so the business is not the go-between.',
+                title: 'Vendor coordination',
+                description: 'We handle triage and communication with supported providers so your staff are not the go-between.',
             },
             {
-                title: 'Environment improvement',
-                description: 'Track issue patterns, inventory, lifecycle, security concerns, and prioritized risk reduction.',
+                title: 'Fewer repeat problems',
+                description: 'We track recurring issues, keep an inventory, flag security and lifecycle concerns, and recommend fixes.',
             },
         ],
-        processHeading: 'Scope first, then service targets',
-        processIntroduction:
-            'User count, locations, hours, systems, vendors, criticality, and current condition determine the responsible support model.',
-        process: seniorDelivery,
-        fitHeading: 'Best suited to DFW businesses that',
+        processHeading: 'How getting started works',
+        processIntroduction: 'Service targets are set after we understand your users, systems, hours, locations, and current vendors.',
+        process: managedItSteps,
+        fitHeading: 'A good fit for DFW businesses that',
         fit: [
-            'Operate an established team with accountable contacts and a defined business technology environment.',
-            'Can support remote-first service and provide authorized access to the systems in scope.',
-            'Want root-cause improvement alongside day-to-day issue resolution.',
+            'Have an established team, named contacts, and business systems that need support.',
+            'Are comfortable with remote support and can provide authorized access to the systems in scope.',
+            'Want repeat problems fixed at the source, not only tickets closed.',
         ],
         notFit: [
             'Residential technology support.',
             'Walk-in repair or consumer device troubleshooting.',
             'Emergency-only support without an established service relationship.',
         ],
-        finalHeading: 'Tell us what needs to be supported and owned',
-        finalBody: 'Share users, systems, vendors, recurring issues, business hours, and current coverage.',
-        locationLabel: 'Remote service across Dallas–Fort Worth',
+        finalHeading: 'Tell us what your team needs supported',
+        finalBody: 'Share users, systems, vendors, recurring issues, and business hours. We normally reply within one business day.',
+        locationLabel: dfwLocation,
         serviceType: 'Managed IT services',
     },
     dallasMobile: {
-        title: 'Dallas Business Mobile App Development | Empuls3',
+        title: 'Mobile App Development in Dallas–Fort Worth | Empuls3',
         metaDescription:
-            'Mobile application planning and delivery for established DFW businesses with defined field, customer, or operational workflows.',
-        eyebrow: 'Dallas business mobile applications',
-        heading: 'Put the right business workflow where the work happens',
+            'iOS, Android, and cross-platform apps for Dallas–Fort Worth businesses: field work, customer self-service, and tasks that happen away from a desk.',
+        eyebrow: 'Dallas–Fort Worth mobile app development',
+        heading: 'Mobile apps for your customers and field teams',
         introduction:
-            'Empuls3 plans and builds mobile experiences for DFW organizations with a defined field, customer, approval, inspection, or data-capture need.',
-        primaryAction: { label: 'Discuss a Mobile Workflow', href: '/contact#contact-form' },
-        secondaryAction: { label: 'Request a Product Call', href: '/contact#schedule-meeting' },
-        problemHeading: 'The strongest mobile cases begin with access and context',
-        problemIntroduction: 'We evaluate whether a mobile app is necessary before choosing native, cross-platform, or responsive web delivery.',
+            'We plan, design, and build mobile apps for DFW businesses whose customers or staff need to get work done from a phone or tablet, and we improve existing apps that have become hard to maintain.',
+        primaryAction: { label: 'Tell Us About Your App', href: contactHref('project') },
+        secondaryAction: { label: 'See Mobile App Development', href: '/solutions/mobile-cross-platform-development' },
+        problemHeading: 'Where a mobile app helps most',
+        problemIntroduction:
+            'We are based in Dallas–Fort Worth and build apps for businesses across the Metroplex. These are the most common reasons to build one.',
         problems: [
             {
-                title: 'Field teams need device capabilities',
-                description: 'Photos, signatures, location, offline work, scanning, or timely data capture are central to the job.',
+                title: 'Work happens in the field',
+                description:
+                    'Teams need photos, signatures, inspections, location, or scanning where the work happens, and offline access where the project calls for it.',
             },
             {
-                title: 'Customers repeat a focused action',
-                description: 'Self-service, status, approvals, communication, or account work needs a reliable mobile experience.',
+                title: 'Customers repeat the same task',
+                description: 'Customers check status, book, approve, or manage an account often enough that a focused app is worth building.',
             },
             {
-                title: 'An existing app needs responsible modernization',
-                description: 'Maintenance, release, platform, performance, or integration conditions are blocking product improvement.',
+                title: 'An existing app is hard to maintain',
+                description: 'Outdated dependencies, separate iOS and Android codebases, or unreliable releases are slowing improvements.',
             },
         ],
-        solutionHeading: 'Mobile product and operating responsibility together',
-        solutionIntroduction:
-            'The experience, APIs, identity, data, security, deployment, store management, monitoring, and support are planned as one system.',
+        solutionHeading: 'What we build',
+        solutionIntroduction: 'The app, the systems behind it, and the release plan are planned together.',
         solutions: [
             {
-                title: 'Workflow and platform decision',
-                description: 'Define users, context, connectivity, device needs, integrations, security, and the simplest viable delivery approach.',
+                title: 'Platform choice',
+                description:
+                    'We recommend native, cross-platform such as React Native, or a mobile web app based on your users, device features, and budget.',
             },
             {
-                title: 'Application and systems delivery',
-                description: 'Build the user experience and the backend services required to support it reliably.',
+                title: 'App and back end',
+                description: 'We build the app along with the APIs, sign-in, data, and admin tools it needs to work with your existing systems.',
             },
             {
-                title: 'Release and lifecycle ownership',
-                description: 'Plan testing, distribution, monitoring, analytics, support, updates, and platform responsibilities.',
+                title: 'Release and updates',
+                description: 'We handle testing, App Store and Google Play submission, monitoring, and ongoing updates.',
             },
         ],
-        processHeading: 'Validate the mobile case before development',
-        processIntroduction: 'A responsible recommendation may be an app, a mobile web experience, or an improvement to the underlying workflow.',
-        process: seniorDelivery,
-        fitHeading: 'Best suited to DFW businesses that',
-        fit: establishedBusinessFit,
-        notFit: ['Want an app primarily as a branding exercise.', ...standardNotFit.slice(1)],
-        finalHeading: 'Bring the workflow and the systems behind it',
-        finalBody: 'We will help determine whether mobile delivery is justified and what operating responsibility it requires.',
-        locationLabel: 'Remote service across Dallas–Fort Worth',
-        serviceType: 'Business mobile application development',
+        processHeading: 'How a mobile project runs',
+        processIntroduction: 'Mobile projects add devices, app stores, and release reviews to the usual build steps.',
+        process: mobileSteps,
+        fitHeading: 'A good fit for DFW businesses that',
+        fit: [
+            'Have staff or customers who need to do a specific task from a phone or tablet.',
+            'Need the app to work with systems they already use, such as a CRM, scheduling, or billing tool.',
+            'Want one developer to handle design, development, store release, and updates.',
+        ],
+        finalHeading: 'Tell us about your app',
+        finalBody: 'Describe who will use it, what they need to do, and the systems it should connect to. We normally reply within one business day.',
+        locationLabel: dfwLocation,
+        serviceType: 'Mobile application development',
     },
 } satisfies Record<string, LeadPageConfig>;

@@ -1,20 +1,13 @@
 'use client';
 
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export function EngineeringHeader() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const totalSlides = 3;
-
-    // Auto-advance slides
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % totalSlides);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, []);
 
     const handleDotClick = (index: number) => {
         setCurrentSlide(index);
@@ -31,24 +24,24 @@ export function EngineeringHeader() {
     const slides = [
         {
             image: '/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_0.png',
-            title: 'You Work With The Developers, Not Account Managers',
+            title: 'You Work Directly With Robert',
             description:
-                "Tired of playing telephone through account managers who can't spell API? Work directly with developers who've been coding since the 90s. We answer our own emails, pick up our phones, and actually understand your problems.",
-            altText: 'Senior software engineers collaborating on a project at Empuls3 micro agency',
+                'The senior developer who reviews your systems is the same person who plans, builds, and explains the work. Questions about releases, incidents, or roadmap priorities go straight to Robert. We normally reply to new inquiries within one business day.',
+            altText: 'Illustration of people reviewing code at a shared workstation',
         },
         {
             image: '/images/site-images/rob_thomas23_African_American_Software_Engineers_at_an_agency_762428ff-30ee-4066-88f5-c531dd19c25d_2.png',
-            title: 'We Fix It In Weeks, Not Months',
+            title: 'Stabilize What Matters First',
             description:
-                "Big agencies need 6 months for a 2-week project. We don't. Our senior developers have seen your problem before and know exactly how to fix it. No learning on your dime, no endless meetings, just results.",
-            altText: 'Software engineering team working on implementing solutions with personalized attention',
+                'We start by learning the system, its users, and its risks, then fix the problems that interrupt the business before planning larger changes. Work is scoped in steps you can review, so progress and tradeoffs stay visible.',
+            altText: 'Illustration of people discussing a project in an office',
         },
         {
             image: '/images/site-images/rob_thomas23_African_American_Software_Engineers_standing_fac_1c490440-96b8-4333-88cd-7c5e0c406ec0_3.png',
-            title: 'Honest Advice That Saves You Money',
+            title: 'Honest Advice on Repair or Rebuild',
             description:
                 "We'll tell you the truth even when the right answer is a focused repair instead of a rebuild, or when another specialist is a better fit. The recommendation follows the business need, not the size of the project.",
-            altText: 'IT consultants providing strategic guidance to clients at Empuls3',
+            altText: 'Illustration of a group of people standing together in an office',
         },
     ];
 
@@ -60,29 +53,28 @@ export function EngineeringHeader() {
         >
             <div className="mx-[5%] max-w-md justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end">
                 <header>
-                    <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Real Developers. Real Solutions.</p>
+                    <p className="mb-3 font-semibold text-[#BD1550] md:mb-4">Software Engineering &amp; IT Consulting</p>
                     <h1 id="engineering-header-title" className="mb-5 text-6xl font-bold text-[#1F1946] md:mb-6 md:text-7xl lg:text-7xl">
-                        We Fix Software That Other Agencies Broke
+                        Senior Engineering Help for Your Critical Software
                     </h1>
                 </header>
                 <p className="md:text-md text-gray-700">
-                    If a vendor disappeared, releases are risky, or a legacy system cannot keep pace with the business, our senior engineers can
-                    assess the situation, stabilize what matters, and create a controlled modernization path.
+                    Empuls3 is Robert Thomas, an independent senior developer who gives DFW businesses engineering help for the applications,
+                    integrations, and infrastructure they depend on, without building a full internal software department. Bring us in for a defined
+                    project, such as an assessment, a new system, or a cloud move, or for ongoing support of the systems you already run.
                 </p>
                 <nav className="mt-6 flex flex-wrap gap-4 md:mt-8" aria-label="Engineering services navigation">
                     <Link
-                        href="#services"
+                        href={contactHref('project')}
                         className="inline-flex items-center justify-center rounded-md bg-[#BD1550] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[#BD1550]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
-                        aria-label="Learn more about our engineering services"
                     >
-                        Learn More
+                        Let’s Talk About Your Project
                     </Link>
                     <Link
-                        href="/contact"
+                        href="/case-studies"
                         className="inline-flex items-center justify-center rounded-md border border-[#1F1946] bg-transparent px-6 py-3 text-base font-medium text-[#1F1946] shadow-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2"
-                        aria-label="Contact us about software engineering services"
                     >
-                        Contact Us
+                        See Published Work
                     </Link>
                 </nav>
             </div>
@@ -91,7 +83,7 @@ export function EngineeringHeader() {
                 aria-roledescription="carousel"
                 aria-label="Software engineering services carousel"
             >
-                <div className="relative h-full w-full overflow-hidden">
+                <div className="relative h-full w-full overflow-hidden" aria-live="polite">
                     {slides.map((slide, index) => (
                         <div
                             key={index}
@@ -111,7 +103,7 @@ export function EngineeringHeader() {
                                         alt={slide.altText}
                                         width="800"
                                         height="600"
-                                        loading="lazy"
+                                        loading={index === 0 ? 'eager' : 'lazy'}
                                     />
                                 </figure>
                                 <div className="relative bg-white px-6 pt-6 pb-32 sm:px-8 sm:pt-8">
@@ -126,7 +118,7 @@ export function EngineeringHeader() {
 
                     <div
                         className="absolute top-auto right-auto bottom-[52px] left-8 flex w-full items-start justify-start"
-                        role="tablist"
+                        role="group"
                         aria-label="Select a slide to show"
                     >
                         {slides.map((slide, index) => (
@@ -134,11 +126,9 @@ export function EngineeringHeader() {
                                 type="button"
                                 key={index}
                                 onClick={() => handleDotClick(index)}
-                                className={`mx-[3px] inline-block h-2 w-2 rounded-full ${currentSlide === index ? 'bg-[#1F1946]' : 'bg-gray-300'}`}
+                                className={`mx-[3px] inline-block h-2 w-2 rounded-full focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 focus-visible:outline-none ${currentSlide === index ? 'bg-[#1F1946]' : 'bg-gray-300'}`}
                                 aria-label={`Go to slide ${index + 1}: ${slide.title}`}
-                                aria-selected={currentSlide === index}
-                                role="tab"
-                                tabIndex={currentSlide === index ? 0 : -1}
+                                aria-pressed={currentSlide === index}
                             />
                         ))}
                     </div>

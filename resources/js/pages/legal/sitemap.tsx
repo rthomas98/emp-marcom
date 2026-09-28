@@ -35,7 +35,7 @@ export default function Sitemap() {
                             </li>
                             <li>
                                 <Link href={route('industries')} className="text-primary hover:text-accent-pink">
-                                    Industries
+                                    Situations We Solve
                                 </Link>
                             </li>
                             <li>
@@ -85,27 +85,27 @@ export default function Sitemap() {
                         <ul className="space-y-2">
                             <li>
                                 <Link href={route('dallas.software-development')} className="text-primary hover:text-accent-pink">
-                                    Software Rescue & Modernization
+                                    Dallas Software Development
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('dallas.web-development')} className="text-primary hover:text-accent-pink">
-                                    Website Modernization
+                                    Dallas Website Development
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('dallas.it-consulting')} className="text-primary hover:text-accent-pink">
-                                    Senior Engineering Consulting
+                                    Dallas IT Consulting
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('dallas.managed-it-services')} className="text-primary hover:text-accent-pink">
-                                    Managed IT Services
+                                    Dallas Managed IT Services
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('dallas.mobile-app-development')} className="text-primary hover:text-accent-pink">
-                                    Business Mobile Applications
+                                    Dallas Mobile App Development
                                 </Link>
                             </li>
                         </ul>
@@ -116,37 +116,37 @@ export default function Sitemap() {
                         <ul className="space-y-2">
                             <li>
                                 <Link href={route('solutions.software-development-design')} className="text-primary hover:text-accent-pink">
-                                    Software Development & Design
+                                    Custom Software Development
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('solutions.web-ecommerce-development')} className="text-primary hover:text-accent-pink">
-                                    Web & E-commerce Development
+                                    Website & E-commerce Development
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('solutions.backend-api-development')} className="text-primary hover:text-accent-pink">
-                                    Back-End & API Development
+                                    Back-End, API & Integrations
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('solutions.frontend-development-uxui-design')} className="text-primary hover:text-accent-pink">
-                                    Front-End Development & UX/UI Design
+                                    Frontend & UX/UI Design
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('solutions.mvp-product-development')} className="text-primary hover:text-accent-pink">
-                                    MVP & Product Development
+                                    MVP & First-Version Products
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('solutions.mobile-cross-platform-development')} className="text-primary hover:text-accent-pink">
-                                    Mobile & Cross-Platform Development
+                                    Mobile App Development
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('solutions.hubspot-crm-development')} className="text-primary hover:text-accent-pink">
-                                    HubSpot & CRM Development
+                                    HubSpot CRM Setup & Integration
                                 </Link>
                             </li>
                         </ul>
@@ -162,12 +162,12 @@ export default function Sitemap() {
                             </li>
                             <li>
                                 <Link href={route('services.application-devops-services')} className="text-primary hover:text-accent-pink">
-                                    Application & DevOps Services
+                                    Application Delivery & DevOps
                                 </Link>
                             </li>
                             <li>
                                 <Link href={route('services.managed-it-support-services')} className="text-primary hover:text-accent-pink">
-                                    Managed IT & Support Services
+                                    Managed IT Services
                                 </Link>
                             </li>
                         </ul>
@@ -183,7 +183,7 @@ export default function Sitemap() {
                             </li>
                             <li>
                                 <Link href={route('company.partners')} className="text-primary hover:text-accent-pink">
-                                    Partners
+                                    Collaboration Model
                                 </Link>
                             </li>
                             <li>

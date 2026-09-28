@@ -1,80 +1,81 @@
+import { contactHref } from '@/utils/contact-intent';
 import { Dialog, Popover } from '@headlessui/react';
 import { Link, usePage } from '@inertiajs/react';
 import { BarChart3, ChevronDown, Code, Database, Globe, Layers, LineChart, Menu, Rocket, Smartphone, X } from 'lucide-react';
 import { useState } from 'react';
 
 const solutions = [
-    { name: 'Solutions Overview', href: '/solutions', description: 'Start with the business problem', icon: LineChart },
+    { name: 'Solutions Overview', href: '/solutions', description: 'What we build and improve', icon: LineChart },
     {
-        name: 'Software Rescue & Modernization',
+        name: 'Custom Software Development',
         href: '/solutions/software-development-design',
-        description: 'Stabilize aging or unreliable software',
+        description: 'New business software or improvements to yours',
         icon: Code,
     },
     {
-        name: 'CRM, API & Workflow Integration',
+        name: 'Back-End, API & Integrations',
         href: '/solutions/backend-api-development',
         description: 'Connect systems and reduce manual work',
         icon: Database,
     },
     {
-        name: 'Website Modernization',
+        name: 'Website & E-commerce Development',
         href: '/solutions/web-ecommerce-development',
-        description: 'Clarify the offer and conversion path',
+        description: 'New websites or updates to the one you have',
         icon: Globe,
     },
     {
-        name: 'Business Application UX',
+        name: 'Frontend & UX/UI Design',
         href: '/solutions/frontend-development-uxui-design',
-        description: 'Remove interface and workflow friction',
+        description: 'Easy-to-use screens for websites and apps',
         icon: Layers,
     },
     {
-        name: 'HubSpot & CRM Operations',
+        name: 'HubSpot CRM Setup & Integration',
         href: '/solutions/hubspot-crm-development',
-        description: 'Improve lifecycle, data, and reporting',
+        description: 'Cleaner contacts, handoffs, and reports',
         icon: BarChart3,
     },
     {
-        name: 'Business Mobile Applications',
+        name: 'Mobile App Development',
         href: '/solutions/mobile-cross-platform-development',
-        description: 'Support defined field or customer workflows',
+        description: 'Apps for your customers and field teams',
         icon: Smartphone,
     },
     {
-        name: 'Product Validation & Delivery',
+        name: 'MVP & First-Version Products',
         href: '/solutions/mvp-product-development',
-        description: 'For funded teams with a validated problem',
+        description: 'Plan, test, and launch a first version',
         icon: Rocket,
     },
 ];
 
 const services = [
-    { name: 'Engagement Models', href: '/services', description: 'Choose the level of ownership required', icon: LineChart },
+    { name: 'Services Overview', href: '/services', description: 'How we work with you, project or ongoing', icon: LineChart },
     {
-        name: 'Ongoing Senior Engineering Support',
+        name: 'Software Engineering & IT Consulting',
         href: '/services/software-engineering-it-consulting',
-        description: 'Accountable ownership for critical systems',
+        description: 'Senior engineering advice and ongoing support',
         icon: Code,
     },
     {
         name: 'Application Delivery & DevOps',
         href: '/services/application-devops-services',
-        description: 'Make releases visible and recoverable',
+        description: 'Release software updates safely',
         icon: Layers,
     },
     {
         name: 'Managed IT Services',
         href: '/services/managed-it-support-services',
-        description: 'Scoped support for established businesses',
+        description: 'Remote support for your team and systems',
         icon: Smartphone,
     },
 ];
 
 const company = [
-    { name: 'About Empuls3', href: '/company/about', description: 'How our senior-led model works', icon: Rocket },
-    { name: 'Collaboration Model', href: '/company/partners', description: 'How we work across teams and vendors', icon: Globe },
-    { name: 'Engagement FAQs', href: '/company/faqs', description: 'Fit, ownership, security, and delivery answers', icon: Database },
+    { name: 'About Empuls3', href: '/company/about', description: 'Founded in 2009 by Robert Thomas', icon: Rocket },
+    { name: 'Collaboration Model', href: '/company/partners', description: 'Working with agencies and in-house teams', icon: Globe },
+    { name: 'FAQs', href: '/company/faqs', description: 'Getting started, cost, ownership, and security', icon: Database },
 ];
 
 function normalizeUrl(urlString: string) {
@@ -264,10 +265,10 @@ export default function MainMenu({ className }: MainMenuProps) {
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <Link
-                        href={route('contact')}
+                        href={contactHref('project')}
                         className="bg-accent-pink hover:bg-accent-pink/90 rounded-md px-4 py-2 text-sm font-medium text-white shadow-sm"
                     >
-                        Request a Software Review
+                        Let’s Talk About Your Project
                     </Link>
                 </div>
             </nav>
@@ -359,11 +360,11 @@ export default function MainMenu({ className }: MainMenuProps) {
                     </div>
                     <div className="sticky bottom-0 grid grid-cols-1 bg-gray-50 text-center">
                         <Link
-                            href={route('contact')}
+                            href={contactHref('project')}
                             className="bg-accent-pink hover:bg-accent-pink/90 p-3 text-base font-semibold text-white"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            Request a Software Review
+                            Let’s Talk About Your Project
                         </Link>
                     </div>
                 </Dialog.Panel>

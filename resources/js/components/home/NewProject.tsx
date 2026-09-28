@@ -9,11 +9,11 @@ const steps = [
     },
     {
         title: 'Design and build',
-        description: 'Responsive, maintainable websites and web applications built by senior engineers.',
+        description: 'Responsive, maintainable websites, web apps, and business systems built by a senior developer.',
     },
     {
         title: 'Launch and support',
-        description: 'Keep the same team for ongoing engineering support after launch, without a handoff to a new vendor.',
+        description: 'Keep the same developer for ongoing support after launch, without a handoff to a new vendor.',
     },
 ];
 
@@ -25,11 +25,11 @@ export function NewProject() {
                     <div>
                         <p className="text-accent-pink mb-3 font-semibold md:mb-4">New Websites & Web Apps</p>
                         <h2 id="new-project-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
-                            Planning Something New? Start with Senior Engineers
+                            Planning Something New? Start With a Senior Developer
                         </h2>
                         <p className="text-gray-700 md:text-lg">
-                            Not every project starts with a rescue. If you are planning a new website, customer portal, internal tool, or web
-                            application, we can help you shape the scope, choose a practical approach, and build it.
+                            If you are planning a new website, customer portal, internal tool, or web application, we help you shape the scope, choose
+                            a practical approach, and build it.
                         </p>
                         <ul className="mt-6 space-y-4 md:mt-8">
                             {steps.map((step) => (
@@ -62,7 +62,7 @@ export function NewProject() {
                             </Link>
                         </div>
                         <p className="mt-4 text-sm text-gray-600">
-                            Build engagements generally begin at $25,000. Not sure yet? A consultation or focused assessment is a good first step.
+                            Projects start at $2,500; the final estimate depends on scope. Not sure yet? A consultation is a good first step.
                         </p>
                     </div>
                     <div>

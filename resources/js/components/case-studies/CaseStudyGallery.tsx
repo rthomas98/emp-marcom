@@ -24,8 +24,8 @@ export function CaseStudyGallery({ relatedCaseStudies = [] }: CaseStudyGalleryPr
         <section className="bg-gray-50 px-[5%] py-16 md:py-24">
             <div className="container mx-auto">
                 <div className="mx-auto mb-10 max-w-3xl text-center">
-                    <h2 className="text-primary text-3xl font-bold md:text-5xl">Related Published Work</h2>
-                    <p className="mt-4 leading-7 text-gray-700">Additional client-approved case studies in the same service category.</p>
+                    <h2 className="text-primary text-3xl font-bold md:text-5xl">More Client Work</h2>
+                    <p className="mt-4 leading-7 text-gray-700">Other projects in the same service category.</p>
                 </div>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {relatedCaseStudies.map((caseStudy) => (

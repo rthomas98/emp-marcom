@@ -65,6 +65,8 @@ function ActionLink({ action, secondary = false }: { action: LinkAction; seconda
 }
 
 export function LeadPage({ config, children }: { config: LeadPageConfig; children?: ReactNode }) {
+    const notFit = config.notFit ?? [];
+    const hasNotFit = notFit.length > 0;
     const serviceSchema = {
         '@context': 'https://schema.org',
         '@type': config.serviceType ? 'Service' : 'WebPage',
@@ -78,7 +80,7 @@ export function LeadPage({ config, children }: { config: LeadPageConfig; childre
               }
             : undefined,
         serviceType: config.serviceType,
-        areaServed: config.locationLabel || 'Dallas–Fort Worth, Texas',
+        areaServed: 'Dallas–Fort Worth, Texas',
     };
 
     return (
@@ -108,7 +110,7 @@ export function LeadPage({ config, children }: { config: LeadPageConfig; childre
                     </div>
 
                     <aside className="bg-primary rounded-2xl p-8 text-white shadow-xl">
-                        <p className="text-accent-yellow text-sm font-semibold tracking-wide uppercase">Built for operational problems</p>
+                        <p className="text-accent-yellow text-sm font-semibold tracking-wide uppercase">Common reasons people contact us</p>
                         <ul className="mt-6 space-y-4">
                             {config.problems.slice(0, 3).map((problem) => (
                                 <li key={problem.title} className="flex gap-3">
@@ -120,7 +122,7 @@ export function LeadPage({ config, children }: { config: LeadPageConfig; childre
                         <div className="mt-8 border-t border-white/20 pt-6 text-sm text-white/80">
                             <p className="flex items-center gap-2">
                                 <MapPin className="size-4" aria-hidden="true" />
-                                {config.locationLabel || 'Serving established DFW businesses remotely'}
+                                {config.locationLabel || 'Based in Dallas–Fort Worth'}
                             </p>
                             <a href="tel:+19727988914" className="mt-3 flex items-center gap-2 hover:text-white">
                                 <Phone className="size-4" aria-hidden="true" />
@@ -192,7 +194,7 @@ export function LeadPage({ config, children }: { config: LeadPageConfig; childre
             </section>
 
             <section className="px-[5%] py-16 md:py-24" aria-labelledby="fit-heading">
-                <div className="container mx-auto grid gap-10 lg:grid-cols-2">
+                <div className={`container mx-auto grid gap-10 ${hasNotFit ? 'lg:grid-cols-2' : 'max-w-3xl'}`}>
                     <div>
                         <h2 id="fit-heading" className="text-primary text-3xl font-bold md:text-4xl">
                             {config.fitHeading}
@@ -206,11 +208,11 @@ export function LeadPage({ config, children }: { config: LeadPageConfig; childre
                             ))}
                         </ul>
                     </div>
-                    {config.notFit && (
+                    {hasNotFit && (
                         <div className="rounded-2xl bg-gray-50 p-8">
                             <h2 className="text-primary text-2xl font-bold">When another provider may be a better fit</h2>
                             <ul className="mt-6 space-y-4">
-                                {config.notFit.map((item) => (
+                                {notFit.map((item) => (
                                     <li key={item} className="flex gap-3 leading-7 text-gray-700">
                                         <CircleX className="mt-1 size-5 shrink-0 text-gray-500" aria-hidden="true" />
                                         {item}
@@ -227,7 +229,7 @@ export function LeadPage({ config, children }: { config: LeadPageConfig; childre
                     <div className="container mx-auto flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
                         <div className="max-w-3xl">
                             <h2 id="proof-heading" className="text-primary text-2xl font-bold md:text-3xl">
-                                {config.proofHeading || 'Evidence before promises'}
+                                {config.proofHeading || 'Published work'}
                             </h2>
                             <p className="mt-3 leading-7 text-gray-700">{config.proofBody}</p>
                         </div>

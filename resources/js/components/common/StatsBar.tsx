@@ -19,25 +19,25 @@ const Stat = ({ value, label, icon }: StatProps) => {
 export function StatsBar() {
     const stats = [
         {
-            value: 'Rescue',
-            label: 'Stabilize aging or unreliable software',
+            value: 'Build',
+            label: 'New websites, web apps, and business systems',
         },
         {
-            value: 'Integrate',
-            label: 'Connect CRMs, APIs, data, and workflows',
+            value: 'Improve',
+            label: 'Fix and modernize the software you already use',
+        },
+        {
+            value: 'Connect',
+            label: 'Link CRMs, APIs, data, and workflows',
         },
         {
             value: 'Support',
-            label: 'Add ongoing senior engineering capacity',
-        },
-        {
-            value: 'Build',
-            label: 'Plan and launch a new website or web app',
+            label: 'Ongoing help from the developer who built it',
         },
     ];
 
     return (
-        <section className="border-b border-gray-200 bg-gray-50" aria-label="Primary software services">
+        <section className="border-b border-gray-200 bg-gray-50" aria-label="What we do">
             <div className="container mx-auto px-[5%] py-8">
                 <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
                     {stats.map((stat, index) => (

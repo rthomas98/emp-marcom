@@ -18,59 +18,48 @@ export interface ContactFormData {
     submit_time: number;
 }
 
+/** Sent when the visitor does not choose a project type. The backend requires a projectType string. */
+export const DEFAULT_PROJECT_TYPE = 'other';
+
+export const projectTypeOptions = [
+    { value: 'new-website-app', label: 'New Website or Web App Build' },
+    { value: 'software-rescue', label: 'Software Rescue & Legacy Modernization' },
+    { value: 'systems-integration', label: 'CRM, API & Workflow Integration' },
+    { value: 'engineering-support', label: 'Ongoing Software Support' },
+    { value: 'web-modernization', label: 'Website & E-Commerce Modernization' },
+    { value: 'mobile-development', label: 'Mobile App Development' },
+    { value: 'managed-it', label: 'Managed IT Services' },
+    { value: DEFAULT_PROJECT_TYPE, label: 'Other / Not sure yet' },
+] as const;
+
 interface ContactFormPanelProps {
-    formType: FormType;
     formData: ContactFormData;
     isSubmitting: boolean;
-    onFormTypeChange: (type: FormType) => void;
+    detailsOpen: boolean;
+    onDetailsToggle: (open: boolean) => void;
     onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
     onSubmit: (event: React.FormEvent) => void;
 }
 
-export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeChange, onChange, onSubmit }: ContactFormPanelProps) {
+const fieldClass =
+    'min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none';
+const labelClass = 'mb-2 block text-sm font-medium text-[#1F1946]';
+const optional = <span className="font-normal text-gray-500">(optional)</span>;
+
+export function ContactFormPanel({ formData, isSubmitting, detailsOpen, onDetailsToggle, onChange, onSubmit }: ContactFormPanelProps) {
+    const presetType = projectTypeOptions.find((option) => option.value === formData.projectType && option.value !== DEFAULT_PROJECT_TYPE);
+
     return (
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm md:p-8">
-            <h2 id="contact-form-title" className="mb-6 text-2xl font-bold text-[#1F1946] md:text-3xl">
-                Send Us a Message
+            <h2 id="contact-form-title" className="mb-2 text-2xl font-bold text-[#1F1946] md:text-3xl">
+                Send a Message
             </h2>
-
-            <div className="mb-6 flex space-x-4" role="tablist" aria-label="Contact form types">
-                <button
-                    type="button"
-                    id="tab-general"
-                    role="tab"
-                    aria-selected={formType === 'general'}
-                    aria-controls="panel-general"
-                    onClick={() => onFormTypeChange('general')}
-                    className={`flex-1 rounded-md border px-4 py-2 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 ${
-                        formType === 'general'
-                            ? 'border-[#BD1550] bg-[#BD1550] text-white'
-                            : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
-                    }`}
-                >
-                    General Inquiry
-                </button>
-                <button
-                    type="button"
-                    id="tab-project"
-                    role="tab"
-                    aria-selected={formType === 'project'}
-                    aria-controls="panel-project"
-                    onClick={() => onFormTypeChange('project')}
-                    className={`flex-1 rounded-md border px-4 py-2 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 ${
-                        formType === 'project'
-                            ? 'border-[#BD1550] bg-[#BD1550] text-white'
-                            : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
-                    }`}
-                >
-                    Project Request
-                </button>
-            </div>
+            <p className="mb-6 text-sm text-gray-600">Only your name, email, and a short description are required.</p>
 
             <form onSubmit={onSubmit} aria-labelledby="contact-form-title">
                 <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                        <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#1F1946]">
+                        <label htmlFor="name" className={labelClass}>
                             Full Name *
                         </label>
                         <input
@@ -79,18 +68,15 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                             name="name"
                             value={formData.name}
                             onChange={onChange}
-                            className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
+                            className={fieldClass}
                             required
                             aria-required="true"
-                            aria-describedby="name-required"
+                            autoComplete="name"
                         />
-                        <span id="name-required" className="sr-only">
-                            Required field
-                        </span>
                     </div>
 
                     <div>
-                        <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#1F1946]">
+                        <label htmlFor="email" className={labelClass}>
                             Email Address *
                         </label>
                         <input
@@ -99,140 +85,134 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                             name="email"
                             value={formData.email}
                             onChange={onChange}
-                            className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
+                            className={fieldClass}
                             required
                             aria-required="true"
-                            aria-describedby="email-required"
                             autoComplete="email"
-                        />
-                        <span id="email-required" className="sr-only">
-                            Required field
-                        </span>
-                    </div>
-
-                    <div>
-                        <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                            Phone Number
-                        </label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={onChange}
-                            className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                            autoComplete="tel"
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="company" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                            Company Name
-                        </label>
-                        <input
-                            type="text"
-                            id="company"
-                            name="company"
-                            value={formData.company}
-                            onChange={onChange}
-                            className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                            autoComplete="organization"
                         />
                     </div>
                 </div>
 
-                {formType === 'general' && (
-                    <div id="panel-general" role="tabpanel" aria-labelledby="tab-general">
-                        <div className="mb-6">
-                            <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                How can we help? *
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={onChange}
-                                rows={5}
-                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                required
-                                aria-required="true"
-                                aria-describedby="message-required"
-                                placeholder="Tell us about the new project, consultation topic, or problem you are dealing with, and who it affects."
-                            />
-                            <span id="message-required" className="sr-only">
-                                Required field
-                            </span>
-                        </div>
-                    </div>
-                )}
+                <div className="mb-6">
+                    <label htmlFor="message" className={labelClass}>
+                        What would you like to build, fix, or discuss? *
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={onChange}
+                        rows={5}
+                        className={fieldClass}
+                        required
+                        aria-required="true"
+                        aria-describedby="message-help"
+                        placeholder="A few sentences is fine: who it is for and what it needs to do, or what is not working today."
+                    />
+                    <p id="message-help" className="mt-2 text-sm text-gray-600">
+                        Please do not include passwords, private keys, or regulated data.
+                    </p>
+                </div>
 
-                {formType === 'project' && (
-                    <div id="panel-project" role="tabpanel" aria-labelledby="tab-project">
+                <details
+                    className="group mb-6 rounded-md border border-gray-200"
+                    open={detailsOpen}
+                    onToggle={(event) => onDetailsToggle(event.currentTarget.open)}
+                >
+                    <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-sm font-medium text-[#1F1946] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] [&::-webkit-details-marker]:hidden">
+                        <span>
+                            Add optional details
+                            {presetType && <span className="ml-2 font-normal text-gray-600">(project type: {presetType.label})</span>}
+                        </span>
+                        <span aria-hidden="true" className="text-lg leading-none text-[#BD1550] group-open:hidden">
+                            +
+                        </span>
+                        <span aria-hidden="true" className="hidden text-lg leading-none text-[#BD1550] group-open:inline">
+                            −
+                        </span>
+                    </summary>
+
+                    <div className="border-t border-gray-200 px-4 py-5">
+                        <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <div>
+                                <label htmlFor="company" className={labelClass}>
+                                    Company Name {optional}
+                                </label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    value={formData.company}
+                                    onChange={onChange}
+                                    className={fieldClass}
+                                    autoComplete="organization"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="phone" className={labelClass}>
+                                    Phone Number {optional}
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={onChange}
+                                    className={fieldClass}
+                                    autoComplete="tel"
+                                />
+                            </div>
+                        </div>
+
                         <div className="mb-6">
-                            <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                Engagement Type *
+                            <label htmlFor="projectType" className={labelClass}>
+                                Project Type {optional}
                             </label>
-                            <span id="projectType-required" className="sr-only">
-                                Required field
-                            </span>
                             <select
                                 id="projectType"
                                 name="projectType"
-                                value={formData.projectType}
+                                value={formData.projectType || DEFAULT_PROJECT_TYPE}
                                 onChange={onChange}
-                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                required
-                                aria-required="true"
-                                aria-describedby="projectType-required"
+                                className={fieldClass}
                             >
-                                <option value="">Select Engagement Type</option>
-                                <option value="new-website-app">New Website or Web App Build</option>
-                                <option value="software-rescue">Software Rescue & Legacy Modernization</option>
-                                <option value="systems-integration">CRM, API & Workflow Integration</option>
-                                <option value="engineering-support">Ongoing Senior Engineering Support</option>
-                                <option value="web-modernization">Website & E-Commerce Modernization</option>
-                                <option value="mobile-development">Mobile Product Development</option>
-                                <option value="managed-it">Managed IT Services</option>
-                                <option value="other">Other</option>
+                                {projectTypeOptions.map((option) => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                ))}
                             </select>
                         </div>
 
                         <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                             <div>
-                                <label htmlFor="budget" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                    Budget Range <span className="font-normal text-gray-500">(optional)</span>
+                                <label htmlFor="budget" className={labelClass}>
+                                    Budget Range {optional}
                                 </label>
                                 <select
                                     id="budget"
                                     name="budget"
                                     value={formData.budget}
                                     onChange={onChange}
-                                    className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
+                                    className={fieldClass}
                                     aria-describedby="budget-help"
                                 >
                                     <option value="">Select Budget Range</option>
+                                    <option value="2500-5000">$2,500 - $5,000</option>
+                                    <option value="5000-10000">$5,000 - $10,000</option>
+                                    <option value="10000-25000">$10,000 - $25,000</option>
+                                    <option value="25k-plus">$25,000+</option>
                                     <option value="not-sure">Not sure yet</option>
-                                    <option value="focused-assessment">Focused assessment first</option>
-                                    <option value="25k-50k">$25,000 - $50,000</option>
-                                    <option value="50k-100k">$50,000 - $100,000</option>
-                                    <option value="over-100k">Over $100,000</option>
                                 </select>
                                 <p id="budget-help" className="mt-2 text-sm text-gray-600">
-                                    Build and substantial implementation engagements generally begin at $25,000. A focused assessment can be smaller.
+                                    Projects start at $2,500; the final estimate depends on scope.
                                 </p>
                             </div>
 
                             <div>
-                                <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                    Timeline
+                                <label htmlFor="timeline" className={labelClass}>
+                                    Timeline {optional}
                                 </label>
-                                <select
-                                    id="timeline"
-                                    name="timeline"
-                                    value={formData.timeline}
-                                    onChange={onChange}
-                                    className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                >
+                                <select id="timeline" name="timeline" value={formData.timeline} onChange={onChange} className={fieldClass}>
                                     <option value="">Select Timeline</option>
                                     <option value="urgent">Urgent (ASAP)</option>
                                     <option value="1-month">Within 1 month</option>
@@ -243,30 +223,9 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                             </div>
                         </div>
 
-                        <div className="mb-6">
-                            <label htmlFor="projectDescription" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                What do you want to build or fix? *
-                            </label>
-                            <textarea
-                                id="projectDescription"
-                                name="projectDescription"
-                                value={formData.projectDescription}
-                                onChange={onChange}
-                                rows={4}
-                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                required
-                                aria-required="true"
-                                aria-describedby="projectDescription-required"
-                                placeholder="For a new website or app, describe who will use it and what it needs to do. For an existing system, describe the workflow, systems involved, current owner or vendor, and business impact."
-                            />
-                            <span id="projectDescription-required" className="sr-only">
-                                Required field
-                            </span>
-                        </div>
-
-                        <div className="mb-6">
-                            <label htmlFor="requirements" className="mb-2 block text-sm font-medium text-[#1F1946]">
-                                Known Constraints or Requirements
+                        <div>
+                            <label htmlFor="requirements" className={labelClass}>
+                                Known Constraints or Requirements {optional}
                             </label>
                             <textarea
                                 id="requirements"
@@ -274,21 +233,23 @@ export function ContactFormPanel({ formType, formData, isSubmitting, onFormTypeC
                                 value={formData.requirements}
                                 onChange={onChange}
                                 rows={3}
-                                className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-3 text-base text-[#1F1946] focus:border-[#BD1550] focus:ring-2 focus:ring-[#BD1550] focus:outline-none"
-                                placeholder="Include timing, access, security, data, vendor, or operating constraints. Do not submit credentials or regulated data."
+                                className={fieldClass}
+                                placeholder="Anything you already know about timing, systems, or vendors. This can wait until we follow up."
                             />
                         </div>
                     </div>
-                )}
+                </details>
 
                 <button
                     type="submit"
                     disabled={isSubmitting}
                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#BD1550] px-6 py-3 text-center font-medium text-white transition hover:bg-[#a01245] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BD1550] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70"
-                    aria-live="polite"
                 >
-                    {isSubmitting ? 'Sending…' : formType === 'general' ? 'Send Inquiry' : 'Send Project Request'}
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
                 </button>
+                <p className="sr-only" aria-live="polite">
+                    {isSubmitting ? 'Sending your message.' : ''}
+                </p>
             </form>
         </div>
     );

@@ -1,6 +1,5 @@
 import { ContactFormAdvanced } from '@/components/contact/ContactFormAdvanced';
 import { ContactHeader } from '@/components/contact/ContactHeader';
-import { ContactInfo } from '@/components/contact/ContactInfo';
 import { ContactSchedule } from '@/components/contact/ContactSchedule';
 import SiteLayout from '@/layouts/site-layout';
 import { generateLocalBusinessSchema } from '@/utils/schema';
@@ -18,7 +17,7 @@ export default function Contact() {
                 <meta
                     name="description"
                     content={generateLocalDescription(
-                        'Tell Empuls3 about a new website or web app, or what is breaking, disconnected, or consuming staff time. A senior specialist will respond within one business day.',
+                        'Tell Empuls3 about a new website or web app, or a system you want to improve. We normally reply within one business day by email.',
                     )}
                 />
                 <meta
@@ -27,10 +26,10 @@ export default function Contact() {
                 />
 
                 {/* Open Graph tags for social sharing */}
-                <meta property="og:title" content="Request a Software Review | Empuls3" />
+                <meta property="og:title" content="Let’s Talk About Your Project | Empuls3" />
                 <meta
                     property="og:description"
-                    content="Talk with a senior specialist about a new website or web app, software rescue, systems integration, or ongoing engineering support for your Dallas-Fort Worth business."
+                    content="Talk with a senior developer about a new website or web app, software rescue, systems integration, or ongoing engineering support for your Dallas-Fort Worth business."
                 />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.empuls3.com/contact" />
@@ -38,7 +37,7 @@ export default function Contact() {
 
                 {/* Twitter Card tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Request a Software Review | Empuls3" />
+                <meta name="twitter:title" content="Let’s Talk About Your Project | Empuls3" />
                 <meta
                     name="twitter:description"
                     content="Discuss a new website or web app, software rescue, systems integration, or ongoing senior engineering support for your DFW business."
@@ -51,7 +50,6 @@ export default function Contact() {
 
             <main id="main-content">
                 <ContactHeader />
-                <ContactInfo />
                 <ContactFormAdvanced />
                 <ContactSchedule />
             </main>

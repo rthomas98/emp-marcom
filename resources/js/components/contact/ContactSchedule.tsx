@@ -11,7 +11,7 @@ export function ContactSchedule() {
                     <div>
                         <img
                             src="/images/site-images/rob_thomas23_African_American_Team_of_Young_Managers_Discussing_df53a8b9-91a0-4201-a378-f71855407ec1.png"
-                            alt="Team of managers discussing a project"
+                            alt="Illustration of people discussing a project around a table"
                             className="h-full w-full rounded-lg object-cover"
                         />
                     </div>
@@ -19,8 +19,8 @@ export function ContactSchedule() {
                     <div>
                         <h2 className="mb-6 text-3xl font-bold text-[#1F1946] md:text-4xl lg:text-5xl">Request a Consultation</h2>
                         <p className="md:text-md mb-8 text-gray-700">
-                            Use a consultation to talk through a new website or app idea, or to explain what an existing system supports, where the
-                            workflow is failing, and who is affected. Send a request and we will reply within one business day to arrange a time.
+                            Prefer to talk it through before sending details? Ask for a consultation and we will reply by email to arrange a time. It
+                            works for a new website or app idea and for an existing system that needs work.
                         </p>
 
                         <div className="space-y-6">
@@ -29,11 +29,8 @@ export function ContactSchedule() {
                                     <Calendar className="h-6 w-6 text-[#BD1550]" />
                                 </div>
                                 <div>
-                                    <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Bring the Context</h3>
-                                    <p className="text-gray-700">
-                                        For a new project, bring the goal, the people who will use it, and any timing. For an existing system, bring
-                                        the affected workflow, users, current owner or vendor, and urgency.
-                                    </p>
+                                    <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Bring What You Know</h3>
+                                    <p className="text-gray-700">The goal, who uses it, and any timing. Missing details are fine at this stage.</p>
                                 </div>
                             </div>
 
@@ -44,8 +41,8 @@ export function ContactSchedule() {
                                 <div>
                                     <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Expect a Fit Conversation</h3>
                                     <p className="text-gray-700">
-                                        The first call determines whether Empuls3 is the right provider and whether the next step should be a project
-                                        plan, a focused assessment, or an ongoing support discussion.
+                                        We will talk through whether Empuls3 is a good fit and whether the next step is a project plan, a focused
+                                        assessment, or ongoing support.
                                     </p>
                                 </div>
                             </div>
@@ -56,10 +53,7 @@ export function ContactSchedule() {
                                 </div>
                                 <div>
                                     <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Leave with a Practical Next Step</h3>
-                                    <p className="text-gray-700">
-                                        We will identify the information, access, stakeholders, or assessment scope needed before a responsible
-                                        implementation recommendation can be made.
-                                    </p>
+                                    <p className="text-gray-700">You will know what information or access we need before we recommend an approach.</p>
                                 </div>
                             </div>
                         </div>
@@ -73,13 +67,6 @@ export function ContactSchedule() {
                             >
                                 Request a Consultation
                             </button>
-                            <p className="mt-3 text-sm text-gray-600">
-                                Prefer to talk first? Call{' '}
-                                <a className="text-[#BD1550] underline hover:text-[#a01245]" href="tel:+19727988914">
-                                    972.798.8914
-                                </a>
-                                .
-                            </p>
                         </div>
                     </div>
                 </div>

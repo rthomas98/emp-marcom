@@ -34,8 +34,8 @@ const sections: LegalSection[] = [
         content: (
             <>
                 <p>
-                    We may share information with service providers that support website hosting, email delivery, scheduling, analytics, security, and
-                    business operations. Those providers receive information only as needed to perform their services under their applicable terms.
+                    We may share information with service providers that support website hosting, email delivery, analytics, security, and business
+                    operations. Those providers receive information only as needed to perform their services under their applicable terms.
                 </p>
                 <p>
                     We may also disclose information when required by law, to protect rights or safety, in connection with a business transaction, or
@@ -82,8 +82,8 @@ const sections: LegalSection[] = [
             <>
                 <p>The website is intended for business audiences and is not directed to children under 13.</p>
                 <p>
-                    Links to scheduling, client websites, social networks, and other third-party services are governed by those providers’ own privacy
-                    practices. Review their terms before submitting information.
+                    Links to client websites, social networks, and other third-party services are governed by those providers’ own privacy practices.
+                    Review their terms before submitting information.
                 </p>
             </>
         ),

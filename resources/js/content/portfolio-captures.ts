@@ -37,5 +37,5 @@ export const unavailableClientSites: Record<string, { checkedOn: string }> = {
 };
 
 export function portfolioCaptureCaption(capture: PortfolioCapture): string {
-    return `Live site captured ${capture.capturedOn}. It may differ from how the site looked at delivery.`;
+    return `Live site captured ${capture.capturedOn}.`;
 }

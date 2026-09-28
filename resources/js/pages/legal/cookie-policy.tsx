@@ -31,12 +31,7 @@ const sections: LegalSection[] = [
     },
     {
         heading: 'Advertising cookies',
-        content: (
-            <p>
-                Empuls3 does not currently describe or intentionally deploy advertising-cookie campaigns on this public website. If advertising or
-                retargeting technology is introduced, this policy and any required controls should be updated before deployment.
-            </p>
-        ),
+        content: <p>Empuls3 does not intentionally deploy advertising-cookie campaigns on this public website at this time.</p>,
     },
     {
         heading: 'Managing cookies',

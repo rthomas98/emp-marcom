@@ -1,3 +1,4 @@
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 import clsx from 'clsx';
 import { ChevronRight } from 'lucide-react';
@@ -49,7 +50,7 @@ export const Features = (props: FeaturesProps) => {
     return (
         <section id="features" className="px-[5%]" aria-labelledby="features-heading">
             <h2 id="features-heading" className="sr-only">
-                Our Core Services and Features
+                Improve, Connect, and Support Existing Systems
             </h2>
             <div className="container mx-auto">
                 <div className="relative grid gap-x-12 py-16 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20">
@@ -165,81 +166,71 @@ export const Features = (props: FeaturesProps) => {
     );
 };
 
+const featureImages: ImageProps[] = [
+    {
+        src: '/images/site-images/rob_thomas23_African_American_Coders_working_in_a_Software_deve_3dadbb8b-55c4-48bc-bf97-a7af44e0ca5e.png',
+        alt: 'Illustration of people reviewing an application',
+    },
+    {
+        src: '/images/site-images/rob_thomas23_A_dynamic_image_of_an_ecommerce_website_on_a_lapto_8573ee70-5ea2-48aa-ae70-35db662a51f2.png',
+        alt: 'Illustration of a website shown on a laptop and phone',
+    },
+    {
+        src: '/images/site-images/rob_thomas23_African_American_Programmer_working_in_a_software__b8f0beff-e05e-4cb9-9bdd-0fe9e598f779.png',
+        alt: 'Illustration of a developer working at a desk',
+    },
+    {
+        src: '/images/site-images/rob_thomas23_African_American_Designers_and_developers_collabor_5359f06c-96ed-4f19-94a6-00d8d4fdbd59.png',
+        alt: 'Illustration of designers and developers reviewing a website',
+    },
+];
+
 export const FeaturesDefaults: Props = {
     contents: [
         {
-            tagline: 'Software Rescue & Legacy Modernization',
-            heading: 'Stabilize the Systems Your Business Depends On',
+            tagline: 'Improve Existing Software',
+            heading: 'Fix and Modernize the Systems Your Business Depends On',
             description:
-                'We diagnose brittle applications, production failures, performance problems, and aging codebases, then create a practical path from immediate stabilization to maintainable modernization. You work directly with senior engineers throughout the engagement.',
+                'When an application is slow, fragile, or hard to change, we find the cause, fix what is urgent, and plan a practical path to modernize the rest. You work directly with Robert throughout.',
             buttons: [
                 { title: 'Explore Modernization', href: '/solutions/software-development-design', variant: 'secondary' },
-                { title: 'Request a Review', href: '/contact', variant: 'link' },
+                { title: 'Request a Review', href: contactHref('consultation'), variant: 'link' },
             ],
-            image: {
-                src: '/images/site-images/rob_thomas23_African_American_Coders_working_in_a_Software_deve_3dadbb8b-55c4-48bc-bf97-a7af44e0ca5e.png',
-                alt: 'Senior software engineers reviewing a legacy application',
-            },
+            image: featureImages[0],
         },
         {
             tagline: 'CRM, API & Workflow Integration',
             heading: 'Connect the Systems That Keep Your Team Moving',
             description:
-                'We connect CRMs, line-of-business applications, vendor APIs, databases, and manual workflows so information moves reliably and teams stop re-entering the same data. Every integration includes clear ownership, failure handling, and operational visibility.',
+                'We connect CRMs, line-of-business applications, vendor APIs, databases, and manual workflows so information moves between them and your team stops re-entering the same data. Error handling and monitoring are planned from the start.',
             buttons: [
                 { title: 'Explore API Integration', href: '/solutions/backend-api-development', variant: 'secondary' },
-                { title: 'Discuss Your Systems', href: '/contact', variant: 'link' },
+                { title: 'Discuss Your Systems', href: contactHref('project'), variant: 'link' },
             ],
-            image: {
-                src: '/images/site-images/rob_thomas23_A_dynamic_image_of_an_ecommerce_website_on_a_lapto_8573ee70-5ea2-48aa-ae70-35db662a51f2.png',
-                alt: 'Business systems connected through a modern integration workflow',
-            },
+            image: featureImages[1],
         },
         {
-            tagline: 'Ongoing Senior Engineering Support',
-            heading: 'Add Experienced Engineering Capacity Without Another Handoff',
+            tagline: 'Ongoing Support',
+            heading: 'Keep a Senior Developer on Hand After Launch',
             description:
-                'Keep critical systems healthy with direct access to senior engineers who can investigate incidents, reduce technical debt, improve delivery pipelines, and own the next round of enhancements without forcing your team to start over with a new vendor.',
+                'Get direct access to a senior developer who can investigate problems, reduce technical debt, and handle the next round of improvements, without starting over with a new vendor.',
             buttons: [
-                { title: 'Explore Engineering Support', href: '/services/software-engineering-it-consulting', variant: 'secondary' },
+                { title: 'Explore Ongoing Support', href: '/services/software-engineering-it-consulting', variant: 'secondary' },
                 { title: 'See How We Work', href: '/company/about', variant: 'link' },
             ],
-            image: {
-                src: '/images/site-images/rob_thomas23_African_American_Programmer_working_in_a_software__b8f0beff-e05e-4cb9-9bdd-0fe9e598f779.png',
-                alt: 'Senior engineer providing ongoing application support',
-            },
+            image: featureImages[2],
         },
         {
-            tagline: 'Focused Web Modernization',
-            heading: 'Modernize the Customer Experience When the Website Is the Bottleneck',
+            tagline: 'Website Redesign',
+            heading: 'Rework a Website That No Longer Fits Your Business',
             description:
-                'For established service businesses whose website no longer reflects their expertise, we modernize the experience, content structure, performance, analytics, and lead path. This remains a focused engagement tied to a measurable business problem—not a generic redesign package.',
+                'When your website no longer reflects what you do, we rework the design, content structure, performance, analytics, and inquiry path around the problem you need to solve.',
             buttons: [
-                { title: 'Explore Web Modernization', href: '/solutions/web-ecommerce-development', variant: 'secondary' },
+                { title: 'Explore Web Development', href: '/solutions/web-ecommerce-development', variant: 'secondary' },
                 { title: 'View Case Studies', href: '/case-studies', variant: 'link' },
             ],
-            image: {
-                src: '/images/site-images/rob_thomas23_African_American_Designers_and_developers_collabor_5359f06c-96ed-4f19-94a6-00d8d4fdbd59.png',
-                alt: 'Designers and engineers modernizing a business website',
-            },
+            image: featureImages[3],
         },
     ],
-    images: [
-        {
-            src: '/images/site-images/rob_thomas23_African_American_Coders_working_in_a_Software_deve_3dadbb8b-55c4-48bc-bf97-a7af44e0ca5e.png',
-            alt: 'Software development team collaborating on custom solutions',
-        },
-        {
-            src: '/images/site-images/rob_thomas23_A_dynamic_image_of_an_ecommerce_website_on_a_lapto_8573ee70-5ea2-48aa-ae70-35db662a51f2.png',
-            alt: 'E-commerce website displayed on laptop and mobile devices',
-        },
-        {
-            src: '/images/site-images/rob_thomas23_African_American_Programmer_working_in_a_software__b8f0beff-e05e-4cb9-9bdd-0fe9e598f779.png',
-            alt: 'Backend developer working on API infrastructure',
-        },
-        {
-            src: '/images/site-images/rob_thomas23_African_American_Designers_and_developers_collabor_5359f06c-96ed-4f19-94a6-00d8d4fdbd59.png',
-            alt: 'UX/UI designers collaborating on interface design',
-        },
-    ],
+    images: featureImages,
 };

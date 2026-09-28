@@ -1,3 +1,4 @@
+import { contactHref } from '@/utils/contact-intent';
 import { Link } from '@inertiajs/react';
 
 export function CallToAction() {
@@ -6,18 +7,17 @@ export function CallToAction() {
             <div className="container mx-auto flex flex-col items-center">
                 <div className="mb-12 max-w-3xl text-center md:mb-18 lg:mb-20">
                     <h2 id="call-to-action-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
-                        Ready to Make the Next Technology Decision Clearer?
+                        Tell Us What You Want to Build or Fix
                     </h2>
                     <p className="text-gray-700 md:text-lg">
-                        Tell us what is slowing the business down. We will review the situation, identify the most useful next conversation, and
-                        respond within one business day.
+                        Share what you are planning or what is not working in your current system. We normally reply within one business day.
                     </p>
                     <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
                         <Link
-                            href="/contact"
+                            href={contactHref('project')}
                             className="bg-accent-pink hover:bg-accent-pink/90 focus:ring-accent-pink inline-flex h-11 min-h-[44px] items-center justify-center rounded-md px-6 py-2.5 text-sm font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
                         >
-                            Request a Software Review
+                            Let’s Talk About Your Project
                         </Link>
                         <Link
                             href="/case-studies"
@@ -30,7 +30,10 @@ export function CallToAction() {
                 <img
                     src="/images/site-images/rob_thomas23_A_African_American_team_of_professionals_collabora_97c07372-4e6a-4c97-90ff-cae9da9aaf12.png"
                     className="rounded-image w-full object-cover"
-                    alt="Team of professionals collaborating"
+                    alt="Professionals collaborating"
+                    loading="lazy"
+                    width="1456"
+                    height="832"
                 />
             </div>
         </section>

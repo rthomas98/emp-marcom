@@ -41,13 +41,30 @@ interface CaseStudyProps {
     relatedCaseStudies: CaseStudy[];
 }
 
-const verifiedOutcomeOverrides: Record<string, string> = {
+// Plain statements of delivered scope, drawn from each published case study. No results are added here.
+const deliveredScopeOverrides: Record<string, string> = {
     'hebert-thomas-law-website-refresh':
-        '<p>The delivered outcome was a responsive WordPress website with updated information architecture, service presentation, and calls to action. Empuls3 has not received client-approved traffic or lead measurements for publication, so no quantitative performance outcome is claimed here.</p>',
+        '<ul><li>Responsive WordPress website</li><li>Updated information architecture</li><li>Clearer presentation of the firm’s services</li><li>Updated calls to action</li></ul>',
     'solushiens-modern-website-redesign':
-        '<p>The delivered outcome was a redesigned responsive website with updated navigation, visual presentation, and service content. Empuls3 has not received client-approved engagement, bounce-rate, or lead measurements for publication, so no quantitative performance outcome is claimed here.</p>',
+        '<ul><li>Redesigned responsive website</li><li>Improved navigation</li><li>Updated visual design</li><li>Updated service content</li></ul>',
     'codegig-strategic-pivot-new-website-for-new-audiences':
-        '<p>The delivered outcome was a new website, message structure, and service architecture aligned to CodeGig’s AI and machine-learning positioning. Empuls3 has not received client-approved inquiry or growth measurements for publication, so no quantitative performance outcome is claimed here.</p>',
+        '<ul><li>New responsive website for CodeGig</li><li>Brand messaging for its AI and machine-learning services</li><li>UI/UX design and custom web development</li><li>Service and content architecture</li></ul>',
+};
+
+// Clarifies the commissioned role where the published wording is broader than the work.
+const solutionOverrides: Record<string, string> = {
+    'codegig-strategic-pivot-new-website-for-new-audiences':
+        '<p>CodeGig commissioned Empuls3 to design and build its new website. The work covered brand messaging, UI/UX design, custom web development, and content architecture.</p>',
+};
+
+// Factual meta descriptions for the published stories, so database meta copy cannot reintroduce outcome claims.
+const metaDescriptionOverrides: Record<string, string> = {
+    'hebert-thomas-law-website-refresh':
+        'How Empuls3 refreshed the Hebert Thomas Law website: a responsive WordPress site with clearer service pages and updated calls to action.',
+    'solushiens-modern-website-redesign':
+        'How Empuls3 redesigned the Solushiens website with improved navigation, updated visual design, and refreshed service content.',
+    'codegig-strategic-pivot-new-website-for-new-audiences':
+        'CodeGig commissioned Empuls3 to design and build a new website for its AI and machine-learning services, including messaging and content architecture.',
 };
 
 function formatDate(dateString: string | null) {
@@ -57,12 +74,15 @@ function formatDate(dateString: string | null) {
 }
 
 export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyProps) {
-    const publishedOutcome = verifiedOutcomeOverrides[caseStudy.slug] || caseStudy.results;
+    const deliveredScope = deliveredScopeOverrides[caseStudy.slug] || caseStudy.results;
+    const solution = solutionOverrides[caseStudy.slug] || caseStudy.solution;
+    const industry = caseStudy.industry && caseStudy.industry.trim().toLowerCase() !== 'other' ? caseStudy.industry : null;
     const liveCapture = portfolioCaptures[caseStudy.slug];
     const siteUnavailable = unavailableClientSites[caseStudy.slug];
     const metaDescription =
+        metaDescriptionOverrides[caseStudy.slug] ||
         caseStudy.meta_description ||
-        `Review the challenge, delivered scope, and approved outcome for ${caseStudy.client_name}'s ${caseStudy.service_type.toLowerCase()} engagement with Empuls3.`;
+        `The starting point and delivered scope for ${caseStudy.client_name}'s ${caseStudy.service_type.toLowerCase()} project with Empuls3.`;
 
     return (
         <>
@@ -89,10 +109,12 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
                                 <span className="font-medium">Client:</span>
                                 <span>{caseStudy.client_name}</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <span className="font-medium">Industry:</span>
-                                <span>{caseStudy.industry}</span>
-                            </div>
+                            {industry && (
+                                <div className="flex items-center gap-2">
+                                    <span className="font-medium">Industry:</span>
+                                    <span>{industry}</span>
+                                </div>
+                            )}
                             <div className="flex items-center gap-2">
                                 <span className="font-medium">Service:</span>
                                 <span>{caseStudy.service_type}</span>
@@ -161,16 +183,12 @@ export default function CaseStudy({ caseStudy, relatedCaseStudies }: CaseStudyPr
 
                             <div className="mb-12">
                                 <h2 className="text-secondary mb-6 text-2xl font-bold">Our Solution</h2>
-                                <div className="prose text-secondary max-w-none" dangerouslySetInnerHTML={{ __html: caseStudy.solution }} />
+                                <div className="prose text-secondary max-w-none" dangerouslySetInnerHTML={{ __html: solution }} />
                             </div>
 
                             <div>
-                                <h2 className="text-secondary mb-6 text-2xl font-bold">Delivered Outcome</h2>
-                                <div className="prose text-secondary max-w-none" dangerouslySetInnerHTML={{ __html: publishedOutcome }} />
-                                <p className="mt-5 rounded-lg bg-gray-50 p-4 text-sm leading-6 text-gray-600">
-                                    Evidence note: business-impact measurements are published only when the client has approved the supporting data. A
-                                    completed deliverable is not presented as proof of traffic, leads, revenue, savings, or engagement by itself.
-                                </p>
+                                <h2 className="text-secondary mb-6 text-2xl font-bold">What We Delivered</h2>
+                                <div className="prose text-secondary max-w-none" dangerouslySetInnerHTML={{ __html: deliveredScope }} />
                             </div>
                         </div>
 

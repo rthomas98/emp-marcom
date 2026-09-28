@@ -1,12 +1,12 @@
 import { Link } from '@inertiajs/react';
 import { ChevronRight, Dribbble, Linkedin, Twitter } from 'lucide-react';
 
-// Source: CompanyTeam (company/about). Keep this in sync with that component; do not add unverified biography details.
+// Keep in sync with the About page founder (components/about/about-content.ts); do not add unverified biography details.
 const founder = {
     name: 'Robert Thomas',
     role: 'Founder',
     portrait: '/images/682c9204c876aa4ebe43910b-HeadshotPro.png',
-    bio: 'Founded Empuls3 in 2009 as a specialized micro agency providing personalized technology solutions with direct access to senior specialists.',
+    bio: 'Robert founded Empuls3 in 2009 and works as an independent developer, so clients work directly with the person who plans and builds their project.',
     links: [
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/robert-thomas-1b110216/', icon: Linkedin },
         { label: 'X', href: 'https://x.com/rob_thomas10', icon: Twitter },
@@ -23,9 +23,7 @@ export function FounderIntro({ showAboutLink = true }: { showAboutLink?: boolean
                     <h2 id="founder-heading" className="font-header text-primary mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
                         Meet the Founder
                     </h2>
-                    <p className="text-gray-700 md:text-lg">
-                        Empuls3 was founded in 2009 by Robert Thomas. Engagements are senior-led, so you work directly with the people doing the work.
-                    </p>
+                    <p className="text-gray-700 md:text-lg">Empuls3 was founded in 2009 by Robert Thomas and is based in Dallas–Fort Worth.</p>
                 </div>
                 <div className="mx-auto flex max-w-sm flex-col items-center text-center">
                     <div className="mb-5 aspect-square w-40 overflow-hidden rounded-full border border-gray-200 md:mb-6 md:w-48">

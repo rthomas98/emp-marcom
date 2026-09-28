@@ -1,7 +1,7 @@
 'use client';
 
 import { Toast } from '@/components/common/Toast';
-import { ContactFormPanel, type ContactFormData, type FormType } from '@/components/contact/ContactFormPanel';
+import { ContactFormPanel, DEFAULT_PROJECT_TYPE, type ContactFormData, type FormType } from '@/components/contact/ContactFormPanel';
 import { trackAnalyticsEvent } from '@/utils/analytics';
 import {
     CONTACT_INTENT_EVENT,
@@ -37,11 +37,11 @@ function ContactMethods() {
     return (
         <div className="contact-info">
             <h2 id="contact-form-heading" className="mb-6 text-3xl font-bold text-[#1F1946] md:text-4xl lg:text-5xl">
-                Contact Information
+                Start With a Short Note
             </h2>
+            <p className="md:text-md mb-4 text-gray-700">We normally reply within one business day by email.</p>
             <p className="md:text-md mb-8 text-gray-700">
-                Planning a new website or web app, or dealing with software that is breaking, disconnected, or consuming staff time? A senior
-                specialist will review your request and respond within one business day.
+                A few sentences about what you want to build or fix is enough. Scope, timing, and system access can wait until we follow up.
             </p>
 
             <ul className="space-y-6" aria-label="Contact methods">
@@ -66,6 +66,7 @@ function ContactMethods() {
                     </div>
                     <div>
                         <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Phone</h3>
+                        <p className="text-gray-700">If you would rather talk first.</p>
                         <a className="text-gray-700 hover:text-[#BD1550] hover:underline" href="tel:+19727988914">
                             972.798.8914
                         </a>
@@ -77,8 +78,8 @@ function ContactMethods() {
                         <MapPin className="h-6 w-6 text-[#BD1550]" />
                     </div>
                     <div>
-                        <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Remote-First DFW Service</h3>
-                        <p className="text-gray-700">We serve Dallas–Fort Worth businesses through scheduled sessions and secure remote access.</p>
+                        <h3 className="mb-1 text-lg font-semibold text-[#1F1946]">Dallas–Fort Worth</h3>
+                        <p className="text-gray-700">We are based in DFW and work remotely through scheduled sessions and secure access.</p>
                     </div>
                 </li>
             </ul>
@@ -93,16 +94,12 @@ export function ContactFormAdvanced() {
     const [toastType, setToastType] = useState<'success' | 'error'>('success');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState<ContactFormData>(() => createEmptyForm('general'));
+    const [detailsOpen, setDetailsOpen] = useState(false);
     const { url } = usePage();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = event.target;
         setFormData((previous) => ({ ...previous, [name]: value }));
-    };
-
-    const handleFormTypeChange = (type: FormType) => {
-        setFormType(type);
-        setFormData((previous) => ({ ...previous, formType: type }));
     };
 
     const applyIntent = useCallback((intent: ResolvedContactIntent | null) => {
@@ -136,15 +133,18 @@ export function ContactFormAdvanced() {
             const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
             axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 
-            const submissionData = { ...formData };
-            if (formType === 'general') submissionData.projectType = 'general-inquiry';
+            // projectType is required by the backend: keep an intent preset or a chosen type, otherwise send the truthful "other".
+            const projectType = formData.projectType || DEFAULT_PROJECT_TYPE;
+            const submittedFormType: FormType = projectType !== DEFAULT_PROJECT_TYPE ? 'project' : formType;
+            const submissionData: ContactFormData = { ...formData, projectType, formType: submittedFormType };
 
             const response = await axios.post('/contact/submit', submissionData);
             if (!response.data.success) throw new Error(response.data.message || 'Something went wrong. Please try again.');
 
-            trackAnalyticsEvent('generate_lead', { form_type: formType, project_type: submissionData.projectType });
-            trackAnalyticsEvent('contact_form_success', { form_type: formType, project_type: submissionData.projectType });
+            trackAnalyticsEvent('generate_lead', { form_type: submittedFormType, project_type: submissionData.projectType });
+            trackAnalyticsEvent('contact_form_success', { form_type: submittedFormType, project_type: submissionData.projectType });
             setFormData(createEmptyForm(formType));
+            setDetailsOpen(false);
             setToastType('success');
             setToastMessage(response.data.message || "Thank you for your message. We'll get back to you soon!");
             setShowToast(true);
@@ -178,10 +178,10 @@ export function ContactFormAdvanced() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
                     <ContactMethods />
                     <ContactFormPanel
-                        formType={formType}
                         formData={formData}
                         isSubmitting={isSubmitting}
-                        onFormTypeChange={handleFormTypeChange}
+                        detailsOpen={detailsOpen}
+                        onDetailsToggle={setDetailsOpen}
                         onChange={handleChange}
                         onSubmit={handleSubmit}
                     />
